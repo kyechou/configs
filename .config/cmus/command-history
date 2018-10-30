@@ -1,0 +1,16 @@
+q
+colorscheme ky
+help
+colorscheme tomorrow
+colorscheme base16
+colorscheme 
+h
+clear
+live-filter 
+w
+set skip_track_info=false
+prev-view
+set softvol_state=0 0
+bind -f browser i toggle show_hidden
+bind -f browser backspace browser-up
+add ~/music/

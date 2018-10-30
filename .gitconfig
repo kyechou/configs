@@ -1,0 +1,30 @@
+[user]
+	email = kuanyenchou@gmail.com
+	name = kyechou
+	signingkey = 71FF6F39B8A800DE
+
+[core]
+	editor = vim
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	log = auto
+
+[push]
+	default = simple
+
+[commit]
+	gpgsign = true
+
+[status]
+	submodulesummary = 1
+
+[alias]
+	lf = ls-files
+	st = status
+	cm = commit
+	co = checkout
+	lg = log --graph --color --pretty=oneline
+	br = branch -avv
