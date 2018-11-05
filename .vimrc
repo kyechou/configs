@@ -198,7 +198,7 @@ autocmd FileType haskell nnoremap <S-F9> I--<esc>kh
 autocmd FileType haskell nnoremap <S-F8> ^2xk
 " autocmd: compile
 autocmd FileType c       nnoremap <C-c> :! gcc % -o %:r -Wall -Wextra -Wpedantic
-                                           \ -Werror -O3 -std=c11 -lpcre2-8<CR>
+                                           \ -Werror -O3 -std=c11<CR>
 autocmd FileType cpp     nnoremap <C-c> :! g++ % -o %:r -Wall -Wextra -Wpedantic
                                            \ -Werror -O3 -std=c++14<CR>
 " autocmd: execute
