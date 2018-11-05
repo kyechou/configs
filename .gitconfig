@@ -28,3 +28,4 @@
 	co = checkout
 	lg = log --graph --color --pretty=oneline
 	br = branch -avv
+	diffc = diff --cached
