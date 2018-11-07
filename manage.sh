@@ -62,13 +62,14 @@ NAME='unknown'
 	$RSYNC private/.ssh ~/
 	if [[ "$NAME" = 'Arch Linux' ]]; then
 		$RSYNC private/.gnupg ~/
+		sudo $RSYNC makepkg.conf /etc/
 	else
 		$GPG --import private/.gnupg/*.asc
 	fi
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-	$RSYNC .config/cmus .config/dunst .config/polybar ~/.config/
+	$RSYNC .config/cmus .config/dunst .config/polybar .config/dconf ~/.config/
 	$RSYNC .i3 .Xmodmap private/.thunderbird ~/
 	sudo $RSYNC iptables.rules /etc/iptables/
 	sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -80,9 +81,11 @@ NAME='unknown'
 	$RSYNC ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.i3 ~/.profile \
 		~/.tmux.conf ~/.vim ~/.vimrc ~/.Xmodmap ./
 	$RSYNC ~/.config/cmus ~/.config/dunst ~/.config/polybar \
-		~/.config/ranger .config/
+		~/.config/ranger ~/.config/dconf .config/
 	[[ -r /etc/iptables/iptables.rules ]] && \
 		$RSYNC /etc/iptables/iptables.rules ./
+	[[ -r /etc/makepkg.conf ]] && \
+		$RSYNC /etc/makepkg.conf ./
 	$RSYNC ~/.ssh ~/.gnupg ~/.thunderbird private/
 	[[ -d /etc/NetworkManager/system-connections ]] && \
 		sudo $RSYNC /etc/NetworkManager/system-connections private/
