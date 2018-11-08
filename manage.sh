@@ -72,6 +72,7 @@ NAME='unknown'
 	$RSYNC .config/cmus .config/dunst .config/polybar .config/dconf ~/.config/
 	$RSYNC .i3 .Xmodmap private/.thunderbird ~/
 	sudo $RSYNC iptables.rules /etc/iptables/
+	sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
 	sudo $RSYNC private/system-connections /etc/NetworkManager/
 	[[ $DRYRUN -eq 0 ]] && sudo pacman -U --needed --noconfirm \
 		private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.xz
@@ -86,6 +87,8 @@ NAME='unknown'
 		$RSYNC /etc/iptables/iptables.rules ./
 	[[ -r /etc/makepkg.conf ]] && \
 		$RSYNC /etc/makepkg.conf ./
+	[[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
+		$RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
 	$RSYNC ~/.ssh ~/.gnupg ~/.thunderbird private/
 	[[ -d /etc/NetworkManager/system-connections ]] && \
 		sudo $RSYNC /etc/NetworkManager/system-connections private/
