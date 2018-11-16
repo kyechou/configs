@@ -1,6 +1,3 @@
-# attempt at creating a base16-tomorrow themed cmus
-# by leofa
-#
 ### colors
 ### {{{
 set color_cmdline_fg=lightcyan

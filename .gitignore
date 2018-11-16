@@ -1,6 +1,7 @@
 private
 .vim
 .bashrc
+.config/cmus/autosave
 .config/cmus/cache
 .config/cmus/command-history
 .config/cmus/lib.pl
