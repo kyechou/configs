@@ -193,7 +193,8 @@ bindsym $mod+m               exec --no-startup-id amixer -M set Master 0%  && am
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -M set Master 1%- && amixer -M set PCM 1%-
 bindsym XF86AudioMute        exec --no-startup-id amixer -M set Master 0%  && amixer -M set PCM 0%
-exec --no-startup-id amixer -M set Master 0% && amixer -M set PCM 0%
+exec --no-startup-id amixer -M set Master 0%
+exec --no-startup-id amixer -M set PCM 0%
 exec --no-startup-id amixer -M set Capture 0dB
 exec --no-startup-id amixer -M set Speaker 0dB
 exec --no-startup-id amixer -M set Headphone 0dB
@@ -228,5 +229,5 @@ exec --no-startup-id lxpolkit						# needed for virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
-#exec --no-startup-id rambox
-exec --no-startup-id thunderbird
+exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox'
+exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
