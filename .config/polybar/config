@@ -49,7 +49,7 @@ font-1 = Liberation Sans:size=10;1
 font-2 = Source Han Sans TW:size=10;2
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem pulseaudio system-load cpu memory wlan eth battery date
+modules-right = filesystem alsa system-load cpu memory wlan eth battery date
 separator =
 locale = en_US.UTF-8
 tray-position = right
@@ -133,30 +133,20 @@ format-suffix = "]"
 format-suffix-foreground = ${colors.foreground-alt}
 
 
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume = <label-volume> <bar-volume>
-interval = 3
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+mapped = true
+interval = 1
+format-volume = <label-volume>
+format-muted = <label-muted>
 label-volume = %{F#666}♪%{F-} %percentage%%
 label-volume-foreground = ${colors.foreground}
-label-muted = muted
+label-muted = ♪ muted
 label-muted-foreground = ${colors.foreground-alt}
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 2
-bar-volume-fill = ━
-bar-volume-fill-font = 2
-bar-volume-empty = ━
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 [module/system-load]
