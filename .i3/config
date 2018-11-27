@@ -186,18 +186,30 @@ bindsym $mod+Control+a exec rambox
 bindsym $mod+Control+c exec gnome-calculator
 bindsym Print          exec gnome-screenshot -i
 
-# ALSA controls (package 'alsa-utils' is needed)
-bindsym $mod+period          exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
-bindsym $mod+comma           exec --no-startup-id amixer -M set Master 1%- && amixer -M set PCM 1%-
-bindsym $mod+m               exec --no-startup-id amixer -M set Master 0%  && amixer -M set PCM 0%
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -M set Master 1%- && amixer -M set PCM 1%-
-bindsym XF86AudioMute        exec --no-startup-id amixer -M set Master 0%  && amixer -M set PCM 0%
-exec --no-startup-id amixer -M set Master 0%
-exec --no-startup-id amixer -M set PCM 0%
-exec --no-startup-id amixer -M set Capture 0dB
-exec --no-startup-id amixer -M set Speaker 0dB
-exec --no-startup-id amixer -M set Headphone 0dB
+## ALSA controls (package 'alsa-utils' is needed)
+#bindsym $mod+period          exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
+#bindsym $mod+comma           exec --no-startup-id amixer -M set Master 1%- && amixer -M set PCM 1%-
+#bindsym $mod+m               exec --no-startup-id amixer -M set Master 0%  && amixer -M set PCM 0%
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -M set Master 1%- && amixer -M set PCM 1%-
+#bindsym XF86AudioMute        exec --no-startup-id amixer -M set Master 0%  && amixer -M set PCM 0%
+#exec --no-startup-id sleep 5 && amixer -M set Master 0%
+#exec --no-startup-id sleep 5 && amixer -M set PCM 0%
+#exec --no-startup-id sleep 5 && amixer -M set Capture 0dB
+#exec --no-startup-id sleep 5 && amixer -M set Speaker 0dB
+#exec --no-startup-id sleep 5 && amixer -M set Headphone 0dB
+
+# Pulse Audio controls
+set $output_sink "$(pactl list short sinks | grep output | head -n1 | cut -f2)"
+set $input_source "$(pactl list short sources | grep input | head -n1 | cut -f2)"
+bindsym $mod+period          exec --no-startup-id pactl set-sink-volume $output_sink +1dB
+bindsym $mod+comma           exec --no-startup-id pactl set-sink-volume $output_sink -1dB
+bindsym $mod+m               exec --no-startup-id pactl set-sink-volume $output_sink 13
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $output_sink +1dB
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $output_sink -1dB
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-volume $output_sink 13
+exec --no-startup-id pactl set-sink-volume $output_sink 13
+exec --no-startup-id pactl set-source-volume $input_source 0%
 
 # Touchpad controls
 bindsym Control+F1 exec --no-startup-id xinput --disable 'ELAN1200:00 04F3:306F Touchpad'
