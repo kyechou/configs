@@ -20,14 +20,9 @@ Plugin 'taglist.vim'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-surround'
 " Syntax
-Plugin 'xhtml.vim'
 Plugin 'godlygeek/tabular' " the tabular plugin must come before vim-markdown
 Plugin 'plasticboy/vim-markdown'
-Plugin 'python.vim'
-" Indent
-Plugin 'indentpython.vim'
 " Colorscheme
 Plugin 'morhetz/gruvbox'
 
@@ -96,7 +91,6 @@ syntax on
 set background=dark
 colorscheme gruvbox
 highlight SpellBad ctermbg=167 ctermfg=234
-let g:airline_theme='gruvbox'
 let c_syntax_for_h = 1
 set encoding=utf8
 set fileencodings=utf8,utf16,big5,gbk,latin1
@@ -108,6 +102,7 @@ nnoremap <S-x> :set ff=unix<CR>:w<CR>
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set textwidth=80
+set colorcolumn=81
 set backspace=indent,eol,start
 set pastetoggle=<F7>
 set smarttab
@@ -117,14 +112,31 @@ set smartindent
 set modeline
 set tabstop=8 shiftwidth=8
 set noexpandtab
-autocmd FileType vim            set expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType vim            set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType markdown       set tabstop=4 shiftwidth=4 expandtab
-autocmd FileType tex,latex      set tabstop=4 shiftwidth=4 expandtab
+autocmd FileType tex,latex,bib  set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python         set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType css,scss       set tabstop=4 shiftwidth=4
 autocmd FileType haskell        set tabstop=4 shiftwidth=4
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#close_symbol = '×'
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline_symbols = {}
+let g:airline_symbols.whitespace = '!'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.crypt = 'cr'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plasticboy/vim-markdown
