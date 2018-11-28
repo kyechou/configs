@@ -1,5 +1,5 @@
 set font "Hack 10"
-set guioptions sv
+set guioptions s
 set smooth-scroll true
 set window-title-basename true
 set statusbar-basename true
