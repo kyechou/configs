@@ -18,6 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'a.vim'
 Plugin 'taglist.vim'
 Plugin 'ap/vim-css-color'
+Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Syntax
@@ -78,6 +79,7 @@ set scrolloff=5
 set nu
 set wrap
 set wildmenu
+set wildmode=longest:full,full
 set ruler
 set lazyredraw
 set nostartofline
@@ -112,6 +114,7 @@ set smartindent
 set modeline
 set tabstop=8 shiftwidth=8
 set noexpandtab
+autocmd BufWritePre * %s/\s\+$//e   " Automatically remove trailing ws before saving
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType vim            set tabstop=4 shiftwidth=4 expandtab
@@ -166,9 +169,8 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F2> :Lex<CR>
 nnoremap <F3> :TlistToggle<CR>
-nnoremap <F4> :! gdb -q %:r<CR>
-nnoremap <F5> :! valgrind --leak-check=full ./%:r<CR>
-nnoremap <F6> :! astyle --style=kr --indent=tab=8 --pad-oper --pad-comma
+nnoremap <F4> :Goyo<CR>
+nnoremap <F5> :! astyle --style=kr --indent=tab=8 --pad-oper --pad-comma
                  \ --pad-header --align-pointer=name --suffix=none %<CR>
 nnoremap <F10> :set spell!<CR>
 nnoremap r :!<Space>
