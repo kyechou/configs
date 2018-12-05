@@ -7,3 +7,7 @@ private
 .config/cmus/lib.pl
 .config/cmus/playlist.pl
 .config/cmus/search-history
+.newsboat/cache.db
+.newsboat/history.cmdline
+.newsboat/history.search
+.newsboat/queue

@@ -1,0 +1,73 @@
+## Linux
+https://www.archlinux.org/feeds/news/ arch
+
+## Academia
+http://export.arxiv.org/rss/cs.GL general academia
+http://export.arxiv.org/rss/cs.NI networking academia
+http://export.arxiv.org/rss/cs.OS os academia
+http://export.arxiv.org/rss/cs.DC distributed academia
+http://export.arxiv.org/rss/cs.CR security academia
+http://export.arxiv.org/rss/cs.FL formal academia
+http://export.arxiv.org/rss/cs.CC complexity academia
+http://export.arxiv.org/rss/cs.DS algorithms academia
+http://export.arxiv.org/rss/cs.GT game academia
+http://export.arxiv.org/rss/cs.LO logic academia
+http://export.arxiv.org/rss/cs.DM discrete-math academia
+http://export.arxiv.org/rss/cs.CL comp-lang academia
+http://export.arxiv.org/rss/cs.PL prog-lang academia
+http://export.arxiv.org/rss/cs.SE software-eng academia
+http://export.arxiv.org/rss/cs.PF performance academia
+http://export.arxiv.org/rss/cs.CY society academia
+
+## Technical news
+https://news.ycombinator.com/rss technews
+https://lobste.rs/rss technews
+http://rss.slashdot.org/Slashdot/slashdotMain technews
+https://www.techmeme.com/feed.xml technews
+https://www.cnet.com/rss/news/ technews
+https://www.zdnet.com/news/rss.xml technews "~ZDNet News"
+https://www.networkworld.com/index.rss technews
+https://www.itworld.com/index.rss technews
+http://feeds.feedburner.com/TechCrunchIT technews
+http://feeds.feedburner.com/TechCrunch/social technews
+http://theconversation.com/us/topics/computer-science-6612/articles.atom technews
+https://www.wired.com/feed/category/security/latest/rss technews
+https://www.sciencedaily.com/rss/computers_math.xml technews
+https://www.sciencedaily.com/rss/most_popular.xml technews
+
+## Non-technical news (Taiwan)
+https://www.twreporter.org/a/rss2.xml TWnews
+http://www.eventsinfocus.org/rss.xml TWnews
+https://feeds.feedburner.com/TheNewsLens TWnews "~The News Lens 關鍵評論網 (中文)"
+https://feeds.feedburner.com/TheNewsLensINTL TWnews "~The News Lens 關鍵評論網 (英文)"
+http://www.peoplenews.tw/rss/%E7%B8%BD%E8%A6%BD TWnews
+http://www.peoplenews.tw/rss/%E5%85%A8%E7%90%83 TWnews
+
+## Non-technical news (US/Worldwide)
+https://www.theatlantic.com/feed/all/ news
+https://www.theguardian.com/us/rss news
+
+## YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcu65ocEWfvvX7W93n8fagg youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4USoIAL9qcsx5nCZV_QRnA youtube
+https://www.youtube.com/feeds/videos.xml?user=maxmoefoetwo youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeR0n8d3ShTn_yrMhpwyE1Q youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHhnf3RgHabfk5f2gUX6EVQ youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCi7GJNg51C3jgmYTUwqoUXA youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA youtube
+
+## Podcasts
+https://rss.art19.com/conan-obrien podcast conan
+http://feeds.soundcloud.com/users/soundcloud:users:24758916/sounds.rss podcast bill
+http://wtfpod.libsyn.com/rss podcast marc
+http://feeds.feedburner.com/mbmbam podcast mbmbam
+http://feeds.soundcloud.com/users/soundcloud:users:289346094/sounds.rss podcast vorw
+https://feed.cnet.com/feed/podcast/cnet-book-club-audio.xml podcast books
+https://tuxdigital.com/feed/thisweekinlinux-ogg podcast TWinL
+http://feeds.feedburner.com/TheLinuxLinkTechShowOgg-vorbisFeed podcast TLLTS
+https://smlr.us/?feed=smlr-ogg podcast SMLR
+https://linuxunplugged.fireside.fm/rss podcast linuxunplugged
+https://latenightlinux.com/feed/ogg podcast latenightlinux
+https://destinationlinux.org/feed/mp3 podcast destinationlinux

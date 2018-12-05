@@ -175,11 +175,12 @@ client.placeholder	"#000000"    "#0c0c0c"    "#ffffff"    "#000000"    "#000000"
 client.background	"#000000"
 
 # Program shortcuts
-bindsym $mod+Control+p exec ~/.config/polybar/launch.sh	# restart polybar
-bindsym $mod+Control+b exec firefox-developer-edition	# browser
-bindsym $mod+Control+f exec gnome-terminal -- ranger	# file manager
-bindsym $mod+Control+m exec gnome-terminal -- cmus	# music player
-bindsym $mod+Control+d exec gnome-dictionary		# dictionary
+bindsym $mod+Control+b exec firefox-developer-edition
+bindsym $mod+Control+f exec gnome-terminal -t Ranger   -- ranger
+bindsym $mod+Control+m exec gnome-terminal -t cmus     -- cmus
+bindsym $mod+Control+n exec gnome-terminal -t Newsboat -- newsboat
+bindsym $mod+Control+p exec gnome-terminal -t Podboat  -- podboat
+bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
 bindsym $mod+Control+a exec rambox
@@ -243,3 +244,4 @@ exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox'
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
+exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec gnome-terminal -t Newsboat -- newsboat'
