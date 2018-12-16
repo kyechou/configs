@@ -1,62 +1,25 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim Bundle (Vundle)
+" => Vim Plugins (vim-plug)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible        " required
-filetype off            " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-" Plugins:
+call plug#begin()
 
 " Utility
-Plugin 'a.vim'
-Plugin 'taglist.vim'
-Plugin 'ap/vim-css-color'
-Plugin 'junegunn/goyo.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'
+Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
 " Syntax
-Plugin 'godlygeek/tabular' " the tabular plugin must come before vim-markdown
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular', { 'for': 'markdown' } " needed by vim-markdown
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Colorscheme
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-" scripts on GitHub repos
-"Plugin 'tpope/vim-rails.git'
-" scripts from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" scripts not on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-"
-" All of your Plugins must be added before the following line
-call vundle#end()               " required
-filetype plugin indent on       " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin commands are not allowed.
-" Put your stuff after this line
+call plug#end()
 
+command! PU PlugUpdate | PlugUpgrade
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -127,7 +90,7 @@ autocmd FileType haskell        set tabstop=4 shiftwidth=4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='gruvbox'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_splits = 0
