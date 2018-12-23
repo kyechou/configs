@@ -176,10 +176,9 @@ client.background	"#000000"
 
 # Program shortcuts
 bindsym $mod+Control+b exec firefox-developer-edition
-bindsym $mod+Control+f exec gnome-terminal -t Ranger   -- ranger
-bindsym $mod+Control+m exec gnome-terminal -t cmus     -- cmus
-bindsym $mod+Control+n exec gnome-terminal -t Newsboat -- newsboat
-bindsym $mod+Control+p exec gnome-terminal -t Podboat  -- podboat
+bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
+bindsym $mod+Control+f exec gnome-terminal -t Ranger -- ranger
+bindsym $mod+Control+m exec gnome-terminal -t cmus   -- cmus
 bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
@@ -236,12 +235,11 @@ exec --no-startup-id xset s off -dpms
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
 exec --no-startup-id xinput --set-prop 'ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
-exec --no-startup-id xinput --enable 'ELAN1200:00 04F3:306F Touchpad'	# enable touchpad
-exec --no-startup-id xinput --disable 'ELAN2556:00 04F3:25EE'		# disable touch screen
-exec --no-startup-id lxpolkit						# needed for virt-manager
+exec --no-startup-id xinput --enable   'ELAN1200:00 04F3:306F Touchpad'	# enable touchpad
+exec --no-startup-id xinput --disable  'ELAN2556:00 04F3:25EE'		# disable touch screen
+exec --no-startup-id lxpolkit	# needed for virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox'
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
-exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec gnome-terminal -t Newsboat -- newsboat'

@@ -71,7 +71,7 @@ NAME='unknown'
 [[ $DEPLOY_ALL -eq 1 ]] && { \
 	$RSYNC .config/cmus .config/dunst .config/polybar .config/dconf \
 		.config/zathura ~/.config/
-	$RSYNC .i3 .newsboat .Xmodmap private/.thunderbird ~/
+	$RSYNC .i3 .Xmodmap private/.thunderbird ~/
 	sudo $RSYNC iptables.rules /etc/iptables/
 	sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
 	sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -80,8 +80,8 @@ NAME='unknown'
 }
 
 [[ $SYNC -eq 1 ]] && { \
-	$RSYNC ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.i3 ~/.newsboat \
-		~/.profile ~/.tmux.conf ~/.vim ~/.vimrc ~/.Xmodmap ./
+	$RSYNC ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.i3 ~/.profile \
+		~/.tmux.conf ~/.vim ~/.vimrc ~/.Xmodmap ./
 	$RSYNC ~/.config/cmus ~/.config/dunst ~/.config/polybar \
 		~/.config/ranger ~/.config/dconf ~/.config/zathura .config/
 	[[ -r /etc/iptables/iptables.rules ]] && \
