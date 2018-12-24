@@ -30,7 +30,7 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     #geometry = "300x5-30+20"
-    geometry = "0x0-0+23"
+    geometry = "400x0-0+23"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -52,20 +52,20 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
-    padding = 1
+    padding = 7
 
     # Horizontal padding.
-    horizontal_padding = 5
+    horizontal_padding = 10
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#454545"
+    frame_color = "#202020"
 
     # Define a color for the separator.
     # possible values are:
@@ -81,11 +81,11 @@
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 60
+    idle_threshold = 30
 
     ### Text ###
 
-    font = Hack 10
+    font = Hack 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -160,7 +160,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
 
     ### History ###
 
@@ -174,10 +174,10 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/dmenu -i -f -l 20 -nb "#3f3931" -nf "#dadada" -sb "#f49624" -sf black -fn Hack-11 -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/firefox-developer-edition
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -240,22 +240,22 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#404040"
-    foreground = "#aaaaaa"
-    timeout = 10
+    background = "#101010"
+    foreground = "#b0b0b0"
+    timeout = 15
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#404040"
+    background = "#101010"
     foreground = "#40d34e"
-    timeout = 10
+    timeout = 15
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#bb3737"
-    foreground = "#ffffff"
+    background = "#101010"
+    foreground = "#ff404e"
     #frame_color = "#ff0000"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
