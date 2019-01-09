@@ -229,8 +229,8 @@ bindsym Control+F6            exec --no-startup-id light -A 3
 exec --no-startup-id light -S 60
 
 # Touch screen controls
-bindsym Control+F7 exec --no-startup-id xinput --disable 'ELAN2556:00 04F3:25EE'
-bindsym Control+F8 exec --no-startup-id xinput --enable  'ELAN2556:00 04F3:25EE'
+bindsym Control+F7 exec --no-startup-id xinput --disable 'pointer:ELAN2556:00 04F3:25EE'
+bindsym Control+F8 exec --no-startup-id xinput --enable  'pointer:ELAN2556:00 04F3:25EE'
 
 # Disable DPMS (Energy Star) and screen saver blanking
 exec --no-startup-id xset s off -dpms
@@ -240,7 +240,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
 exec --no-startup-id xinput --set-prop 'ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
 exec --no-startup-id xinput --enable   'ELAN1200:00 04F3:306F Touchpad'	# enable touchpad
-exec --no-startup-id xinput --disable  'ELAN2556:00 04F3:25EE'		# disable touch screen
+exec --no-startup-id xinput --disable  'pointer:ELAN2556:00 04F3:25EE'	# disable touch screen
 exec --no-startup-id lxpolkit	# needed for virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace
