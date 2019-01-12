@@ -151,7 +151,8 @@ label-muted-foreground = ${colors.foreground-alt}
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = <label-volume> <bar-volume>
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 interval = 3
 label-volume = %{F#666}♪%{F-} %percentage%%
 label-volume-foreground = ${colors.foreground}
@@ -213,7 +214,7 @@ format-connected-underline = #55cc55
 label-connected = %essid% (%signal%%)
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
-label-disconnected = %ifname% disconnected
+label-disconnected = %ifname%
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -227,7 +228,7 @@ format-connected-underline = #55cc55
 label-connected = %local_ip% (%linkspeed%)
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
-label-disconnected = %ifname% disconnected
+label-disconnected = %ifname%
 label-disconnected-foreground = ${colors.foreground-alt}
 
 
@@ -239,16 +240,16 @@ full-at = 99
 poll-interval = 5
 time-format = %H:%M
 format-charging = <label-charging>
-format-charging-prefix = "Charging "
+format-charging-prefix = "CHR "
 format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging-underline = #9f78e1
 label-charging = %percentage%% (%time%)
 format-discharging = <label-discharging>
-format-discharging-prefix = "Battery "
+format-discharging-prefix = "BAT "
 format-discharging-prefix-foreground = ${colors.foreground-alt}
 format-discharging-underline = ${self.format-charging-underline}
 label-discharging = %percentage%% (%time%)
-format-full-prefix = "Full "
+format-full-prefix = "FULL "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 label-full = %percentage%%
