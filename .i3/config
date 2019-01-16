@@ -36,7 +36,7 @@ for_window [class="^.*"] border pixel 0
 hide_edge_borders both
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Control+q kill
@@ -177,8 +177,8 @@ client.background	"#000000"
 # Program shortcuts
 bindsym $mod+Control+b exec firefox-developer-edition
 bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
-bindsym $mod+Control+f exec gnome-terminal -t Ranger -- ranger
-bindsym $mod+Control+m exec gnome-terminal -t cmus   -- cmus
+bindsym $mod+Control+f exec st -t Ranger ranger
+bindsym $mod+Control+m exec st -t cmus cmus
 bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
