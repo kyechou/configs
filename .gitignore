@@ -1,13 +1,8 @@
 private
 .vim
-.bashrc
 .config/cmus/autosave
 .config/cmus/cache
 .config/cmus/command-history
 .config/cmus/lib.pl
 .config/cmus/playlist.pl
 .config/cmus/search-history
-.newsboat/cache.db
-.newsboat/history.cmdline
-.newsboat/history.search
-.newsboat/queue
