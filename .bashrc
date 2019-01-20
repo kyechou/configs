@@ -44,8 +44,6 @@ set -o vi
         export LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
         export LESS_TERMCAP_md=$(tput bold; tput setaf 2)
         export LESS_TERMCAP_me=$(tput sgr0)
-        export LESS_TERMCAP_so=$(tput bold; tput setaf 0; tput setab 7)
-        export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
         ## use italic (sitm/ritm) instead of underline (smul/rmul)
         export LESS_TERMCAP_us=$(tput sitm; tput setaf 4)
         export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)
