@@ -28,4 +28,5 @@
 	co = checkout
 	lg = log --graph --color --pretty=oneline
 	br = branch -avv
+	lsr = ls-remote
 	diffc = diff --cached
