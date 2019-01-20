@@ -40,7 +40,7 @@ set -o vi
 # colored less for interactive shell
 [[ $- == *i* ]] && {
         OLDTERM=$TERM
-        export TERM='xterm+256color'
+        export TERM='xterm-256color'
         export LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
         export LESS_TERMCAP_md=$(tput bold; tput setaf 2)
         export LESS_TERMCAP_me=$(tput sgr0)
