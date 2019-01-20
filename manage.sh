@@ -69,8 +69,8 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-	$RSYNC .config/cmus .config/dunst .config/polybar .config/dconf \
-		.config/zathura .config/vlc .config/termite ~/.config/
+	$RSYNC .config/cmus .config/dunst .config/polybar .config/termite \
+		.config/zathura .config/vlc ~/.config/
 	$RSYNC .i3 .Xmodmap private/.thunderbird ~/
 	sudo $RSYNC iptables.rules /etc/iptables/
 	sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
@@ -83,8 +83,8 @@ NAME='unknown'
 	$RSYNC ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.i3 ~/.profile \
 		~/.tmux.conf ~/.vim ~/.vimrc ~/.Xmodmap ./
 	$RSYNC ~/.config/cmus ~/.config/dunst ~/.config/polybar \
-		~/.config/ranger ~/.config/dconf ~/.config/zathura \
-		~/.config/vlc ~/.config/termite .config/
+		~/.config/ranger ~/.config/termite ~/.config/zathura \
+		~/.config/vlc .config/
 	[[ -r /etc/iptables/iptables.rules ]] && \
 		$RSYNC /etc/iptables/iptables.rules ./
 	[[ -r /etc/makepkg.conf ]] && \
