@@ -17,6 +17,7 @@ export GPG_TTY=$(tty)
 export BROWSER=firefox-developer-edition
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export CUPS_USER='uofi\kychou2'
+export TERM='xterm-256color'
 
 # Bash
 [[ -r /usr/share/bash-completion/bash_completion ]] && \
@@ -39,8 +40,6 @@ set -o vi
 
 # colored less for interactive shell
 [[ $- == *i* ]] && {
-        OLDTERM=$TERM
-        export TERM='xterm-256color'
         export LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
         export LESS_TERMCAP_md=$(tput bold; tput setaf 2)
         export LESS_TERMCAP_me=$(tput sgr0)
@@ -49,7 +48,6 @@ set -o vi
         export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)
         export LESS_TERMCAP_mr=$(tput rev)
         export LESS_TERMCAP_mh=$(tput dim)
-        export TERM=$OLDTERM
 }
 
 # aliases
