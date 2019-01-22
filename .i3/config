@@ -166,13 +166,22 @@ bindsym $mod+Pause mode "$mode_system"
 focus_follows_mouse no
 
 # Colors
-# colorclass		border       background   text         indicator    child_border
-client.focused		"#0089c2"    "#0089c2"    "#ffffff"    "#6093b0"    "#0089c2"
-client.focused_inactive	"#000000"    "#5a747c"    "#ffffff"    "#000000"    "#000000"
-client.unfocused	"#000000"    "#222222"    "#888888"    "#000000"    "#000000"
-client.urgent		"#bd2c40"    "#bd2c40"    "#ffffff"    "#bd2c40"    "#000000"
-client.placeholder	"#000000"    "#0c0c0c"    "#ffffff"    "#000000"    "#000000"
-client.background	"#000000"
+set $black  "#282828"
+set $gray   "#665c54"
+set $white  "#d5c4a1"
+set $red    "#fb4934"
+set $green  "#b8bb26"
+set $yellow "#fabd2f"
+set $blue   "#83a5b0"
+set $purple "#d3869b"
+set $teal   "#8ec07c"
+# colorclass		border  background  text    indicator  child_border
+client.focused		$black  $black      $blue   $black     $black
+client.focused_inactive	$black  $black      $white  $black     $black
+client.unfocused	$black  $black      $white  $black     $black
+client.urgent		$purple $purple     $black  $purple    $black
+client.placeholder	$black  $black      $white  $black     $black
+client.background	$black
 
 # Program shortcuts
 bindsym $mod+Control+b exec firefox-developer-edition

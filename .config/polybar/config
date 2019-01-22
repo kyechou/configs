@@ -17,13 +17,13 @@
 ;==========================================================
 
 [colors]
-background = #222
+background = #282828
 background-alt = #444
-foreground = #efefef
-foreground-alt = #666
-primary = #0089c2
+foreground = #d5c4a1
+foreground-alt = #776660
+primary = #83a5b0
 secondary = #f49624
-alert = #bd2c40
+alert = #fb4934
 
 
 [bar/top]
@@ -143,7 +143,7 @@ mapped = true
 interval = 1
 format-volume = <label-volume>
 format-muted = <label-muted>
-label-volume = %{F#666}♪%{F-} %percentage%%
+label-volume = %{F#776660}♪%{F-} %percentage%%
 label-volume-foreground = ${colors.foreground}
 label-muted = ♪ muted
 label-muted-foreground = ${colors.foreground-alt}
@@ -154,7 +154,7 @@ type = internal/pulseaudio
 ;format-volume = <label-volume> <bar-volume>
 format-volume = <label-volume>
 interval = 3
-label-volume = %{F#666}♪%{F-} %percentage%%
+label-volume = %{F#776660}♪%{F-} %percentage%%
 label-volume-foreground = ${colors.foreground}
 label-muted = muted
 label-muted-foreground = ${colors.foreground-alt}
