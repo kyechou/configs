@@ -1,4 +1,5 @@
 set font "Hack 10"
+set first-page-column "1:1"
 set guioptions "s"
 set smooth-scroll true
 set window-title-basename true
