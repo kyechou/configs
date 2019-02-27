@@ -81,10 +81,10 @@ autocmd BufWritePre * %s/\s\+$//e   " Automatically remove trailing ws before sa
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType vim            set tabstop=4 shiftwidth=4 expandtab
+autocmd FileType css,scss       set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType markdown       set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType tex,latex,bib  set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python         set tabstop=4 shiftwidth=4 expandtab
-autocmd FileType css,scss       set tabstop=4 shiftwidth=4
 autocmd FileType haskell        set tabstop=4 shiftwidth=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
