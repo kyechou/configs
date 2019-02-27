@@ -192,6 +192,7 @@ bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
 bindsym $mod+Control+a exec rambox
+bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+c exec gnome-calculator
 bindsym Print          exec gnome-screenshot -i
 
