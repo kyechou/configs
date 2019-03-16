@@ -191,7 +191,6 @@ bindsym $mod+Control+m exec termite -t cmus -e cmus
 bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
-bindsym $mod+Control+a exec slack
 bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+c exec gnome-calculator
 bindsym Print          exec gnome-screenshot -i
@@ -258,3 +257,4 @@ exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec slack'
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
+exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec firefox-developer-edition'
