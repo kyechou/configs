@@ -11,7 +11,7 @@ cd "$SCRIPT_DIR"
 
 usage()
 {
-	echo '[!] Usage: $0 [OPTIONS]' >&2
+	echo "[!] Usage: $0 [OPTIONS]" >&2
 	echo '    Options:' >&2
 	echo '        -a    deploy everything (as an Arch Linux desktop)' >&2
 	echo '        -d    deploy as in a CLI environment' >&2
