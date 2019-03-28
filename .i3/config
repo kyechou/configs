@@ -184,6 +184,7 @@ client.placeholder	$black  $black      $white  $black     $black
 client.background	$black
 
 # Program shortcuts
+bindsym $mod+Control+a exec rambox
 bindsym $mod+Control+b exec firefox-developer-edition
 bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
 bindsym $mod+Control+f exec termite -t Ranger -e ranger
@@ -255,6 +256,5 @@ exec --no-startup-id lxpolkit	# needed for virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
-exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec slack'
+exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox'
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
-exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec firefox-developer-edition'
