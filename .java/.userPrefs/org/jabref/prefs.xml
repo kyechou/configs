@@ -74,9 +74,9 @@
 <entry key="generateKeysBeforeSaving" value="true"/>
 <entry key="grayOutNonHits" value="true"/>
 <entry key="gridColor" value="210:210:210"/>
-<entry key="groupIntersectSelections" value="false"/>
+<entry key="groupIntersectSelections" value="true"/>
 <entry key="groupKeywordSeparator" value=", "/>
-<entry key="groupSidepaneVisible" value="false"/>
+<entry key="groupSidepaneVisible" value="true"/>
 <entry key="groupsDefaultField" value="keywords"/>
 <entry key="iconDisabledColor" value="200:200:200"/>
 <entry key="iconEnabledColor" value="0:153:153"/>
@@ -145,7 +145,7 @@
 <entry key="searchGlobal" value="false"/>
 <entry key="secDescending" value="false"/>
 <entry key="secSort" value="title"/>
-<entry key="selectedFetcherIndex" value="4"/>
+<entry key="selectedFetcherIndex" value="0"/>
 <entry key="serializeSpecialFields" value="false"/>
 <entry key="showPrintedColumn" value="false"/>
 <entry key="showPriorityColumn" value="false"/>
