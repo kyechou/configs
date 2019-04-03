@@ -5,13 +5,13 @@
 <entry key="CleanUpConvertToBibtex" value="true"/>
 <entry key="CleanUpDOI" value="true"/>
 <entry key="CleanUpFixFileLinks" value="true"/>
-<entry key="CleanUpFormatters" value="enabled;pages[normalize_page_numbers]&#10;month[normalize_month]&#10;"/>
+<entry key="CleanUpFormatters" value="disabled;pages[normalize_page_numbers]&#10;month[normalize_month]&#10;"/>
 <entry key="CleanUpISSN" value="true"/>
-<entry key="CleanUpMakePathsRelative" value="true"/>
+<entry key="CleanUpMakePathsRelative" value="false"/>
 <entry key="CleanUpMovePDF" value="false"/>
-<entry key="CleanUpRenamePDF" value="true"/>
+<entry key="CleanUpRenamePDF" value="false"/>
 <entry key="CleanUpRenamePDFonlyRelativePaths" value="false"/>
-<entry key="CleanUpUpgradeExternalLinks" value="true"/>
+<entry key="CleanUpUpgradeExternalLinks" value="false"/>
 <entry key="KeyPatternRegex" value=""/>
 <entry key="KeyPatternReplacement" value=""/>
 <entry key="abbrAuthorNames" value="false"/>
@@ -50,7 +50,7 @@
 <entry key="doNotResolveStringsFor" value="url"/>
 <entry key="emailSubject" value="References"/>
 <entry key="enforceLegalBibtexKey" value="true"/>
-<entry key="entryEditorHeight" value="370"/>
+<entry key="entryEditorHeight" value="349"/>
 <entry key="exportInOriginalOrder" value="false"/>
 <entry key="exportInSpecifiedOrder" value="false"/>
 <entry key="exportPriDescending" value="false"/>
@@ -99,7 +99,7 @@
 <entry key="mainWindowPosX" value="-2"/>
 <entry key="mainWindowPosY" value="23"/>
 <entry key="mainWindowSizeX" value="1924"/>
-<entry key="mainWindowSizeY" value="1059"/>
+<entry key="mainWindowSizeY" value="1179"/>
 <entry key="markImportedEntries" value="false"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -110,7 +110,7 @@
 <entry key="memoryStickMode" value="false"/>
 <entry key="mergeEntriesDiffMode" value="4"/>
 <entry key="mergeEntriesPosX" value="560"/>
-<entry key="mergeEntriesPosY" value="221"/>
+<entry key="mergeEntriesPosY" value="201"/>
 <entry key="mergeEntriesSizeX" value="800"/>
 <entry key="mergeEntriesSizeY" value="600"/>
 <entry key="namesAsIs" value="false"/>
@@ -125,7 +125,7 @@
 <entry key="overrideDefaultFonts" value="false"/>
 <entry key="overwriteOwner" value="false"/>
 <entry key="overwriteTimeStamp" value="false"/>
-<entry key="preferUrlDoi" value="false"/>
+<entry key="preferUrlDoi" value="true"/>
 <entry key="previewEnabled" value="true"/>
 <entry key="previewPanelHeight" value="191"/>
 <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\bibtexkey&quot;&gt;\begin{bibtexkey} (\bibtexkey)&lt;/a&gt;\end{bibtexkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{review}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Review: &lt;/b&gt; \format[HTMLChars]{\review} \end{review}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
@@ -138,6 +138,7 @@
 <entry key="pushToApplication" value="Vim"/>
 <entry key="recentDatabases" value="/home/kyc/cs/papers/papers.bib"/>
 <entry key="reformatFileOnSaveAndExport" value="false"/>
+<entry key="regExpSearchExpression" value="**/[bibtexkey](-.+)?\\.pdf"/>
 <entry key="remoteServerPort" value="6050"/>
 <entry key="resolveStringsAllFields" value="false"/>
 <entry key="runAutomaticFileSearch" value="false"/>
@@ -145,7 +146,7 @@
 <entry key="searchGlobal" value="false"/>
 <entry key="secDescending" value="false"/>
 <entry key="secSort" value="title"/>
-<entry key="selectedFetcherIndex" value="0"/>
+<entry key="selectedFetcherIndex" value="8"/>
 <entry key="serializeSpecialFields" value="false"/>
 <entry key="showPrintedColumn" value="false"/>
 <entry key="showPriorityColumn" value="false"/>
@@ -179,7 +180,7 @@
 <entry key="useOwner" value="false"/>
 <entry key="useProxy" value="false"/>
 <entry key="useProxyAuthentication" value="false"/>
-<entry key="useRegExpSearch" value="false"/>
+<entry key="useRegExpSearch" value="true"/>
 <entry key="useRemoteServer" value="true"/>
 <entry key="useTimeStamp" value="false"/>
 <entry key="useUnitFormatterOnSearch" value="true"/>
