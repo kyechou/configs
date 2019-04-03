@@ -79,7 +79,7 @@
 <entry key="groupSidepaneVisible" value="false"/>
 <entry key="groupsDefaultField" value="keywords"/>
 <entry key="iconDisabledColor" value="200:200:200"/>
-<entry key="iconEnabledColor" value="79:95:143"/>
+<entry key="iconEnabledColor" value="0:153:153"/>
 <entry key="importAlwaysUsePDFImportStyle" value="false"/>
 <entry key="importDefaultPDFimportStyle" value="2"/>
 <entry key="importFileDirPattern" value=""/>
@@ -154,7 +154,7 @@
 <entry key="showReadColumn" value="true"/>
 <entry key="showRecommendations" value="true"/>
 <entry key="showRelevanceColumn" value="false"/>
-<entry key="sidePaneWidth" value="267"/>
+<entry key="sidePaneWidth" value="269"/>
 <entry key="specialFieldsEnabled" value="true"/>
 <entry key="tableBackground" value="255:255:255"/>
 <entry key="tableColorCodesOn" value="false"/>
