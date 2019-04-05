@@ -187,8 +187,8 @@ client.background	$black
 bindsym $mod+Control+a exec rambox
 bindsym $mod+Control+b exec firefox-developer-edition
 bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
-bindsym $mod+Control+f exec termite -t Ranger -e ranger
-bindsym $mod+Control+m exec termite -t cmus -e cmus
+bindsym $mod+Control+f exec termite -e ranger
+bindsym $mod+Control+m exec termite -e cmus
 bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
