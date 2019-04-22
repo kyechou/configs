@@ -677,29 +677,6 @@
 # Wait for I frame before toggling placeholder (boolean)
 #sout-bridge-in-placeholder-switch-on-iframe=1
 
-[stream_out_chromecast] # Chromecast stream output
-
-# ? (string)
-#sout-chromecast-ip=
-
-# ? (integer)
-#sout-chromecast-port=8009
-
-# ? (boolean)
-#sout-chromecast-video=1
-
-# HTTP port (integer)
-#sout-chromecast-http-port=8010
-
-# Performance warning (integer)
-#sout-chromecast-show-perf-warning=1
-
-# Enable Audio passthrough (boolean)
-#sout-chromecast-audio-passthrough=0
-
-# Conversion quality (integer)
-#sout-chromecast-conversion-quality=1
-
 [stream_out_transcode] # Transcode stream output
 
 # Video encoder (string)

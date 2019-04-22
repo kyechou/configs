@@ -49,6 +49,10 @@ bindsym $mod+d exec j4-dmenu-desktop \
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# launch password manager (pass)
+bindsym $mod+p exec passmenu --type -i -f -l 20 \
+	-nb \#3f3931 -nf \#dadada -sb \#f49624 -sf black -fn Hack-11
+
 # change focus
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
