@@ -6,3 +6,4 @@ private
 .config/cmus/lib.pl
 .config/cmus/playlist.pl
 .config/cmus/search-history
+.config/vlc/vlc-qt-interface.conf
