@@ -14,6 +14,7 @@ Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
 " Syntax
 Plug 'godlygeek/tabular', { 'for': 'markdown' } " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'vim-scripts/promela.vim', { 'for': 'promela' }
 " Colorscheme
 Plug 'morhetz/gruvbox'
 
