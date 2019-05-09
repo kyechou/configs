@@ -84,6 +84,12 @@ autocmd FileType c              set tabstop=8 shiftwidth=8 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Automatically remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => a.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType cpp let g:alternateExtensions_cpp = "hpp,HPP,h,H"
+autocmd FileType cpp let g:alternateExtensions_CPP = "HPP,hpp,H,h"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'gruvbox'
