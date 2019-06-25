@@ -55,8 +55,8 @@ NAME='unknown'
 [[ -r /etc/os-release ]] && . /etc/os-release
 
 [[ $DEPLOY -eq 1 ]] && { \
-	$RSYNC .bashrc .bash_profile .gitconfig .profile .tmux.conf .vim .vimrc ~/
-	$RSYNC .config/ranger ~/.config/
+	$RSYNC .bashrc .bash_profile .gitconfig .profile .tmux.conf ~/
+	$RSYNC .config/nvim .config/ranger ~/.config/
 	[[ "$NAME" = 'Arch Linux' && $DRYRUN -eq 0 ]] && sudo pacman -U \
 		--needed --noconfirm pacleaf/pacleaf-1.0.0-1-x86_64.pkg.tar.xz
 	$RSYNC private/.ssh ~/
@@ -83,10 +83,10 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
 	$RSYNC ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.i3 ~/.profile \
-		~/.tmux.conf ~/.vim ~/.vimrc ~/.Xmodmap ./
-	$RSYNC ~/.config/cmus ~/.config/dunst ~/.config/polybar \
-		~/.config/ranger ~/.config/termite ~/.config/zathura \
-		~/.config/vlc .config/
+		~/.tmux.conf ~/.Xmodmap ./
+	$RSYNC ~/.config/nvim ~/.config/cmus ~/.config/dunst ~/.config/polybar \
+		~/.config/ranger ~/.config/termite ~/.config/zathura ~/.config/vlc \
+        .config/
 	mkdir -p .java/.userPrefs/org && \
 		$RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
 	[[ -r /etc/iptables/iptables.rules ]] && \
