@@ -26,33 +26,37 @@ command! PU PlugUpdate | PlugUpgrade
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shell=/bin/bash
-set history=1000
 filetype on
 filetype plugin on
 filetype indent on
-set autoread
 set autochdir
+set autoread
+set history=1000
+set modeline
+set nobackup
+set noswapfile
 set tags=./tags;/
-"set timeoutlen=0
-"set ttimeoutlen=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
+" => User interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backspace=indent,eol,start
+set guicursor=a:block
+set hlsearch
+set incsearch
+set nostartofline
+set number
+set pastetoggle=<F7>
+set ruler
 set scrolloff=5
-set nu
-set wrap
+set textwidth=80
+set colorcolumn=81
 set wildmenu
 set wildmode=longest:full,full
-set ruler
-set lazyredraw
-set nostartofline
-set incsearch
-set hlsearch
+set wrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors, Syntax and Encodings
+" => Colors, syntax and encodings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 set background=dark
@@ -66,23 +70,18 @@ nnoremap <S-u> :set fileencoding=utf-8<CR>:w<CR>
 nnoremap <S-x> :set ff=unix<CR>:w<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
+" => Tab and indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set textwidth=80
-set colorcolumn=81
-set backspace=indent,eol,start
-set pastetoggle=<F7>
 set smarttab
 set cindent
 set autoindent
 set smartindent
-set modeline
 set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType c              set tabstop=8 shiftwidth=8 noexpandtab
-autocmd BufWritePre * %s/\s\+$//e   " Automatically remove trailing ws before saving
+autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => a.vim
@@ -120,15 +119,8 @@ let g:vim_markdown_frontmatter = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-let g:netrw_winsize = 25
+let g:netrw_winsize = 20
 let g:netrw_browse_split = 3
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nobackup
-set nowritebackup
-set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
