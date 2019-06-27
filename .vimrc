@@ -31,11 +31,14 @@ filetype plugin on
 filetype indent on
 set autochdir
 set autoread
+set belloff=all
 set history=1000
 set modeline
 set nobackup
 set noswapfile
+set tabpagemax=30
 set tags=./tags;/
+set viminfo=""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
@@ -44,13 +47,18 @@ set backspace=indent,eol,start
 set guicursor=a:block
 set hlsearch
 set incsearch
+set laststatus=2
+set nocompatible
+set nolangremap
 set nostartofline
 set number
 set pastetoggle=<F7>
 set ruler
 set scrolloff=5
+set sidescroll=1
 set textwidth=80
 set colorcolumn=81
+set ttyfast
 set wildmenu
 set wildmode=longest:full,full
 set wrap
@@ -72,10 +80,10 @@ nnoremap <S-x> :set ff=unix<CR>:w<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab and indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set smarttab
-set cindent
 set autoindent
+set cindent
 set smartindent
+set smarttab
 set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab

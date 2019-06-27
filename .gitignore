@@ -5,7 +5,8 @@ private
 .config/cmus/lib.pl
 .config/cmus/playlist.pl
 .config/cmus/search-history
-.config/nvim/.netrwhist
-.config/nvim/plugged
-.config/nvim/autoload/*.old
 .config/vlc/vlc-qt-interface.conf
+.vim/.netrwhist
+.vim/autoload/*.old
+.vim/plugged
+.vim/sessions

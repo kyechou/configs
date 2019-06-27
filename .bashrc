@@ -12,8 +12,8 @@ umask 022
 # environment variables
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=vim
+export VISUAL=vim
 export GPG_TTY=$(tty)
 export BROWSER=firefox-developer-edition
 export RANGER_LOAD_DEFAULT_RC=FALSE

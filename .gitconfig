@@ -4,7 +4,7 @@
 	signingkey = 71FF6F39B8A800DE
 
 [core]
-	editor = nvim
+	editor = vim
 
 [color]
 	status = auto
