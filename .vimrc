@@ -72,7 +72,7 @@ colorscheme gruvbox
 highlight SpellBad ctermbg=167 ctermfg=234
 let c_syntax_for_h = 1
 set encoding=utf8
-set fileencodings=utf8,utf16,big5,gbk,latin1
+set fileencodings=utf8,latin1,utf16,big5,gbk
 set ffs=unix,dos,mac
 nnoremap <S-u> :set fileencoding=utf-8<CR>:w<CR>
 nnoremap <S-x> :set ff=unix<CR>:w<CR>
