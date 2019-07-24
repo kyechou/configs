@@ -254,8 +254,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
 exec --no-startup-id unclutter --timeout 3 --ignore-scrolling
 exec --no-startup-id xinput --set-prop 'ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
-exec --no-startup-id xinput --enable   'ELAN1200:00 04F3:306F Touchpad'	# enable touchpad
+exec --no-startup-id xinput --disable  'ELAN1200:00 04F3:306F Touchpad'	# disable touchpad
 exec --no-startup-id xinput --disable  'pointer:ELAN2556:00 04F3:25EE'	# disable touch screen
+exec --no-startup-id gpgconf --launch gpg-agent
 exec --no-startup-id lxpolkit	# needed for virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace

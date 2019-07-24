@@ -47,6 +47,7 @@ filesystem
 findutils
 firefox-developer-edition
 flex
+gaming-meta
 gaupol
 gawk
 gcc
@@ -61,7 +62,6 @@ gnome-dictionary
 gnome-disk-utility
 gnome-keyring
 gnome-screenshot
-go
 gptfdisk
 grep
 groff
