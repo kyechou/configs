@@ -47,7 +47,6 @@ filesystem
 findutils
 firefox-developer-edition
 flex
-gaming-meta
 gaupol
 gawk
 gcc
@@ -62,6 +61,7 @@ gnome-dictionary
 gnome-disk-utility
 gnome-keyring
 gnome-screenshot
+gnome-themes-extra
 gptfdisk
 grep
 groff
@@ -70,6 +70,7 @@ gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
+gtk-engine-murrine
 gzip
 htop
 i3-wm
