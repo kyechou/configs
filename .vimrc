@@ -147,6 +147,7 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
+nnoremap <C-i> :vert term<CR>
 " autocmd: comment
 autocmd FileType c       nnoremap <F9> I/*<esc>A*/<esc>j
 autocmd FileType c       nnoremap <F8> ^2x$xxj
