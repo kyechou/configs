@@ -97,9 +97,9 @@
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
 <entry key="mainWindowPosX" value="-2"/>
-<entry key="mainWindowPosY" value="3"/>
+<entry key="mainWindowPosY" value="23"/>
 <entry key="mainWindowSizeX" value="1924"/>
-<entry key="mainWindowSizeY" value="1199"/>
+<entry key="mainWindowSizeY" value="1179"/>
 <entry key="markImportedEntries" value="false"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
