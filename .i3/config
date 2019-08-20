@@ -248,10 +248,10 @@ bindsym Print          exec gnome-screenshot -i
 # Startup programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
+exec_always --no-startup-id xinput disable  'pointer:ELAN2556:00 04F3:25EE'
+exec_always --no-startup-id xinput enable   'pointer:ELAN1200:00 04F3:306F Touchpad'
 exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled Default' 1
 exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
-exec_always --no-startup-id xinput disable  'pointer:ELAN1200:00 04F3:306F Touchpad'    # disable touchpad
-exec_always --no-startup-id xinput disable  'pointer:ELAN2556:00 04F3:25EE' # disable touch screen
 exec --no-startup-id unclutter --timeout 3 --jitter 10 --ignore-scrolling
 exec --no-startup-id lxpolkit   # needed by virt-manager
 exec --no-startup-id nm-applet
