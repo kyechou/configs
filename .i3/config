@@ -141,8 +141,7 @@ bindsym $mod+r mode "resize"
 # Power management commands
 set $locker i3lock -ec 000000
 set $mode_system \
-    System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, \
-    (p) poweroff
+    System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
     bindsym l exec --no-startup-id $locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
