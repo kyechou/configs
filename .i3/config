@@ -38,20 +38,11 @@ hide_edge_borders both
 # start a terminal
 bindsym $mod+Return exec termite
 
+# Focus not following the mouse
+focus_follows_mouse no
+
 # kill focused window
 bindsym $mod+Control+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec j4-dmenu-desktop \
-	--dmenu='dmenu -i -f -l 20 -nb \#3f3931 -nf \#dadada -sb \#f49624 -sf black -fn Hack-11'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# launch password manager (pass)
-bindsym $mod+p exec passmenu --type -i -f -l 20 \
-	-nb \#3f3931 -nf \#dadada -sb \#f49624 -sf black -fn Hack-11
 
 # change focus
 bindsym $mod+$left  focus left
@@ -130,44 +121,41 @@ bindsym $mod+Control+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-	# Pressing left will shrink the window's width.
-	# Pressing right will grow the window's width.
-	# Pressing up will shrink the window's height.
-	# Pressing down will grow the window's height.
-	bindsym $left       resize shrink width  20 px or 2 ppt
-	bindsym $down       resize grow   height 20 px or 2 ppt
-	bindsym $up         resize shrink height 20 px or 2 ppt
-	bindsym $right      resize grow   width  20 px or 2 ppt
+    # Pressing left will shrink the window's width.
+    # Pressing right will grow the window's width.
+    # Pressing up will shrink the window's height.
+    # Pressing down will grow the window's height.
+    bindsym $left       resize shrink width  20 px or 2 ppt
+    bindsym $down       resize grow   height 20 px or 2 ppt
+    bindsym $up         resize shrink height 20 px or 2 ppt
+    bindsym $right      resize grow   width  20 px or 2 ppt
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
 # Power management commands
 set $locker i3lock -ec 000000
 set $mode_system \
-	System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, \
-	(p) poweroff
+    System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, \
+    (p) poweroff
 mode "$mode_system" {
-	bindsym l exec --no-startup-id $locker, mode "default"
-	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
-	bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym l exec --no-startup-id $locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
-
-# Focus not following the mouse
-focus_follows_mouse no
 
 # Colors
 set $black  "#282828"
@@ -179,26 +167,13 @@ set $yellow "#fabd2f"
 set $blue   "#83a5b0"
 set $purple "#d3869b"
 set $teal   "#8ec07c"
-# colorclass		border  background  text    indicator  child_border
-client.focused		$black  $black      $blue   $black     $black
-client.focused_inactive	$black  $black      $blue   $black     $black
-client.unfocused	$black  $black      $white  $black     $black
-client.urgent		$purple $purple     $black  $purple    $black
-client.placeholder	$black  $black      $white  $black     $black
-client.background	$black
-
-# Program shortcuts
-bindsym $mod+Control+a exec rambox
-bindsym $mod+Control+b exec firefox-developer-edition
-bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
-bindsym $mod+Control+f exec termite -e ranger
-bindsym $mod+Control+m exec termite -e cmus
-bindsym $mod+Control+d exec gnome-dictionary
-bindsym $mod+Control+t exec thunderbird
-bindsym $mod+Control+v exec virt-manager
-bindsym $mod+Control+s exec spotify
-bindsym $mod+Control+c exec gnome-calculator
-bindsym Print          exec gnome-screenshot -i
+# colorclass            border  background  text    indicator  child_border
+client.focused          $black  $black      $blue   $black     $black
+client.focused_inactive $black  $black      $blue   $black     $black
+client.unfocused        $black  $black      $white  $black     $black
+client.urgent           $purple $purple     $black  $purple    $black
+client.placeholder      $black  $black      $white  $black     $black
+client.background       $black
 
 ## ALSA controls (package 'alsa-utils' is needed)
 #bindsym $mod+period          exec --no-startup-id amixer -M set Master 1%+ && amixer -M set PCM 1%+
@@ -225,16 +200,6 @@ bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-volume $output_
 exec --no-startup-id pactl set-sink-volume $output_sink 13
 exec --no-startup-id pactl set-source-volume $input_source 0%
 
-# Touchpad controls
-bindsym Control+F1 exec --no-startup-id xinput --disable 'ELAN1200:00 04F3:306F Touchpad'
-bindsym Control+F2 exec --no-startup-id xinput --enable 'ELAN1200:00 04F3:306F Touchpad'
-
-# Keyboard and mouse config
-bindsym Control+F3 exec --no-startup-id xset r rate 400 35
-bindsym Control+F4 exec --no-startup-id xset m 0 0
-exec --no-startup-id xset r rate 400 35	# autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
-exec --no-startup-id xset m 0 0		# acceleration: 0, threshold: 0
-
 # Screen backlight
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 3
 bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 3
@@ -242,21 +207,53 @@ bindsym Control+F5            exec --no-startup-id light -U 3
 bindsym Control+F6            exec --no-startup-id light -A 3
 exec --no-startup-id light -S 40
 
-# Touch screen controls
-bindsym Control+F7 exec --no-startup-id xinput --disable 'pointer:ELAN2556:00 04F3:25EE'
-bindsym Control+F8 exec --no-startup-id xinput --enable  'pointer:ELAN2556:00 04F3:25EE'
-
 # Disable DPMS (Energy Star) and screen saver blanking
 exec --no-startup-id xset s off -dpms
+
+# Keyboard and mouse config
+bindsym Control+F3 exec --no-startup-id xset r rate 400 35
+bindsym Control+F4 exec --no-startup-id xset m 0 0
+exec --no-startup-id xset r rate 400 35 # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+exec --no-startup-id xset m 0 0     # acceleration: 0, threshold: 0
+
+# Touchpad controls
+bindsym Control+F1 exec --no-startup-id \
+                        xinput disable 'pointer:ELAN1200:00 04F3:306F Touchpad'
+bindsym Control+F2 exec --no-startup-id \
+                        xinput enable  'pointer:ELAN1200:00 04F3:306F Touchpad'
+
+# Touch screen controls
+bindsym Control+F7 exec --no-startup-id \
+                        xinput disable 'pointer:ELAN2556:00 04F3:25EE'
+bindsym Control+F8 exec --no-startup-id \
+                        xinput enable  'pointer:ELAN2556:00 04F3:25EE'
+
+# Program shortcuts
+bindsym $mod+d exec j4-dmenu-desktop \
+    --dmenu='dmenu -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11'
+bindsym $mod+p exec \
+    passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11
+bindsym $mod+Control+a exec rambox
+bindsym $mod+Control+b exec firefox-developer-edition
+bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
+bindsym $mod+Control+f exec termite -e ranger
+bindsym $mod+Control+m exec termite -e cmus
+bindsym $mod+Control+d exec gnome-dictionary
+bindsym $mod+Control+t exec thunderbird
+bindsym $mod+Control+v exec virt-manager
+bindsym $mod+Control+s exec spotify
+bindsym $mod+Control+c exec gnome-calculator
+bindsym Print          exec gnome-screenshot -i
 
 # Startup programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
-exec --no-startup-id unclutter --timeout 3 --ignore-scrolling
-exec --no-startup-id xinput --set-prop 'ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
-exec --no-startup-id xinput --disable  'ELAN1200:00 04F3:306F Touchpad'	# disable touchpad
-exec --no-startup-id xinput --disable  'pointer:ELAN2556:00 04F3:25EE'	# disable touch screen
-exec --no-startup-id lxpolkit	# needed for virt-manager
+exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled Default' 1
+exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
+exec_always --no-startup-id xinput disable  'pointer:ELAN1200:00 04F3:306F Touchpad'    # disable touchpad
+exec_always --no-startup-id xinput disable  'pointer:ELAN2556:00 04F3:25EE' # disable touch screen
+exec --no-startup-id unclutter --timeout 3 --jitter 10 --ignore-scrolling
+exec --no-startup-id lxpolkit   # needed by virt-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id ibus-daemon --daemonize --replace
 exec --no-startup-id udiskie -At
