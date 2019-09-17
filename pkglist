@@ -85,7 +85,6 @@ iputils
 j4-dmenu-desktop
 jabref
 jfsutils
-jsoncpp
 less
 libreoffice-fresh
 libtool
@@ -140,6 +139,7 @@ s-nail
 sed
 shadow
 spotify
+steam
 sudo
 sysfsutils
 system-config-printer
@@ -162,7 +162,6 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thunderbird
-thunderbird-exchangecalendar-alpha
 tmux
 transmission-gtk
 trash-cli
