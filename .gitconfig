@@ -26,6 +26,8 @@
 	st = status
 	cm = commit
 	co = checkout
+	sw = switch
+	rt = restore
 	lg = log --graph --color --pretty=oneline
 	br = branch -avv
 	lsr = ls-remote

@@ -73,7 +73,7 @@ NAME='unknown'
         .config/zathura .config/vlc ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
-    $RSYNC .i3 .Xmodmap private/.thunderbird ~/
+    $RSYNC .i3 .Xmodmap ~/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -95,7 +95,7 @@ NAME='unknown'
         $RSYNC /etc/makepkg.conf ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
-    $RSYNC ~/.ssh ~/.gnupg ~/.thunderbird private/
+    $RSYNC ~/.ssh ~/.gnupg private/
     [[ -d /etc/NetworkManager/system-connections ]] && \
         sudo $RSYNC /etc/NetworkManager/system-connections private/
     [[ $DRYRUN -eq 0 ]] && sudo chown -R $(id -nu):$(id -ng) private
