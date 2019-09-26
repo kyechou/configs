@@ -8,14 +8,16 @@ call plug#begin()
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'junegunn/goyo.vim'
-Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
+Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
+Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
 " Syntax
-Plug 'godlygeek/tabular', { 'for': 'markdown' } " needed by vim-markdown
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'vim-scripts/promela.vim', { 'for': 'promela' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'vim-scripts/promela.vim', {'for': 'promela'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'c3m3gyanesh/p4-syntax-highlighter-collection', {'rtp': 'vim', 'for': 'p4'}
 " Colorscheme
 Plug 'morhetz/gruvbox'
 
@@ -88,7 +90,7 @@ set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
-autocmd FileType c,cpp          set tabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType c              set tabstop=8 shiftwidth=8 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
