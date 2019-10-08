@@ -84,6 +84,7 @@ iputils
 j4-dmenu-desktop
 jabref
 jfsutils
+leagueoflegends-git
 less
 libreoffice-fresh
 libtool
@@ -140,6 +141,7 @@ shadow
 spotify
 steam
 sudo
+syncthing
 sysfsutils
 system-config-printer
 systemd
