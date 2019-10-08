@@ -24,10 +24,6 @@ export TERM='xterm-256color'
 [[ -r /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-# OPAM (OCaml Package Manager)
-[[ -r ~/.opam/opam-init/init.sh ]] && \
-    . ~/.opam/opam-init/init.sh >/dev/null 2>&1
-
 # history settings
 HISTCONTROL=ignoreboth
 HISTSIZE=5000
