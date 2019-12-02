@@ -246,7 +246,7 @@ bindsym Print          exec gnome-screenshot -i
 
 # Startup programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
+exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/raccoon-wallpaper-1920x1200.jpg
 exec_always --no-startup-id xinput disable  'pointer:ELAN2556:00 04F3:25EE'
 exec_always --no-startup-id xinput enable   'pointer:ELAN1200:00 04F3:306F Touchpad'
 exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled Default' 1

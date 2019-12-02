@@ -41,7 +41,7 @@
 <entry key="columnWidths" value="160;200;500;50;400;200"/>
 <entry key="confirmDelete" value="false"/>
 <entry key="consoleCommand" value=""/>
-<entry key="cyclePreview" value="/ieee.csl;acm-sig-proceedings.csl"/>
+<entry key="cyclePreview" value="acm-sig-proceedings-long-author-list.csl;acm-sig-proceedings.csl;/ieee.csl"/>
 <entry key="cyclePreviewPos" value="0"/>
 <entry key="defaultBibtexKeyPattern" value="[year]-[authEtAl]"/>
 <entry key="defaultEncoding" value="UTF-8"/>
@@ -146,7 +146,7 @@
 <entry key="searchGlobal" value="false"/>
 <entry key="secDescending" value="false"/>
 <entry key="secSort" value="title"/>
-<entry key="selectedFetcherIndex" value="0"/>
+<entry key="selectedFetcherIndex" value="4"/>
 <entry key="serializeSpecialFields" value="false"/>
 <entry key="showPrintedColumn" value="false"/>
 <entry key="showPriorityColumn" value="false"/>
