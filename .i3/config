@@ -207,7 +207,7 @@ bindsym Control+F6            exec --no-startup-id light -A 3
 exec --no-startup-id light -S 40
 
 # Disable DPMS (Energy Star) and screen saver blanking
-#exec --no-startup-id xset s off -dpms
+exec --no-startup-id xset s off -dpms
 
 # Keyboard and mouse config
 bindsym Control+F3 exec --no-startup-id xset r rate 400 35

@@ -112,6 +112,8 @@ xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabl
 xinput disable  'pointer:ELAN2556:00 04F3:25EE'
 # screen backlight
 light -S 40
+# disable DPMS and screen saver blanking
+xset s off -dpms
 # pulse audio
 pactl set-sink-volume \
     "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
