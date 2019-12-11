@@ -15,6 +15,7 @@ atool
 autoconf
 automake
 baobab
+base
 bash
 bash-completion
 bind-tools
@@ -101,7 +102,6 @@ lvm2
 lxappearance
 lxrandr
 lxsession
-m4
 make
 man-db
 man-pages
@@ -124,7 +124,6 @@ pass
 patch
 pavucontrol
 pciutils
-perl
 perl-image-exiftool
 picom
 pkgconf
