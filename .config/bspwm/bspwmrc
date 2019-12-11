@@ -146,5 +146,5 @@ autostart picom
 # autostart network programs
 #
 until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
-autostart rambox
 autostart thunderbird
+autostart rambox

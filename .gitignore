@@ -10,3 +10,4 @@ private
 .vim/autoload/*.old
 .vim/plugged
 .vim/sessions
+.stversions
