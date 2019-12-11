@@ -87,6 +87,8 @@ bspc rule -a Pavucontrol    state=floating
 bspc rule -a Thunderbird    desktop='^1'
 bspc rule -a Rambox         desktop='^10'
 
+bspc desktop '^1' --layout monocle
+
 
 #
 # desktop environment applets (restart with bspwm)
