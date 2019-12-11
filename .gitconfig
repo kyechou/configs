@@ -1,34 +1,35 @@
 [user]
-	email = kuanyenchou@gmail.com
-	name = kyechou
-	signingkey = 71FF6F39B8A800DE
+    email = kuanyenchou@gmail.com
+    name = kyechou
+    signingkey = 71FF6F39B8A800DE
 
 [core]
-	editor = vim
+    editor = vim
 
 [color]
-	status = auto
-	branch = auto
-	diff = auto
-	log = auto
+    status = auto
+    branch = auto
+    diff = auto
+    log = auto
 
 [push]
-	default = simple
+    default = simple
 
 [commit]
-	gpgsign = true
+    gpgsign = true
 
 [status]
-	submodulesummary = 1
+    submodulesummary = 1
 
 [alias]
-	lf = ls-files
-	st = status
-	cm = commit
-	co = checkout
-	sw = switch
-	rt = restore
-	lg = log --graph --color --pretty=oneline
-	br = branch -avv
-	lsr = ls-remote
-	diffc = diff --cached
+    lf = ls-files
+    st = status
+    cm = commit
+    co = checkout
+    sw = switch
+    rt = restore
+    lg = log --graph --color --pretty=oneline
+    br = branch -avv
+    lsr = ls-remote
+    diffc = diff --cached
+    diffs = diff --stat

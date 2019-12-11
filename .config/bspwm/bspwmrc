@@ -82,10 +82,9 @@ bspc config gapless_monocle     true
 bspc config pointer_modifier    control
 bspc config click_to_focus      any
 
-bspc rule -a feh            state=floating
-bspc rule -a Pavucontrol    state=floating
-bspc rule -a Thunderbird    desktop='^1'
-bspc rule -a Rambox         desktop='^10'
+bspc rule -a feh                state=floating
+bspc rule -a Pavucontrol        state=floating
+bspc rule -a Thunderbird        desktop='^1'
 
 bspc desktop '^1' --layout monocle
 
