@@ -21,18 +21,19 @@ background = #282828
 background-alt = #444
 foreground = #d5c4a1
 foreground-alt = #776660
-primary = #83a5b0
+primary = #83b5d0
 secondary = #f49624
 alert = #d3869b
 
 
 [bar/top]
 monitor = ${env:MONITOR:eDP-1}
+monitor-fallback =
 monitor-strict = false
 bottom = false
-fixed-center = false
+fixed-center = true
 width = 100%
-height = 23
+height = 27
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -47,63 +48,63 @@ module-margin = 1
 font-0 = Hack:size=10;2
 font-1 = Liberation Sans:size=10;1
 font-2 = Source Han Sans TW:size=10;2
-modules-left = i3
+modules-left = bspwm
 modules-center =
-#modules-center = xwindow
-modules-right = filesystem pulseaudio system-load cpu memory wlan eth battery date
+modules-right = filesystem pulseaudio system-load cpu memory battery date
 separator =
 locale = en_US.UTF-8
 tray-position = right
 tray-padding = 4
 tray-detached = false
-tray-transparent = false
 tray-background = ${colors.background}
 tray-scale = 1.0
 enable-ipc = false
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 cursor-click = default
 cursor-scroll = default
 
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-pin-workspaces = true
-label-mode = %mode%
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-; focused = Active workspace on focused monitor
+[module/bspwm]
+type = internal/bspwm
+; Only show workspaces defined on the same output as the bar
+pin-workspaces = false
+; Output mode flags after focused state label
+inline-mode = false
+; Create click handler used to focus workspace
+enable-click = true
+; Create scroll handlers used to cycle workspaces
+enable-scroll = true
+; Set the scroll cycle direction
+reverse-scroll = true
+; dimmed = Workspace on unfocused monitors
+label-dimmed-foreground = ${colors.foreground-alt}
+label-dimmed-background = ${colors.background}
+label-dimmed-underline = ${colors.background}
+label-dimmed-padding = 1
+; focused = Active workspace
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.background}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 1
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+; occupied = Non-empty workspace
+label-occupied = %index%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.alert}
 label-urgent-padding = 1
+; empty = Empty workspace
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
 ; Separator in between workspaces
 label-separator =
-; Workspace icons (label;icon)
-; NOTE: The label needs to match the name of the i3 workspace
-; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
-; you must also define a ws-icon-5.
-;ws-icon-0 = 1;☸
-;ws-icon-1 = 2;♬
-;ws-icon-2 = 3;ℵ
-;ws-icon-default = ∃
+label-separator-padding =
 
 
 [module/xwindow]
@@ -116,8 +117,8 @@ type = internal/fs
 interval = 30
 mount-0 = /
 mount-1 = /home
-label-mounted = %{F#20c0f0}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+label-mounted = %{F#f49624}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% unmounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 
@@ -184,7 +185,7 @@ exec = ~/.config/polybar/system-load.sh
 interval = 3
 format-prefix = "L "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #999
+format-underline =
 
 
 [module/cpu]
@@ -192,7 +193,7 @@ type = internal/cpu
 interval = 3
 format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ff4500
+format-underline =
 label = %percentage:2%%
 
 
@@ -201,7 +202,7 @@ type = internal/memory
 interval = 3
 format-prefix = "MEM "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4be0dc
+format-underline =
 label = %percentage_used%%
 
 
@@ -244,7 +245,7 @@ time-format = %H:%M
 format-charging = <label-charging>
 format-charging-prefix = "CHR "
 format-charging-prefix-foreground = ${colors.foreground-alt}
-format-charging-underline = #9f78e1
+format-charging-underline =
 label-charging = %percentage%% (%time%)
 format-discharging = <label-discharging>
 format-discharging-prefix = "BAT "
@@ -262,11 +263,12 @@ interval = 5
 label = %date% %time%
 date = "%Y-%m-%d"
 time = "%a %I:%M %P %Z"
-format-underline = #0a6cf5
+format-underline =
 
 
 [settings]
-screenchange-reload = true
+throttle-output = 5
+throttle-output-for = 10
 
 
 [global/wm]

@@ -1,0 +1,146 @@
+#!/bin/bash
+
+
+#
+# monitors
+#
+
+first_empty_desktop() {
+    monitor=$1
+    if ! bspc query -M $monitor >/dev/null; then
+        return  # invalid monitor
+    fi
+    for desktop in $(bspc query -D -m $monitor); do
+        if ! bspc query -N -d $desktop >/dev/null; then
+            echo "$desktop"
+            return
+        fi
+    done
+}
+
+switch_monitor() {
+    DEST_MON=$1
+    bspc monitor $DEST_MON -d 1 2 3 4 5 6 7 8 9 10
+    echo "SWitching to......... ========== $DEST_MON ==========" >&2
+    for monitor in $(bspc query -M --names); do
+        if [[ "$monitor" != "$DEST_MON" ]]; then
+            for desktop in $(bspc query -D -m $monitor); do
+                # swap non-empty desktops to the destination monitor
+                if bspc query -N -d $desktop; then
+                    DEST_DESK=$(first_empty_desktop "$DEST_MON")
+                    bspc desktop $desktop -s $DEST_DESK
+                fi
+            done
+            bspc monitor $monitor -r
+        fi
+    done
+}
+
+LAPTOP_MON="eDP-1"
+MONITORS="$(xrandr --listmonitors | sed '1d' | awk -F ' ' '{print $4}')"
+if [[ "${MONITORS[@]}" =~ "$LAPTOP_MON" ]]; then
+    switch_monitor "$LAPTOP_MON"
+else
+    switch_monitor "$(echo "${MONITORS[@]}" | head -n1)"
+fi
+
+
+#
+# color
+#
+ black="#282828"
+  gray="#665c54"
+ white="#d5c4a1"
+   red="#fb4934"
+ green="#b8bb26"
+yellow="#fabd2f"
+  blue="#83b5d0"
+purple="#d3869b"
+  teal="#8ec07c"
+
+# unfocused window
+bspc config normal_border_color $black
+# focused window of unfocused monitor
+bspc config active_border_color $gray
+# focused window of focused monitor
+bspc config focused_border_color $blue
+
+
+#
+# configuration
+#
+
+bspc config border_width        3
+bspc config window_gap          10
+
+bspc config split_ratio         0.52
+bspc config automatic_scheme    longest_side
+bspc config initial_polarity    second_child
+bspc config removal_adjustment  true
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config pointer_modifier    control
+bspc config click_to_focus      any
+
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+
+#
+# desktop environment applets (restart with bspwm)
+#
+
+# simple X hotkey daemon
+pkill -x sxhkd ; sxhkd &
+# input method daemon
+ibus-daemon --daemonize --replace
+# wallpaper
+feh --bg-fill ~/pic/wallpaper/raccoon-wallpaper-1920x1200.jpg
+# polybar (panel)
+~/.config/polybar/launch.sh
+# keyboard and mouse
+xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+xset m 0 0          # acceleration: 0, threshold: 0
+# touchpad
+xinput enable   'pointer:ELAN1200:00 04F3:306F Touchpad'
+xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled Default' 1
+xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
+# touch screen
+xinput disable  'pointer:ELAN2556:00 04F3:25EE'
+# screen backlight
+light -S 40
+# pulse audio
+pactl set-sink-volume \
+    "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
+pactl set-source-volume \
+    "$(pactl list short sources | grep input | head -n1 | cut -f2)" 0%
+## ALSA
+#sleep 3 && amixer -M set Master 0%
+#sleep 3 && amixer -M set PCM 0%
+#sleep 3 && amixer -M set Capture 0dB
+#sleep 3 && amixer -M set Speaker 0dB
+#sleep 3 && amixer -M set Headphone 0dB
+
+
+#
+# autostart programs
+#
+
+autostart() {
+    :
+}
+
+pgrep udiskie || (udiskie --no-automount --tray &)
+pgrep unclutter || (unclutter --timeout 3 --jitter 10 --ignore-scrolling &)
+lxpolkit &  # needed by virt-manager
+nm-applet &
+
+#
+# autostart network programs
+#
+
+#sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox' &
+#sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird' &

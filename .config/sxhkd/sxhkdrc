@@ -1,0 +1,191 @@
+################################################################################
+#
+#   wm independent hotkeys
+#
+################################################################################
+
+# terminal emulator
+alt + Return
+    termite
+
+# make sxhkd reload its configuration files:
+alt + ctrl + r
+    pkill -USR1 -x sxhkd
+
+# program launcher
+alt + d
+    j4-dmenu-desktop \
+    --dmenu='dmenu -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11'
+
+# pass password manager
+alt + p
+    passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11
+
+# keyboard and mouse config
+ctrl + F3
+    xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+ctrl + F4
+    xset m 0 0          # acceleration: 0, threshold: 0
+
+# touchpad
+ctrl + {F1,F2}
+    xinput {disable,enable} 'pointer:ELAN1200:00 04F3:306F Touchpad'
+
+# touch screen
+ctrl + {F7,F8}
+    xinput {disable,enable} 'pointer:ELAN2556:00 04F3:25EE'
+
+# screen backlight
+ctrl + {F5,F6}
+    light -{U,A} 3
+XF86MonBrightness{Down,Up}
+    light -{U,A} 3
+
+# power/session management
+# (lock, exit/logout, suspend, hibernate, reboot, poweroff)
+alt + Pause ; l
+    i3lock -ec 000000
+alt + Pause ; e
+    bspc quit
+alt + Pause ; {s,h}
+    i3lock -ec 000000 && systemctl {suspend,hibernate}
+alt + Pause ; {r,p}
+    systemctl {reboot,poweroff}
+
+# pulse audio
+alt + {period,comma,m}
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+        {+1dB,-1dB,13}
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+        {+1dB,-1dB,13}
+
+## ALSA
+#alt + period
+#    amixer -M set Master 1%+ && amixer -M set PCM 1%+
+#alt + comma
+#    amixer -M set Master 1%- && amixer -M set PCM 1%-
+#alt + m
+#    amixer -M set Master 0%  && amixer -M set PCM 0%
+#XF86AudioRaiseVolume
+#    amixer -M set Master 1%+ && amixer -M set PCM 1%+
+#XF86AudioLowerVolume
+#    amixer -M set Master 1%- && amixer -M set PCM 1%-
+#XF86AudioMute
+#    amixer -M set Master 0%  && amixer -M set PCM 0%
+
+# program shortcuts
+alt + ctrl + a
+    rambox
+alt + ctrl + b
+    firefox-developer-edition
+alt + ctrl + c
+    gnome-calculator
+alt + ctrl + d
+    gnome-dictionary
+alt + ctrl + f
+    termite -e ranger
+alt + ctrl + m
+    termite -e cmus
+alt + ctrl + p
+    ~/.config/polybar/launch.sh
+alt + ctrl + s
+    spotify
+alt + ctrl + t
+    thunderbird
+alt + ctrl + v
+    virt-manager
+Print
+    gnome-screenshot -i
+
+################################################################################
+#
+#   bspwm hotkeys
+#
+################################################################################
+
+# restart bspwm
+alt + ctrl + shift + r
+    bspc wm -r
+
+# close and kill windows
+alt + ctrl + {_,shift + }q
+    bspc node -{c,k}
+
+# set the window state
+alt + {e,shift + e,@space,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# alternate between the tiled and monocle layout
+alt + w
+    bspc desktop -l next
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+alt + {j,k}
+    bspc node -f {south,north}
+alt + h
+    if bspc query -T -d | grep monocle; then \
+        bspc node -f prev.local; \
+    else \
+        bspc node -f west; \
+    fi
+alt + l
+    if bspc query -T -d | grep monocle; then \
+        bspc node -f next.local; \
+    else \
+        bspc node -f east; \
+    fi
+
+# swap/move the node in the given direction
+alt + ctrl + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# move the floating window
+alt + shift + {h,j,k,l}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# focus or send to the given desktop
+alt + {_,ctrl + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus the node for the given path jump
+alt + {a,b,c,shift + c}
+    bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous desktop in the current monitor
+alt + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+alt + {grave,Tab}
+    bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+alt + {o,i}
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
+
+#
+# resize
+#
+
+# expand a window by moving one of its side outward
+alt + super + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+alt + super + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+#
+# rotate
+#
+alt + {_,shift + }r
+    bspc node -R {90,270}

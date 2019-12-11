@@ -69,8 +69,8 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-    $RSYNC .config/cmus .config/dunst .config/polybar .config/termite \
-        .config/zathura .config/vlc ~/.config/
+    $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
+        .config/polybar .config/termite .config/zathura .config/vlc ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     $RSYNC .i3 .Xmodmap ~/
@@ -84,8 +84,9 @@ NAME='unknown'
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.i3 ~/.Xmodmap ./
-    $RSYNC ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/ranger \
-        ~/.config/termite ~/.config/zathura ~/.config/vlc .config/
+    $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/cmus ~/.config/dunst \
+        ~/.config/polybar ~/.config/ranger ~/.config/termite ~/.config/zathura \
+        ~/.config/vlc .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     pacman -Qeq > pkglist

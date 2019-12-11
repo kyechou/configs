@@ -207,7 +207,7 @@ bindsym Control+F6            exec --no-startup-id light -A 3
 exec --no-startup-id light -S 40
 
 # Disable DPMS (Energy Star) and screen saver blanking
-exec --no-startup-id xset s off -dpms
+#exec --no-startup-id xset s off -dpms
 
 # Keyboard and mouse config
 bindsym Control+F3 exec --no-startup-id xset r rate 400 35
@@ -234,14 +234,14 @@ bindsym $mod+p exec \
     passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11
 bindsym $mod+Control+a exec rambox
 bindsym $mod+Control+b exec firefox-developer-edition
-bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
+bindsym $mod+Control+c exec gnome-calculator
+bindsym $mod+Control+d exec gnome-dictionary
 bindsym $mod+Control+f exec termite -e ranger
 bindsym $mod+Control+m exec termite -e cmus
-bindsym $mod+Control+d exec gnome-dictionary
+bindsym $mod+Control+p exec ~/.config/polybar/launch.sh
+bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+v exec virt-manager
-bindsym $mod+Control+s exec spotify
-bindsym $mod+Control+c exec gnome-calculator
 bindsym Print          exec gnome-screenshot -i
 
 # Startup programs
