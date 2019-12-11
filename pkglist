@@ -22,6 +22,7 @@ binutils
 bison
 bridge-utils
 browserpass-firefox
+bspwm
 bzip2
 cantarell-fonts
 chromium
@@ -125,6 +126,7 @@ pavucontrol
 pciutils
 perl
 perl-image-exiftool
+picom
 pkgconf
 polybar
 procps-ng
@@ -141,6 +143,7 @@ sed
 shadow
 spotify
 sudo
+sxhkd
 syncthing
 sysfsutils
 system-config-printer

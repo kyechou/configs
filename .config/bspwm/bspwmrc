@@ -70,10 +70,10 @@ bspc config focused_border_color $blue
 # configuration
 #
 
-bspc config border_width        3
-bspc config window_gap          10
+bspc config border_width        4
+bspc config window_gap          8
 
-bspc config split_ratio         0.52
+bspc config split_ratio         0.5
 bspc config automatic_scheme    longest_side
 bspc config initial_polarity    second_child
 bspc config removal_adjustment  true
@@ -82,11 +82,10 @@ bspc config gapless_monocle     true
 bspc config pointer_modifier    control
 bspc config click_to_focus      any
 
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
+bspc rule -a feh            state=floating
+bspc rule -a Pavucontrol    state=floating
+bspc rule -a Thunderbird    desktop='^1'
+bspc rule -a Rambox         desktop='^10'
 
 
 #
@@ -130,17 +129,20 @@ pactl set-source-volume \
 #
 
 autostart() {
-    :
+    prog=$1
+    if pgrep $prog; then return; fi
+    $@ &
 }
 
-pgrep udiskie || (udiskie --no-automount --tray &)
-pgrep unclutter || (unclutter --timeout 3 --jitter 10 --ignore-scrolling &)
-lxpolkit &  # needed by virt-manager
-nm-applet &
+autostart udiskie --no-automount --tray
+autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
+autostart lxpolkit  # needed by virt-manager
+autostart nm-applet
+autostart picom
 
 #
 # autostart network programs
 #
-
-#sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox' &
-#sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird' &
+until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
+autostart rambox
+autostart thunderbird

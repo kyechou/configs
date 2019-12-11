@@ -71,6 +71,7 @@ set wrap
 syntax on
 set background=dark
 colorscheme gruvbox
+highlight Normal guibg=NONE ctermbg=NONE
 highlight SpellBad ctermbg=167 ctermfg=234
 let c_syntax_for_h = 1
 set encoding=utf8
