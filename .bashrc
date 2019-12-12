@@ -19,7 +19,6 @@ export BROWSER=firefox-developer-edition
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
-#export XDG_CONFIG_HOME="$HOME/.config"
 
 # Bash
 [[ -r /usr/share/bash-completion/bash_completion ]] && \
