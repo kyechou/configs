@@ -130,25 +130,43 @@ alt + w
 alt + {j,k}
     bspc node -f {south,north}
 alt + h
-    if bspc query -T -d | grep monocle; then \
+    if bspc query -T -d | grep monocle >/dev/null; then \
         bspc node -f prev.local; \
     else \
         bspc node -f west; \
     fi
 alt + l
-    if bspc query -T -d | grep monocle; then \
+    if bspc query -T -d | grep monocle >/dev/null; then \
         bspc node -f next.local; \
     else \
         bspc node -f east; \
     fi
 
 # swap/move the node in the given direction
-alt + ctrl + {h,j,k,l}
-    bspc node -s {west,south,north,east}
-
-# move the floating window
-alt + shift + {h,j,k,l}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+alt + ctrl + h
+    if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
+        bspc node -v -20 0; \
+    else \
+        bspc node -s west; \
+    fi
+alt + ctrl + j
+    if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
+        bspc node -v 0 20; \
+    else \
+        bspc node -s south; \
+    fi
+alt + ctrl + k
+    if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
+        bspc node -v 0 -20; \
+    else \
+        bspc node -s north; \
+    fi
+alt + ctrl + l
+    if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
+        bspc node -v 20 0; \
+    else \
+        bspc node -s east; \
+    fi
 
 # focus or send to the given desktop
 alt + {_,ctrl + }{1-9,0}
@@ -188,4 +206,4 @@ alt + super + shift + {h,j,k,l}
 # rotate
 #
 alt + {_,shift + }r
-    bspc node -R {90,270}
+    bspc node @parent -R {90,270}
