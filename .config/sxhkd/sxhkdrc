@@ -110,6 +110,10 @@ Print
 alt + ctrl + shift + r
     bspc wm -r
 
+# reset monitor
+alt + ctrl + shift + m
+    ~/.config/bspwm/reset-monitor
+
 # close and kill windows
 alt + ctrl + {_,shift + }q
     bspc node -{c,k}
