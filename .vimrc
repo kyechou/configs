@@ -41,6 +41,7 @@ set noswapfile
 set tabpagemax=30
 set tags=./tags;/
 set viminfo=""
+set sessionoptions=blank,buffers,folds,help,options,resize,tabpages,winsize,terminal,slash,unix
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
@@ -150,7 +151,7 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
-nnoremap <C-i> :vert term<CR>
+nnoremap <C-i> :term<CR>
 " autocmd: comment
 autocmd FileType c       nnoremap <F9> I/*<esc>A*/<esc>j
 autocmd FileType c       nnoremap <F8> ^2x$xxj
