@@ -113,26 +113,43 @@ let g:lightline = {
     \           ['readonly', 'filename', 'modified']
     \       ],
     \   },
-    \   'tab': {
-    \       'active': ['filename', 'modified'],
-    \       'inactive': ['filename', 'modified'],
+    \   'inactive': {
+    \       'left': [['readonly', 'filename', 'modified']],
     \   },
     \   'component': {
     \       'readonly': '%r',
-    \       'modified': '%m',
     \       'spell': 'SPELL [%{&spell?&spelllang:""}]',
     \   },
     \   'component_function': {
     \       'filename': 'LightlineFilename',
     \   },
+    \   'tab': {
+    \       'active': ['filename', 'modified'],
+    \       'inactive': ['filename', 'modified'],
+    \   },
+    \   'tab_component_function': {
+    \       'modified': 'LightlineTabModified',
+    \   },
     \   'tabline': {
     \       'right': [],
     \   },
-    \   'subseparator': { 'left': '', 'right': '|' },
     \ }
 function! LightlineFilename()
-    let filename = expand('%:~') !=# '' ? expand('%:~') : '[No Name]'
-    return filename
+    return expand('%:~') ==# '' ? '[No Name]' :
+        \ expand('%:~') ==# expand('%:t') ? expand('%:p') : expand('%:~')
+endfunction
+function! LightlineTabModified(n)
+    let l:window_number = tabpagewinnr(a:n, '$')
+    let l:modified = v:false
+    let l:unmodifiable = v:false
+    for winnr in range(1, l:window_number)
+        let l:modified = l:modified || gettabwinvar(a:n, winnr, '&modified')
+        let l:unmodifiable = l:unmodifiable ||
+            \ !gettabwinvar(a:n, winnr, '&modifiable')
+    endfor
+    let l:string  = l:modified ? '+' : ''
+    let l:string .= l:unmodifiable ? '-' : ''
+    return l:string
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
