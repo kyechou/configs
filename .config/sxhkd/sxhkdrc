@@ -119,12 +119,18 @@ alt + ctrl + {_,shift + }q
     bspc node -{c,k}
 
 # set the window state
-alt + {e,shift + e,@space,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+alt + e
+    if bspc query -T -d | grep monocle >/dev/null; then \
+        bspc desktop -l tiled; \
+    else \
+        bspc node -t tiled; \
+    fi
+alt + {shift + e,@space,f}
+    bspc node -t {pseudo_tiled,floating,fullscreen}
 
 # alternate between the tiled and monocle layout
 alt + w
-    bspc desktop -l next
+    bspc desktop -l monocle
 
 #
 # focus/swap
