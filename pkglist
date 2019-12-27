@@ -30,6 +30,7 @@ chromium
 cmus
 coreutils
 cryptsetup
+cscope
 ctags
 cups
 device-mapper
