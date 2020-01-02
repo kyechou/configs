@@ -42,8 +42,8 @@ bspc config initial_polarity    second_child
 bspc config removal_adjustment  true
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
-bspc config single_monocle      true
-bspc config pointer_modifier    control
+bspc config single_monocle      false
+bspc config pointer_modifier    mod1    # alt
 bspc config click_to_focus      any
 
 bspc rule -a feh                state=floating
