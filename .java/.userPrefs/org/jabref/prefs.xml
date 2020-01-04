@@ -96,9 +96,9 @@
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
-<entry key="mainWindowPosX" value="-2"/>
-<entry key="mainWindowPosY" value="23"/>
-<entry key="mainWindowSizeX" value="1924"/>
+<entry key="mainWindowPosX" value="0"/>
+<entry key="mainWindowPosY" value="21"/>
+<entry key="mainWindowSizeX" value="1024"/>
 <entry key="mainWindowSizeY" value="1059"/>
 <entry key="markImportedEntries" value="false"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
