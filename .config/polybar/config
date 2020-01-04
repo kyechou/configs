@@ -62,8 +62,8 @@ tray-padding = 4
 tray-scale = 1.0
 wm-restack = bspwm
 enable-ipc = false
-scroll-up = bspwm-deskprev
-scroll-down = bspwm-desknext
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 cursor-click = default
 cursor-scroll = default
 
@@ -79,7 +79,7 @@ enable-click = true
 ; Create scroll handlers used to cycle workspaces
 enable-scroll = true
 ; Set the scroll cycle direction
-reverse-scroll = false
+reverse-scroll = true
 ; dimmed = Workspace on unfocused monitors
 label-dimmed-foreground = ${colors.foreground-alt}
 label-dimmed-background = ${colors.background}
