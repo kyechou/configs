@@ -103,6 +103,7 @@ picom
 pkgconf
 polybar
 pulseaudio
+python-ueberzug
 qemu
 rambox-bin
 ranger-git
@@ -146,7 +147,6 @@ valgrind
 vim
 virt-manager
 vlc
-w3m
 wget
 which
 whois
