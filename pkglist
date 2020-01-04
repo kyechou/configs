@@ -105,7 +105,7 @@ polybar
 pulseaudio
 qemu
 rambox-bin
-ranger
+ranger-git
 reflector
 rsync
 spotify
