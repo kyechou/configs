@@ -74,7 +74,7 @@ NAME='unknown'
         .config/vlc ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
-    $RSYNC .i3 .Xmodmap ~/
+    $RSYNC .Xmodmap ~/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -84,7 +84,7 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.i3 ~/.Xmodmap ./
+        ~/.tmux.conf ~/.Xmodmap ./
     $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/picom ~/.config/cmus \
         ~/.config/dunst ~/.config/polybar ~/.config/ranger ~/.config/termite \
         ~/.config/zathura ~/.config/vlc .config/
