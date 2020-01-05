@@ -49,7 +49,7 @@ font-0 = Hack:size=10;2
 font-1 = Liberation Sans:size=10;1
 font-2 = Source Han Sans TW:size=10;2
 modules-left = bspwm
-modules-center = xwindow
+modules-center =
 modules-right = filesystem pulseaudio system-load cpu memory battery date
 separator =
 dim-value = 1.0
