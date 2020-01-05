@@ -58,13 +58,25 @@ alt + Pause ; {r,p}
 
 # pulse audio
 alt + {period,comma,m}
-    pactl set-sink-volume \
-        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-        {+1dB,-1dB,13}
+    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            {+2%,-2%,13}; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            {+1dB,-1dB,13}; \
+    fi
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-    pactl set-sink-volume \
-        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-        {+1dB,-1dB,13}
+    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            {+2%,-2%,13}; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            {+1dB,-1dB,13}; \
+    fi
 
 # program shortcuts
 alt + ctrl + a
