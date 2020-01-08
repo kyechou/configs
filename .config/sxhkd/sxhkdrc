@@ -57,26 +57,52 @@ alt + Pause ; {r,p}
     systemctl {reboot,poweroff}
 
 # pulse audio
-alt + {period,comma,m}
+alt + period
     if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            {+2%,-2%,13}; \
+            +2%; \
     else \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            {+1dB,-1dB,13}; \
+            +1dB; \
     fi
-XF86Audio{RaiseVolume,LowerVolume,Mute}
+alt + comma
     if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            {+2%,-2%,13}; \
+            -2%; \
     else \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            {+1dB,-1dB,13}; \
+            -1dB; \
     fi
+alt + m
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
+XF86AudioRaiseVolume
+    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            +2%; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            +1dB; \
+    fi
+XF86AudioLowerVolume
+    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            -2%; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            -1dB; \
+    fi
+XF86AudioMute
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
 
 # program shortcuts
 alt + ctrl + a
