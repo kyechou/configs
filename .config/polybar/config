@@ -27,7 +27,7 @@ alert = #d3869b
 
 
 [bar/top]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP1}
 monitor-fallback =
 monitor-strict = false
 bottom = false

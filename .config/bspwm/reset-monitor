@@ -31,7 +31,7 @@ switch_monitor() {
 }
 
 reset_monitor() {
-    LAPTOP_MON="eDP-1"
+    LAPTOP_MON="eDP1"
     MONITORS="$(xrandr --listmonitors | sed '1d' | awk -F ' ' '{print $4}')"
     if [[ "${MONITORS[@]}" =~ "$LAPTOP_MON" ]]; then
         switch_monitor "$LAPTOP_MON"
