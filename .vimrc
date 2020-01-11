@@ -196,7 +196,7 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
-nnoremap <C-i> :term<CR>
+nnoremap <C-@><C-i> :term<CR>
 " autocmd: compile
 autocmd FileType c       nnoremap <C-c> :! gcc % -o %:r -Wall -Wextra -Wpedantic
                                            \ -Werror -O3 -std=c11<CR>
