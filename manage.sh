@@ -57,8 +57,6 @@ NAME='unknown'
 [[ $DEPLOY -eq 1 ]] && { \
     $RSYNC .bashrc .bash_profile .profile .vimrc .vim .gitconfig .tmux.conf ~/
     $RSYNC .config/ranger ~/.config/
-    [[ "$NAME" = 'Arch Linux' && $DRYRUN -eq 0 ]] && sudo pacman -U \
-        --needed --noconfirm pacleaf/pacleaf-1.0.0-1-x86_64.pkg.tar.xz
     $RSYNC private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
         $RSYNC private/.gnupg ~/
