@@ -67,12 +67,13 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-    $RSYNC .Xmodmap .workrave ~/
+    $RSYNC .Xmodmap ~/
     $RSYNC .config/bspwm .config/sxhkd .config/picom .config/cmus \
         .config/dunst .config/polybar .config/termite .config/zathura \
         .config/vlc ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
+    mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -82,12 +83,13 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ~/.workrave ./
+        ~/.tmux.conf ~/.Xmodmap ./
     $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/picom ~/.config/cmus \
         ~/.config/dunst ~/.config/polybar ~/.config/ranger ~/.config/termite \
         ~/.config/zathura ~/.config/vlc .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
+    mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
     pacman -Qeq > pkglist
     [[ -r /etc/iptables/iptables.rules ]] && \
         $RSYNC /etc/iptables/iptables.rules ./

@@ -10,7 +10,4 @@
 .vim/autoload/*.old
 .vim/plugged
 .vim/sessions
-.workrave/id
-.workrave/idlelog.*
-.workrave/todaystats
 private
