@@ -48,6 +48,7 @@ bspc config single_monocle      false
 bspc config pointer_modifier    mod1    # alt
 bspc config click_to_focus      any
 
+bspc rule -a Zathura            state=tiled
 bspc rule -a Pavucontrol        state=floating
 bspc rule -a Thunderbird        desktop='^1'
 
