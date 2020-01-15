@@ -19,6 +19,7 @@ export BROWSER=firefox-developer-edition
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
+export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
 # Bash
 [[ -r /usr/share/bash-completion/bash_completion ]] && \
