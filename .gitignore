@@ -1,4 +1,3 @@
-private
 .config/cmus/autosave
 .config/cmus/cache
 .config/cmus/command-history
@@ -6,8 +5,12 @@ private
 .config/cmus/playlist.pl
 .config/cmus/search-history
 .config/vlc/vlc-qt-interface.conf
+.stversions
 .vim/.netrwhist
 .vim/autoload/*.old
 .vim/plugged
 .vim/sessions
-.stversions
+.workrave/id
+.workrave/idlelog.*
+.workrave/todaystats
+private

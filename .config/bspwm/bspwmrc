@@ -108,6 +108,7 @@ autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
 autostart lxpolkit  # needed by virt-manager
 autostart nm-applet
 autostart picom
+autostart workrave
 
 #
 # autostart network programs

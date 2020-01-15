@@ -67,12 +67,12 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
+    $RSYNC .Xmodmap .workrave ~/
     $RSYNC .config/bspwm .config/sxhkd .config/picom .config/cmus \
         .config/dunst .config/polybar .config/termite .config/zathura \
         .config/vlc ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
-    $RSYNC .Xmodmap ~/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -82,7 +82,7 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ./
+        ~/.tmux.conf ~/.Xmodmap ~/.workrave ./
     $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/picom ~/.config/cmus \
         ~/.config/dunst ~/.config/polybar ~/.config/ranger ~/.config/termite \
         ~/.config/zathura ~/.config/vlc .config/
