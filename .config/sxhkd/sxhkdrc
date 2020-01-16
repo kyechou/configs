@@ -117,6 +117,8 @@ alt + ctrl + f
     termite -e ranger
 alt + ctrl + m
     termite -e cmus
+alt + ctrl + n
+    termite -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s

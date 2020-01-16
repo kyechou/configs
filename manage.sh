@@ -70,7 +70,7 @@ NAME='unknown'
     $RSYNC .Xmodmap ~/
     $RSYNC .config/bspwm .config/sxhkd .config/picom .config/cmus \
         .config/dunst .config/polybar .config/termite .config/zathura \
-        .config/vlc ~/.config/
+        .config/vlc .config/newsboat ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
@@ -86,7 +86,7 @@ NAME='unknown'
         ~/.tmux.conf ~/.Xmodmap ./
     $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/picom ~/.config/cmus \
         ~/.config/dunst ~/.config/polybar ~/.config/ranger ~/.config/termite \
-        ~/.config/zathura ~/.config/vlc .config/
+        ~/.config/zathura ~/.config/vlc ~/.config/newsboat .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
