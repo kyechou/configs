@@ -1,9 +1,13 @@
 # blog
 https://hahapoem.blogspot.com/feeds/posts/default blog
 
-# tech, tech news
-https://news.ycombinator.com/rss tech
-https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml tech
+# tech
+https://www.archlinux.org/feeds/news/ tech
+https://www.networkcomputing.com/rss/all tech
+https://spectrum.ieee.org/rss/computing/fulltext tech
+https://spectrum.ieee.org/rss/telecom/fulltext tech
+http://rss.acm.org/technews/TechNews.xml tech
+http://opensource.com/feed tech
 
 # TW news
 https://about.pts.org.tw/rss/XML/newsfeed.xml news tw-news
@@ -11,6 +15,8 @@ https://www.twreporter.org/a/rss2.xml news tw-news
 https://feeds.feedburner.com/TheNewsLens news tw-news
 
 # news
-https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news
+https://www.theatlantic.com/feed/best-of/ news "~The Atlantic"
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news "~The New York Times"
+http://feeds.reuters.com/reuters/topNews news
 https://news.cts.com.tw/rss/international.xml news
 https://global.udn.com/rss/news/1020/8662 news
