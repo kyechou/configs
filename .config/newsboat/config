@@ -1,7 +1,6 @@
 auto-reload yes
+browser elinks
 datetime-format "%b %d, %Y"
-#feedlist-format "%4i %n %11u %t"
-#articlelist-format "%4i %f %D %6L %?T?|%-17T| ?%t"
 goto-first-unread no
 goto-next-feed no
 keep-articles-days 30

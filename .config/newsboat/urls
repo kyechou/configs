@@ -3,8 +3,14 @@ https://hahapoem.blogspot.com/feeds/posts/default blog
 
 # tech, tech news
 https://news.ycombinator.com/rss tech
-
-# news
+https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml tech
 
 # TW news
 https://about.pts.org.tw/rss/XML/newsfeed.xml news tw-news
+https://www.twreporter.org/a/rss2.xml news tw-news
+https://feeds.feedburner.com/TheNewsLens news tw-news
+
+# news
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news
+https://news.cts.com.tw/rss/international.xml news
+https://global.udn.com/rss/news/1020/8662 news

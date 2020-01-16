@@ -74,6 +74,7 @@ NAME='unknown'
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
+    mkdir -p ~/.elinks && $RSYNC .elinks/elinks.conf ~/.elinks/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -90,6 +91,7 @@ NAME='unknown'
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
+    mkdir -p .elinks && $RSYNC ~/.elinks/elinks.conf .elinks/
     pacman -Qeq > pkglist
     [[ -r /etc/iptables/iptables.rules ]] && \
         $RSYNC /etc/iptables/iptables.rules ./

@@ -36,6 +36,7 @@ dnsmasq
 dunst
 e2fsprogs
 ebtables
+elinks
 fakeroot
 feh
 file-roller
@@ -87,6 +88,7 @@ man-pages
 netctl
 network-manager-applet
 networkmanager
+newsboat
 nmap
 ntfs-3g
 openssh
