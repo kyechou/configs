@@ -28,11 +28,17 @@ ctrl + F4
     xset m 0 0          # acceleration: 0, threshold: 0
 
 # touchpad
-ctrl + {F1,F2}
+ctrl + F1
     if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
-        xinput {disable,enable} 'SynPS/2 Synaptics TouchPad'; \
+        xinput disable 'SynPS/2 Synaptics TouchPad'; \
     else \
-        xinput {disable,enable} 'pointer:ELAN1200:00 04F3:306F Touchpad'; \
+        xinput disable 'pointer:ELAN1200:00 04F3:306F Touchpad'; \
+    fi
+ctrl + F2
+    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
+        xinput enable 'SynPS/2 Synaptics TouchPad'; \
+    else \
+        xinput enable 'pointer:ELAN1200:00 04F3:306F Touchpad'; \
     fi
 
 # touch screen
