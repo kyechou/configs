@@ -22,7 +22,8 @@ export TERM='xterm-256color'
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
 # Bash
-[[ -r /usr/share/bash-completion/bash_completion ]] && \
+[ "${BASH#*bash}" != "$BASH" ] && \
+    [ -r /usr/share/bash-completion/bash_completion ] && \
     . /usr/share/bash-completion/bash_completion
 
 # history settings
