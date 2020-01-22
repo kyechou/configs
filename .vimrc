@@ -37,6 +37,7 @@ set belloff=all
 set history=1000
 set modeline
 set nobackup
+set nojoinspaces
 set noswapfile
 set tabpagemax=30
 set tags=./tags;
