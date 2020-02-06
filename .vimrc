@@ -18,6 +18,7 @@ Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'vim-scripts/promela.vim', {'for': 'promela'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'c3m3gyanesh/p4-syntax-highlighter-collection', {'rtp': 'vim', 'for': 'p4'}
+Plug 'vim-scripts/maude.vim', {'for': 'maude'}
 " Colorscheme
 Plug 'morhetz/gruvbox'
 
@@ -82,6 +83,7 @@ let c_syntax_for_h = 1
 set encoding=utf8
 set fileencodings=utf8,latin1,utf16,big5,gbk
 set ffs=unix,dos,mac
+autocmd BufNewFile,BufRead *.maude set syntax=maude filetype=maude
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab and indentation
