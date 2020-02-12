@@ -246,6 +246,10 @@ alt + {a,b,c,shift + c}
 alt + bracket{left,right}
     bspc desktop -f {prev,next}.local
 
+# send the node to the next/previous desktop in the current monitor
+alt + ctrl + bracket{left,right}
+    bspc node -d {prev,next}.local
+
 # focus the last node/desktop
 alt + {grave,Tab}
     bspc {node,desktop} -f last
