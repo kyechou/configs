@@ -84,8 +84,8 @@
 <entry key="importDefaultPDFimportStyle" value="2"/>
 <entry key="importFileDirPattern" value=""/>
 <entry key="importFileNamePattern" value="[bibtexkey]-[title]"/>
-<entry key="importInspectionDialogHeight" value="585"/>
-<entry key="importInspectionDialogWidth" value="1049"/>
+<entry key="importInspectionDialogHeight" value="660"/>
+<entry key="importInspectionDialogWidth" value="1207"/>
 <entry key="importWorkingDirectory" value="/home/kyc/cs/papers"/>
 <entry key="incompleteEntryBackground" value="250:175:175"/>
 <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
@@ -99,7 +99,7 @@
 <entry key="mainWindowPosX" value="0"/>
 <entry key="mainWindowPosY" value="27"/>
 <entry key="mainWindowSizeX" value="1920"/>
-<entry key="mainWindowSizeY" value="1173"/>
+<entry key="mainWindowSizeY" value="1053"/>
 <entry key="markImportedEntries" value="false"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -146,7 +146,7 @@
 <entry key="searchGlobal" value="false"/>
 <entry key="secDescending" value="false"/>
 <entry key="secSort" value="title"/>
-<entry key="selectedFetcherIndex" value="7"/>
+<entry key="selectedFetcherIndex" value="4"/>
 <entry key="serializeSpecialFields" value="false"/>
 <entry key="showPrintedColumn" value="false"/>
 <entry key="showPriorityColumn" value="false"/>
@@ -191,5 +191,5 @@
 <entry key="warnBeforeOverwritingKey" value="true"/>
 <entry key="webSearchVisible" value="true"/>
 <entry key="windowMaximised" value="false"/>
-<entry key="workingDirectory" value="/home/kyc/cs/papers/2018-Prabhu-PlanktonVerifyingEvolving.pdf"/>
+<entry key="workingDirectory" value="/home/kyc/cs/papers/2015-KimEtAl-In Band Network Telemetry Via Programmable Dataplanes.pdf"/>
 </map>
