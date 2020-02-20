@@ -75,6 +75,7 @@ NAME='unknown'
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
     mkdir -p ~/.elinks && $RSYNC .elinks/elinks.conf ~/.elinks/
+    $RSYNC private/batmud ~/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -99,7 +100,7 @@ NAME='unknown'
         $RSYNC /etc/makepkg.conf ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
-    $RSYNC ~/.ssh ~/.gnupg private/
+    $RSYNC ~/.ssh ~/.gnupg ~/batmud private/
     [[ -d /etc/NetworkManager/system-connections ]] && \
         sudo $RSYNC /etc/NetworkManager/system-connections private/
     [[ $DRYRUN -eq 0 ]] && sudo chown -R $(id -nu):$(id -ng) private
