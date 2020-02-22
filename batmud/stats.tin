@@ -1,0 +1,20 @@
+#nop sc set <name> (<mortlevel>)|{colorhp}/<maxhp> [{diffhp}]|{colorsp}/<maxsp> [{diffsp}]|{colorep}/<maxep> [{diffep}]|<cash> [{diffcash}]|<bank>|<weight>|<exp> [{diffexp}]|<age>|<alignment>
+
+#action {{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}} {
+    #system {> logs/stats};
+    #line {log} {logs/stats} {
+        - %1 -\n\n
+        HitPoint:       %2\n
+        SpellPoint:     %3\n
+        EndurancePoint: %4\n
+        Cash:           %5\n
+        Bank:           %6\n
+        Weight:         %7\n
+        Experience:     %8\n
+        Age:            %9\n
+        [%10]
+    };
+    #line {gag}
+}
+
+#send{sc}

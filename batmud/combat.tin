@@ -1,0 +1,11 @@
+#nop Spells
+
+#alias {cspark%*}  { cast celestial spark %1 }
+#alias {ccw%*}     { cast cure critical wounds %1 }
+#alias {csw%*}     { cast cure serious wounds %1 }
+#alias {clw%*}     { cast cure light wounds %1 }
+
+
+#nop Skills
+
+#alias {heal%*}    { use cast heal %1 }

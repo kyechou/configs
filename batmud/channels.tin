@@ -1,0 +1,20 @@
+#function {log_line} {
+    #script {ts} {date +"%I:%M%P"};
+    #line {log} {%1} {[$ts[1]] \};
+    #line {log} {%1};
+    #line {gag}
+}
+
+#action {^%S tells you %*}       { #return @log_line{logs/private} }
+#action {^You tell %S %*}        { #return @log_line{logs/private} }
+#action {^%S whispers to you %*} { #return @log_line{logs/private} }
+#action {^You whisper to %S %*}  { #return @log_line{logs/private} }
+
+#action {^%*{[()\{\}\[\]<>]}newbie{[()\{\}\[\]<>]}:%*}  { #return @log_line{logs/public} }
+#action {^%*{[()\{\}\[\]<>]}bat{[()\{\}\[\]<>]}:%*}     { #return @log_line{logs/public} }
+#action {^%*{[()\{\}\[\]<>]}chat{[()\{\}\[\]<>]}:%*}    { #return @log_line{logs/public} }
+#action {^%*{[()\{\}\[\]<>]}ghost{[()\{\}\[\]<>]}:%*}   { #return @log_line{logs/public} }
+#action {^%* shouts %*}                                 { #return @log_line{logs/public} }
+
+#action {^%*{[()\{\}\[\]<>]}wanted{[()\{\}\[\]<>]}:%*}  { #return @log_line{logs/trade} }
+#action {^%*{[()\{\}\[\]<>]}sales{[()\{\}\[\]<>]}:%*}   { #return @log_line{logs/trade} }

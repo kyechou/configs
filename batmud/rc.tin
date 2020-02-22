@@ -1,0 +1,14 @@
+#config     {charset}       UTF-8
+#config     {color patch}   on
+#config     {speedwalk}     off
+#config     {verbatim}      off
+#config     {wordwrap}      off
+
+#gag {^$}
+
+#read login.tin
+#read prompt.tin
+#read stats.tin
+#read channels.tin
+#read map.tin
+#read combat.tin
