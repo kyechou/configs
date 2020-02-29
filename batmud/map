@@ -245,7 +245,7 @@ L {UNICODE GRAPHICS} {ROOM R} {]}
 L {UNICODE GRAPHICS} {ROOM R CURVED} {)}
 
 
-LM {Northern gatehouse} {22} {} {}
+LM {Dortlewall} {22} {} {}
 
 
 T {} { } {}
@@ -335,7 +335,7 @@ R {   21} {0} {} {} { } {} {} {} {} {} {1.000} {}
 E {   20} {n} {n} {1} {0} {} {1.000} {}
 E {   22} {s} {s} {4} {0} {} {1.000} {}
 
-R {   22} {0} {} {Northern gatehouse} { } {} {} {} {} {} {1.000} {}
+R {   22} {0} {} {Dortlewall} { } {} {} {} {} {} {1.000} {}
 E {   21} {n} {n} {1} {0} {} {1.000} {}
 E {   23} {s} {s} {4} {0} {} {1.000} {}
 

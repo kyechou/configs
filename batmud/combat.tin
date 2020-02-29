@@ -8,7 +8,6 @@
 #alias {lb}     {cast lightning bolt}
 #alias {ac}     {cast acid arrow}
 #alias {pig}    {cast call pigeon}
-
 #alias {moon}   {cast moon sense}
 
 
@@ -20,8 +19,8 @@
 #alias {star}   {use stargazing}
 
 
-
-
-
+#nop
+#nop Ress
+#nop
 
 #alias {ress}   {accept ress from athalon}
