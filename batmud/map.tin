@@ -1,16 +1,17 @@
-#alias loadmap  { #map read {map} }
-#alias savemap  { #map write {map} }
-#alias drawmap  { #map map 40 60 overwrite {map.out} }
-#alias unmap    { #map undo; drawmap }
-#alias mr       { #map run }
+#alias loadmap  {#map read {map}}
+#alias savemap  {#map write {map}}
+#alias drawmap  {#map map 40 60 overwrite {map.out}}
+#alias unmap    {#map undo; drawmap}
+#alias mr       {#map run}
 
 #map flag asciivnums on
 
-#event {MAP ENTER ROOM} { drawmap }
-#event {SESSION DISCONNECTED} { #map write {map} }
+#event {MAP ENTER ROOM} {drawmap}
+#event {SESSION DISCONNECTED} {#map write {map}}
 
-#action {You cannot go that way.}   { unmap }
-#action {That exit is blocked.}     { unmap }
+#action {You cannot go that way.}   {unmap}
+#action {That exit is blocked.}     {unmap}
+#action {%* blocks your way.}       {unmap}
 
 #map read {map}
 #map return

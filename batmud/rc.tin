@@ -1,5 +1,6 @@
 #config     {charset}       UTF-8
-#config     {color patch}   on
+#config     {color mode}    256
+#config     {color patch}   off
 #config     {speedwalk}     off
 #config     {verbatim}      off
 #config     {wordwrap}      off

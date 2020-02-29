@@ -1,11 +1,27 @@
+#nop
 #nop Spells
+#nop
 
-#alias {cspark%*}  { cast celestial spark %1 }
-#alias {ccw%*}     { cast cure critical wounds %1 }
-#alias {csw%*}     { cast cure serious wounds %1 }
-#alias {clw%*}     { cast cure light wounds %1 }
+#alias {heal}   {cast heal self}
+#alias {gr}     {cast shocking grasp}
+#alias {ms}     {cast magic missile}
+#alias {lb}     {cast lightning bolt}
+#alias {ac}     {cast acid arrow}
+#alias {pig}    {cast call pigeon}
+
+#alias {moon}   {cast moon sense}
 
 
+#nop
 #nop Skills
+#nop
 
-#alias {heal%*}    { use cast heal %1 }
+#alias {hide}   {use hiding}
+#alias {star}   {use stargazing}
+
+
+
+
+
+
+#alias {ress}   {accept ress from athalon}
