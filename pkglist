@@ -17,6 +17,7 @@ automake
 baobab
 base
 bash-completion
+biber
 bind-tools
 binutils
 bison
