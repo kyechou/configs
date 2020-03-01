@@ -9,10 +9,12 @@
 #event {MAP ENTER ROOM} {drawmap}
 #event {SESSION DISCONNECTED} {#map write {map}}
 
-#action {You cannot go that way.}   {unmap}
-#action {That exit is blocked.}     {unmap}
-#action {%* blocks your way.}       {unmap}
-#action {You cannot leave%*}        {unmap}
+#action {You cannot go that way.}       {unmap}
+#action {That exit is blocked.}         {unmap}
+#action {%* blocks your way.}           {unmap}
+#action {%* bars the way.}              {unmap}
+#action {You cannot leave%*}            {unmap}
+#action {%* stops you from going %*}    {unmap}
 
 #map read {map}
 #map return
