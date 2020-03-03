@@ -16,9 +16,11 @@
 #action {^%*{[()\{\}\[\]<>]}ghost{[()\{\}\[\]<>]}:%*}   {#return @log_line{logs/public}}
 #action {^%* shouts %*}                                 {#return @log_line{logs/public}}
 #action {^%* exclaims %*}                               {#return @log_line{logs/public}}
+#action {^%* says %*}                                   {#return @log_line{logs/public}}
 
 #action {^%*{[()\{\}\[\]<>]}wanted{[()\{\}\[\]<>]}:%*}  {#return @log_line{logs/trade}}
 #action {^%*{[()\{\}\[\]<>]}sales{[()\{\}\[\]<>]}:%*}   {#return @log_line{logs/trade}}
 
 #action {^%*{[()\{\}\[\]<>]}party{[()\{\}\[\]<>]}:%*}   {#return @log_line{logs/social}}
 #action {^%*{[()\{\}\[\]<>]}houses{[()\{\}\[\]<>]}:%*}  {#return @log_line{logs/social}}
+#action {^%*{[()\{\}\[\]<>]}sky-{[()\{\}\[\]<>]}:%*}    {#return @log_line{logs/social}}

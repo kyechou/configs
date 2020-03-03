@@ -1,6 +1,6 @@
-#nop sc set <name> (<mortlevel>)|{colorhp}/<maxhp> [{diffhp}]|{colorsp}/<maxsp> [{diffsp}]|{colorep}/<maxep> [{diffep}]|<cash> [{diffcash}]|<bank>|<weight>|<exp> [{diffexp}]|<age>|<alignment>
+#nop sc set <name> (<mortlevel>)|{colorhp}/<maxhp> [{diffhp}]|{colorsp}/<maxsp> [{diffsp}]|{colorep}/<maxep> [{diffep}]|<cash> [{diffcash}]|<bank>|<weight>|<exp> [{diffexp}]|<alignment>
 
-#action {{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}} {
+#action {{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}} {
     #system {> logs/stats};
     #line {log} {logs/stats} {
         - %1 -\n\n
@@ -11,8 +11,7 @@
         Bank:           %6\n
         Weight:         %7\n
         Experience:     %8\n
-        Age:            %9\n
-        [%10]
+        [%9]
     };
     #line {gag}
 }

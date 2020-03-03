@@ -2,13 +2,21 @@
 #nop Spells
 #nop
 
-#alias {heal}   {cast heal self}
 #alias {gr}     {cast shocking grasp}
 #alias {ms}     {cast magic missile}
 #alias {lb}     {cast lightning bolt}
 #alias {ac}     {cast acid arrow}
+
+#alias {heal}   {cast heal self}
 #alias {pig}    {cast call pigeon}
+#alias {dark}   {cast darkness}
+#alias {light}  {cast light}
+#alias {infra}  {cast infravision}
 #alias {moon}   {cast moon sense}
+#alias {mirr}   {cast mirror image}
+
+#alias {pl}     {cast rift pulse}
+#alias {sp}     {cast spark birth}
 
 
 #nop
@@ -24,3 +32,10 @@
 #nop
 
 #alias {ress}   {accept ress from athalon}
+
+
+#nop
+#nop Trigger events
+#nop
+
+#action {You are not doing anything at the moment.}     {pl}
