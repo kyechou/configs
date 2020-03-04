@@ -1,10 +1,11 @@
 #config     {charset}       UTF-8
 #config     {color mode}    256
 #config     {color patch}   on
-#config     {command echo}  off
+#config     {command echo}  on
 #config     {speedwalk}     off
 #config     {verbatim}      off
 #config     {wordwrap}      off
+#config     {packet patch}  0.5
 
 #gag {^$}
 
