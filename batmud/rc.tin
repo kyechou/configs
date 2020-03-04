@@ -1,6 +1,7 @@
 #config     {charset}       UTF-8
 #config     {color mode}    256
-#config     {color patch}   off
+#config     {color patch}   on
+#config     {command echo}  off
 #config     {speedwalk}     off
 #config     {verbatim}      off
 #config     {wordwrap}      off
