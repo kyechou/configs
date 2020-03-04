@@ -1,19 +1,35 @@
 #nop sc set <name> (<mortlevel>)|{colorhp}/<maxhp> [{diffhp}]|{colorsp}/<maxsp> [{diffsp}]|{colorep}/<maxep> [{diffep}]|<cash> [{diffcash}]|<bank>|<weight>|<exp> [{diffexp}]|<alignment>
 
-#action {{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}} {
+#action {^{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}|{[^|]+}$} {
     #system {> logs/stats};
     #line {log} {logs/stats} {
         - %1 -\n\n
-        HitPoint:       %2\n
-        SpellPoint:     %3\n
-        EndurancePoint: %4\n
-        Cash:           %5\n
-        Bank:           %6\n
-        Weight:         %7\n
-        Experience:     %8\n
+        HP:     %2\n
+        SP:     %3\n
+        EP:     %4\n
+        Cash:   %5\n
+        Bank:   %6\n
+        Weight: %7\n
+        Exp:    %8\n
         [%9]
     };
     #line {gag}
 }
 
 #send{sc}
+
+
+#nop
+#nop Entity stats
+#nop
+
+#action {^--=  %+  HP:%d(%d) [%*] [%*] [%*]  =--$} {
+    #system {> logs/entity-stats};
+    #line {log} {logs/entity-stats} {
+        - %1 -\n\n
+        HP: %2/%3 [%4]\n
+        [%5]\n
+        [%6]
+    };
+    #line {gag}
+}

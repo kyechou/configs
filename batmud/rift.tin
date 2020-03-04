@@ -1,3 +1,11 @@
 #alias {rift}   {cast create rift}
 #alias {en}     {ensnare fire}
 #alias {sf}     {seek fire}
+
+#alias {bkn}    {cast beckon rift entity}
+#alias {est}    {cast establish entity control}
+#alias {dis}    {cast dismiss rift entity}
+#alias {regen}  {cast regenerate rift entity}
+#alias {smn}    {cast summon rift entity}
+
+#alias {esc}    {gem entities fire}
