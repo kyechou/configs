@@ -1,12 +1,4 @@
 accountsservice
-adobe-source-han-sans-cn-fonts
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
-adobe-source-han-sans-tw-fonts
-adobe-source-han-serif-cn-fonts
-adobe-source-han-serif-jp-fonts
-adobe-source-han-serif-kr-fonts
-adobe-source-han-serif-tw-fonts
 arc-icon-theme
 arc-solid-gtk-theme
 arp-scan
@@ -36,6 +28,7 @@ dmenu
 dnsmasq
 dunst
 e2fsprogs
+ebgaramond-otf
 ebtables
 elinks
 fakeroot
@@ -91,6 +84,8 @@ network-manager-applet
 networkmanager
 newsboat
 nmap
+noto-fonts-cjk
+noto-fonts-emoji
 ntfs-3g
 openssh
 openvpn
