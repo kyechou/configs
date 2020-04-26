@@ -63,7 +63,7 @@ bspc desktop '^1' --layout monocle
 # simple X hotkey daemon
 pkill -x sxhkd ; sxhkd &
 # input method daemon
-ibus-daemon --daemonize --replace
+ibus-daemon -drx
 # wallpaper
 feh --bg-fill ~/pic/wallpaper/snow.jpg
 # keyboard and mouse

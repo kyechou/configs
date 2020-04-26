@@ -81,7 +81,7 @@ highlight Normal guibg=NONE ctermbg=NONE
 highlight SpellBad ctermbg=167 ctermfg=234
 let c_syntax_for_h = 1
 set encoding=utf8
-set fileencodings=utf8,latin1,utf16,big5,gbk
+set fileencodings=utf8,big5,gbk,latin1,utf16
 set ffs=unix,dos,mac
 autocmd BufNewFile,BufRead *.maude set syntax=maude filetype=maude
 
