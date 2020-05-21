@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.8
+###  vlc 3.0.10
 ###
 
 ###
@@ -43,7 +43,7 @@
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.8 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.10 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -167,6 +167,42 @@
 
 # Open GL/GLES hardware converter (string)
 #glconv=
+
+# Rendering intent for color conversion (integer)
+#rendering-intent=1
+
+# Display primaries (integer)
+#target-prim=0
+
+# Display gamma / transfer function (integer)
+#target-trc=0
+
+# Tone-mapping algorithm (integer)
+#tone-mapping=3
+
+# Tone-mapping parameter (float)
+#tone-mapping-param=0.000000
+
+# Highlight clipped pixels (boolean)
+#tone-mapping-warn=0
+
+# Dithering algorithm (integer)
+#dither-algo=-1
+
+# Dither depth override (0 = framebuffer depth) (integer)
+#dither-depth=0
+
+# Desaturation strength (float)
+#desat-strength=0.750000
+
+# Desaturation exponent (float)
+#desat-exponent=1.500000
+
+# Desaturation base (float)
+#desat-base=0.180000
+
+# Maximum brightness boost (float)
+#max-boost=0.000000
 
 [flaschen] # Flaschen-Taschen video output
 
@@ -937,7 +973,7 @@
 [freetype] # Freetype2 font renderer
 
 # Font (string)
-freetype-font=Source Han Sans TW
+freetype-font=DejaVu Sans
 
 # Monospace Font (string)
 #freetype-monofont=Monospace
@@ -1565,6 +1601,68 @@ subsdec-encoding=UTF-8
 
 # Presentation Level (integer)
 #vbi-level=3
+
+[qsv] # Intel QuickSync Video encoder for MPEG4-Part10/MPEG2 (aka H.264/H.262)
+
+# Enable software mode (boolean)
+#sout-qsv-software=0
+
+# Codec Profile (string)
+#sout-qsv-h264-profile=unspecified
+
+# Codec Level (string)
+#sout-qsv-h264-level=unspecified
+
+# Codec Profile (string)
+#sout-qsv-mpeg2-profile=unspecified
+
+# Codec Level (string)
+#sout-qsv-mpeg2-level=unspecified
+
+# Group of Picture size (integer)
+#sout-qsv-gop-size=32
+
+# Group of Picture Reference Distance (integer)
+#sout-qsv-gop-refdist=4
+
+# IDR interval (integer)
+#sout-qsv-idr-interval=0
+
+# Target Usage (string)
+#sout-qsv-target-usage=quality
+
+# Rate Control Method (string)
+#sout-qsv-rc-method=vbr
+
+# Quantization parameter (integer)
+#sout-qsv-qp=0
+
+# Quantization parameter for I-frames (integer)
+#sout-qsv-qpi=0
+
+# Quantization parameter for P-frames (integer)
+#sout-qsv-qpp=0
+
+# Quantization parameter for B-frames (integer)
+#sout-qsv-qpb=0
+
+# Maximum Bitrate (integer)
+#sout-qsv-bitrate-max=0
+
+# Accuracy of RateControl (integer)
+#sout-qsv-accuracy=0
+
+# Convergence time of 'avbr' RateControl (integer)
+#sout-qsv-convergence=0
+
+# Number of slices per frame (integer)
+#sout-qsv-num-slice=0
+
+# Number of reference frames (integer)
+#sout-qsv-num-ref-frame=0
+
+# Number of parallel operations (integer)
+#sout-qsv-async-depth=4
 
 [a52] # ATSC A/52 (AC-3) audio decoder
 
@@ -3307,6 +3405,15 @@ sout-x264-tune=film
 # Use regular HTTP modules (boolean)
 #adaptive-use-access=0
 
+# Live Playback delay (ms) (integer)
+#adaptive-livedelay=15000
+
+# Max buffering (ms) (integer)
+#adaptive-maxbuffer=30000
+
+# Low latency (integer)
+#adaptive-lowlatency=-1
+
 [diracsys] # Dirac video demuxer
 
 # Value to adjust dts by (integer)
@@ -3883,10 +3990,10 @@ vout=any
 #sub-track=-1
 
 # Audio language (string)
-#audio-language=
+audio-language=Japanese
 
 # Subtitle language (string)
-sub-language=Japanese
+sub-language=Chinese
 
 # Menu language (string)
 #menu-language=
@@ -3997,7 +4104,7 @@ sub-language=Japanese
 #meta-url=
 
 # File caching (ms) (integer)
-#file-caching=300
+#file-caching=1000
 
 # Live capture caching (ms) (integer)
 #live-caching=300
@@ -4255,7 +4362,7 @@ metadata-network-access=1
 #global-key-faster=
 
 # Faster (string)
-#key-faster=+
+key-faster=Shift++
 
 # Slower (string)
 #global-key-slower=

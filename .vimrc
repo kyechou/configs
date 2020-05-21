@@ -80,8 +80,8 @@ colorscheme gruvbox
 highlight Normal guibg=NONE ctermbg=NONE
 highlight SpellBad ctermbg=167 ctermfg=234
 let c_syntax_for_h = 1
-set encoding=utf8
-set fileencodings=utf8,big5,gbk,latin1,utf16
+set encoding=utf-8
+set fileencodings=utf-8,big5,gbk,utf16,utf-16le,latin1
 set ffs=unix,dos,mac
 autocmd BufNewFile,BufRead *.maude set syntax=maude filetype=maude
 
