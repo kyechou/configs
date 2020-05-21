@@ -68,9 +68,9 @@ NAME='unknown'
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
     $RSYNC .Xmodmap batmud ~/
-    $RSYNC .config/bspwm .config/sxhkd .config/picom .config/cmus \
-        .config/dunst .config/polybar .config/termite .config/zathura \
-        .config/vlc .config/newsboat ~/.config/
+    $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
+        .config/polybar .config/termite .config/zathura .config/vlc \
+        .config/newsboat ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
@@ -85,9 +85,9 @@ NAME='unknown'
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.Xmodmap ~/batmud ./
-    $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/picom ~/.config/cmus \
-        ~/.config/dunst ~/.config/polybar ~/.config/ranger ~/.config/termite \
-        ~/.config/zathura ~/.config/vlc ~/.config/newsboat .config/
+    $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/cmus ~/.config/dunst \
+        ~/.config/polybar ~/.config/ranger ~/.config/termite ~/.config/zathura \
+        ~/.config/vlc ~/.config/newsboat .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
