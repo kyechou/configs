@@ -8,6 +8,7 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'vim-scripts/taglist.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'craigemery/vim-autotag', {'for': ['c', 'cpp']}
 Plug 'brookhong/cscope.vim', {'for': ['c', 'cpp']}
@@ -83,7 +84,8 @@ let c_syntax_for_h = 1
 set encoding=utf-8
 set fileencodings=utf-8,big5,gbk,utf16,utf-16le,latin1
 set ffs=unix,dos,mac
-autocmd BufNewFile,BufRead *.maude set syntax=maude filetype=maude
+autocmd BufNewFile,BufRead *.h      set syntax=cpp filetype=cpp
+autocmd BufNewFile,BufRead *.maude  set syntax=maude filetype=maude
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab and indentation
@@ -96,7 +98,6 @@ set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
-autocmd FileType c              set tabstop=8 shiftwidth=8 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
