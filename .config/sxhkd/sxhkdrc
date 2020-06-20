@@ -45,11 +45,11 @@ ctrl + F2
         xinput enable 'ELAN1200:00 04F3:3107 Touchpad'; \
     fi
 
-# touch screen
-ctrl + {F7,F8}
-    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
-        xinput {disable,enable} 'ELAN2556:00 04F3:25EE'; \
-    fi
+## touch screen
+#ctrl + {F7,F8}
+#    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+#        xinput {disable,enable} 'ELAN2556:00 04F3:25EE'; \
+#    fi
 
 # screen backlight
 ctrl + {F5,F6}
@@ -70,51 +70,51 @@ alt + Pause ; {r,p}
 
 # pulse audio
 alt + period
-    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            +2%; \
-    else \
+    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
             +1dB; \
-    fi
-alt + comma
-    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            -2%; \
     else \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            +2%; \
+    fi
+alt + comma
+    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
             -1dB; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            -2%; \
     fi
 alt + m
     pactl set-sink-volume \
-        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 0%
 XF86AudioRaiseVolume
-    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            +2%; \
-    else \
+    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
             +1dB; \
-    fi
-XF86AudioLowerVolume
-    if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
-            -2%; \
     else \
         pactl set-sink-volume \
             "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            +2%; \
+    fi
+XF86AudioLowerVolume
+    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
             -1dB; \
+    else \
+        pactl set-sink-volume \
+            "$(pactl list short sinks | grep output | head -n1 | cut -f2)" \
+            -2%; \
     fi
 XF86AudioMute
     pactl set-sink-volume \
-        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 13
+        "$(pactl list short sinks | grep output | head -n1 | cut -f2)" 0%
 
 # program shortcuts
 alt + ctrl + a
