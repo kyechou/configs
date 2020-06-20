@@ -190,13 +190,13 @@ client.background       $black
 # Pulse Audio controls
 set $output_sink "$(pactl list short sinks | grep output | head -n1 | cut -f2)"
 set $input_source "$(pactl list short sources | grep input | head -n1 | cut -f2)"
-bindsym $mod+period          exec --no-startup-id pactl set-sink-volume $output_sink +1dB
-bindsym $mod+comma           exec --no-startup-id pactl set-sink-volume $output_sink -1dB
-bindsym $mod+m               exec --no-startup-id pactl set-sink-volume $output_sink 13
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $output_sink +1dB
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $output_sink -1dB
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-volume $output_sink 13
-exec --no-startup-id pactl set-sink-volume $output_sink 13
+bindsym $mod+period          exec --no-startup-id pactl set-sink-volume $output_sink +2%
+bindsym $mod+comma           exec --no-startup-id pactl set-sink-volume $output_sink -2%
+bindsym $mod+m               exec --no-startup-id pactl set-sink-volume $output_sink 0%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $output_sink +2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $output_sink -2%
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-volume $output_sink 0%
+exec --no-startup-id pactl set-sink-volume $output_sink 0%
 exec --no-startup-id pactl set-source-volume $input_source 0%
 
 # Screen backlight
@@ -217,15 +217,13 @@ exec --no-startup-id xset m 0 0     # acceleration: 0, threshold: 0
 
 # Touchpad controls
 bindsym Control+F1 exec --no-startup-id \
-                        xinput disable 'pointer:ELAN1200:00 04F3:306F Touchpad'
+                        xinput disable 'ELAN1200:00 04F3:3107 Touchpad'
 bindsym Control+F2 exec --no-startup-id \
-                        xinput enable  'pointer:ELAN1200:00 04F3:306F Touchpad'
+                        xinput enable  'ELAN1200:00 04F3:3107 Touchpad'
 
-# Touch screen controls
-bindsym Control+F7 exec --no-startup-id \
-                        xinput disable 'pointer:ELAN2556:00 04F3:25EE'
-bindsym Control+F8 exec --no-startup-id \
-                        xinput enable  'pointer:ELAN2556:00 04F3:25EE'
+## Touch screen controls
+#bindsym Control+F7 exec --no-startup-id xinput disable 'ELAN2556:00 04F3:25EE'
+#bindsym Control+F8 exec --no-startup-id xinput enable  'ELAN2556:00 04F3:25EE'
 
 # Program shortcuts
 bindsym $mod+d exec j4-dmenu-desktop \
@@ -246,15 +244,14 @@ bindsym Print          exec gnome-screenshot -i
 
 # Startup programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/raccoon-wallpaper-1920x1200.jpg
-exec_always --no-startup-id xinput disable  'pointer:ELAN2556:00 04F3:25EE'
-exec_always --no-startup-id xinput enable   'pointer:ELAN1200:00 04F3:306F Touchpad'
-exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled Default' 1
-exec_always --no-startup-id xinput set-prop 'pointer:ELAN1200:00 04F3:306F Touchpad' 'libinput Tapping Enabled' 1
+exec_always --no-startup-id feh --bg-fill ~/pic/wallpaper/snow.jpg
+exec_always --no-startup-id xinput enable   'ELAN1200:00 04F3:3107 Touchpad'
+exec_always --no-startup-id xinput set-prop 'ELAN1200:00 04F3:3107 Touchpad' 'libinput Tapping Enabled' 1
+exec --no-startup-id udiskie --no-automount --tray
 exec --no-startup-id unclutter --timeout 3 --jitter 10 --ignore-scrolling
 exec --no-startup-id lxpolkit   # needed by virt-manager
 exec --no-startup-id nm-applet
+exec --no-startup-id workrave
 exec --no-startup-id ibus-daemon --daemonize --replace
-exec --no-startup-id udiskie -At
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec rambox'
 exec --no-startup-id sh -c 'until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done; exec thunderbird'
