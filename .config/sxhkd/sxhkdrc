@@ -31,19 +31,25 @@ ctrl + F4
 ctrl + F1
     if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
         xinput disable 'SynPS/2 Synaptics TouchPad'; \
+    elif [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+        xinput disable 'ELAN1200:00 04F3:306F Touchpad'; \
     else \
-        xinput disable 'pointer:ELAN1200:00 04F3:306F Touchpad'; \
+        xinput disable 'ELAN1200:00 04F3:3107 Touchpad'; \
     fi
 ctrl + F2
     if [[ ${HOSTNAME:-$(uname -n)} == *"thinkpad"* ]]; then \
         xinput enable 'SynPS/2 Synaptics TouchPad'; \
+    elif [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+        xinput enable 'ELAN1200:00 04F3:306F Touchpad'; \
     else \
-        xinput enable 'pointer:ELAN1200:00 04F3:306F Touchpad'; \
+        xinput enable 'ELAN1200:00 04F3:3107 Touchpad'; \
     fi
 
 # touch screen
 ctrl + {F7,F8}
-    xinput {disable,enable} 'pointer:ELAN2556:00 04F3:25EE'
+    if [[ ${HOSTNAME:-$(uname -n)} == *"q525u"* ]]; then \
+        xinput {disable,enable} 'ELAN2556:00 04F3:25EE'; \
+    fi
 
 # screen backlight
 ctrl + {F5,F6}
