@@ -70,7 +70,7 @@ feh --bg-fill ~/pic/wallpaper/snow.jpg
 xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
 xset m 0 0          # acceleration: 0, threshold: 0
 # screen backlight
-light -S 40
+light -S 70
 # disable DPMS and screen saver blanking
 xset s off -dpms
 # pulse audio
