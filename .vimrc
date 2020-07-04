@@ -16,8 +16,8 @@ Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
 " Syntax
 Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'vim-scripts/promela.vim', {'for': 'promela'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'vim-scripts/promela.vim', {'for': 'promela'}
 Plug 'c3m3gyanesh/p4-syntax-highlighter-collection', {'rtp': 'vim', 'for': 'p4'}
 Plug 'vim-scripts/maude.vim', {'for': 'maude'}
 " Colorscheme
@@ -160,9 +160,12 @@ endfunction
 " => plasticboy/vim-markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
+let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
