@@ -67,7 +67,7 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-    $RSYNC .Xmodmap batmud ~/
+    $RSYNC .Xmodmap batmud switch-monitor.sh ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/termite .config/zathura .config/vlc \
         .config/newsboat ~/.config/
@@ -84,7 +84,7 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ~/batmud ./
+        ~/.tmux.conf ~/.Xmodmap ~/batmud ~/switch-monitor.sh ./
     $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/cmus ~/.config/dunst \
         ~/.config/polybar ~/.config/ranger ~/.config/termite ~/.config/zathura \
         ~/.config/vlc ~/.config/newsboat .config/
