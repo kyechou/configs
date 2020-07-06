@@ -157,6 +157,12 @@ function! LightlineTabModified(n)
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Yggdroot/indentLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_char = '│' " '┆', '┊', '│', '▏'
+let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plasticboy/vim-markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
