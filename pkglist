@@ -112,7 +112,6 @@ perl-image-exiftool
 pkgconf
 polybar
 pulseaudio
-python-ueberzug
 qemu
 rambox-bin
 ranger-git
@@ -121,6 +120,7 @@ rsync
 sed
 soundconverter
 spotify
+steam
 sudo
 sxhkd
 syncthing
@@ -149,6 +149,7 @@ ttf-hack
 ttf-liberation
 ttf-tw
 udiskie
+ueberzug
 uiuc-vpn
 unclutter
 unrar
@@ -215,6 +216,8 @@ xorg-xwininfo
 xorg-xwud
 yay
 zathura
+zathura-djvu
 zathura-pdf-mupdf
+zathura-ps
 zip
 zoom
