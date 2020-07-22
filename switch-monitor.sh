@@ -40,8 +40,10 @@ done
 
 if [[ -f "$NVFILE" ]]; then
     sudo mv "$NVFILE" "$BACKUP"
+    echo 'Switched to Intel driving laptop monitor'
 elif [[ -f "$BACKUP" ]]; then
     sudo mv "$BACKUP" "$NVFILE"
+    echo 'Switched to Nvidia driving external monitor'
 fi
 
 # vim: set ts=4 sw=4 et:
