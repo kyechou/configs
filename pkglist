@@ -10,7 +10,7 @@ baobab
 base
 bash-completion
 biber
-bind-tools
+bind
 binutils
 bison
 bridge-utils
