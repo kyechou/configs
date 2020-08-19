@@ -150,7 +150,7 @@ Print
 
 # restart bspwm
 alt + ctrl + shift + r
-    bspc wm -r
+    bspc wm --restart
 
 # reset monitor
 alt + ctrl + shift + m
@@ -158,37 +158,37 @@ alt + ctrl + shift + m
 
 # close and kill windows
 alt + ctrl + {_,shift + }q
-    bspc node -{c,k}
+    bspc node --{close,kill}
 
 # set the window state
 alt + e
     if bspc query -T -d | grep '"layout":"monocle"' >/dev/null; then \
-        bspc desktop -l tiled; \
+        bspc desktop --layout tiled; \
     else \
-        bspc node -t tiled; \
+        bspc node --state tiled; \
     fi
 alt + shift + e
     if bspc query -T -n | grep '"state":"pseudo_tiled"' >/dev/null; then \
-        bspc node -t tiled; \
+        bspc node --state tiled; \
     else \
-        bspc node -t pseudo_tiled; \
+        bspc node --state pseudo_tiled; \
     fi
 alt + @space
     if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
-        bspc node -t tiled; \
+        bspc node --state tiled; \
     else \
-        bspc node -t floating; \
+        bspc node --state floating; \
     fi
 alt + f
     if bspc query -T -n | grep '"state":"fullscreen"' >/dev/null; then \
-        bspc node -t tiled; \
+        bspc node --state tiled; \
     else \
-        bspc node -t fullscreen; \
+        bspc node --state fullscreen; \
     fi
 
 # alternate between the tiled and monocle layout
 alt + w
-    bspc desktop -l monocle
+    bspc desktop --layout monocle
 
 #
 # focus/swap
@@ -196,74 +196,81 @@ alt + w
 
 # focus the node in the given direction
 alt + {j,k}
-    bspc node -f {south,north}
+    bspc node --focus {south,north}
 alt + h
     if bspc query -T -d | grep '"layout":"monocle"' >/dev/null; then \
-        bspc node -f prev.local; \
+        bspc node --focus prev.local.leaf; \
     else \
-        bspc node -f west; \
+        bspc node --focus west; \
     fi
 alt + l
     if bspc query -T -d | grep '"layout":"monocle"' >/dev/null; then \
-        bspc node -f next.local; \
+        bspc node --focus next.local.leaf; \
     else \
-        bspc node -f east; \
+        bspc node --focus east; \
     fi
 
 # swap/move the node in the given direction
 alt + ctrl + h
     if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
-        bspc node -v -20 0; \
+        bspc node --move -20 0; \
     elif bspc query -T -d | grep '"layout":"monocle"' >/dev/null; then \
-        bspc node -s prev.local; \
+        bspc node --swap prev.local.leaf; \
     else \
-        bspc node -s west; \
+        bspc node --swap west; \
     fi
 alt + ctrl + j
     if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
-        bspc node -v 0 20; \
+        bspc node --move 0 20; \
     else \
-        bspc node -s south; \
+        bspc node --swap south; \
     fi
 alt + ctrl + k
     if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
-        bspc node -v 0 -20; \
+        bspc node --move 0 -20; \
     else \
-        bspc node -s north; \
+        bspc node --swap north; \
     fi
 alt + ctrl + l
     if bspc query -T -n | grep '"state":"floating"' >/dev/null; then \
-        bspc node -v 20 0; \
+        bspc node --move 20 0; \
     elif bspc query -T -d | grep '"layout":"monocle"' >/dev/null; then \
-        bspc node -s next.local; \
+        bspc node --swap next.local.leaf; \
     else \
-        bspc node -s east; \
+        bspc node --swap east; \
     fi
 
 # focus or send to the given desktop
 alt + {_,ctrl + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop --focus,node --to-desktop} '^{1-9,10}'
 
 # focus the node for the given path jump
 alt + {a,b,c,shift + c}
-    bspc node -f @{parent,brother,first,second}
+    bspc node --focus @{parent,brother,first,second}
 
 # focus the next/previous desktop in the current monitor
 alt + bracket{left,right}
-    bspc desktop -f {prev,next}.local
+    bspc desktop --focus {prev,next}.local
 
 # send the node to the next/previous desktop in the current monitor
 alt + ctrl + bracket{left,right}
-    bspc node -d {prev,next}.local
+    bspc node --to-desktop {prev,next}.local
+
+# bubble up/down the current desktop with the next/previous desktop in the
+# current monitor
+alt + ctrl + shift + bracket{left,right}
+    bspc desktop --bubble {prev,next}
 
 # focus the last node/desktop
-alt + {grave,Tab}
-    bspc {node,desktop} -f last
+alt + grave
+    bspc node --focus last.leaf
+alt + Tab
+    bspc desktop --focus last.occupied
 
 # focus the older or newer node in the focus history
 alt + {o,i}
     bspc wm -h off; \
-    bspc node {older,newer} -f; \
+    bspc node {older,newer}.leaf --focus; \
     bspc wm -h on
 
 #
