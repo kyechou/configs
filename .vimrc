@@ -160,7 +160,8 @@ endfunction
 " => Yggdroot/indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char = '│' " '┆', '┊', '│', '▏'
-let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml']
+let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml', "tex"]
+"let g:indentLine_setConceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plasticboy/vim-markdown

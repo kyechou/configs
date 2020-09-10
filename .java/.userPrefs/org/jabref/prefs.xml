@@ -39,10 +39,10 @@
   <entry key="bindings" value=""/>
   <entry key="citeCommand" value="\cite"/>
   <entry key="collectTelemetry" value="false"/>
-  <entry key="columnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
-  <entry key="columnSortOrder" value="field:year"/>
-  <entry key="columnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;ASCENDING"/>
-  <entry key="columnWidths" value="28.0;28.0;28.0;121.08501150697556;243.43756853138308;536.2516489493553;65.75570673909208;425.4626306413354;174.7609545384941"/>
+  <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle;bibtexkey"/>
+  <entry key="columnSortOrder" value=""/>
+  <entry key="columnSortTypes" value=""/>
+  <entry key="columnWidths" value="100;100;100;100;100;100"/>
   <entry key="confirmDelete" value="false"/>
   <entry key="consoleCommand" value=""/>
   <entry key="cyclePreview" value="acm-sig-proceedings-long-author-list.csl;acm-sig-proceedings.csl;/ieee.csl"/>
@@ -55,7 +55,7 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.6436170212765957"/>
+  <entry key="entryEditorHeightFX" value="0.6369668246445498"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -103,10 +103,14 @@
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
   <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
+  <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
+  <entry key="mainTableColumnSortOrder" value="field:year"/>
+  <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;ASCENDING"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;98.71780147662018;400.8712059064807;629.1648892534864;78.57424118129614;172.57752255947497;132.29040196882693"/>
   <entry key="mainWindowPosX" value="0.0"/>
   <entry key="mainWindowPosY" value="27.0"/>
   <entry key="mainWindowSizeX" value="1920.0"/>
-  <entry key="mainWindowSizeY" value="1053.0"/>
+  <entry key="mainWindowSizeY" value="1173.0"/>
   <entry key="markImportedEntries" value="false"/>
   <entry key="markedEntryBackground0" value="255:255:180"/>
   <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -140,7 +144,7 @@
   <entry key="previewEnabled" value="true"/>
   <entry key="previewPanelHeight" value="126"/>
   <entry key="previewPanelHeightFX" value="0.65"/>
-  <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\bibtexkey&quot;&gt;\begin{bibtexkey} (\bibtexkey)&lt;/a&gt;\end{bibtexkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
+  <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\bibtexkey&quot;&gt;\begin{bibtexkey} (\bibtexkey)&lt;/a&gt;\end{bibtexkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
   <entry key="priDescending" value="true"/>
   <entry key="priSort" value="year"/>
   <entry key="proxyHostname" value=""/>
@@ -158,7 +162,7 @@
   <entry key="searchGlobal" value="false"/>
   <entry key="secDescending" value="false"/>
   <entry key="secSort" value="title"/>
-  <entry key="selectedFetcherIndex" value="7"/>
+  <entry key="selectedFetcherIndex" value="3"/>
   <entry key="serializeSpecialFields" value="false"/>
   <entry key="showAdvancedHints" value="true"/>
   <entry key="showLatexCitations" value="true"/>
@@ -169,8 +173,10 @@
   <entry key="showReadColumn" value="true"/>
   <entry key="showRecommendations" value="true"/>
   <entry key="showRelevanceColumn" value="false"/>
+  <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
+  <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.1328125"/>
+  <entry key="sidePaneWidthFX" value="0.146875"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -203,7 +209,7 @@
   <entry key="userDefaultFileBrowserApplication" value="true"/>
   <entry key="validFieldBackgroundColor" value="255:255:255"/>
   <entry key="validateInEntryEditor" value="true"/>
-  <entry key="versionIgnoreUpdate" value="5.0"/>
+  <entry key="versionIgnoreUpdate" value="5.1"/>
   <entry key="warnAboutDuplicatesInInspection" value="true"/>
   <entry key="warnBeforeOverwritingKey" value="true"/>
   <entry key="webSearchVisible" value="true"/>
