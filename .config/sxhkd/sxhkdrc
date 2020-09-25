@@ -285,6 +285,14 @@ alt + super + {h,j,k,l}
 alt + super + shift + {h,j,k,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# balance the nodes ratio in the current desktop
+alt + ctrl + shift + b
+    bspc node @/ --balance
+
+# equalize the nodes ratio in the current desktop
+alt + ctrl + shift + e
+    bspc node @/ --equalize
+
 #
 # rotate
 #
