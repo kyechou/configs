@@ -20,6 +20,7 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'vim-scripts/promela.vim', {'for': 'promela'}
 Plug 'c3m3gyanesh/p4-syntax-highlighter-collection', {'rtp': 'vim', 'for': 'p4'}
 Plug 'vim-scripts/maude.vim', {'for': 'maude'}
+Plug 'vim-scripts/click.vim', {'for': 'click'}
 " Colorscheme
 Plug 'morhetz/gruvbox'
 
@@ -86,6 +87,7 @@ set fileencodings=utf-8,big5,gbk,utf16,utf-16le,latin1
 set ffs=unix,dos,mac
 autocmd BufNewFile,BufRead *.h      set syntax=cpp filetype=cpp
 autocmd BufNewFile,BufRead *.maude  set syntax=maude filetype=maude
+autocmd BufNewFile,BufRead *.click  set syntax=click filetype=click
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab and indentation
@@ -213,9 +215,9 @@ nnoremap <C-j> :edit!<CR>
 nnoremap <C-@><C-i> :term<CR>
 " autocmd: compile
 autocmd FileType c       nnoremap <C-c> :! gcc % -o %:r -Wall -Wextra -Wpedantic
-                                           \ -Werror -O3 -std=c11<CR>
+                                           \ -Werror -O3 -std=c17<CR>
 autocmd FileType cpp     nnoremap <C-c> :! g++ % -o %:r -Wall -Wextra -Wpedantic
-                                           \ -Werror -O3 -std=c++14<CR>
+                                           \ -Werror -O3 -std=c++17<CR>
 " autocmd: execute
 autocmd FileType c       nnoremap <C-x> :! ./%:r<CR>
 autocmd FileType cpp     nnoremap <C-x> :! ./%:r<CR>
