@@ -61,6 +61,7 @@ NAME='unknown'
     if [[ "$NAME" = 'Arch Linux' ]]; then
         $RSYNC private/.gnupg ~/
         sudo $RSYNC makepkg.conf /etc/
+        sudo $RSYNC reflector.conf /etc/xdg/reflector/
     else
         $GPG --import private/.gnupg/*.asc
     fi
@@ -97,6 +98,8 @@ NAME='unknown'
         $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/makepkg.conf ]] && \
         $RSYNC /etc/makepkg.conf ./
+    [[ -r /etc/xdg/reflector/reflector.conf ]] && \
+        $RSYNC /etc/xdg/reflector/reflector.conf ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
     $RSYNC ~/.ssh ~/.gnupg private/
