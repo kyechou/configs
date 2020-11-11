@@ -47,6 +47,7 @@ set tags=./tags;
 set viminfo=""
 set viminfofile="NONE"
 set sessionoptions=blank,buffers,folds,help,options,resize,tabpages,winsize,terminal,slash,unix
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
