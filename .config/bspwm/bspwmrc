@@ -117,4 +117,4 @@ autostart workrave
 #
 until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
 autostart thunderbird
-#autostart rambox
+#autostart ferdi
