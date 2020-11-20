@@ -36,6 +36,7 @@ edk2-ovmf
 elinks
 fakeroot
 feh
+ferdi-bin
 file
 file-roller
 findutils
@@ -115,7 +116,6 @@ pkgconf
 polybar
 pulseaudio
 qemu
-rambox-bin
 ranger-git
 reflector
 rsync
