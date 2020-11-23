@@ -76,6 +76,7 @@ NAME='unknown'
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
     mkdir -p ~/.elinks && $RSYNC .elinks/elinks.conf ~/.elinks/
+    sudo $RSYNC logid.cfg /etc/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
@@ -94,12 +95,14 @@ NAME='unknown'
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
     mkdir -p .elinks && $RSYNC ~/.elinks/elinks.conf .elinks/
     pacman -Qeq > pkglist
-    [[ -r /etc/iptables/iptables.rules ]] && \
-        $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/makepkg.conf ]] && \
         $RSYNC /etc/makepkg.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] && \
         $RSYNC /etc/xdg/reflector/reflector.conf ./
+    [[ -r /etc/logid.cfg ]] && \
+        $RSYNC /etc/logid.cfg ./
+    [[ -r /etc/iptables/iptables.rules ]] && \
+        $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
     $RSYNC ~/.ssh ~/.gnupg private/
