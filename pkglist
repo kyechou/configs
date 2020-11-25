@@ -13,6 +13,7 @@ biber
 bind
 binutils
 bison
+blueberry
 bridge-utils
 browserpass-firefox
 bspwm
@@ -36,7 +37,7 @@ edk2-ovmf
 elinks
 fakeroot
 feh
-ferdi-bin
+ferdi-git
 file
 file-roller
 findutils
@@ -83,6 +84,7 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux
 linux-firmware
+logiops-git
 lxappearance
 lxrandr
 lxsession
