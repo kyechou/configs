@@ -60,6 +60,7 @@ NAME='unknown'
     $RSYNC private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
         $RSYNC private/.gnupg ~/
+        $RSYNC .config/yay ~/.config/
         sudo $RSYNC makepkg.conf /etc/
         sudo $RSYNC reflector.conf /etc/xdg/reflector/
     else
@@ -87,9 +88,9 @@ NAME='unknown'
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.Xmodmap ~/switch-monitor.sh ./
-    $RSYNC ~/.config/bspwm ~/.config/sxhkd ~/.config/cmus ~/.config/dunst \
-        ~/.config/polybar ~/.config/ranger ~/.config/termite ~/.config/zathura \
-        ~/.config/vlc ~/.config/newsboat .config/
+    $RSYNC ~/.config/yay ~/.config/ranger ~/.config/bspwm ~/.config/sxhkd \
+        ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
+        ~/.config/zathura ~/.config/vlc ~/.config/newsboat .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
