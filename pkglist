@@ -1,4 +1,5 @@
 accountsservice
+arc-icon-theme-git
 arc-solid-gtk-theme
 arp-scan
 astyle
@@ -108,7 +109,6 @@ openvpn
 p7zip
 pacman
 pacman-contrib
-paper-icon-theme-git
 parted
 pass
 patch
