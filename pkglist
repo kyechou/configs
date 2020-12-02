@@ -1,5 +1,4 @@
 accountsservice
-arc-icon-theme
 arc-solid-gtk-theme
 arp-scan
 astyle
@@ -85,7 +84,7 @@ lightdm-gtk-greeter-settings
 linux
 linux-firmware
 logiops-git
-lxappearance
+lxappearance-gtk3
 lxrandr
 lxsession
 m4
@@ -109,6 +108,7 @@ openvpn
 p7zip
 pacman
 pacman-contrib
+paper-icon-theme-git
 parted
 pass
 patch
