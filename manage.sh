@@ -56,7 +56,7 @@ NAME='unknown'
 
 [[ $DEPLOY -eq 1 ]] && { \
     $RSYNC .bashrc .bash_profile .profile .vimrc .vim .gitconfig .tmux.conf ~/
-    $RSYNC .config/ranger ~/.config/
+    $RSYNC .config/nnn ~/.config/
     $RSYNC private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
         $RSYNC private/.gnupg ~/
@@ -88,7 +88,7 @@ NAME='unknown'
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.Xmodmap ~/switch-monitor.sh ./
-    $RSYNC ~/.config/yay ~/.config/ranger ~/.config/bspwm ~/.config/sxhkd \
+    $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
         ~/.config/zathura ~/.config/vlc ~/.config/newsboat .config/
     mkdir -p .java/.userPrefs/org && \
