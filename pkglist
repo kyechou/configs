@@ -44,6 +44,7 @@ findutils
 firefox-developer-edition
 flashplugin
 flex
+fzf
 gaupol
 gawk
 gcc
@@ -77,6 +78,7 @@ intel-ucode
 j4-dmenu-desktop
 jabref
 less
+libarchive
 libreoffice-fresh
 libtool
 light
@@ -99,6 +101,7 @@ network-manager-applet
 networkmanager
 newsboat
 nmap
+nnn
 nordvpn-bin
 noto-fonts-cjk
 noto-fonts-emoji
@@ -114,14 +117,12 @@ parted
 pass
 patch
 pavucontrol
-perl-image-exiftool
 pkgconf
 polybar
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 qemu
-ranger-git
 reflector
 rsync
 sed
@@ -129,6 +130,7 @@ soundconverter
 spotify
 sudo
 sxhkd
+sxiv
 syncthing
 system-config-printer
 tcpdump
@@ -156,7 +158,6 @@ ttf-liberation
 ttf-nerd-fonts-symbols
 ttf-tw
 udiskie
-ueberzug
 uiuc-vpn
 unclutter
 unrar

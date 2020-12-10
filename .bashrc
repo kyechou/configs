@@ -14,32 +14,39 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export VISUAL=vim
+export PAGER=less
 export GPG_TTY=$(tty)
 export BROWSER=firefox-developer-edition
-export RANGER_LOAD_DEFAULT_RC=FALSE
 export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
-# Bash
-[ "${BASH#*bash}" != "$BASH" ] && \
-    [ -r /usr/share/bash-completion/bash_completion ] && \
+# nnn
+[[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
+export NNN_OPTS='cdeEQRUx'
+export NNN_OPENER=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke
+export GUI=1
+export NNN_PLUG='p:getplugs;o:fzopen;f:fzcd;s:suedit'
+export NNN_COLORS='#6f6f6f6f'
+export NNN_FCOLORS='c1e26f2900607bf7c6d6abc4'
+export NNN_ARCHIVE='\\.(7z|bz2|gz|tar|tgz|xz|zip)$'
+export NNN_TRASH=1
+export NNN_FIFO='/tmp/nnn.fifo'
+
+# bash
+[[ "${BASH#*bash}" != "$BASH" ]] && \
+    [[ -r /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
 # history settings
 HISTCONTROL=ignoreboth
-HISTSIZE=5000
+HISTSIZE=1000
 HISTFILESIZE=1000
-shopt -s histappend
-LESSHISTFILE=/dev/null
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-# globstar
-shopt -s globstar
-# start vi mode
-set -o vi
+shopt -s checkwinsize   # check window size after each external command
+shopt -s histappend     # append the history file
+shopt -s globstar       # globstar **
+set -o vi               # start vi mode
 
 # colored less for interactive shell
 [[ $- == *i* ]] && {
