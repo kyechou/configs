@@ -21,7 +21,7 @@ background = #282828
 background-alt = #444
 foreground = #d5c4a1
 foreground-alt = #776660
-primary = #83b5d0
+primary = #9d85d8
 secondary = #f49624
 alert = #d3869b
 
@@ -112,7 +112,7 @@ label-separator-padding =
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:40:...%
+label = %{F#9d85d8}%title:0:40:...%%{F-}
 
 
 [module/filesystem]
@@ -120,7 +120,7 @@ type = internal/fs
 interval = 30
 mount-0 = /
 mount-1 = /home
-label-mounted = %{F#f49624}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#9d85d8}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% unmounted
 label-unmounted-foreground = ${colors.foreground-alt}
 

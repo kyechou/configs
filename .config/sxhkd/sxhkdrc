@@ -15,11 +15,11 @@ alt + ctrl + r
 # program launcher
 alt + d
     j4-dmenu-desktop \
-    --dmenu='dmenu -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11'
+    --dmenu='dmenu -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#9d85d8 -sf black -fn Hack-11'
 
 # pass password manager
 alt + p
-    passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#8ec07c -sf black -fn Hack-11
+    passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#9d85d8 -sf black -fn Hack-11
 
 # keyboard and mouse config
 ctrl + F3
@@ -128,7 +128,7 @@ alt + ctrl + c
 alt + ctrl + d
     gnome-dictionary
 alt + ctrl + f
-    termite -e ranger
+    termite -e nnn
 alt + ctrl + m
     termite -e cmus
 alt + ctrl + n
