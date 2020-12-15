@@ -89,10 +89,10 @@ is_mac() {
 
 handle_pdf() {
     if [ "$GUI" -ne 0 ] && is_mac; then
-        open "${FPATH}" >/dev/null 2>&1 &
+        nohup open "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which zathura >/dev/null 2>&1; then
-        zathura "${FPATH}" >/dev/null 2>&1 &
+        nohup zathura "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif which pdftotext >/dev/null 2>&1; then
         ## Preview as text conversion
@@ -115,7 +115,7 @@ handle_audio() {
         mpv "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which vlc >/dev/null 2>&1; then
-        vlc "${FPATH}" >/dev/null 2>&1 &
+        nohup vlc "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif which media_client >/dev/null 2>&1; then
         media_client play "${FPATH}" >/dev/null 2>&1 &
@@ -131,16 +131,16 @@ handle_audio() {
 
 handle_video() {
     if [ "$GUI" -ne 0 ] && is_mac; then
-        open "${FPATH}" >/dev/null 2>&1 &
+        nohup open "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which smplayer >/dev/null 2>&1; then
-        smplayer "${FPATH}" >/dev/null 2>&1 &
+        nohup smplayer "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which mpv >/dev/null 2>&1; then
-        mpv "${FPATH}" >/dev/null 2>&1 &
+        nohup mpv "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which vlc >/dev/null 2>&1; then
-        vlc "${FPATH}" >/dev/null 2>&1 &
+        nohup vlc "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif which ffmpegthumbnailer >/dev/null 2>&1; then
         # Thumbnail
@@ -219,7 +219,7 @@ handle_extension() {
         ## OpenDocument
         odt|ods|odp|sxw|doc|docx|ppt|pptx|xls|xlsx)
             if [ "$GUI" -ne 0 ] && which libreoffice >/dev/null 2>&1; then
-                libreoffice "${FPATH}" >/dev/null 2>&1 &
+                nohup libreoffice "${FPATH}" >/dev/null 2>&1 &
                 exit 0
             elif which odt2txt >/dev/null 2>&1; then
                 ## Preview as text conversion
@@ -284,7 +284,7 @@ load_dir() {
     count="$(listimages | grep -a -m 1 -ZznF "$target" | cut -d: -f1)"
 
     if [ -n "$count" ]; then
-        listimages | xargs -0 "$1" -apq -n "$count" --
+        listimages | xargs -0 nohup "$1" -apq -n "$count" --
     else
         shift
         "$1" -- "$@" # fallback
@@ -314,7 +314,7 @@ handle_multimedia() {
         ## Image
         image/*)
             if [ "$GUI" -ne 0 ] && is_mac; then
-                open "${FPATH}" >/dev/null 2>&1 &
+                nohup open "${FPATH}" >/dev/null 2>&1 &
                 exit 0
             elif [ "$GUI" -ne 0 ] && which imvr >/dev/null 2>&1; then
                 load_dir imvr "${FPATH}" >/dev/null 2>&1 &
@@ -485,10 +485,10 @@ handle_mime() {
 
 handle_fallback() {
     if [ "$GUI" -ne 0 ] && which xdg-open >/dev/null 2>&1; then
-        xdg-open "${FPATH}" >/dev/null 2>&1 &
+        nohup xdg-open "${FPATH}" >/dev/null 2>&1 &
         exit 0
     elif [ "$GUI" -ne 0 ] && which open >/dev/null 2>&1; then
-        open "${FPATH}" >/dev/null 2>&1 &
+        nohup open "${FPATH}" >/dev/null 2>&1 &
         exit 0
     fi
 
