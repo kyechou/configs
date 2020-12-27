@@ -4,6 +4,7 @@ arc-solid-gtk-theme
 arp-scan
 astyle
 atool
+aur-out-of-date
 autoconf
 automake
 baobab
@@ -77,6 +78,7 @@ inetutils
 intel-ucode
 j4-dmenu-desktop
 jabref
+jq
 less
 libarchive
 libreoffice-fresh
