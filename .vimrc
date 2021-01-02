@@ -210,6 +210,8 @@ nnoremap <C-e> :tabedit<Space>
 nnoremap <C-k> :tabclose<CR>
 nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
+nnoremap <C-Right> :tabmove +1<CR>
+nnoremap <C-Left> :tabmove -1<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
 nnoremap <C-@><C-i> :term<CR>
