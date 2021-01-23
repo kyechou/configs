@@ -50,6 +50,7 @@ bspc config pointer_modifier    mod1    # alt
 bspc config click_to_focus      any
 
 bspc rule -a Zathura            state=tiled
+bspc rule -a Sxiv               state=floating
 bspc rule -a Pavucontrol        state=floating
 bspc rule -a Lxappearance       state=floating
 bspc rule -a Blueman-manager    state=floating
