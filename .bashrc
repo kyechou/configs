@@ -23,7 +23,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
 # nnn
 [[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
-export NNN_OPTS='cdeEQRUx'
+export NNN_OPTS='cdeEQRU'
 export NNN_OPENER=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke
 export GUI=1
 export NNN_PLUG='p:getplugs;o:fzopen;f:fzcd;s:suedit'
