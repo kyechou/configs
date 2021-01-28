@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE map SYSTEM "http://java.sun.com/dtd/preferences.dtd">
 <map MAP_XML_VERSION="1.0">
+  <entry key="AskAutoNamingPDFsAgain" value="true"/>
   <entry key="CleanUpConvertToBiblatex" value="false"/>
   <entry key="CleanUpConvertToBibtex" value="true"/>
   <entry key="CleanUpDOI" value="true"/>
@@ -14,6 +15,7 @@
   <entry key="CleanUpUpgradeExternalLinks" value="false"/>
   <entry key="KeyPatternRegex" value=""/>
   <entry key="KeyPatternReplacement" value=""/>
+  <entry key="TeXstudioPath" value="texstudio"/>
   <entry key="abbrAuthorNames" value="false"/>
   <entry key="acceptRecommendations" value="false"/>
   <entry key="activeFieldEditorBackgroundColor" value="220:220:255"/>
@@ -27,7 +29,7 @@
   <entry key="autoCompFirstNameMode" value="BOTH"/>
   <entry key="autoCompLF" value="false"/>
   <entry key="autoComplete" value="false"/>
-  <entry key="autoCompleteFields" value="title;keywords;author;editor;publisher;related;journal;crossref;entryset"/>
+  <entry key="autoCompleteFields" value="related;author;crossref;publisher;journal;keywords;editor;entryset;title"/>
   <entry key="autoOpenForm" value="true"/>
   <entry key="autoResizeMode" value="true"/>
   <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
@@ -52,29 +54,32 @@
   <entry key="customTabName_1" value="Abstract"/>
   <entry key="customTabName_2" value="Comments"/>
   <entry key="cyclePreview" value="acm-sig-proceedings-long-author-list.csl;acm-sig-proceedings.csl;/ieee.csl"/>
-  <entry key="cyclePreviewPos" value="0"/>
+  <entry key="cyclePreviewPos" value="2"/>
   <entry key="defaultBibtexKeyPattern" value="[year]-[authEtAl]"/>
   <entry key="defaultEncoding" value="UTF-8"/>
   <entry key="defaultOwner" value="kyc"/>
   <entry key="defaultShowSource" value="false"/>
-  <entry key="defaultUnwantedBibtexKeyCharacters" value="-`ʹ:!;?^+"/>
+  <entry key="defaultUnwantedBibtexKeyCharacters" value="`ʹ:!;?^+"/>
   <entry key="displayGroupCount" value="true"/>
   <entry key="doNotResolveStringsFor" value="url"/>
   <entry key="downloadLinkedFiles" value="true"/>
+  <entry key="emacsParameters" value="-n -e"/>
+  <entry key="emacsPath" value="emacsclient"/>
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.611764705882353"/>
+  <entry key="entryEditorHeightFX" value="0.6160427807486631"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
-  <entry key="exportPriSort" value="bibtexkey"/>
+  <entry key="exportPriSort" value="citationkey"/>
   <entry key="exportSecDescending" value="false"/>
   <entry key="exportSecSort" value="author"/>
   <entry key="exportTerDescending" value="true"/>
   <entry key="exportTerSort" value="title"/>
+  <entry key="exportWorkingDirectory" value="/home/kyc"/>
   <entry key="externalFileTypes" value="JPG image:jpg:image/jpeg:feh:picture;LaTeX:tex:application/x-latex:vim:emacs;PDF:pdf:application/pdf:zathura:pdfSmall;PNG image:png:image/png:feh:picture;PostScript:ps:application/postscript:zathura:psSmall;Text:txt:text/plain:vim:emacs"/>
-  <entry key="extraFileColumns" value="false"/>
+  <entry key="extraFileColumns" value="true"/>
   <entry key="fieldEditorTextColor" value="0:0:0"/>
   <entry key="fileBrowserCommand" value=""/>
   <entry key="fileColumn" value="true"/>
@@ -92,11 +97,12 @@
   <entry key="gridColor" value="210:210:210"/>
   <entry key="groupIntersectSelections" value="true"/>
   <entry key="groupIntersectUnionViewModes" value="INTERSECTION"/>
-  <entry key="groupKeywordSeparator" value=", "/>
+  <entry key="groupKeywordSeparator" value=","/>
   <entry key="groupSidepaneVisible" value="true"/>
   <entry key="groupsDefaultField" value="keywords"/>
   <entry key="iconDisabledColor" value="200:200:200"/>
   <entry key="iconEnabledColor" value="0:153:153"/>
+  <entry key="idEntryGenerator" value="DOI"/>
   <entry key="importAlwaysUsePDFImportStyle" value="false"/>
   <entry key="importDefaultPDFimportStyle" value="2"/>
   <entry key="importFileDirPattern" value=""/>
@@ -110,13 +116,16 @@
   <entry key="keyGenFirstLetterA" value="true"/>
   <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib"/>
   <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
+  <entry key="lastUsedExport" value=""/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
   <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
-  <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
+  <entry key="lyxpipe" value="/home/kyc/.lyx/lyxpipe"/>
+  <entry key="mainFontSize" value="9"/>
+  <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
-  <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;117.2921559304762;380.0668310929703;618.2615564580292;66.95674244940894;234.13358089875732;125.23587680577441"/>
+  <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;ASCENDING"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;133.53404157861493;304.295216045908;626.8083186307504;72.81877949619043;238.99508182345176;184.8547635953634"/>
   <entry key="mainWindowPosX" value="0.0"/>
   <entry key="mainWindowPosY" value="27.0"/>
   <entry key="mainWindowSizeX" value="1920.0"/>
@@ -128,7 +137,7 @@
   <entry key="markedEntryBackground3" value="255:120:120"/>
   <entry key="markedEntryBackground4" value="255:75:75"/>
   <entry key="markedEntryBackground5" value="220:255:220"/>
-  <entry key="memoryStickMode" value="false"/>
+  <entry key="memoryStickMode" value="true"/>
   <entry key="mergeEntriesDiffMode" value="4"/>
   <entry key="mergeEntriesPosX" value="560"/>
   <entry key="mergeEntriesPosY" value="201"/>
@@ -141,6 +150,7 @@
   <entry key="namesLastOnly" value="false"/>
   <entry key="namesNatbib" value="false"/>
   <entry key="newline" value="&#10;"/>
+  <entry key="nonWrappableFields" value="pdf;ps;url;doi;file;isbn;issn"/>
   <entry key="numberColWidth" value="50"/>
   <entry key="numericFields" value="mittnum"/>
   <entry key="openFoldersOfAttachedFiles" value="false"/>
@@ -154,7 +164,7 @@
   <entry key="previewEnabled" value="true"/>
   <entry key="previewPanelHeight" value="126"/>
   <entry key="previewPanelHeightFX" value="0.65"/>
-  <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\bibtexkey&quot;&gt;\begin{bibtexkey} (\bibtexkey)&lt;/a&gt;\end{bibtexkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
+  <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\citationkey&quot;&gt;\begin{citationkey} (\citationkey)&lt;/a&gt;\end{citationkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
   <entry key="priDescending" value="true"/>
   <entry key="priSort" value="year"/>
   <entry key="proxyHostname" value=""/>
@@ -163,7 +173,7 @@
   <entry key="proxyUsername" value=""/>
   <entry key="pushToApplication" value="Vim"/>
   <entry key="recentDatabases" value="/home/kyc/cs/papers/papers.bib"/>
-  <entry key="reformatFileOnSaveAndExport" value="false"/>
+  <entry key="reformatFileOnSaveAndExport" value="true"/>
   <entry key="regExpSearchExpression" value="**/[bibtexkey](-.+)?\\.pdf"/>
   <entry key="remoteServerPort" value="6050"/>
   <entry key="resolveStringsAllFields" value="false"/>
@@ -181,12 +191,12 @@
   <entry key="showQualityColumn" value="false"/>
   <entry key="showRankingColumn" value="false"/>
   <entry key="showReadColumn" value="true"/>
-  <entry key="showRecommendations" value="true"/>
+  <entry key="showRecommendations" value="false"/>
   <entry key="showRelevanceColumn" value="false"/>
   <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
   <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.1421875"/>
+  <entry key="sidePaneWidthFX" value="0.15052083333333333"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -199,6 +209,7 @@
   <entry key="tableText" value="0:0:0"/>
   <entry key="terDescending" value="false"/>
   <entry key="terSort" value=""/>
+  <entry key="texmakerPath" value="texmaker"/>
   <entry key="timeStampField" value="timestamp"/>
   <entry key="timeStampFormat" value="yyyy-MM-dd"/>
   <entry key="toolbarVisible" value="true"/>
@@ -220,10 +231,13 @@
   <entry key="validFieldBackgroundColor" value="255:255:255"/>
   <entry key="validateInEntryEditor" value="true"/>
   <entry key="versionIgnoreUpdate" value="5.1"/>
+  <entry key="vim" value="vim"/>
+  <entry key="vimServer" value="vim"/>
   <entry key="warnAboutDuplicatesInInspection" value="true"/>
-  <entry key="warnBeforeOverwritingKey" value="true"/>
+  <entry key="warnBeforeOverwritingKey" value="false"/>
   <entry key="webSearchVisible" value="true"/>
+  <entry key="winEdtPath" value="WinEdt"/>
   <entry key="windowMaximised" value="false"/>
   <entry key="workingDirectory" value="/home/kyc/cs/papers/2015-KimEtAl-In Band Network Telemetry Via Programmable Dataplanes.pdf"/>
-  <entry key="xmpPrivacyFilters" value="pdf;timestamp;keywords;owner;note;review"/>
+  <entry key="xmpPrivacyFilters" value="pdf;review;keywords;owner;note;timestamp"/>
 </map>
