@@ -72,7 +72,7 @@ NAME='unknown'
     $RSYNC .Xmodmap switch-monitor.sh ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/termite .config/zathura .config/vlc \
-        .config/newsboat ~/.config/
+        .config/newsboat .config/redshift ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
@@ -90,7 +90,8 @@ NAME='unknown'
         ~/.tmux.conf ~/.Xmodmap ~/switch-monitor.sh ./
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
-        ~/.config/zathura ~/.config/vlc ~/.config/newsboat .config/
+        ~/.config/zathura ~/.config/vlc ~/.config/newsboat ~/.config/redshift \
+        .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/

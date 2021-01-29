@@ -126,6 +126,7 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 qemu
+redshift-minimal
 reflector
 rsync
 sed
