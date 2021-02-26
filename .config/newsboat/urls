@@ -1,5 +1,4 @@
 # blog
-https://hahapoem.blogspot.com/feeds/posts/default blog
 https://slate.com/feeds/all.rss
 
 # tech
@@ -18,7 +17,5 @@ https://feeds.feedburner.com/TheNewsLens news tw-news
 # news
 https://www.theatlantic.com/feed/best-of/ news "~The Atlantic"
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news "~The New York Times"
-http://feeds.reuters.com/reuters/topNews news
-https://news.cts.com.tw/rss/international.xml news
 https://global.udn.com/rss/news/1020/8662 news
 https://dailyillini.com/feed/rss/ news
