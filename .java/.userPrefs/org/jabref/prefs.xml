@@ -29,7 +29,7 @@
   <entry key="autoCompFirstNameMode" value="BOTH"/>
   <entry key="autoCompLF" value="false"/>
   <entry key="autoComplete" value="false"/>
-  <entry key="autoCompleteFields" value="related;author;crossref;publisher;journal;keywords;editor;entryset;title"/>
+  <entry key="autoCompleteFields" value="entryset;editor;related;author;crossref;publisher;title;keywords;journal"/>
   <entry key="autoOpenForm" value="true"/>
   <entry key="autoResizeMode" value="true"/>
   <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
@@ -68,7 +68,7 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.6160427807486631"/>
+  <entry key="entryEditorHeightFX" value="0.5839572192513369"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -116,16 +116,16 @@
   <entry key="keyGenFirstLetterA" value="true"/>
   <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib"/>
   <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
-  <entry key="lastUsedExport" value=""/>
+  <entry key="lastUsedExport" value="HTML table (with Abstract &amp; BibTeX)"/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
   <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
   <entry key="lyxpipe" value="/home/kyc/.lyx/lyxpipe"/>
   <entry key="mainFontSize" value="9"/>
-  <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
+  <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
-  <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;133.53404157861493;304.295216045908;626.8083186307504;72.81877949619043;238.99508182345176;184.8547635953634"/>
+  <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;137.0455951460683;355.36474649669884;679.1781275550849;85.86226467186215;297.1700006756049"/>
   <entry key="mainWindowPosX" value="0.0"/>
   <entry key="mainWindowPosY" value="27.0"/>
   <entry key="mainWindowSizeX" value="1920.0"/>
@@ -196,7 +196,7 @@
   <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
   <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.15052083333333333"/>
+  <entry key="sidePaneWidthFX" value="0.14739583333333334"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -239,5 +239,5 @@
   <entry key="winEdtPath" value="WinEdt"/>
   <entry key="windowMaximised" value="false"/>
   <entry key="workingDirectory" value="/home/kyc/cs/papers/2015-KimEtAl-In Band Network Telemetry Via Programmable Dataplanes.pdf"/>
-  <entry key="xmpPrivacyFilters" value="pdf;review;keywords;owner;note;timestamp"/>
+  <entry key="xmpPrivacyFilters" value="review;pdf;owner;timestamp;keywords;note"/>
 </map>
