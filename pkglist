@@ -1,7 +1,6 @@
 accountsservice
 arc-icon-theme-git
 arc-solid-gtk-theme
-arp-scan
 astyle
 atool
 aur-out-of-date
@@ -37,6 +36,7 @@ ebgaramond-otf
 ebtables
 edk2-ovmf
 elinks
+ettercap
 fakeroot
 feh
 ferdi-git
