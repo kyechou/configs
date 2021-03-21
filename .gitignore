@@ -5,6 +5,8 @@
 .config/cmus/playlist.pl
 .config/cmus/search-history
 .config/vlc/vlc-qt-interface.conf
+.config/spotify-tui/.spotify_token_cache.json
+.config/spotify-tui/client.yml
 .stversions
 .vim/.netrwhist
 .vim/autoload/*.old

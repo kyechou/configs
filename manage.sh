@@ -72,7 +72,8 @@ NAME='unknown'
     $RSYNC .Xmodmap switch-monitor.sh jabref.xml ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/termite .config/zathura .config/vlc \
-        .config/newsboat .config/redshift ~/.config/
+        .config/newsboat .config/redshift .config/spotify-tui .config/spotifyd \
+        ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
@@ -91,7 +92,7 @@ NAME='unknown'
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
         ~/.config/zathura ~/.config/vlc ~/.config/newsboat ~/.config/redshift \
-        .config/
+        ~/.config/spotify-tui ~/.config/spotifyd .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/

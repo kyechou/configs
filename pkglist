@@ -132,7 +132,8 @@ reflector
 rsync
 sed
 soundconverter
-spotify
+spotify-tui-git
+spotifyd
 sudo
 sxhkd
 sxiv

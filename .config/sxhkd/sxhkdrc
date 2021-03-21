@@ -136,7 +136,7 @@ alt + ctrl + n
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
-    spotify --disable-gpu
+    termite -e spt
 alt + ctrl + t
     thunderbird
 alt + ctrl + v
