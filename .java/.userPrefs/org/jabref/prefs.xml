@@ -41,10 +41,10 @@
   <entry key="bindings" value=""/>
   <entry key="citeCommand" value="\cite"/>
   <entry key="collectTelemetry" value="false"/>
-  <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle;bibtexkey"/>
+  <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle"/>
   <entry key="columnSortOrder" value=""/>
   <entry key="columnSortTypes" value=""/>
-  <entry key="columnWidths" value="100;100;100;100;100;100"/>
+  <entry key="columnWidths" value="100;100;100;100;100"/>
   <entry key="confirmDelete" value="false"/>
   <entry key="consoleCommand" value=""/>
   <entry key="customTabFields_0" value="doi;crossref;keywords;eprint;url;file;groups;owner;timestamp;printed;priority;qualityassured;ranking;readstatus;relevance"/>
@@ -125,7 +125,7 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;137.0455951460683;355.36474649669884;679.1781275550849;85.86226467186215;297.1700006756049"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;137.41937536839004;362.7879526156518;697.0571201681992;84.5833584803327;302.71412497465724"/>
   <entry key="mainWindowPosX" value="0.0"/>
   <entry key="mainWindowPosY" value="27.0"/>
   <entry key="mainWindowSizeX" value="1920.0"/>
@@ -196,7 +196,7 @@
   <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
   <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.14739583333333334"/>
+  <entry key="sidePaneWidthFX" value="0.1390625"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
