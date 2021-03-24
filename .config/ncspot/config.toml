@@ -35,6 +35,7 @@ default_keybindings = false
 "Shift+k" = "shift up 1"
 "Shift+h" = "seek -5000"
 "Shift+l" = "seek +5000"
+"Shift+o" = "open current"
 "Space" = "playpause"
 "A" = "goto artist"
 "a" = "goto album"
