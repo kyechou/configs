@@ -7,7 +7,7 @@ HOSTNAME=${HOSTNAME:-$(uname -n)}
 # monitors
 #
 
-. ~/.config/bspwm/reset-monitor
+~/.config/bspwm/reset-monitor
 
 
 #
