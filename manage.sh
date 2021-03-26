@@ -69,7 +69,7 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-    $RSYNC .Xmodmap switch-monitor.sh jabref.xml ~/
+    $RSYNC .Xmodmap switch-gpu.sh jabref.xml ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/termite .config/zathura .config/vlc \
         .config/newsboat .config/redshift .config/ncspot ~/.config/
@@ -80,6 +80,7 @@ NAME='unknown'
     sudo $RSYNC logid.cfg /etc/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
+    sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
     [[ $DRYRUN -eq 0 ]] && sudo pacman -U --needed --noconfirm \
         private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.xz
@@ -87,7 +88,7 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ~/switch-monitor.sh ~/jabref.xml ./
+        ~/.tmux.conf ~/.Xmodmap ~/switch-gpu.sh ~/jabref.xml ./
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
         ~/.config/zathura ~/.config/vlc ~/.config/newsboat ~/.config/redshift \
@@ -107,6 +108,8 @@ NAME='unknown'
         $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
+    [[ -r /etc/X11/xorg.conf.d/20-nvidia.conf ]] && \
+        $RSYNC /etc/X11/xorg.conf.d/20-nvidia.conf ./
     $RSYNC ~/.ssh ~/.gnupg private/
     [[ -d /etc/NetworkManager/system-connections ]] && \
         sudo $RSYNC /etc/NetworkManager/system-connections private/
