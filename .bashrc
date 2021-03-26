@@ -21,6 +21,10 @@ export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
+# asp (arch build system)
+export ASPROOT="$HOME/cs/archlinux/abs"
+export ASPCACHE="$ASPROOT/cache"
+
 # nnn
 [[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
 export NNN_OPTS='cdeEQRU'
