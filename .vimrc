@@ -215,11 +215,3 @@ nnoremap <C-Left> :tabmove -1<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
 nnoremap <C-@><C-i> :term<CR>
-" autocmd: compile
-autocmd FileType c       nnoremap <C-c> :! gcc % -o %:r -Wall -Wextra -Wpedantic
-                                           \ -Werror -O3 -std=c17<CR>
-autocmd FileType cpp     nnoremap <C-c> :! g++ % -o %:r -Wall -Wextra -Wpedantic
-                                           \ -Werror -O3 -std=c++17<CR>
-" autocmd: execute
-autocmd FileType c       nnoremap <C-x> :! ./%:r<CR>
-autocmd FileType cpp     nnoremap <C-x> :! ./%:r<CR>
