@@ -1,38 +1,49 @@
 [user]
-    email = kuanyenchou@gmail.com
     name = kyechou
+    email = kuanyenchou@gmail.com
     signingkey = 71FF6F39B8A800DE
 
 [core]
     editor = vim
 
 [color]
-    status = auto
     branch = auto
     diff = auto
     log = auto
+    status = auto
+    ui = auto
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+    forceSignAnnotated = true
 
 [push]
     default = simple
 
 [pull]
-	ff = only
-
-[commit]
-    gpgsign = true
+	ff = only   # merge locally
 
 [status]
-    submodulesummary = 1
+    submodulesummary = true
+
+[diff]
+    algorithm = minimal
+
+[log]
+    date = iso-local
+    showroot = true
 
 [alias]
-    lf = ls-files
     st = status
     cm = commit
     co = checkout
-    sw = switch
     rt = restore
-    lg = log --graph --color --pretty=oneline
     br = branch -avv
+    lg = log --graph --color
+    lgp = log --color -p --compact-summary
     lsr = ls-remote
+    diff = diff
     diffc = diff --cached
-    diffs = diff --stat
