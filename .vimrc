@@ -6,9 +6,10 @@ call plug#begin()
 
 " Utility
 Plug 'itchyny/lightline.vim'
-Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'vim-scripts/taglist.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/comments.vim'
+Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'craigemery/vim-autotag', {'for': ['c', 'cpp']}
 Plug 'brookhong/cscope.vim', {'for': ['c', 'cpp']}
@@ -18,7 +19,6 @@ Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'vim-scripts/promela.vim', {'for': 'promela'}
-Plug 'c3m3gyanesh/p4-syntax-highlighter-collection', {'rtp': 'vim', 'for': 'p4'}
 Plug 'vim-scripts/maude.vim', {'for': 'maude'}
 Plug 'vim-scripts/click.vim', {'for': 'click'}
 " Colorscheme
