@@ -6,6 +6,8 @@
 .config/cmus/search-history
 .config/vlc/vlc-qt-interface.conf
 .config/ncspot/userstate.toml
+.config/rescrobbled/config.toml
+.config/rescrobbled/session
 .stversions
 .vim/.netrwhist
 .vim/autoload/*.old
