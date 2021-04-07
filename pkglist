@@ -38,6 +38,7 @@ ebtables
 edk2-ovmf
 elinks
 ettercap
+evince
 fakeroot
 feh
 ferdi-git
@@ -226,9 +227,5 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yay
-zathura
-zathura-djvu
-zathura-pdf-mupdf
-zathura-ps
 zip
 zoom

@@ -94,6 +94,9 @@ handle_pdf() {
     elif [ "$GUI" -ne 0 ] && which zathura >/dev/null 2>&1; then
         nohup zathura "${FPATH}" >/dev/null 2>&1 &
         exit 0
+    elif [ "$GUI" -ne 0 ] && which evince >/dev/null 2>&1; then
+        nohup evince "${FPATH}" >/dev/null 2>&1 &
+        exit 0
     elif which pdftotext >/dev/null 2>&1; then
         ## Preview as text conversion
         pdftotext -l 10 -nopgbrk -q -- "${FPATH}" - | eval "$PAGER"
@@ -284,7 +287,11 @@ load_dir() {
     count="$(listimages | grep -a -m 1 -ZznF "$target" | cut -d: -f1)"
 
     if [ -n "$count" ]; then
-        listimages | xargs -0 nohup "$1" -apq -n "$count" --
+        if [ "$GUI" -ne 0 ]; then
+            listimages | xargs -0 nohup "$1" -apq -n "$count" --
+        else
+            listimages | xargs -0 "$1" -apq -n "$count" --
+        fi
     else
         shift
         "$1" -- "$@" # fallback
