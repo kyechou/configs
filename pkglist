@@ -92,8 +92,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux
 linux-firmware
-linux-kyc
-linux-kyc-headers
 logiops-git
 lxappearance-gtk3
 lxrandr
@@ -103,7 +101,6 @@ make
 man-db
 man-pages
 mdadm
-ncspot
 netctl
 network-manager-applet
 networkmanager
@@ -115,7 +112,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
 nvidia
-nvidia-dkms
 nvidia-prime
 openssh
 openvpn
@@ -134,10 +130,10 @@ pulseaudio-bluetooth
 qemu
 redshift-minimal
 reflector
-rescrobbled-git
 rsync
 sed
 soundconverter
+spotify
 sudo
 sxhkd
 sxiv

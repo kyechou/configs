@@ -136,7 +136,7 @@ alt + ctrl + n
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
-    termite -e ncspot
+    spotify
 alt + ctrl + t
     thunderbird
 alt + ctrl + v
