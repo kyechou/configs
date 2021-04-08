@@ -69,7 +69,7 @@ NAME='unknown'
 }
 
 [[ $DEPLOY_ALL -eq 1 ]] && { \
-    $RSYNC .Xmodmap switch-gpu.sh jabref.xml ~/
+    $RSYNC .Xmodmap switch-gpu.sh ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/termite .config/zathura .config/vlc \
         .config/newsboat .config/redshift .config/ncspot .config/rescrobbled \
@@ -89,7 +89,7 @@ NAME='unknown'
 
 [[ $SYNC -eq 1 ]] && { \
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ~/switch-gpu.sh ~/jabref.xml ./
+        ~/.tmux.conf ~/.Xmodmap ~/switch-gpu.sh ./
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
         ~/.config/zathura ~/.config/vlc ~/.config/newsboat ~/.config/redshift \

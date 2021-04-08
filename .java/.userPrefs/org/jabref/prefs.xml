@@ -29,7 +29,7 @@
   <entry key="autoCompFirstNameMode" value="BOTH"/>
   <entry key="autoCompLF" value="false"/>
   <entry key="autoComplete" value="false"/>
-  <entry key="autoCompleteFields" value="entryset;editor;related;author;crossref;publisher;title;keywords;journal"/>
+  <entry key="autoCompleteFields" value="author;publisher;title;editor;crossref;journal;keywords;related;entryset"/>
   <entry key="autoOpenForm" value="true"/>
   <entry key="autoResizeMode" value="true"/>
   <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
@@ -78,7 +78,7 @@
   <entry key="exportTerDescending" value="true"/>
   <entry key="exportTerSort" value="title"/>
   <entry key="exportWorkingDirectory" value="/home/kyc"/>
-  <entry key="externalFileTypes" value="JPG image:jpg:image/jpeg:feh:picture;LaTeX:tex:application/x-latex:vim:emacs;PDF:pdf:application/pdf:zathura:pdfSmall;PNG image:png:image/png:feh:picture;PostScript:ps:application/postscript:zathura:psSmall;Text:txt:text/plain:vim:emacs"/>
+  <entry key="externalFileTypes" value="Djvu:djvu:image/vnd.djvu:evince:FILE;JPG image:jpg:image/jpeg:feh:PICTURE;LaTeX:tex:application/x-latex:vim:FILE_TEXT;PDF:pdf:application/pdf:evince:PDF_FILE;PNG image:png:image/png:feh:PICTURE;PostScript:ps:application/postscript:evince:FILE;Text:txt:text/plain:vim:FILE_TEXT"/>
   <entry key="extraFileColumns" value="true"/>
   <entry key="fieldEditorTextColor" value="0:0:0"/>
   <entry key="fileBrowserCommand" value=""/>
@@ -125,7 +125,7 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;137.41937536839004;362.7879526156518;697.0571201681992;84.5833584803327;302.71412497465724"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;127.89147592964076;360.97655943015087;706.6909344432637;73.24638051034647;298.8458342734939"/>
   <entry key="mainWindowPosX" value="0.0"/>
   <entry key="mainWindowPosY" value="27.0"/>
   <entry key="mainWindowSizeX" value="1920.0"/>
@@ -137,7 +137,7 @@
   <entry key="markedEntryBackground3" value="255:120:120"/>
   <entry key="markedEntryBackground4" value="255:75:75"/>
   <entry key="markedEntryBackground5" value="220:255:220"/>
-  <entry key="memoryStickMode" value="true"/>
+  <entry key="memoryStickMode" value="false"/>
   <entry key="mergeEntriesDiffMode" value="4"/>
   <entry key="mergeEntriesPosX" value="560"/>
   <entry key="mergeEntriesPosY" value="201"/>
@@ -196,7 +196,7 @@
   <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
   <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.1390625"/>
+  <entry key="sidePaneWidthFX" value="0.14479166666666668"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -239,5 +239,5 @@
   <entry key="winEdtPath" value="WinEdt"/>
   <entry key="windowMaximised" value="false"/>
   <entry key="workingDirectory" value="/home/kyc/cs/papers/2015-KimEtAl-In Band Network Telemetry Via Programmable Dataplanes.pdf"/>
-  <entry key="xmpPrivacyFilters" value="review;pdf;owner;timestamp;keywords;note"/>
+  <entry key="xmpPrivacyFilters" value="review;owner;pdf;keywords;timestamp;note"/>
 </map>
