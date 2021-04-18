@@ -15,7 +15,6 @@ bind
 binutils
 bison
 blueman
-bridge-utils
 browserpass-firefox
 bspwm
 calibre
@@ -34,7 +33,6 @@ dunst
 e2fsprogs
 easytag
 ebgaramond-otf
-ebtables
 edk2-ovmf
 elinks
 ettercap
@@ -80,6 +78,7 @@ ibus
 ibus-chewing
 inetutils
 intel-ucode
+iptables-nft
 j4-dmenu-desktop
 jabref
 jq
