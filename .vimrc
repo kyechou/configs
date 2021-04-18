@@ -201,11 +201,13 @@ nnoremap  <C-@>fi :call CscopeFind('i', expand('<cword>'))<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap  <C-@>y "+y
 nnoremap <C-@>n :Lexplore<CR>
 nnoremap <C-@>t :TlistToggle<CR>
 nnoremap <C-@>s :set spell!<CR>
 nnoremap r :!<Space>
 nnoremap <C-a> :A<CR>
+nnoremap t :tabnew<CR>
 nnoremap <C-e> :tabedit<Space>
 nnoremap <C-k> :tabclose<CR>
 nnoremap <C-l> :tabnext<CR>
