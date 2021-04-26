@@ -36,8 +36,8 @@ bspc config focused_border_color $violet
 # configuration
 #
 
-bspc config border_width        4
-bspc config window_gap          8
+bspc config border_width        3
+bspc config window_gap          6
 
 bspc config split_ratio         0.5
 bspc config automatic_scheme    longest_side
@@ -68,7 +68,7 @@ pkill -x sxhkd ; sxhkd &
 # input method daemon
 ibus-daemon -drx
 # wallpaper
-feh --image-bg "$black" --bg-fill ~/pic/wallpaper/dawn.jpg
+feh --image-bg "$black" --bg-fill ~/pic/wallpaper/woods.jpg
 # keyboard and mouse
 xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
 xset m 0 0          # acceleration: 0, threshold: 0
