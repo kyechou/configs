@@ -6,7 +6,7 @@
 
 # terminal emulator
 alt + Return
-    termite
+    alacritty
 
 # make sxhkd reload its configuration files:
 alt + ctrl + r
@@ -128,11 +128,11 @@ alt + ctrl + c
 alt + ctrl + d
     gnome-dictionary
 alt + ctrl + f
-    termite -e nnn
+    alacritty -e nnn
 alt + ctrl + m
-    termite -e cmus
+    alacritty -e cmus
 alt + ctrl + n
-    termite -e newsboat
+    alacritty -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s

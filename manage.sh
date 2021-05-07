@@ -71,7 +71,7 @@ NAME='unknown'
 [[ $DEPLOY_ALL -eq 1 ]] && { \
     $RSYNC .Xmodmap switch-gpu.sh ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
-        .config/polybar .config/termite .config/vlc .config/newsboat \
+        .config/polybar .config/alacritty .config/vlc .config/newsboat \
         .config/redshift ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
@@ -90,7 +90,7 @@ NAME='unknown'
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.Xmodmap ~/switch-gpu.sh ./
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
-        ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/termite \
+        ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/alacritty \
         ~/.config/vlc ~/.config/newsboat ~/.config/redshift .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/

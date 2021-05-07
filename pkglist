@@ -1,4 +1,5 @@
 accountsservice
+alacritty
 arc-icon-theme-git
 arc-solid-gtk-theme
 asp
@@ -140,7 +141,6 @@ sxiv
 syncthing
 system-config-printer
 tcpdump
-termite
 texinfo
 texlive-bibtexextra
 texlive-core
