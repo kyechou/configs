@@ -9,7 +9,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 0.5; done
 # Launch Polybar, using default config location ~/.config/polybar/config
 if command -v xrandr >/dev/null 2>&1; then
     for m in $(xrandr --listmonitors | sed '1d' | awk -F ' ' '{print $4}'); do
-        MONITOR="$m" polybar --reload top >/dev/null &
+        MONITOR="$m" polybar -q --reload top >/dev/null &
     done
 fi
 
