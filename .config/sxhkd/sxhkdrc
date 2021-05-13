@@ -128,11 +128,11 @@ alt + ctrl + c
 alt + ctrl + d
     gnome-dictionary
 alt + ctrl + f
-    alacritty -e nnn
+    alacritty -t nnn -e nnn
 alt + ctrl + m
     alacritty -e cmus
 alt + ctrl + n
-    alacritty -e newsboat
+    alacritty -t newsboat -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
