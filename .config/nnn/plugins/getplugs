@@ -74,8 +74,8 @@ for f in $(find . -maxdepth 1 \( ! -iname "." ! -iname "*.md" \)); do
 			prompt "$f"
 			$op "$f" ../../plugins/
 		fi
-	else
-		cp -vRf "$f" ../../plugins/
+#	else
+#		cp -vRf "$f" ../../plugins/
 	fi
 done
 cd ../.. || exit 1
