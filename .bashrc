@@ -19,6 +19,7 @@ export GPG_TTY=$(tty)
 export BROWSER=firefox-developer-edition
 export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
+export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dsun.java2d.opengl=true' # on, off, gasp, lcd
 
@@ -37,6 +38,9 @@ export NNN_FCOLORS='c1e26f2900607bf7c6d6abc4'
 export NNN_ARCHIVE='\\.(7z|bz2|gz|tar|tgz|xz|zip)$'
 export NNN_TRASH=1
 export NNN_FIFO='/tmp/nnn.fifo'
+
+# vRNI/VeriFlow
+export SOURCE_ROOT=/home/kyc/vmware/main
 
 # bash
 [[ "${BASH#*bash}" != "$BASH" ]] && \
