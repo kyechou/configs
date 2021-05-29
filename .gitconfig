@@ -27,7 +27,7 @@
     default = simple
 
 [pull]
-	ff = only   # merge locally
+    ff = only   # merge locally
 
 [status]
     submodulesummary = true
