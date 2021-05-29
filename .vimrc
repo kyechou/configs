@@ -7,13 +7,12 @@ call plug#begin()
 " Utility
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'ap/vim-css-color'
+Plug 'mileszs/ack.vim'
+Plug 'craigemery/vim-autotag'
 Plug 'vim-scripts/taglist.vim'
-Plug 'vim-scripts/comments.vim'
-Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
-Plug 'craigemery/vim-autotag', {'for': ['c', 'cpp']}
-Plug 'brookhong/cscope.vim', {'for': ['c', 'cpp']}
-Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
+Plug 'MarcWeber/vim-addon-local-vimrc'
 " Syntax
 Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
@@ -103,12 +102,6 @@ autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => a.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType cpp let g:alternateExtensions_cpp = 'hpp,HPP,h,H'
-autocmd FileType cpp let g:alternateExtensions_CPP = 'HPP,hpp,H,h'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
@@ -185,18 +178,18 @@ let g:netrw_winsize = 20
 let g:netrw_browse_split = 3
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => cscope
+" => ack.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:cscope_silent = 1
-nnoremap <C-@>l :call ToggleLocationList()<CR>
-" c: caller
-nnoremap  <C-@>fc :call CscopeFind('c', expand('<cword>'))<CR>
-" f: file
-nnoremap  <C-@>ff :call CscopeFind('f', expand('<cword>'))<CR>
-" g: definition
-nnoremap  <C-@>fg :call CscopeFind('g', expand('<cword>'))<CR>
-" i: Find files #including this file
-nnoremap  <C-@>fi :call CscopeFind('i', expand('<cword>'))<CR>
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => a.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType cpp let g:alternateExtensions_cpp = 'hpp,HPP,h,H'
+autocmd FileType cpp let g:alternateExtensions_CPP = 'HPP,hpp,H,h'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../include,sfr:../include/veriflow,sfr:../inc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
@@ -205,8 +198,9 @@ noremap  <C-@>y "+y
 nnoremap <C-@>n :Lexplore<CR>
 nnoremap <C-@>t :TlistToggle<CR>
 nnoremap <C-@>s :set spell!<CR>
-nnoremap r :!<Space>
 nnoremap <C-a> :A<CR>
+nnoremap <C-s> :Ack!<Space>
+nnoremap r :!<Space>
 nnoremap t :tabnew<CR>
 nnoremap <C-e> :tabedit<Space>
 nnoremap <C-k> :tabclose<CR>
