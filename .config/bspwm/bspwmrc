@@ -68,7 +68,7 @@ pkill -x sxhkd ; sxhkd &
 # input method daemon
 ibus-daemon -drx
 # wallpaper
-feh --image-bg "$black" --bg-fill ~/pic/wallpaper/woods.jpg
+feh --image-bg "$black" --bg-fill ~/pic/wallpaper/dawn-1.jpg
 # keyboard and mouse
 xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
 xset m 0 0          # acceleration: 0, threshold: 0
