@@ -8,6 +8,7 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
+Plug 'simeji/winresizer'
 Plug 'mileszs/ack.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'vim-scripts/taglist.vim'
@@ -102,6 +103,17 @@ autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => plasticboy/vim-markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
@@ -159,15 +171,12 @@ let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml', "tex"]
 "let g:indentLine_setConceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => plasticboy/vim-markdown
+" => winresizer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_math = 1
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_toml_frontmatter = 1
+let g:winresizer_enable = 1
+let g:winresizer_gui_enable = 1
+let g:winresizer_start_key = '<C-q>'
+let g:winresizer_gui_start_key = '<C-q>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
@@ -187,8 +196,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => a.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType cpp let g:alternateExtensions_cpp = 'hpp,HPP,h,H'
-autocmd FileType cpp let g:alternateExtensions_CPP = 'HPP,hpp,H,h'
+autocmd FileType cpp let g:alternateExtensions_cpp = 'h,H,hpp,HPP'
+autocmd FileType cpp let g:alternateExtensions_CPP = 'H,h,HPP,hpp'
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../include,sfr:../include/veriflow,sfr:../inc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -202,6 +211,7 @@ nnoremap <C-a> :A<CR>
 nnoremap <C-s> :Ack!<Space>
 nnoremap r :!<Space>
 nnoremap t :tabnew<CR>
+nnoremap yt :tabnew %<CR>
 nnoremap <C-e> :tabedit<Space>
 nnoremap <C-k> :tabclose<CR>
 nnoremap <C-l> :tabnext<CR>
