@@ -133,6 +133,7 @@ rsync
 sed
 soundconverter
 spotify
+sshpass
 sudo
 sxhkd
 sxiv
@@ -155,6 +156,7 @@ texlive-science
 the_silver_searcher
 thunderbird
 tmux
+traceroute
 transmission-gtk
 trash-cli
 ttf-exljbris
