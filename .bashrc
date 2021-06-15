@@ -21,7 +21,6 @@ export CUPS_USER='uofi\kychou2'
 export TERM='xterm-256color'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
-export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dsun.java2d.opengl=true' # on, off, gasp, lcd
 
 # asp (arch build system)
 export ASPROOT="$HOME/cs/archlinux/abs"
