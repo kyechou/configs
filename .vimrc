@@ -46,7 +46,7 @@ set tabpagemax=30
 set tags=./tags;
 set viminfo=""
 set viminfofile="NONE"
-set sessionoptions=blank,buffers,curdir,folds,help,options,resize,slash,tabpages,unix
+set sessionoptions=blank,buffers,curdir,folds,help,options,slash,tabpages,unix
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
