@@ -8,8 +8,8 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
-Plug 'simeji/winresizer'
 Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
@@ -54,10 +54,9 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,slash,tabpages,unix
 set backspace=indent,eol,start
 set colorcolumn=81
 set guicursor=a:block
-set hlsearch
-set incsearch
 set laststatus=2
 set nocompatible
+set nocursorline
 set nolangremap
 set noshowmode
 set nostartofline
@@ -68,10 +67,19 @@ set scrolloff=5
 set showtabline=2
 set sidescroll=1
 set textwidth=80
+set title
 set ttyfast
 set wildmenu
 set wildmode=longest:full,full
 set wrap
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors, syntax and encodings
@@ -169,14 +177,6 @@ endfunction
 let g:indentLine_char = '│' " '┆', '┊', '│', '▏'
 let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml', "tex"]
 "let g:indentLine_setConceal = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => winresizer
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:winresizer_enable = 1
-let g:winresizer_gui_enable = 1
-let g:winresizer_start_key = '<C-q>'
-let g:winresizer_gui_start_key = '<C-q>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
