@@ -9,7 +9,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
@@ -40,7 +39,7 @@ set belloff=all
 set history=1000
 set modeline
 set nobackup
-set joinspaces  " two spaces after '.', '?', '!'
+set nojoinspaces  " 1 space after '.', '?', '!'
 set noswapfile
 set tabpagemax=30
 set tags=./tags;
