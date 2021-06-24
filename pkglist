@@ -68,7 +68,6 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gtk-engine-murrine
-gvim
 gzip
 htop
 hugo
@@ -170,6 +169,7 @@ unclutter
 unrar
 unzip
 valgrind
+vim
 virt-manager
 vlc
 wget
