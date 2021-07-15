@@ -121,6 +121,7 @@ parted
 pass
 patch
 pavucontrol
+picom
 pkgconf
 polybar
 pulseaudio

@@ -72,7 +72,7 @@ NAME='unknown'
     $RSYNC .Xmodmap switch-gpu.sh ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/alacritty .config/vlc .config/newsboat \
-        .config/zathura .config/redshift ~/.config/
+        .config/zathura .config/redshift .config/picom ~/.config/
     mkdir -p ~/.java/.userPrefs/org && \
         $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
@@ -92,7 +92,7 @@ NAME='unknown'
     $RSYNC ~/.config/yay ~/.config/nnn ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/alacritty \
         ~/.config/vlc ~/.config/newsboat ~/.config/zathura ~/.config/redshift \
-        .config/
+        ~/.config/picom .config/
     mkdir -p .java/.userPrefs/org && \
         $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
