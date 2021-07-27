@@ -210,8 +210,8 @@ nnoremap <C-a> :A<CR>
 nnoremap <C-s> :Ack!<Space>
 nnoremap r :!<Space>
 nnoremap t :tabnew<CR>
-nnoremap yt :tabnew %<CR>
-nnoremap <C-e> :tabedit<Space>
+nnoremap yt :tab split<CR>
+nnoremap <C-e> :tab drop<Space>
 nnoremap <C-k> :tabclose<CR>
 nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
