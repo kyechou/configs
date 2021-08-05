@@ -19,6 +19,8 @@
   <entry key="abbrAuthorNames" value="false"/>
   <entry key="acceptRecommendations" value="false"/>
   <entry key="activeFieldEditorBackgroundColor" value="220:220:255"/>
+  <entry key="addCreationDate" value="false"/>
+  <entry key="addModificationDate" value="false"/>
   <entry key="adobeAcrobatCommand" value=""/>
   <entry key="allowFileAutoOpenBrowse" value="true"/>
   <entry key="allowIntegerEditionBibtex" value="false"/>
@@ -29,16 +31,18 @@
   <entry key="autoCompFirstNameMode" value="BOTH"/>
   <entry key="autoCompLF" value="false"/>
   <entry key="autoComplete" value="false"/>
-  <entry key="autoCompleteFields" value="author;publisher;title;editor;crossref;journal;keywords;related;entryset"/>
+  <entry key="autoCompleteFields" value="editor;journal;keywords;crossref;entryset;related;title;author;publisher"/>
   <entry key="autoOpenForm" value="true"/>
   <entry key="autoResizeMode" value="true"/>
   <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
   <entry key="autolinkExactKeyOnly" value="false"/>
   <entry key="avoidOverwritingKey" value="false"/>
   <entry key="backup" value="false"/>
+  <entry key="baseDOIURI" value="https://doi.org"/>
   <entry key="bibLocAsPrimaryDir" value="true"/>
   <entry key="biblatexMode" value="false"/>
-  <entry key="bindings" value=""/>
+  <entry key="bindNames" value="Abbreviate;Accept;Autogenerate citation keys;Automatically link files;Capitalize word;Check integrity;Cleanup;Clear read status;Clear search;Close dialog;Close library;Copy;Copy \\cite{citation key};Copy citation key;Copy citation key and link;Copy citation key and title;Copy preview;Copy title;Cut;Delete entry;Delete;Download full text documents;Edit strings;Entry editor, next entry;Entry editor, next panel;Entry editor, next panel 2;Entry editor, previous entry;Entry editor, previous panel;Entry editor, previous panel 2;Execute default action in dialog;Export;Export Selected;File list editor, move entry down;File list editor, move entry up;Focus entry table;Help;Import into current library;Import into new library;Lowercase word;Uppercase word;Merge entries;Move caret left;Move caret right;Move caret to beginning of line;Move caret to  of line;Move caret to next word;Move caret to previous word;Move caret down;Move caret to beginning of text;Move caret to end of text;Move caret up;New article;New book;New entry;New entry from plain text;New inbook;New inproceesings;New mastersthesis;New phdthesis;New proceedings;New technical report;New unpublished;Next library;Next preview layout;Open / close entry editor;Open OpenOffice/LibreOffice connection;Open URL or DOI;Open file;Open folder;Open library;Open terminal here;Paste;Preamble editor, store changes;Previous library;Previous preview layout;Pull changes from shared database;Push to application;Quit JabRef;Redo;Refresh OO;Remove characters until next word;Remove all characters caret to end of line;Characters until previous word;Replace string;Resolve duplicate citation keys;Save all;Save library;Save library as ...;Search;Search for unlinked local files;Select all;Select first entry;Select last entry;Set read status to read;Set read status to skimmed;String dialog, add string;String dialog, remove string;Synchronize files;Toggle groups interface;Unabbreviate;Undo;Web search;Write XMP"/>
+  <entry key="bindings" value="ctrl+alt+A;ctrl+ENTER;ctrl+G;F7;;ctrl+F8;alt+F8;;ESCAPE;Esc;ctrl+W;ctrl+C;ctrl+K;ctrl+shift+K;ctrl+alt+K;ctrl+shift+alt+K;ctrl+shift+C;ctrl+shift+alt+T;ctrl+X;DELETE;;alt+F7;ctrl+T;alt+DOWN;ctrl+TAB;ctrl+PLUS;alt+UP;ctrl+shift+TAB;ctrl+MINUS;ctrl+ENTER;ctrl+alt+e;ctrl+shift+e;ctrl+DOWN;ctrl+UP;alt+1;F1;ctrl+I;ctrl+alt+I;;;ctrl+M;;;;;;;;;;;ctrl+shift+A;ctrl+shift+B;ctrl+N;ctrl+shift+N;ctrl+shift+I;;ctrl+shift+M;ctrl+shift+T;ctrl+shift+P;;ctrl+shift+U;ctrl+PAGE_DOWN;F9;ctrl+E;alt+0;F3;F4;ctrl+shift+O;ctrl+O;ctrl+shift+L;ctrl+V;alt+S;ctrl+PAGE_UP;shift+F9;ctrl+shift+R;ctrl+L;ctrl+Q;ctrl+Y;ctrl+alt+O;;;;ctrl+R;ctrl+shift+D;ctrl+alt+S;ctrl+S;ctrl+shift+S;ctrl+F;shift+F7;ctrl+A;HOME;END;;;ctrl+N;shift+DELETE;ctrl+shift+F7;alt+3;ctrl+alt+shift+A;ctrl+Z;alt+4;F6"/>
   <entry key="citeCommand" value="\cite"/>
   <entry key="collectTelemetry" value="false"/>
   <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle"/>
@@ -53,8 +57,8 @@
   <entry key="customTabName_0" value="General"/>
   <entry key="customTabName_1" value="Abstract"/>
   <entry key="customTabName_2" value="Comments"/>
-  <entry key="cyclePreview" value="acm-sig-proceedings-long-author-list.csl;acm-sig-proceedings.csl;/ieee.csl"/>
-  <entry key="cyclePreviewPos" value="2"/>
+  <entry key="cyclePreview" value="/ieee.csl"/>
+  <entry key="cyclePreviewPos" value="0"/>
   <entry key="defaultBibtexKeyPattern" value="[year]-[authEtAl]"/>
   <entry key="defaultEncoding" value="UTF-8"/>
   <entry key="defaultOwner" value="kyc"/>
@@ -68,7 +72,7 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.5839572192513369"/>
+  <entry key="entryEditorHeightFX" value="0.5854430379746836"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -78,7 +82,8 @@
   <entry key="exportTerDescending" value="true"/>
   <entry key="exportTerSort" value="title"/>
   <entry key="exportWorkingDirectory" value="/home/kyc"/>
-  <entry key="externalFileTypes" value="Djvu:djvu:image/vnd.djvu:evince:FILE;JPG image:jpg:image/jpeg:feh:PICTURE;LaTeX:tex:application/x-latex:vim:FILE_TEXT;PDF:pdf:application/pdf:evince:PDF_FILE;PNG image:png:image/png:feh:PICTURE;PostScript:ps:application/postscript:evince:FILE;Text:txt:text/plain:vim:FILE_TEXT"/>
+  <entry key="externalFileTypes" value="Djvu:djvu:image/vnd.djvu:zathura:FILE;JPG image:jpg:image/jpeg:feh:PICTURE;LaTeX:tex:application/x-latex:vim:FILE_TEXT;PDF:pdf:application/pdf:zathura:PDF_FILE;PNG image:png:image/png:feh:PICTURE;PostScript:ps:application/postscript:zathura:FILE;Text:txt:text/plain:vim:FILE_TEXT"/>
+  <entry key="externalJournalLists" value=""/>
   <entry key="extraFileColumns" value="true"/>
   <entry key="fieldEditorTextColor" value="0:0:0"/>
   <entry key="fileBrowserCommand" value=""/>
@@ -86,11 +91,12 @@
   <entry key="fileDirectory" value=""/>
   <entry key="findUnlinkedFilesDialogSize" value="657;759"/>
   <entry key="floatMarkedEntries" value="true"/>
-  <entry key="fontFamily" value="Fontin Sans Rg"/>
+  <entry key="fontFamily" value="Hack"/>
   <entry key="fontSize" value="16"/>
   <entry key="fontStyle" value="0"/>
   <entry key="fxFontRenderingTweak" value="true"/>
   <entry key="fxTheme" value="Dark.css"/>
+  <entry key="generateKeyOnImport" value="true"/>
   <entry key="generateKeysAfterInspection" value="true"/>
   <entry key="generateKeysBeforeSaving" value="true"/>
   <entry key="grayOutNonHits" value="true"/>
@@ -121,15 +127,15 @@
   <entry key="localAutoSave" value="false"/>
   <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
   <entry key="lyxpipe" value="/home/kyc/.lyx/lyxpipe"/>
-  <entry key="mainFontSize" value="9"/>
+  <entry key="mainFontSize" value="10"/>
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;127.89147592964076;360.97655943015087;706.6909344432637;73.24638051034647;298.8458342734939"/>
-  <entry key="mainWindowPosX" value="0.0"/>
-  <entry key="mainWindowPosY" value="27.0"/>
-  <entry key="mainWindowSizeX" value="1920.0"/>
-  <entry key="mainWindowSizeY" value="1053.0"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;194.56898158642895;692.3598143715567;1430.6886857821153;77.8655566058522;559.6696183590402"/>
+  <entry key="mainWindowPosX" value="6.0"/>
+  <entry key="mainWindowPosY" value="33.0"/>
+  <entry key="mainWindowSizeX" value="3420.0"/>
+  <entry key="mainWindowSizeY" value="1393.0"/>
   <entry key="markImportedEntries" value="false"/>
   <entry key="markedEntryBackground0" value="255:255:180"/>
   <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -155,7 +161,7 @@
   <entry key="numericFields" value="mittnum"/>
   <entry key="openFoldersOfAttachedFiles" value="false"/>
   <entry key="openLastEdited" value="true"/>
-  <entry key="overrideDefaultFontSize" value="true"/>
+  <entry key="overrideDefaultFontSize" value="false"/>
   <entry key="overrideDefaultFonts" value="false"/>
   <entry key="overwriteOwner" value="false"/>
   <entry key="overwriteTimeStamp" value="false"/>
@@ -167,6 +173,10 @@
   <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\citationkey&quot;&gt;\begin{citationkey} (\citationkey)&lt;/a&gt;\end{citationkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
   <entry key="priDescending" value="true"/>
   <entry key="priSort" value="year"/>
+  <entry key="protectedTermsDisabledExternal" value=""/>
+  <entry key="protectedTermsDisabledInternal" value=""/>
+  <entry key="protectedTermsEnabledExternal" value=""/>
+  <entry key="protectedTermsEnabledInternal" value="/protectedterms/months_weekdays.terms;/protectedterms/countries_territories.terms;/protectedterms/electrical_engineering.terms"/>
   <entry key="proxyHostname" value=""/>
   <entry key="proxyPassword" value=""/>
   <entry key="proxyPort" value="80"/>
@@ -182,7 +192,7 @@
   <entry key="searchGlobal" value="false"/>
   <entry key="secDescending" value="false"/>
   <entry key="secSort" value="title"/>
-  <entry key="selectedFetcherIndex" value="4"/>
+  <entry key="selectedFetcherIndex" value="5"/>
   <entry key="serializeSpecialFields" value="false"/>
   <entry key="showAdvancedHints" value="true"/>
   <entry key="showLatexCitations" value="true"/>
@@ -196,7 +206,7 @@
   <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
   <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.14479166666666668"/>
+  <entry key="sidePaneWidthFX" value="0.11695906432748537"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -217,6 +227,7 @@
   <entry key="updateTimestamp" value="false"/>
   <entry key="urlColumn" value="true"/>
   <entry key="useCaseKeeperOnSearch" value="true"/>
+  <entry key="useCustomDOIURI" value="false"/>
   <entry key="useDefaultConsoleApplication" value="true"/>
   <entry key="useDefaultLookAndFeel" value="true"/>
   <entry key="useOwner" value="false"/>
@@ -230,7 +241,7 @@
   <entry key="userDefaultFileBrowserApplication" value="true"/>
   <entry key="validFieldBackgroundColor" value="255:255:255"/>
   <entry key="validateInEntryEditor" value="true"/>
-  <entry key="versionIgnoreUpdate" value="5.1"/>
+  <entry key="versionIgnoreUpdate" value="5.3"/>
   <entry key="vim" value="vim"/>
   <entry key="vimServer" value="vim"/>
   <entry key="warnAboutDuplicatesInInspection" value="true"/>
@@ -239,5 +250,5 @@
   <entry key="winEdtPath" value="WinEdt"/>
   <entry key="windowMaximised" value="false"/>
   <entry key="workingDirectory" value="/home/kyc/cs/papers/2015-KimEtAl-In Band Network Telemetry Via Programmable Dataplanes.pdf"/>
-  <entry key="xmpPrivacyFilters" value="review;owner;pdf;keywords;timestamp;note"/>
+  <entry key="xmpPrivacyFilters" value="timestamp;owner;keywords;review;pdf;note"/>
 </map>
