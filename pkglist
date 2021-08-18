@@ -29,7 +29,6 @@ ctags
 cups
 devtools
 diffutils
-dmenu
 dnsmasq
 dunst
 e2fsprogs
@@ -80,7 +79,6 @@ ibus-chewing
 inetutils
 intel-ucode
 iptables-nft
-j4-dmenu-desktop
 jabref
 jq
 less
@@ -102,6 +100,7 @@ make
 man-db
 man-pages
 mdadm
+nerd-fonts-complete
 netctl
 network-manager-applet
 networkmanager
@@ -133,6 +132,7 @@ pulseaudio-bluetooth
 qemu
 redshift-minimal
 reflector
+rofi
 rsync
 sed
 solaar
@@ -164,10 +164,10 @@ tmux
 traceroute
 transmission-gtk
 trash-cli
+ttc-iosevka
 ttf-exljbris
 ttf-hack
 ttf-liberation
-ttf-nerd-fonts-symbols
 udiskie
 uiuc-vpn
 unclutter
@@ -181,6 +181,7 @@ which
 whois
 wireshark-qt
 workrave
+xclip
 xdotool
 xf86-video-vesa
 xorg-bdftopcf
