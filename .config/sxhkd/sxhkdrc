@@ -71,49 +71,25 @@ alt + Pause ; {r,p}
 
 # pulse audio
 alt + period
-    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            +1dB; \
-    else \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            +2%; \
-    fi
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
+        +2%; \
 alt + comma
-    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            -1dB; \
-    else \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            -2%; \
-    fi
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
+        -2%; \
 alt + m
     pactl set-sink-volume \
         "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
         0%
 XF86AudioRaiseVolume
-    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            +1dB; \
-    else \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            +2%; \
-    fi
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
+        +2%; \
 XF86AudioLowerVolume
-    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            -1dB; \
-    else \
-        pactl set-sink-volume \
-            "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
-            -2%; \
-    fi
+    pactl set-sink-volume \
+        "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
+        -2%; \
 XF86AudioMute
     pactl set-sink-volume \
         "$(pactl list short sinks | grep -E 'output|sink' | tail -n1 | cut -f2)" \
