@@ -14,12 +14,13 @@ alt + ctrl + r
 
 # program launcher
 alt + d
-    j4-dmenu-desktop \
-    --dmenu='dmenu -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#9d85d8 -sf black -fn Hack-11'
+    rofi -no-lazy-grab -show drun -modi drun
+alt + r
+    rofi -no-lazy-grab -show combi -modi combi -combi-modi window,drun,run,ssh
 
 # pass password manager
 alt + p
-    passmenu --type -i -f -l 20 -nb \#282828 -nf \#d5c4a1 -sb \#9d85d8 -sf black -fn Hack-11
+    ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
 # keyboard and mouse config
 ctrl + F3

@@ -13,30 +13,31 @@ HOSTNAME=${HOSTNAME:-$(uname -n)}
 #
 # color
 #
- black="#282828"
-  gray="#665c54"
- white="#d5c4a1"
-   red="#fb4934"
- green="#b8bb26"
-yellow="#fabd2f"
-  blue="#83b5d0"
-purple="#d3869b"
-violet="#9d85d8"
-  teal="#8ec07c"
+  black="#282828"
+   gray="#665c54"
+  white="#d5c4a1"
+    red="#fb4934"
+  green="#b8bb26"
+ yellow="#fabd2f"
+   blue="#43baf4"
+oldblue="#83b5d0"
+ purple="#d3869b"
+ violet="#9d85d8"
+   teal="#8ec07c"
 
 # unfocused window
 bspc config normal_border_color $black
 # focused window of unfocused monitor
 bspc config active_border_color $gray
 # focused window of focused monitor
-bspc config focused_border_color $violet
+bspc config focused_border_color $blue
 
 
 #
 # configuration
 #
 
-bspc config border_width        4
+bspc config border_width        3
 bspc config window_gap          6
 
 bspc config split_ratio         0.5
