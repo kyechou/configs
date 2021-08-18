@@ -128,7 +128,7 @@ deploy_all() {
     sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
     sudo $RSYNC private/system-connections /etc/NetworkManager/
     if [[ $DRYRUN -eq 0 ]]; then
-        sudo pacman -U --needed --noconfirm private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.xz
+        sudo pacman -U --needed --noconfirm private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.zst
     fi
 }
 
