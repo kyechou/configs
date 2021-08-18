@@ -1,0 +1,33 @@
+configuration {
+	modi:                           "window,drun,run,ssh,combi";
+    width:                          30;
+    lines:                          20;
+    font:                           "Iosevka Nerd Font 13";
+    show-icons:                     false;
+    icon-theme:                     "Arc-Dark-solid";
+    drun-display-format:            "{name}";
+    disable-history:                true;
+    sort:                           true;
+    sorting-method:                 "fzf";
+    sidebar-mode:                   false;
+	combi-modi:                     "window,drun,run,ssh";
+    hide-scrollbar:                 true;
+    display-drun:                   " ";
+    display-combi:                  " ";
+
+	kb-remove-char-back:            "BackSpace,Shift+BackSpace";
+	kb-remove-to-eol:               "";
+	kb-accept-entry:                "Control+m,Return,KP_Enter";
+	kb-row-up:                      "Up,Control+k,ISO_Left_Tab";
+	kb-row-down:                    "Down,Control+j";
+	kb-page-prev:                   "Page_Up,Control+h";
+	kb-page-next:                   "Page_Down,Control+l";
+}
+
+@theme "gruvbox-dark-hard"
+
+window {
+    transparency:                   "real";
+    location:                       center;
+    padding:                        8px;
+}
