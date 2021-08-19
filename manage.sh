@@ -67,6 +67,21 @@ parse_params() {
 }
 
 sync() {
+    # Check if the host is "arch"
+    if [[ "$(hostname)" != "arch" ]]; then
+        while :; do
+            echo -n "[!] This machine is not 'arch'. Do you want to continue syncing? [Y/n] "
+            read continue_syncing
+            continue_syncing="$(echo "$continue_syncing" | tr '[:upper:]' '[:lower:]')"
+            if [ -z "${continue_syncing##y*}" ]; then
+                rm -rf "$INSTALL_DIR"
+                break
+            elif [ -z "${continue_syncing##n*}" ]; then
+                exit 1
+            fi
+        done
+    fi
+
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ~/.Xmodmap ~/switch-gpu.sh ./
     $RSYNC ~/.config/nnn ~/.config/yay ~/.config/bspwm ~/.config/sxhkd \
