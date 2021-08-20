@@ -15,7 +15,7 @@ alt + ctrl + r
 # program launcher
 alt + d
     rofi -no-lazy-grab -show drun -modi drun
-alt + r
+alt + x
     rofi -no-lazy-grab -show combi -modi combi -combi-modi window,drun,run,ssh
 
 # pass password manager
