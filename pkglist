@@ -33,7 +33,6 @@ dnsmasq
 dunst
 e2fsprogs
 easytag
-ebgaramond-otf
 edk2-ovmf
 elinks
 ettercap
@@ -167,9 +166,7 @@ trash-cli
 ttc-iosevka
 ttc-iosevka-etoile
 ttc-iosevka-slab
-ttf-exljbris
 ttf-hack
-ttf-liberation
 udiskie
 uiuc-vpn
 unclutter
