@@ -83,3 +83,4 @@ alias gdb='gdb -q'
 alias valgrind='valgrind --leak-check=full --show-leak-kinds=all \
                          --errors-for-leak-kinds=all'
 alias sshweb='ssh kychou2@web.illinois.edu'
+alias sshzm='ssh -p 2222 plankton.nerdpol.ovh'
