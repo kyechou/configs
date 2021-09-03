@@ -15,16 +15,17 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export VISUAL=vim
 export PAGER='less -R'
+export TERM='xterm-256color'
 export GPG_TTY=$(tty)
 export BROWSER=firefox-developer-edition
 export CUPS_USER='uofi\kychou2'
-export TERM='xterm-256color'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
-# asp (arch build system)
-export ASPROOT="$HOME/cs/archlinux/abs"
-export ASPCACHE="$ASPROOT/cache"
+# input method framework
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
 
 # nnn
 [[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
@@ -41,10 +42,11 @@ export NNN_FIFO='/tmp/nnn.fifo'
 # vRNI/VeriFlow
 export SOURCE_ROOT=/home/kyc/vmware/main
 
-# bash
-[[ "${BASH#*bash}" != "$BASH" ]] && \
+# bash completion
+[[ "${BASH#*bash}" != "$BASH" ]] && {
     [[ -r /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+}
 
 # history settings
 HISTCONTROL=ignoreboth

@@ -67,7 +67,7 @@ bspc desktop '^1' --layout monocle
 # simple X hotkey daemon
 pkill -x sxhkd ; sxhkd &
 # input method daemon
-ibus-daemon -drx
+fcitx5 -d --keep --replace
 # wallpaper
 feh --image-bg "$black" --bg-fill ~/pic/wallpaper/dawn-1.jpg
 # keyboard and mouse
