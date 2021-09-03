@@ -58,7 +58,6 @@ gdb
 gettext
 ghostscript
 git
-gnome-calculator
 gnome-disk-utility
 gnome-keyring
 gnome-screenshot
@@ -139,6 +138,7 @@ rsync
 sed
 solaar
 soundconverter
+speedcrunch
 spotify
 sshpass
 sudo
