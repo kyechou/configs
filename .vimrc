@@ -20,6 +20,7 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'vim-scripts/promela.vim', {'for': 'promela'}
 Plug 'vim-scripts/maude.vim', {'for': 'maude'}
 Plug 'vim-scripts/click.vim', {'for': 'click'}
+Plug 'rightson/vim-p4-syntax', {'for': 'p4'}
 " Colorscheme
 Plug 'morhetz/gruvbox'
 
