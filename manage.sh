@@ -98,6 +98,8 @@ sync() {
         $RSYNC /etc/xdg/reflector/reflector.conf ./
     [[ -r /etc/logid.cfg ]] && \
         $RSYNC /etc/logid.cfg ./
+    [[ -r /etc/modprobe.d/hid_apple.conf ]] && \
+        $RSYNC /etc/modprobe.d/hid_apple.conf ./
     [[ -r /etc/iptables/iptables.rules ]] && \
         $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
@@ -138,6 +140,7 @@ deploy_all() {
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
     mkdir -p ~/.elinks && $RSYNC .elinks/elinks.conf ~/.elinks/
     sudo $RSYNC logid.cfg /etc/
+    sudo $RSYNC hid_apple.conf /etc/modprobe.d/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
     sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
