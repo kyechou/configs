@@ -34,24 +34,24 @@ alt + Pause ; {r,p}
     systemctl {reboot,poweroff}
 
 # keyboard and mouse config
-ctrl + shift + 1
+ctrl + F1
     xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
-ctrl + shift + 2
+ctrl + F2
     xset mouse 0 0      # acceleration: 0, threshold: 0
 
 # touchpad
-ctrl + shift + {3,4}
+ctrl + {F3,F4}
     devname="$(xinput list --name-only | grep -i touchpad | head -n1)"; \
     xinput {disable,enable} "$devname"
 
 # screen backlight
-ctrl + shift + {5,6}
+ctrl + {F5,F6}
     light -{U,A} 3
 XF86MonBrightness{Down,Up}
     light -{U,A} 3
 
 # touch screen
-ctrl + shift + {7,8}
+ctrl + {F7,F8}
     if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
         xinput {disable,enable} 'ELAN2556:00 04F3:25EE'; \
     fi
