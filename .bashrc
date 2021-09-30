@@ -32,6 +32,7 @@ export XMODIFIERS='@im=fcitx'
 export NNN_OPTS='cdeEQRU'
 export NNN_OPENER=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke
 export GUI=1
+export BIN=0
 export NNN_PLUG='p:getplugs;o:fzopen;f:fzcd;s:suedit'
 export NNN_COLORS='#6f6f6f6f'
 export NNN_FCOLORS='c1e26f2900607bf7c6d6abc4'
