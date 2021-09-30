@@ -166,7 +166,10 @@ handle_extension() {
         ## Archive
         a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
         rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
-            if which atool >/dev/null 2>&1; then
+            if [ "$GUI" -ne 0 ] && which file-roller >/dev/null 2>&1; then
+                nohup file-roller "${FPATH}" >/dev/null 2>&1 &
+                exit 0
+            elif which atool >/dev/null 2>&1; then
                 atool --list -- "${FPATH}" | eval "$PAGER"
                 exit 0
             elif which bsdtar >/dev/null 2>&1; then
@@ -175,13 +178,19 @@ handle_extension() {
             fi
             exit 1;;
         rar)
-            if which unrar >/dev/null 2>&1; then
+            if [ "$GUI" -ne 0 ] && which file-roller >/dev/null 2>&1; then
+                nohup file-roller "${FPATH}" >/dev/null 2>&1 &
+                exit 0
+            elif which unrar >/dev/null 2>&1; then
                 ## Avoid password prompt by providing empty password
                 unrar lt -p- -- "${FPATH}" | eval "$PAGER"
             fi
             exit 1;;
         7z)
-            if which 7z >/dev/null 2>&1; then
+            if [ "$GUI" -ne 0 ] && which file-roller >/dev/null 2>&1; then
+                nohup file-roller "${FPATH}" >/dev/null 2>&1 &
+                exit 0
+            elif which 7z >/dev/null 2>&1; then
                 ## Avoid password prompt by providing empty password
                 7z l -p -- "${FPATH}" | eval "$PAGER"
                 exit 0
