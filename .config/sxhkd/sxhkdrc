@@ -34,10 +34,13 @@ alt + Pause ; {r,p}
     systemctl {reboot,poweroff}
 
 # keyboard and mouse config
+## autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+## acceleration: 0, threshold: 0
 ctrl + F1
-    xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+    xset r rate 400 35; \
+    xset mouse 0 0
 ctrl + F2
-    xset mouse 0 0      # acceleration: 0, threshold: 0
+    setxkbmap -option ctrl:nocaps
 
 # touchpad
 ctrl + {F3,F4}

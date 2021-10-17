@@ -83,7 +83,7 @@ sync() {
     fi
 
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ~/.Xmodmap ./
+        ~/.tmux.conf ./
     $RSYNC ~/.config/nnn ~/.config/yay ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/rofi \
         ~/.config/alacritty ~/.config/vlc ~/.config/newsboat ~/.config/zathura \
@@ -131,7 +131,6 @@ deploy() {
 deploy_all() {
     deploy
 
-    $RSYNC .Xmodmap ~/
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/rofi .config/alacritty .config/vlc \
         .config/newsboat .config/zathura .config/redshift .config/picom \

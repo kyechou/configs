@@ -74,6 +74,7 @@ feh --image-bg "$black" --bg-fill ~/pic/wallpaper/dawn-1.jpg
 # keyboard and mouse
 xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
 xset mouse 0 0      # acceleration: 0, threshold: 0
+setxkbmap -option ctrl:nocaps
 # screen backlight
 light -S 70
 # disable DPMS and screen saver blanking
