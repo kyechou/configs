@@ -142,7 +142,9 @@ deploy_all() {
     sudo $RSYNC hid_apple.conf /etc/modprobe.d/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
-    sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
+    if lsmod | grep nvidia &>/dev/null; then
+        sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
+    fi
     sudo $RSYNC private/system-connections /etc/NetworkManager/
     if [[ $DRYRUN -eq 0 ]]; then
         sudo pacman -U --needed --noconfirm private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.zst
