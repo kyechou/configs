@@ -66,7 +66,7 @@ set ruler
 set scrolloff=5
 set showtabline=2
 set sidescroll=1
-set textwidth=80
+set textwidth=0 " 80
 set title
 set ttyfast
 set wildmenu
