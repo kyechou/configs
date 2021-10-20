@@ -58,7 +58,7 @@ bspc rule -a Lxappearance       state=floating
 bspc rule -a Blueman-manager    state=floating
 bspc rule -a Thunderbird        desktop='^1'
 
-bspc desktop '^1' --layout monocle
+#bspc desktop '^1' --layout monocle
 
 
 #
