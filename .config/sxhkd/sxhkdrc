@@ -88,6 +88,8 @@ alt + ctrl + t
     thunderbird
 alt + ctrl + v
     virt-manager
+alt + shift + ctrl + l
+    chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
 Print
     gnome-screenshot -i
 
