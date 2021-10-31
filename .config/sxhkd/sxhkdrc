@@ -32,13 +32,13 @@ ctrl + grave
 
 # power/session management
 # (lock, exit/logout, suspend, hibernate, reboot, poweroff)
-alt + Pause ; l
+alt + End ; l
     i3lock -ec 000000
-alt + Pause ; e
+alt + End ; e
     bspc quit
-alt + Pause ; {s,h}
+alt + End ; {s,h}
     i3lock -ec 000000 && systemctl {suspend,hibernate}
-alt + Pause ; {r,p}
+alt + End ; {r,p}
     systemctl {reboot,poweroff}
 
 # keyboard and mouse config
