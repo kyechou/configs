@@ -103,6 +103,7 @@ autostart() {
     $@ &
 }
 
+autostart dunst
 autostart picom -b
 autostart udiskie --no-automount --tray
 autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
