@@ -17,7 +17,7 @@ export VISUAL=vim
 export PAGER='less -R'
 export TERM='xterm-256color'
 export GPG_TTY=$(tty)
-export BROWSER=firefox-developer-edition
+export BROWSER=firefox
 export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
@@ -88,3 +88,4 @@ alias valgrind='valgrind --leak-check=full --show-leak-kinds=all \
 alias sshweb='ssh kychou2@web.illinois.edu'
 alias sshzm='ssh -p 2222 plankton.nerdpol.ovh'
 alias sshauto='ssh -p 2200 plankton.nerdpol.ovh'
+alias sshatt='ssh guard.research.att.com'
