@@ -14,7 +14,7 @@
     ui = auto
 
 [init]
-    defaultBranch = main
+    defaultBranch = master
 
 [commit]
     gpgsign = true
