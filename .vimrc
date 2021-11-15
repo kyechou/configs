@@ -46,6 +46,7 @@ set tabpagemax=30
 set tags=./tags;
 set viminfo=""
 set viminfofile="NONE"
+set diffopt+=internal,algorithm:patience
 set sessionoptions=blank,buffers,curdir,folds,help,options,slash,tabpages,unix
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
