@@ -55,7 +55,7 @@ bspc rule -a Sxiv               state=floating
 bspc rule -a SpeedCrunch        state=floating
 bspc rule -a Pavucontrol        state=floating
 bspc rule -a Lxappearance       state=floating
-bspc rule -a Blueman-manager    state=floating
+bspc rule -a Blueberry.py       state=floating
 bspc rule -a Thunderbird        desktop='^1'
 
 #bspc desktop '^1' --layout monocle
@@ -109,7 +109,7 @@ autostart udiskie --no-automount --tray
 autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
 autostart lxpolkit  # needed by virt-manager
 autostart nm-applet
-autostart blueman-applet
+autostart blueberry-tray
 #autostart workrave
 
 #
