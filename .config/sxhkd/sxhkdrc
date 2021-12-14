@@ -97,7 +97,7 @@ alt + ctrl + t
 alt + ctrl + v
     virt-manager
 alt + shift + ctrl + l
-    chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
+    /opt/google/chrome/chrome --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
 Print
     gnome-screenshot -i
 
