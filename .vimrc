@@ -108,6 +108,7 @@ set smartindent
 set smarttab
 set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType html,xml,xhtml set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType javascript     set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType yaml,json      set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType haskell        set tabstop=4 shiftwidth=4 noexpandtab
 autocmd BufWritePre * %s/\s\+$//e   " Remove trailing ws before saving
