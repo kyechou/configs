@@ -73,7 +73,7 @@ set ttyfast
 set wildmenu
 set wildmode=longest:full,full
 set wrap
-set linebreak
+set nolinebreak
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Search
@@ -210,7 +210,7 @@ nnoremap <silent> j gj
 nnoremap <silent> k gk
 nnoremap <silent> 0 g0
 nnoremap <silent> $ g$
-nnoremap <C-@>y "+y
+noremap <C-@>y "+y
 nnoremap <C-@>n :Lexplore<CR>
 nnoremap <C-@>t :TlistToggle<CR>
 nnoremap <C-@>s :set spell!<CR>
