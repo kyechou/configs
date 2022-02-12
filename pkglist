@@ -114,7 +114,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
 nvidia
-nvidia-prime
 openssh
 openvpn
 p7zip
@@ -185,7 +184,6 @@ wireshark-qt
 workrave
 xclip
 xdotool
-xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
