@@ -92,6 +92,7 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux
 linux-firmware
+linux-headers
 logiops-git
 lxappearance-gtk3
 lxrandr
@@ -113,7 +114,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
-nvidia
+nvidia-dkms
 openssh
 openvpn
 p7zip
