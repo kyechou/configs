@@ -49,6 +49,7 @@ bspc config gapless_monocle     true
 bspc config single_monocle      false
 bspc config pointer_modifier    mod1    # alt
 bspc config click_to_focus      any
+bspc config swallow_first_click false
 
 bspc rule -a Zathura            state=tiled
 bspc rule -a Sxiv               state=floating
