@@ -178,7 +178,7 @@ endfunction
 " => Yggdroot/indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char = '│' " '┆', '┊', '│', '▏'
-let g:indentLine_fileTypeExclude = ['markdown', 'yaml', 'json', 'toml', "tex"]
+let g:indentLine_fileTypeExclude = ['markdown', "tex"]
 "let g:indentLine_setConceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -206,10 +206,10 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../inclu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> j gj
-nnoremap <silent> k gk
-nnoremap <silent> 0 g0
-nnoremap <silent> $ g$
+"nnoremap <silent> j gj
+"nnoremap <silent> k gk
+"nnoremap <silent> 0 g0
+"nnoremap <silent> $ g$
 noremap <C-@>y "+y
 nnoremap <C-@>n :Lexplore<CR>
 nnoremap <C-@>t :TlistToggle<CR>
