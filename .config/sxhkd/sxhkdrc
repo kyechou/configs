@@ -69,9 +69,17 @@ ctrl + {F7,F8}
 
 # pulse audio
 alt + {period,comma,m}
-    pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%,0%}
+    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
+        pactl set-sink-volume @DEFAULT_SINK@ {+1dB,-1dB,0.0000000001}; \
+    else \
+        pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%,0%}; \
+    fi
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-    pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%,0%}
+    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
+        pactl set-sink-volume @DEFAULT_SINK@ {+1dB,-1dB,0.0000000001}; \
+    else \
+        pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%,0%}; \
+    fi
 
 # program shortcuts
 alt + ctrl + a
