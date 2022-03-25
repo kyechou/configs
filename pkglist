@@ -1,7 +1,6 @@
 accountsservice
 alacritty
-arc-icon-theme-git
-arc-solid-gtk-theme
+arc-icon-theme
 asp
 astyle
 atool
@@ -101,6 +100,7 @@ m4
 make
 man-db
 man-pages
+materia-gtk-theme
 mdadm
 nerd-fonts-complete
 netctl
