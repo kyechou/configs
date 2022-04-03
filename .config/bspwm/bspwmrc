@@ -81,7 +81,7 @@ light -S 70
 # disable DPMS and screen saver blanking
 xset s off -dpms
 # pulse audio
-pactl set-sink-volume @DEFAULT_SINK@ 0%
+pactl set-sink-volume @DEFAULT_SINK@ 0.00000000001
 pactl set-source-volume @DEFAULT_SOURCE@ 0%
 # laptop dependent properties
 # touchpad
