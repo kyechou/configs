@@ -81,8 +81,8 @@ alt + ctrl + b
     firefox
 alt + ctrl + c
     speedcrunch
-alt + ctrl + d
-    gnome-dictionary
+#alt + ctrl + d
+#    gnome-dictionary
 alt + ctrl + f
     alacritty -t nnn -e nnn
 alt + ctrl + m
@@ -100,7 +100,7 @@ alt + ctrl + v
 alt + shift + ctrl + l
     /opt/google/chrome/chrome --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
 Print
-    gnome-screenshot -i
+    flameshot gui
 
 ################################################################################
 #

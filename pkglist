@@ -46,6 +46,7 @@ file
 file-roller
 findutils
 firefox
+flameshot
 flex
 font-manager
 fzf
@@ -58,7 +59,6 @@ ghostscript
 git
 gnome-disk-utility
 gnome-keyring
-gnome-screenshot
 gnome-themes-extra
 gnuplot
 google-chrome
