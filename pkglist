@@ -16,6 +16,7 @@ bind
 binutils
 bison
 blueberry
+bridge-utils
 browserpass-firefox
 bspwm
 calibre
@@ -26,6 +27,7 @@ ctags
 cups
 devtools
 diffutils
+dmidecode
 dnsmasq
 dunst
 e2fsprogs
@@ -116,6 +118,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
 nvidia-dkms
+openbsd-netcat
 openssh
 openvpn
 p7zip
@@ -131,7 +134,7 @@ polybar
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
-qemu
+qemu-desktop
 redshift-minimal
 reflector
 rofi
