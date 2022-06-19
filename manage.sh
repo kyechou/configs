@@ -104,6 +104,8 @@ sync() {
         $RSYNC /etc/iptables/iptables.rules ./
     [[ -r /etc/lightdm/lightdm-gtk-greeter.conf ]] && \
         $RSYNC /etc/lightdm/lightdm-gtk-greeter.conf ./
+    [[ -r /etc/geoclue/geoclue.conf ]] && \
+        $RSYNC /etc/geoclue/geoclue.conf ./
     [[ -r /etc/X11/xorg.conf.d/20-nvidia.conf ]] && \
         $RSYNC /etc/X11/xorg.conf.d/20-nvidia.conf ./
     [[ -d /etc/NetworkManager/system-connections ]] && \
@@ -142,6 +144,7 @@ deploy_all() {
     sudo $RSYNC hid_apple.conf /etc/modprobe.d/
     sudo $RSYNC iptables.rules /etc/iptables/
     sudo $RSYNC lightdm-gtk-greeter.conf /etc/lightdm/
+    sudo $RSYNC geoclue.conf /etc/geoclue/
     if lsmod | grep nvidia &>/dev/null; then
         sudo $RSYNC 20-nvidia.conf /etc/X11/xorg.conf.d/
     fi

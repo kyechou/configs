@@ -138,7 +138,7 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 qemu-desktop
-redshift-minimal
+redshift
 reflector
 rofi
 rsync
