@@ -17,7 +17,7 @@ binutils
 bison
 blueberry
 bridge-utils
-browserpass-firefox
+browserpass-librewolf
 bspwm
 cantarell-fonts
 cmake
@@ -46,7 +46,6 @@ ferdi-bin
 file
 file-roller
 findutils
-firefox
 flameshot
 flex
 font-manager
@@ -85,6 +84,7 @@ jq
 less
 libarchive
 libreoffice-fresh
+librewolf-bin
 libtool
 light
 lightdm

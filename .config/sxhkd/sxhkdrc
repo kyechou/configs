@@ -78,7 +78,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 alt + ctrl + a
     ferdi
 alt + ctrl + b
-    firefox
+    librewolf
 alt + ctrl + c
     speedcrunch
 #alt + ctrl + d
