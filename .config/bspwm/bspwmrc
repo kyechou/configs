@@ -7,7 +7,7 @@ HOSTNAME=${HOSTNAME:-$(uname -n)}
 # monitors
 #
 
-~/.config/bspwm/reset-monitor
+~/.config/bspwm/reset-monitor.sh
 
 
 #
@@ -71,8 +71,6 @@ bspc rule -a Thunderbird        desktop='^1'
 pkill -x sxhkd ; sxhkd &
 # input method daemon
 fcitx5 -d --keep --replace
-# wallpaper
-feh --image-bg "$black" --bg-fill ~/pic/wallpaper/dawn-1.jpg
 # screen backlight
 light -S 70
 # disable DPMS and screen saver blanking
@@ -84,6 +82,8 @@ pactl set-source-volume @DEFAULT_SOURCE@ 0%
 xset r rate 400 35  # autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
 xset mouse 0 0      # acceleration: 0, threshold: 0
 setxkbmap -option ctrl:nocaps
+# wallpaper
+~/.config/wallpaper.sh
 # laptop dependent properties
 # touchpad
 touchpad="$(xinput list --name-only | grep -i touchpad | head -n1)"

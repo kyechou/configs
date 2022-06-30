@@ -87,7 +87,9 @@ sync() {
     $RSYNC ~/.config/nnn ~/.config/yay ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/rofi \
         ~/.config/alacritty ~/.config/vlc ~/.config/newsboat ~/.config/zathura \
-        ~/.config/redshift ~/.config/picom ~/.config/mimeapps.list .config/
+        ~/.config/redshift ~/.config/picom ~/.config/wallpaper.sh \
+        ~/.config/colorscheme.sh ~/.config/mimeapps.list ~/.config/systemd \
+        .config/
     $RSYNC ~/.ssh ~/.gnupg private/
     mkdir -p .java/.userPrefs/org && $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
@@ -136,7 +138,8 @@ deploy_all() {
     $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
         .config/polybar .config/rofi .config/alacritty .config/vlc \
         .config/newsboat .config/zathura .config/redshift .config/picom \
-        .config/mimeapps.list \
+        .config/wallpaper.sh .config/colorscheme.sh .config/mimeapps.list \
+        .config/systemd \
         ~/.config/
     mkdir -p ~/.java/.userPrefs/org && $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/

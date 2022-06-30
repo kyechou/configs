@@ -81,6 +81,7 @@ intel-ucode
 iptables-nft
 jabref
 jq
+kanagawa-gtk-theme-git
 less
 libarchive
 libreoffice-fresh
@@ -104,7 +105,6 @@ m4
 make
 man-db
 man-pages
-materia-gtk-theme
 mdadm
 nerd-fonts-complete
 netctl
@@ -133,6 +133,7 @@ phinger-cursors
 picom
 pkgconf
 polybar
+pscircle
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth

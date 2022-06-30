@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 first_empty_desktop() {
     monitor=$1
     if ! bspc query -M $monitor >/dev/null; then

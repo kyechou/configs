@@ -33,11 +33,11 @@ ctrl + grave
 # power/session management
 # (lock, exit/logout, suspend, hibernate, reboot, poweroff)
 alt + End ; l
-    i3lock -ec 000000
+    i3lock -ec 111111
 alt + End ; e
     bspc quit
 alt + End ; {s,h}
-    i3lock -ec 000000 && systemctl {suspend,hibernate}
+    i3lock -ec 111111 && systemctl {suspend,hibernate}
 alt + End ; {r,p}
     systemctl {reboot,poweroff}
 
@@ -114,7 +114,7 @@ alt + ctrl + shift + r
 
 # reset monitor
 alt + ctrl + shift + m
-    ~/.config/bspwm/reset-monitor
+    ~/.config/bspwm/reset-monitor.sh
 
 # close and kill windows
 alt + ctrl + {_,shift + }q
