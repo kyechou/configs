@@ -13,24 +13,14 @@ HOSTNAME=${HOSTNAME:-$(uname -n)}
 #
 # color
 #
-  black="#282828"
-   gray="#665c54"
-  white="#d5c4a1"
-    red="#fb4934"
-  green="#b8bb26"
- yellow="#fabd2f"
-   blue="#43baf4"
-oldblue="#83b5d0"
- purple="#d3869b"
- violet="#9d85d8"
-   teal="#8ec07c"
+source "$HOME/.config/colorscheme.sh"
 
 # unfocused window
-bspc config normal_border_color $black
+bspc config normal_border_color $sumiInk2
 # focused window of unfocused monitor
-bspc config active_border_color $gray
+bspc config active_border_color $sumiInk3
 # focused window of focused monitor
-bspc config focused_border_color $blue
+bspc config focused_border_color $dragonBlue
 
 
 #
@@ -38,7 +28,7 @@ bspc config focused_border_color $blue
 #
 
 bspc config border_width        3
-bspc config window_gap          6
+bspc config window_gap          8
 
 bspc config split_ratio         0.5
 bspc config automatic_scheme    longest_side

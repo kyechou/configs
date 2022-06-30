@@ -11,6 +11,7 @@ sumiInk4="#54546D"
 ## Popup and Floats
 waveBlue1="#223249"
 waveBlue2="#2D4F67"
+waveBlue3="#3D5F77"
 
 ## Diff and Git
 winterGreen="#2B3328"
