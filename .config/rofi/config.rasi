@@ -4,7 +4,7 @@ configuration {
     lines:                          20;
     font:                           "Iosevka Nerd Font 13";
     show-icons:                     false;
-    icon-theme:                     "Arc-Dark-solid";
+    icon-theme:                     "Kanagawa";
     drun-display-format:            "{name}";
     disable-history:                true;
     sort:                           true;

@@ -107,11 +107,8 @@ autostart() {
 
 autostart dunst
 autostart picom -b
-autostart udiskie --no-automount --tray
 autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
 autostart lxpolkit  # needed by virt-manager
-autostart nm-applet
-autostart blueberry-tray
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift
 #autostart workrave
 

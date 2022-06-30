@@ -22,6 +22,10 @@ alt + x
 alt + p
     ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
+# network manager dmenu
+alt + n
+    networkmanager_dmenu
+
 # dunst notification daemon
 ctrl + Return
     dunstctl close
