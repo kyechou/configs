@@ -20,6 +20,7 @@ bridge-utils
 browserpass-librewolf
 bspwm
 cantarell-fonts
+chromium
 cmake
 cmus
 ctags
@@ -61,7 +62,6 @@ gnome-disk-utility
 gnome-keyring
 gnome-themes-extra
 gnuplot
-google-chrome
 gptfdisk
 grep
 groff
