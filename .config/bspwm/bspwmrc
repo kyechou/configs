@@ -95,10 +95,17 @@ autostart() {
     $@ &
 }
 
+hide_stalonetray() {
+    until xdotool search --class stalonetray >/dev/null; do
+        sleep 1
+    done
+    xdotool windowunmap $(xdotool search --class stalonetray)
+}
+
 autostart dunst
 autostart picom -b
 autostart stalonetray
-autostart sh -c "sleep 1; xdotool windowunmap $(xdotool search --class stalonetray)"
+hide_stalonetray &
 autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
 autostart lxpolkit  # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift
