@@ -26,6 +26,14 @@ alt + p
 alt + n
     networkmanager_dmenu
 
+# system tray (showing/hiding stalonetray)
+alt + s
+    if xdotool search --onlyvisible --class stalonetray >/dev/null; then \
+        xdotool windowunmap "$(xdotool search --class stalonetray)"; \
+    else \
+        xdotool windowmap "$(xdotool search --class stalonetray)"; \
+    fi
+
 # dunst notification daemon
 ctrl + Return
     dunstctl close

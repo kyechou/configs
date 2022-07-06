@@ -89,7 +89,7 @@ sync() {
         ~/.config/alacritty ~/.config/vlc ~/.config/newsboat ~/.config/zathura \
         ~/.config/redshift ~/.config/picom ~/.config/wallpaper.sh \
         ~/.config/colorscheme.sh ~/.config/mimeapps.list ~/.config/systemd \
-        ~/.config/networkmanager-dmenu .config/
+        ~/.config/networkmanager-dmenu ~/.config/stalonetrayrc .config/
     $RSYNC ~/.ssh ~/.gnupg private/
     mkdir -p .java/.userPrefs/org && $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
@@ -139,7 +139,7 @@ deploy_all() {
         .config/polybar .config/rofi .config/alacritty .config/vlc \
         .config/newsboat .config/zathura .config/redshift .config/picom \
         .config/wallpaper.sh .config/colorscheme.sh .config/mimeapps.list \
-        .config/systemd .config/networkmanager-dmenu \
+        .config/systemd .config/networkmanager-dmenu .config/stalonetrayrc \
         ~/.config/
     mkdir -p ~/.java/.userPrefs/org && $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
