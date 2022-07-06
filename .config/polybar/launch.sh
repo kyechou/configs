@@ -17,7 +17,7 @@ fi
 if command -v bspc >/dev/null 2>&1; then
     sleep 1
     for desktop in $(bspc query -D); do
-        if bspc query -N -d $desktop; then
+        if bspc query -N -d $desktop >/dev/null 2>&1; then
             bspc config -d $desktop top_padding 0
         fi
     done
