@@ -29,14 +29,14 @@ export XMODIFIERS='@im=fcitx'
 
 # nnn
 [[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
-export NNN_OPTS='cdeEQRU'
+export NNN_OPTS='cdeEiRuU'
 export NNN_OPENER=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke
 export GUI=1
 export BIN=0
-export NNN_PLUG='p:getplugs;o:fzopen;f:fzcd;s:suedit'
-export NNN_COLORS='#6f6f6f6f'
-export NNN_FCOLORS='c1e26f2900607bf7c6d6abc4'
-export NNN_ARCHIVE='\\.(7z|bz2|gz|tar|tgz|xz|zip)$'
+export NNN_PLUG='o:fzopen;c:fzcd;s:suedit;d:gpgd;e:gpge;O:openall'
+export NNN_COLORS='#44444444'
+export NNN_FCOLORS='c1e2442200607bf7c6d6abc4'
+export NNN_ARCHIVE='\\.(7z|bz2|gz|tar|tgz|xz|zip|zst)$'
 export NNN_TRASH=1
 export NNN_FIFO='/tmp/nnn.fifo'
 
