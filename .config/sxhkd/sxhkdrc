@@ -23,8 +23,8 @@ alt + p
     ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
 # network manager dmenu
-alt + n
-    networkmanager_dmenu
+#alt + n
+#    networkmanager_dmenu
 
 # system tray (showing/hiding stalonetray)
 alt + s
