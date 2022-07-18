@@ -106,6 +106,7 @@ autostart dunst
 autostart picom -b
 autostart stalonetray
 hide_stalonetray &
+autostart nm-applet
 autostart unclutter --timeout 3 --jitter 10 --ignore-scrolling
 autostart lxpolkit  # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift
