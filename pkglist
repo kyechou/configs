@@ -126,6 +126,7 @@ p7zip
 pacman
 pacman-contrib
 parted
+paru
 pass
 patch
 pavucontrol
@@ -241,7 +242,6 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-yay
 zathura
 zathura-djvu
 zathura-pdf-mupdf

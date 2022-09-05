@@ -84,7 +84,7 @@ sync() {
 
     $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
         ~/.tmux.conf ./
-    $RSYNC ~/.config/nnn ~/.config/yay ~/.config/bspwm ~/.config/sxhkd \
+    $RSYNC ~/.config/nnn ~/.config/paru ~/.config/bspwm ~/.config/sxhkd \
         ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/rofi \
         ~/.config/alacritty ~/.config/vlc ~/.config/newsboat ~/.config/zathura \
         ~/.config/redshift ~/.config/picom ~/.config/wallpaper.sh \
@@ -123,7 +123,7 @@ deploy() {
     $RSYNC .config/nnn ~/.config/
     $RSYNC private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
-        $RSYNC .config/yay ~/.config/
+        $RSYNC .config/paru ~/.config/
         sudo $RSYNC makepkg.conf /etc/
         sudo $RSYNC reflector.conf /etc/xdg/reflector/
         $RSYNC private/.gnupg ~/
