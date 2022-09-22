@@ -90,7 +90,7 @@ sync() {
         ~/.config/redshift ~/.config/picom ~/.config/wallpaper.sh \
         ~/.config/colorscheme.sh ~/.config/mimeapps.list ~/.config/systemd \
         ~/.config/networkmanager-dmenu ~/.config/stalonetrayrc .config/
-    $RSYNC ~/.ssh ~/.gnupg private/
+    $RSYNC ~/.ssh ~/.gnupg ~/.config/mudlet private/
     mkdir -p .java/.userPrefs/org && $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
     mkdir -p .elinks && $RSYNC ~/.elinks/elinks.conf .elinks/
@@ -141,6 +141,7 @@ deploy_all() {
         .config/wallpaper.sh .config/colorscheme.sh .config/mimeapps.list \
         .config/systemd .config/networkmanager-dmenu .config/stalonetrayrc \
         ~/.config/
+    $RSYNC private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/
     mkdir -p ~/.elinks && $RSYNC .elinks/elinks.conf ~/.elinks/
