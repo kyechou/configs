@@ -93,20 +93,16 @@ alt + ctrl + b
     firefox
 alt + ctrl + c
     speedcrunch
-#alt + ctrl + d
-#    gnome-dictionary
 alt + ctrl + f
     alacritty -t nnn -e nnn
 alt + ctrl + m
-    alacritty -e cmus
+    evolution
 alt + ctrl + n
     alacritty -t newsboat -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
     spotify
-alt + ctrl + t
-    thunderbird
 alt + ctrl + v
     virt-manager
 alt + shift + ctrl + l
