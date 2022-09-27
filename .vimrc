@@ -210,6 +210,7 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../inclu
 "nnoremap <silent> k gk
 "nnoremap <silent> 0 g0
 "nnoremap <silent> $ g$
+noremap Q gq
 noremap <C-@>y "+y
 nnoremap <C-@>n :Lexplore<CR>
 nnoremap <C-@>t :TlistToggle<CR>
