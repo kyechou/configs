@@ -48,7 +48,6 @@ bspc rule -a Pavucontrol        state=floating
 bspc rule -a Lxappearance       state=floating
 bspc rule -a Blueberry.py       state=floating
 bspc rule -a Wihotspot-gui      state=floating
-bspc rule -a Evolution          state=floating
 bspc rule -a Evolution          desktop='^1'
 
 #bspc desktop '^1' --layout monocle
