@@ -37,7 +37,6 @@ edk2-ovmf
 elinks
 ettercap
 everforest-gtk-theme-git
-evolution-ews
 fakeroot
 fcitx5
 fcitx5-chewing
@@ -175,6 +174,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
+thunderbird
 tmux
 traceroute
 transmission-gtk
