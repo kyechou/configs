@@ -94,7 +94,9 @@ light
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
+linux
 linux-firmware
+linux-headers
 linux-lts
 linux-lts-headers
 linux-wifi-hotspot
@@ -154,6 +156,7 @@ speedcrunch
 spotify
 sshpass
 stalonetray
+steam
 sudo
 sxhkd
 sxiv
