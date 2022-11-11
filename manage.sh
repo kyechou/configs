@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(dirname $(realpath ${BASH_SOURCE[0]}))"
+SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 cd "$SCRIPT_DIR"
 
 msg() {
@@ -114,7 +114,7 @@ sync() {
         sudo $RSYNC /etc/NetworkManager/system-connections private/
     if [[ $DRYRUN -eq 0 ]]; then
         pacman -Qeq > pkglist
-        sudo chown -R $(id -nu):$(id -ng) private
+        sudo chown -R "$(id -nu):$(id -ng)" private
     fi
 }
 
@@ -159,7 +159,7 @@ deploy_all() {
 }
 
 main() {
-    parse_params $@
+    parse_params "$@"
 
     if [[ $SYNC -eq 1 ]]; then
         sync
@@ -170,4 +170,4 @@ main() {
     fi
 }
 
-main $@
+main "$@"
