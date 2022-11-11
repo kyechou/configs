@@ -66,6 +66,8 @@ gnome-keyring
 gnome-themes-extra
 gnuplot
 gptfdisk
+greetd
+greetd-tuigreet
 grep
 groff
 gst-libav
@@ -91,9 +93,6 @@ libarchive
 libreoffice-fresh
 libtool
 light
-lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 linux
 linux-firmware
 linux-headers
@@ -228,6 +227,7 @@ xorg-xdriinfo
 xorg-xev
 xorg-xgamma
 xorg-xhost
+xorg-xinit
 xorg-xinput
 xorg-xkbcomp
 xorg-xkbevd
