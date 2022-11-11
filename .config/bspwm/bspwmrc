@@ -91,21 +91,21 @@ fi
 
 autostart() {
     prog=$1
-    if pgrep $prog; then return; fi
-    $@ &
+    if pgrep "$prog"; then return; fi
+    "$@" &
 }
 
 autorestart() {
     prog=$1
-    if pgrep $prog; then pkill $prog; fi
-    $@ &
+    if pgrep "$prog"; then pkill "$prog"; fi
+    "$@" &
 }
 
 hide_stalonetray() {
     until xdotool search --class stalonetray >/dev/null; do
         sleep 1
     done
-    xdotool windowunmap $(xdotool search --class stalonetray)
+    xdotool windowunmap "$(xdotool search --class stalonetray)"
 }
 
 autostart dunst
