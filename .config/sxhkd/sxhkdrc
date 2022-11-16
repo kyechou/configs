@@ -4,10 +4,6 @@
 #
 ################################################################################
 
-# terminal emulator
-alt + Return
-    alacritty
-
 # make sxhkd reload its configuration files:
 alt + ctrl + r
     pkill -USR1 -x sxhkd
@@ -22,18 +18,6 @@ alt + x
 alt + p
     ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
-# network manager dmenu
-#alt + n
-#    networkmanager_dmenu
-
-# system tray (showing/hiding stalonetray)
-alt + s
-    if xdotool search --onlyvisible --class stalonetray >/dev/null; then \
-        xdotool windowunmap "$(xdotool search --class stalonetray)"; \
-    else \
-        xdotool windowmap "$(xdotool search --class stalonetray)"; \
-    fi
-
 # dunst notification daemon
 ctrl + Return
     dunstctl close
@@ -42,8 +26,7 @@ ctrl + shift + Return
 ctrl + grave
     dunstctl history-pop
 
-# power/session management
-# (lock, exit/logout, suspend, hibernate, reboot, poweroff)
+# power, session management
 alt + End ; l
     i3lock -ec 111111
 alt + End ; e
@@ -54,7 +37,7 @@ alt + End ; {r,p}
     systemctl {reboot,poweroff}
 
 # keyboard and mouse config
-## autorepeat delay: 400 ms, autorepeat rate: 35 hits/sec
+## delay: 400 ms, rate: 35 hits/sec
 ## acceleration: 0, threshold: 0
 ctrl + F1
     xset r rate 400 35; \
@@ -70,23 +53,20 @@ ctrl + {F3,F4}
 # screen backlight
 ctrl + {F5,F6}
     light -{U,A} 3
-XF86MonBrightness{Down,Up}
-    light -{U,A} 3
 
-# touch screen
-ctrl + {F7,F8}
-    if [[ ${HOSTNAME:-$(uname -n)} == *"asus"* ]]; then \
-        xinput {disable,enable} 'ELAN2556:00 04F3:25EE'; \
-    fi
-
-# pulse audio
-alt + {period,comma,m}
-    pactl set-sink-volume @DEFAULT_SINK@ {+1dB,-1dB,0.00000000001}
-    #pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%,0%}
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-    pactl set-sink-volume @DEFAULT_SINK@ {+1dB,-1dB,0.00000000001}
+# audio
+alt + {period,comma}
+    pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
+alt + m
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+alt + shift + {period,comma}
+    pactl set-source-volume @DEFAULT_SOURCE@ {+2%,-2%}
+alt + shift + m
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # program shortcuts
+alt + Return
+    alacritty
 alt + ctrl + a
     ferdi
 alt + ctrl + b
@@ -94,11 +74,11 @@ alt + ctrl + b
 alt + ctrl + c
     speedcrunch
 alt + ctrl + f
-    alacritty -t nnn -e nnn
+    alacritty --class nnn -t nnn -e nnn
 alt + ctrl + m
     thunderbird
 alt + ctrl + n
-    alacritty -t newsboat -e newsboat
+    alacritty --class newsboat -t newsboat -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
@@ -218,6 +198,8 @@ alt + {a,b,c,shift + c}
 
 # focus the next/previous desktop in the current monitor
 alt + bracket{left,right}
+    bspc desktop --focus {prev,next}.occupied.local
+alt + shift + bracket{left,right}
     bspc desktop --focus {prev,next}.local
 
 # send the node to the next/previous desktop in the current monitor
@@ -246,12 +228,12 @@ alt + {o,i}
 #
 
 # expand a window by moving one of its side outward
-alt + super + {h,j,k,l}
+alt + shift + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-alt + super + shift + {h,j,k,l}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#alt + super + shift + {h,j,k,l}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # balance the nodes ratio in the current desktop
 alt + ctrl + shift + b

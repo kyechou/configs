@@ -44,4 +44,3 @@ reset_monitor() {
 
 reset_monitor
 ~/.config/polybar/launch.sh
-pkill stalonetray

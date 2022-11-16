@@ -25,7 +25,7 @@ autumnYellow="#DCA561"
 ## Diag
 samuraiRed="#E82424"
 roninYellow="#FF9E3B"
-waveAqua1="#6A9589"
+waveAqua0="#6A9589"
 dragonBlue="#658594"
 
 ## Fg and Comments
@@ -38,7 +38,7 @@ crystalBlue="#7E9CD8"
 springViolet2="#9CABCA"
 springBlue="#7FB4CA"
 lightBlue="#A3D4D5"
-waveAqua2="#7AA89F"
+waveAqua1="#7AA89F"
 waveAqua2="#68AD99"
 waveAqua4="#7AA880"
 waveAqua5="#6CAF95"

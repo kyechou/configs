@@ -37,6 +37,44 @@ RSYNC='rsync --delete-after -rlptDvh'
 GPG='gpg'
 NAME='unknown'
 
+CLI_HOME_CONFIGS=(
+    .bash_profile
+    .bashrc
+    .gitconfig
+    .profile
+    .tmux.conf
+    .vim
+    .vimrc
+)
+
+CLI_CONFIGS=(
+    .config/nnn
+    .config/paru
+)
+
+GUI_CONFIGS=(
+    .config/alacritty
+    .config/bspwm
+    .config/cmus
+    .config/colorscheme.sh
+    .config/dunst
+    .config/greetd
+    .config/hypr
+    .config/mimeapps.list
+    .config/newsboat
+    .config/picom
+    .config/polybar
+    .config/redshift
+    .config/rofi
+    .config/sway
+    .config/swaylock
+    .config/sxhkd
+    .config/systemd
+    .config/vlc
+    .config/waybar
+    .config/zathura
+)
+
 parse_params() {
     while :; do
         case "${1-}" in
@@ -82,14 +120,9 @@ sync() {
         done
     fi
 
-    $RSYNC ~/.bashrc ~/.bash_profile ~/.profile ~/.vimrc ~/.vim ~/.gitconfig \
-        ~/.tmux.conf ./
-    $RSYNC ~/.config/nnn ~/.config/paru ~/.config/bspwm ~/.config/sxhkd \
-        ~/.config/cmus ~/.config/dunst ~/.config/polybar ~/.config/rofi \
-        ~/.config/alacritty ~/.config/vlc ~/.config/newsboat ~/.config/zathura \
-        ~/.config/redshift ~/.config/picom ~/.config/wallpaper.sh \
-        ~/.config/colorscheme.sh ~/.config/mimeapps.list ~/.config/systemd \
-        ~/.config/stalonetrayrc .config/
+    for item in ${CLI_HOME_CONFIGS[@]}; do $RSYNC ~/$item ./; done
+    for item in ${CLI_CONFIGS[@]}; do $RSYNC ~/$item .config/; done
+    for item in ${GUI_CONFIGS[@]}; do $RSYNC ~/$item .config/; done
     $RSYNC ~/.ssh ~/.gnupg ~/.config/mudlet private/
     mkdir -p .java/.userPrefs/org && $RSYNC ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && $RSYNC ~/.workrave/workrave.ini .workrave/
@@ -119,11 +152,10 @@ sync() {
 }
 
 deploy() {
-    $RSYNC .bashrc .bash_profile .profile .vimrc .vim .gitconfig .tmux.conf ~/
-    $RSYNC .config/nnn ~/.config/
+    for item in ${CLI_HOME_CONFIGS[@]}; do $RSYNC "$item" ~/; done
+    for item in ${CLI_CONFIGS[@]}; do $RSYNC "$item" ~/.config/; done
     $RSYNC private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
-        $RSYNC .config/paru ~/.config/
         sudo $RSYNC makepkg.conf /etc/
         sudo $RSYNC reflector.conf /etc/xdg/reflector/
         $RSYNC private/.gnupg ~/
@@ -135,11 +167,7 @@ deploy() {
 deploy_all() {
     deploy
 
-    $RSYNC .config/bspwm .config/sxhkd .config/cmus .config/dunst \
-        .config/polybar .config/rofi .config/alacritty .config/vlc \
-        .config/newsboat .config/zathura .config/redshift .config/picom \
-        .config/wallpaper.sh .config/colorscheme.sh .config/mimeapps.list \
-        .config/systemd .config/stalonetrayrc ~/.config/
+    for item in ${GUI_CONFIGS[@]}; do $RSYNC "$item" ~/.config/; done
     $RSYNC private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && $RSYNC .workrave/workrave.ini ~/.workrave/

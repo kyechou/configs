@@ -1,0 +1,339 @@
+#
+# ~/.config/sway/config
+#
+
+################################################################################
+##
+## Variables
+##
+################################################################################
+
+set $mod Mod1
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $opacity 0.92
+
+
+################################################################################
+##
+## WM configuration
+##
+################################################################################
+
+# Font for title bars
+font pango:Iosevka 9
+
+# Colors (~/.config/colorscheme.sh)
+set $sumiInk0       #16161D
+set $sumiInk1b      #181820
+set $sumiInk1       #1F1F28
+set $sumiInk2       #2A2A37
+set $sumiInk3       #363646
+set $sumiInk4       #54546D
+set $fujiWhite      #DCD7BA
+set $crystalBlue    #7E9CD8
+set $boatYellow2    #C0A36E
+set $waveRed        #E46876
+# Client class           border       background text       indicator    child_border
+client.focused           $crystalBlue $sumiInk1  $fujiWhite $boatYellow2 $crystalBlue
+client.focused_inactive  $sumiInk2    $sumiInk1  $sumiInk4  $sumiInk3    $sumiInk2
+client.focused_tab_title $sumiInk2    $sumiInk1  $sumiInk4
+client.unfocused         $sumiInk2    $sumiInk1  $sumiInk4  $sumiInk3    $sumiInk2
+client.urgent            $waveRed     $sumiInk1  $waveRed   $waveRed     $waveRed
+
+default_border normal
+default_floating_border normal
+focus_follows_mouse no
+focus_wrapping no
+force_display_urgency_hint 500 ms
+gaps inner 6
+gaps outer 2
+hide_edge_borders none
+smart_borders no_gaps
+smart_gaps off
+mouse_warping output
+show_marks no
+title_align left
+workspace_auto_back_and_forth no
+
+seat * {
+    hide_cursor 3000
+    hide_cursor when-typing enable
+    xcursor_theme phinger-cursors 32
+}
+
+
+################################################################################
+##
+## Window rules (criteria commands)
+##
+################################################################################
+
+# Remove title bars
+for_window [app_id=".*"] border pixel 2
+
+# Global window opacity
+for_window [app_id=".*"] opacity set $opacity
+
+for_window [app_id="Lxappearance"]                  floating enable
+for_window [app_id="Lxrandr"]                       floating enable
+for_window [app_id="Sxiv"]                          floating enable
+for_window [app_id="blueberry.py"]                  floating enable
+for_window [app_id="font-manager"]                  floating enable
+for_window [app_id="nm-connection-editor"]          floating enable
+for_window [app_id="org.fcitx.fcitx5-config-qt"]    floating enable
+for_window [app_id="org.speedcrunch.speedcrunch"]   floating enable
+for_window [app_id="pavucontrol"]                   floating enable
+for_window [app_id="wdisplays"]                     floating enable
+for_window [app_id="wihotspot-gui"]                 floating enable
+for_window [app_id="org.pwmt.zathura"]              floating disable
+for_window [app_id="Spotify"]                       floating disable
+assign [app_id="thunderbird"]   workspace number 1
+assign [app_id="Spotify"]       workspace number 10
+
+
+################################################################################
+##
+## Output configuration
+##
+################################################################################
+
+output * adaptive_sync on
+output * bg \
+   /usr/share/backgrounds/nordic-wallpapers/at_the_coffeshop.png \
+   fill $sumiInk1
+
+
+################################################################################
+##
+## Input configuration
+##
+################################################################################
+
+input type:keyboard {
+    repeat_delay 400
+    repeat_rate 35
+    xkb_layout us
+    xkb_model hhk
+    xkb_options ctrl:nocaps
+}
+
+input type:touchpad {
+    accel_profile flat
+    drag enabled
+    dwt enabled
+    natural_scroll disabled
+    pointer_accel 0
+    scroll_method two_finger
+    tap enabled
+    tap_button_map lrm
+}
+
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+
+
+################################################################################
+##
+## Window management key bindings
+##
+################################################################################
+
+# Kill focused window
+bindsym $mod+Control+q kill
+
+# Drag and resize windows with mouse
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Control+r reload
+
+# Restart sway inplace (preserves your layout/session)
+bindsym $mod+Control+Shift+r restart
+
+# Toggle opacity
+bindsym $mod+Control+o opacity set 1
+bindsym $mod+Control+Shift+o opacity set $opacity
+
+# Layout
+bindsym $mod+g splith
+bindsym $mod+v splitv
+bindsym $mod+n split none
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+bindsym $mod+Control+space focus mode_toggle
+
+# Change focus
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+bindsym $mod+i focus next
+bindsym $mod+o focus prev
+bindsym $mod+a focus parent
+bindsym $mod+c focus child
+
+# Move the focused window
+bindsym $mod+Control+$left  move left
+bindsym $mod+Control+$down  move down
+bindsym $mod+Control+$up    move up
+bindsym $mod+Control+$right move right
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+bracketleft  workspace prev
+bindsym $mod+bracketright workspace next
+
+# Move the focused container to workspace
+bindsym $mod+Control+1 move container to workspace number 1
+bindsym $mod+Control+2 move container to workspace number 2
+bindsym $mod+Control+3 move container to workspace number 3
+bindsym $mod+Control+4 move container to workspace number 4
+bindsym $mod+Control+5 move container to workspace number 5
+bindsym $mod+Control+6 move container to workspace number 6
+bindsym $mod+Control+7 move container to workspace number 7
+bindsym $mod+Control+8 move container to workspace number 8
+bindsym $mod+Control+9 move container to workspace number 9
+bindsym $mod+Control+0 move container to workspace number 10
+bindsym $mod+Control+Tab move container to workspace back_and_forth
+bindsym $mod+Control+bracketleft  move container to workspace prev
+bindsym $mod+Control+bracketright move container to workspace next
+
+# Scratchpad
+bindsym $mod+Control+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Resize
+mode "resize" {
+    bindsym $left   resize shrink width  20 px
+    bindsym $down   resize grow   height 20 px
+    bindsym $up     resize shrink height 20 px
+    bindsym $right  resize grow   width  20 px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+bindsym $mod+Shift+$left   resize shrink width  20 px
+bindsym $mod+Shift+$down   resize grow   height 20 px
+bindsym $mod+Shift+$up     resize shrink height 20 px
+bindsym $mod+Shift+$right  resize grow   width  20 px
+
+
+################################################################################
+##
+## Other key bindings
+##
+################################################################################
+
+# Program launcher
+bindsym $mod+d exec rofi -no-lazy-grab -show drun -modi drun
+bindsym $mod+x exec \
+    rofi -no-lazy-grab -show combi -modi combi -combi-modi window,drun,run,ssh
+
+# Pass password manager
+bindsym $mod+p exec ~/.config/rofi/passmenu.sh \
+    --type -no-lazy-grab -i -p "pass" -no-custom
+
+# Dunst notification daemon
+bindsym Control+Return          exec dunstctl close
+bindsym Control+Shift+Return    exec dunstctl close-all
+bindsym Control+grave           exec dunstctl history-pop
+
+# Power, session management
+mode "power" {
+    bindsym l exec swaylock, mode "default"
+    bindsym e exec swaymsg exit, mode "default"
+    bindsym s exec swaylock && systemctl suspend, mode "default"
+    bindsym h exec swaylock && systemctl hibernate, mode "default"
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym p exec systemctl poweroff, mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+End mode "power"
+
+# Touchpad (disable/enable)
+bindsym Control+F1 exec swaymsg input type:touchpad events disabled
+bindsym Control+F2 exec swaymsg input type:touchpad events enabled
+
+# Screen backlight
+bindsym Control+F3 exec light -U 3
+bindsym Control+F4 exec light -A 3
+
+# Shortcuts inhibitor
+bindsym Control+F12 seat - shortcuts_inhibitor toggle
+
+# Audio
+bindsym $mod+period exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym $mod+comma  exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym $mod+m      exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym $mod+Shift+period exec pactl set-source-volume @DEFAULT_SOURCE@ +2%
+bindsym $mod+Shift+comma  exec pactl set-source-volume @DEFAULT_SOURCE@ -2%
+bindsym $mod+Shift+m      exec pactl set-source-mute   @DEFAULT_SOURCE@ toggle
+
+# Program shortcuts
+bindsym $mod+Return exec $term
+bindsym $mod+Control+a exec ferdi
+bindsym $mod+Control+b exec firefox
+bindsym $mod+Control+c exec speedcrunch
+bindsym $mod+Control+f exec $term --class nnn -t nnn -e nnn
+bindsym $mod+Control+m exec thunderbird
+bindsym $mod+Control+n exec $term --class newsboat -t newsboat -e newsboat
+bindsym $mod+Control+s exec spotify
+bindsym $mod+Control+v exec virt-manager
+bindsym $mod+Print     exec grimshot save output \$(date +'%Y-%m-%d.%H-%M-%S.png')
+bindsym Print          exec grimshot save area \$(date +'%Y-%m-%d.%H-%M-%S.png')
+bindsym $mod+Shift+Control+l exec "/usr/bin/chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
+
+
+################################################################################
+##
+## Autostart programs
+##
+################################################################################
+
+#
+# systemctl user environment
+#
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+#
+# desktop environment applets
+#
+exec waybar
+exec dunst
+exec light -S 70
+exec fcitx5 -d --replace
+exec nm-applet --indicator
+exec ~/.config/sway/centralize-cursor.sh
+exec lxpolkit # needed by virt-manager
+exec /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
+#autostart gammastep
+# https://www.reddit.com/r/gnome/comments/tzxeax/is_there_currently_a_solution_to_screen_color/
+
+#
+# User space applications
+#
+#until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
+#autostart thunderbird
+#autostart ferdi

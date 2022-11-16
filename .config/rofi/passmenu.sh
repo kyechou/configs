@@ -10,7 +10,7 @@ if [[ $1 == "--type" ]]; then
 fi
 
 if [[ -n $WAYLAND_DISPLAY ]]; then
-	xdotool="ydotool type --file -"
+	xdotool="ydotool type --file /dev/stdin"
 elif [[ -n $DISPLAY ]]; then
 	xdotool="xdotool type --clearmodifiers --file -"
 else

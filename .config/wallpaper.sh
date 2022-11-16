@@ -5,8 +5,8 @@ set -euo pipefail
 wallpaper="/tmp/wallpaper.png"
 width="$(xrandr | head -n1 | cut -d ' ' -f 8 | tr -d ,)"
 display_height="$(xrandr | head -n1 | cut -d ' ' -f 10 | tr -d ,)"
-bar_height="$(grep ^height $HOME/.config/polybar/config.ini | cut -d ' ' -f 3)"
-height="$((display_height - bar_height))"
+#bar_height="$(grep ^height $HOME/.config/polybar/config.ini | cut -d ' ' -f 3)"
+height="$display_height" # "$((display_height - bar_height))"
 dot_radius_percentage=0.0028
 dot_border_width_percentage=0.00138
 toplists_font_percentage=0.014
@@ -71,4 +71,14 @@ pscircle \
     --output-height=$height \
     --output-width=$width \
     --output="$wallpaper"
-feh --bg-max "$wallpaper" --image-bg "#$bg_color"
+
+session_id=$(loginctl | grep $USER | tail -n1 | awk '{print $1}')
+session_type=$(loginctl show-session "$session_id" -p Type | cut -d= -f2)
+
+if [[ "$session_type" = "wayland" ]]; then
+    swaybg -c "#$bg_color" -i "$wallpaper" --mode fit &
+    newpid=$!
+    grep -v $newpid <(pgrep swaybg) | xargs kill || :
+else
+    feh --bg-max "$wallpaper" --image-bg "#$bg_color"
+fi
