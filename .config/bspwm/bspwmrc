@@ -59,6 +59,9 @@ touchpad="$(xinput list --name-only | grep -i touchpad | head -n1)"
 xinput enable "$touchpad"
 xinput set-prop "$touchpad" 'libinput Tapping Enabled' 1
 
+# disable DPMS and screen saver blanking
+xset s off -dpms
+
 
 ### desktop environment applets
 
