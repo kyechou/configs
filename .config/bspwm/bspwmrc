@@ -88,7 +88,7 @@ autostart lxpolkit  # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift
 autorestart redshift
 
-feh --bg-fill "$wallpaper" --image-bg $sumiInk0
+feh --bg-fill "$wallpaper" --image-bg $sumiInk1
 
 
 ### user space applications
