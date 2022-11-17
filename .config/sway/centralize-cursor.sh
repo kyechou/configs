@@ -1,10 +1,5 @@
 #!/bin/bash
 
-main() {
-    width="$(hyprctl monitors -j | jq .[0].width)"
-    height="$(hyprctl monitors -j | jq .[0].height)"
-    ydotool mousemove --absolute -- $((width / 2)) $((height / 2))
-}
-
-
-main "$@"
+width="$(swaymsg -r -t get_outputs | jq '.[] | select(.focused == true).current_mode.width')"
+height="$(swaymsg -r -t get_outputs | jq '.[] | select(.focused == true).current_mode.height')"
+ydotool mousemove --absolute -- $((width / 2)) $((height / 2))
