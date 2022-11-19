@@ -30,7 +30,6 @@ if [[ "$dGPU_status" = connected ]]; then
     export WLR_DRM_NO_ATOMIC=1
     export WLR_NO_HARDWARE_CURSORS=1
     export WLR_DRM_DEVICES=/dev/dri/card0
-
 fi
 
 # GTK themes
