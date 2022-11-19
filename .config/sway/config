@@ -309,7 +309,9 @@ bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+v exec virt-manager
 bindsym $mod+Print     exec grimshot save output \$(date +'%Y-%m-%d.%H-%M-%S.png')
 bindsym Print          exec grimshot save area \$(date +'%Y-%m-%d.%H-%M-%S.png')
-bindsym $mod+Shift+Control+l exec "/usr/bin/chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
+bindsym $mod+Shift+Control+l exec /usr/bin/chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
+#bindsym Print exec flameshot gui
+# https://github.com/flameshot-org/flameshot/issues/2978
 
 
 ################################################################################
