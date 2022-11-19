@@ -210,7 +210,8 @@ wireplumber
 wireshark-qt
 wl-clipboard
 xclip
-xdg-desktop-portal-wlr-git
+xdg-desktop-portal
+xdg-desktop-portal-wlr
 xdotool
 xorg-bdftopcf
 xorg-docs
