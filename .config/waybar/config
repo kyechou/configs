@@ -18,7 +18,7 @@
     "sway/window"
   ],
   "modules-right": [
-    "custom/updates",
+    // "custom/updates",
     "disk#root",
     "disk#home",
     "pulseaudio",
