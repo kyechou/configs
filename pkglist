@@ -84,6 +84,8 @@ gvim
 gzip
 htop
 hugo
+hunspell
+hunspell-en_us
 i3lock
 inetutils
 intel-ucode
