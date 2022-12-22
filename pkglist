@@ -69,7 +69,6 @@ gnuplot
 gptfdisk
 greetd
 greetd-gtkgreet-git
-greetd-tuigreet
 grep
 grimshot
 groff
@@ -148,7 +147,6 @@ pipewire-pulse
 pkgconf
 polybar
 pscircle
-pulseaudio-alsa
 python-matplotlib
 qemu-desktop
 qt6-wayland
