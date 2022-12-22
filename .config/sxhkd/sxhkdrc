@@ -19,11 +19,9 @@ alt + p
     ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
 # dunst notification daemon
-ctrl + Return
+ctrl + @space
     dunstctl close
-ctrl + shift + Return
-    dunstctl close-all
-ctrl + grave
+ctrl + Return
     dunstctl history-pop
 
 # power, session management

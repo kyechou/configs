@@ -261,9 +261,8 @@ bindsym $mod+p exec ~/.config/rofi/passmenu.sh \
     --type -no-lazy-grab -i -p "pass" -no-custom
 
 # Dunst notification daemon
-bindsym Control+Return          exec dunstctl close
-bindsym Control+Shift+Return    exec dunstctl close-all
-bindsym Control+grave           exec dunstctl history-pop
+bindsym Control+space           exec dunstctl close
+bindsym Control+Return          exec dunstctl history-pop
 
 # Power, session management
 mode "power" {
