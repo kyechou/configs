@@ -44,6 +44,7 @@ bspc rule -a Pavucontrol        state=floating
 bspc rule -a Lxappearance       state=floating
 bspc rule -a Blueberry.py       state=floating
 bspc rule -a Wihotspot-gui      state=floating
+bspc rule -a Lifeograph         state=floating
 bspc rule -a Thunderbird        desktop='^1'
 
 
