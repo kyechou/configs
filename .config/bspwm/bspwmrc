@@ -92,8 +92,8 @@ autorestart redshift
 feh --bg-fill "$wallpaper" --image-bg $sumiInk1
 
 
-### user space applications
+### user applications
 
-until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
-autostart thunderbird
-autostart ferdi
+#until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
+#autostart thunderbird
+#autostart ferdi
