@@ -15,9 +15,9 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 # Nvidia
 # https://wiki.hyprland.org/Configuring/Environment-variables/#nvidia-specific
 dGPU_status=$(for p in /sys/class/drm/*/status; do
-	con=${p%/status}
-	echo -n "${con#*/card?-}:"
-	cat "$p"
+    con=${p%/status}
+    echo -n "${con#*/card?-}:"
+    cat "$p"
 done | grep '\<DP-1\>' | cut -d: -f2)
 
 if [[ "$dGPU_status" = connected ]]; then
