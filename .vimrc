@@ -18,7 +18,6 @@ Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'blyoa/vim-promela-syntax', {'for': 'promela'}
-Plug 'vim-scripts/maude.vim', {'for': 'maude'}
 Plug 'vim-scripts/click.vim', {'for': 'click'}
 Plug 'rightson/vim-p4-syntax', {'for': 'p4'}
 " Colorscheme
