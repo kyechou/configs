@@ -18,7 +18,7 @@ dGPU_status=$(for p in /sys/class/drm/*/status; do
     con=${p%/status}
     echo -n "${con#*/card?-}:"
     cat "$p"
-done | grep '\<DP-1\>' | cut -d: -f2)
+done | grep '\<DP-' | cut -d: -f2 | grep -v disconnected | head -n1)
 
 if [[ "$dGPU_status" = connected ]]; then
     export LIBVA_DRIVER_NAME=nvidia
