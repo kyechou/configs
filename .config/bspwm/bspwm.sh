@@ -21,12 +21,12 @@ for s in "${dGPU_status[@]}"; do
 done
 
 if [[ $dGPU_connected -ne 0 ]]; then
-    if [[ ! -f "$NVFILE" ]]; then
-        echo sudo mv "$BACKUP" "$NVFILE"
+    if [[ -f "$BACKUP" ]] && [[ ! -f "$NVFILE" ]]; then
+        sudo mv "$BACKUP" "$NVFILE"
     fi
 else
-    if [[ -f "$NVFILE" ]]; then
-        echo sudo mv "$NVFILE" "$BACKUP"
+    if [[ -f "$NVFILE" ]] && [[ ! -f "$BACKUP" ]]; then
+        sudo mv "$NVFILE" "$BACKUP"
     fi
 fi
 
