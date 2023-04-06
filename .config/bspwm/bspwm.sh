@@ -5,19 +5,28 @@ BACKUP="$NVFILE.back"
 
 # Nvidia
 # https://wiki.hyprland.org/Configuring/Environment-variables/#nvidia-specific
-dGPU_status=$(for p in /sys/class/drm/*/status; do
-    con=${p%/status}
-    echo -n "${con#*/card?-}:"
-    cat "$p"
-done | grep '\<DP-' | cut -d: -f2 | grep -v disconnected | head -n1)
+dGPU_status=(
+    $(for p in /sys/class/drm/*/status; do
+        con=${p%/status}
+        echo -n "${con#*/card?-}:"
+        cat "$p"
+    done | grep '\<DP-' | cut -d: -f2)
+)
 
-if [[ "$dGPU_status" = connected ]]; then
+dGPU_connected=0
+for s in "${dGPU_status[@]}"; do
+    if [[ "$s" = connected ]]; then
+        dGPU_connected=1
+    fi
+done
+
+if [[ $dGPU_connected -ne 0 ]]; then
     if [[ ! -f "$NVFILE" ]]; then
-        sudo mv "$BACKUP" "$NVFILE"
+        echo sudo mv "$BACKUP" "$NVFILE"
     fi
 else
     if [[ -f "$NVFILE" ]]; then
-        sudo mv "$NVFILE" "$BACKUP"
+        echo sudo mv "$NVFILE" "$BACKUP"
     fi
 fi
 

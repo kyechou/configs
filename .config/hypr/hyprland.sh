@@ -14,13 +14,22 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 # Nvidia
 # https://wiki.hyprland.org/Configuring/Environment-variables/#nvidia-specific
-dGPU_status=$(for p in /sys/class/drm/*/status; do
-	con=${p%/status}
-	echo -n "${con#*/card?-}:"
-	cat "$p"
-done | grep '\<DP-' | cut -d: -f2 | grep -v disconnected | head -n1)
+dGPU_status=(
+    $(for p in /sys/class/drm/*/status; do
+        con=${p%/status}
+        echo -n "${con#*/card?-}:"
+        cat "$p"
+    done | grep '\<DP-' | cut -d: -f2)
+)
 
-if [[ "$dGPU_status" = connected ]]; then
+dGPU_connected=0
+for s in "${dGPU_status[@]}"; do
+    if [[ "$s" = connected ]]; then
+        dGPU_connected=1
+    fi
+done
+
+if [[ $dGPU_connected -ne 0 ]]; then
     export LIBVA_DRIVER_NAME=nvidia
     export GBM_BACKEND=nvidia-drm
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
