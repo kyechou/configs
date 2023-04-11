@@ -140,3 +140,6 @@ x-scheme-handler/webcal=userapp-Thunderbird-60SHO1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-60SHO1.desktop
 x-scheme-handler/msteams=teams.desktop
 message/rfc822=userapp-Thunderbird-6CPQT1.desktop
+
+[Added Associations]
+text/x-log=code.desktop;
