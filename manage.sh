@@ -40,6 +40,7 @@ NAME='unknown'
 CLI_HOME_CONFIGS=(
     .bash_profile
     .bashrc
+    .gdbinit
     .gitconfig
     .profile
     .tmux.conf
