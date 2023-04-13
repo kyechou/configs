@@ -9,6 +9,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'mileszs/ack.vim'
+Plug 'bkad/CamelCaseMotion'
 Plug 'craigemery/vim-autotag'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
@@ -47,6 +48,7 @@ set viminfo=""
 set viminfofile="NONE"
 set diffopt+=internal,algorithm:patience
 set sessionoptions=blank,buffers,curdir,folds,help,options,slash,tabpages,unix
+let g:mapleader="\\"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
@@ -196,6 +198,11 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => bkad/CamelCaseMotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:camelcasemotion_key = '<leader>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => a.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType cpp let g:alternateExtensions_cpp = 'h,H,hpp,HPP'
@@ -205,15 +212,18 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../inclu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nnoremap <silent> j gj
-"nnoremap <silent> k gk
-"nnoremap <silent> 0 g0
-"nnoremap <silent> $ g$
-noremap Q gq
-noremap <C-@>y "+y
-nnoremap <C-@>n :Lexplore<CR>
-nnoremap <C-@>t :TlistToggle<CR>
-nnoremap <C-@>s :set spell!<CR>
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+nnoremap <silent> 0 g0
+nnoremap <silent> $ g$
+nnoremap <silent> w <Plug>CamelCaseMotion_w
+nnoremap <silent> b <Plug>CamelCaseMotion_b
+nnoremap <silent> e <Plug>CamelCaseMotion_e
+vnoremap <silent> Q gq
+vnoremap <silent> Y "+y
+nnoremap <leader>n :Lexplore<CR>
+nnoremap <leader>t :TlistToggle<CR>
+nnoremap <leader>s :set spell!<CR>
 nnoremap <C-a> :A<CR>
 nnoremap <C-s> :Ack!<Space>
 nnoremap r :!<Space>
@@ -227,4 +237,4 @@ nnoremap <C-Right> :tabmove +1<CR>
 nnoremap <C-Left> :tabmove -1<CR>
 nnoremap <C-n> :noh<CR>
 nnoremap <C-j> :edit!<CR>
-nnoremap <C-@><C-i> :term<CR>
+nnoremap <leader><C-i> :term<CR>
