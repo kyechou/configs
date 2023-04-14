@@ -2,14 +2,29 @@
 <!DOCTYPE map SYSTEM "http://java.sun.com/dtd/preferences.dtd">
 <map MAP_XML_VERSION="1.0">
   <entry key="AskAutoNamingPDFsAgain" value="true"/>
+  <entry key="CleanUpCLEANUP_EPRINT" value="true"/>
+  <entry key="CleanUpCLEAN_UP_DOI" value="true"/>
+  <entry key="CleanUpCLEAN_UP_ISSN" value="true"/>
+  <entry key="CleanUpCLEAN_UP_UPGRADE_EXTERNAL_LINKS" value="false"/>
+  <entry key="CleanUpCONVERT_TIMESTAMP_TO_CREATIONDATE" value="false"/>
+  <entry key="CleanUpCONVERT_TIMESTAMP_TO_MODIFICATIONDATE" value="false"/>
+  <entry key="CleanUpCONVERT_TO_BIBLATEX" value="false"/>
+  <entry key="CleanUpCONVERT_TO_BIBTEX" value="false"/>
   <entry key="CleanUpConvertToBiblatex" value="false"/>
   <entry key="CleanUpConvertToBibtex" value="true"/>
   <entry key="CleanUpDOI" value="true"/>
+  <entry key="CleanUpDO_NOT_CONVERT_TIMESTAMP" value="false"/>
+  <entry key="CleanUpFIX_FILE_LINKS" value="true"/>
   <entry key="CleanUpFixFileLinks" value="true"/>
-  <entry key="CleanUpFormatters" value="disabled;pages[normalize_page_numbers]&#10;month[normalize_month]&#10;"/>
+  <entry key="CleanUpFormatters" value="disabled;month[normalize_month]&#10;pages[normalize_page_numbers]&#10;"/>
   <entry key="CleanUpISSN" value="true"/>
+  <entry key="CleanUpJobs" value="CLEAN_UP_DOI;CLEANUP_EPRINT;FIX_FILE_LINKS;CLEAN_UP_ISSN"/>
+  <entry key="CleanUpMAKE_PATHS_RELATIVE" value="false"/>
+  <entry key="CleanUpMOVE_PDF" value="false"/>
   <entry key="CleanUpMakePathsRelative" value="false"/>
   <entry key="CleanUpMovePDF" value="false"/>
+  <entry key="CleanUpRENAME_PDF" value="false"/>
+  <entry key="CleanUpRENAME_PDF_ONLY_RELATIVE_PATHS" value="false"/>
   <entry key="CleanUpRenamePDF" value="false"/>
   <entry key="CleanUpRenamePDFonlyRelativePaths" value="false"/>
   <entry key="CleanUpUpgradeExternalLinks" value="false"/>
@@ -72,7 +87,7 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.6779825412221144"/>
+  <entry key="entryEditorHeightFX" value="0.6822157434402333"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -120,8 +135,8 @@
   <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
   <entry key="keyGenAlwaysAddLetter" value="false"/>
   <entry key="keyGenFirstLetterA" value="true"/>
-  <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib"/>
-  <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
+  <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib;/home/kyc/cs/projects/neo-paper/reference.bib"/>
+  <entry key="lastFocused" value="/home/kyc/cs/projects/neo-paper/reference.bib"/>
   <entry key="lastUsedExport" value="HTML table (with Abstract &amp; BibTeX)"/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
@@ -131,11 +146,11 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;311.45052192674007;311.45052192674007;311.45052192674007;311.45052192674007;311.45052192673984"/>
-  <entry key="mainWindowPosX" value="6.0"/>
-  <entry key="mainWindowPosY" value="34.0"/>
-  <entry key="mainWindowSizeX" value="1902.0"/>
-  <entry key="mainWindowSizeY" value="1154.0"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;590.1789748353849;590.1789748353849;590.1789748353849;590.1789748353849;590.1789748353845"/>
+  <entry key="mainWindowPosX" value="9.0"/>
+  <entry key="mainWindowPosY" value="39.0"/>
+  <entry key="mainWindowSizeX" value="3416.0"/>
+  <entry key="mainWindowSizeY" value="1386.0"/>
   <entry key="markImportedEntries" value="false"/>
   <entry key="markedEntryBackground0" value="255:255:180"/>
   <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -182,7 +197,7 @@
   <entry key="proxyPort" value="80"/>
   <entry key="proxyUsername" value=""/>
   <entry key="pushToApplication" value="Vim"/>
-  <entry key="recentDatabases" value="/home/kyc/vmware/vrni-labs-paper/NSDI/Scylla/paper.bib;/home/kyc/vmware/nsdi23/paper.bib;/home/kyc/cs/projects/neo/paper/reference.bib;/home/kyc/cs/papers/papers.bib"/>
+  <entry key="recentDatabases" value="/home/kyc/cs/projects/neo-paper/reference.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib;/home/kyc/cs/papers/papers.bib;/home/kyc/cs/projects/allie/paper/conext23/reference.bib;/home/kyc/vmware/vrni-labs-scylla/paper.bib;/home/kyc/vmware/vrni-labs-paper/NSDI/Scylla/paper.bib;/home/kyc/vmware/nsdi23/paper.bib;/home/kyc/cs/projects/neo/paper/reference.bib"/>
   <entry key="reformatFileOnSaveAndExport" value="true"/>
   <entry key="regExpSearchExpression" value="**/[bibtexkey](-.+)?\\.pdf"/>
   <entry key="remoteServerPort" value="6050"/>
@@ -206,7 +221,7 @@
   <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
   <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="0.14879074658254468"/>
+  <entry key="sidePaneWidthFX" value="399.0"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="tableBackground" value="255:255:255"/>
   <entry key="tableColorCodesOn" value="false"/>
@@ -250,6 +265,6 @@
   <entry key="webSearchVisible" value="true"/>
   <entry key="winEdtPath" value="WinEdt"/>
   <entry key="windowMaximised" value="false"/>
-  <entry key="workingDirectory" value="/home/kyc/vmware/vrni-labs-paper/NSDI/Scylla"/>
+  <entry key="workingDirectory" value="/home/kyc/cs/projects/neo-paper"/>
   <entry key="xmpPrivacyFilters" value="timestamp;review;owner;pdf;keywords;note"/>
 </map>
