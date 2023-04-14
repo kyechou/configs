@@ -1,7 +1,126 @@
+#
+# ~/.config/greetd/sway-config (sway configuration for greetd gtkgreet)
+#
+
+################################################################################
+##
+## Variables
+##
+################################################################################
+
+set $mod Mod1
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $opacity 0.92
+set $wallpaper /usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
+
+
+################################################################################
+##
+## WM configuration
+##
+################################################################################
+
+# Font for title bars
+font pango:Iosevka 9
+
+# Colors (~/.config/colorscheme.sh)
+set $sumiInk0       #16161D
+set $sumiInk1b      #181820
+set $sumiInk1       #1F1F28
+set $sumiInk2       #2A2A37
+set $sumiInk3       #363646
+set $sumiInk4       #54546D
+set $fujiWhite      #DCD7BA
+set $crystalBlue    #7E9CD8
+set $boatYellow2    #C0A36E
+set $waveRed        #E46876
+# Client class           border       background text       indicator    child_border
+client.focused           $crystalBlue $sumiInk1  $fujiWhite $boatYellow2 $crystalBlue
+client.focused_inactive  $sumiInk2    $sumiInk1  $sumiInk4  $sumiInk3    $sumiInk2
+client.focused_tab_title $sumiInk2    $sumiInk1  $sumiInk4
+client.unfocused         $sumiInk2    $sumiInk1  $sumiInk4  $sumiInk3    $sumiInk2
+client.urgent            $waveRed     $sumiInk1  $waveRed   $waveRed     $waveRed
+
+default_border normal
+default_floating_border normal
+focus_follows_mouse no
+focus_wrapping no
+force_display_urgency_hint 500 ms
+gaps inner 6
+gaps outer 2
+hide_edge_borders none
+smart_borders no_gaps
+smart_gaps off
+mouse_warping output
+show_marks no
+title_align left
+workspace_auto_back_and_forth no
+
+seat seat0 {
+    # seat0 is the default seat
+    # Using "seat *" will make firefox crash on reload
+    # https://bugzilla.mozilla.org/show_bug.cgi?id=1652820
+    hide_cursor 3000
+    hide_cursor when-typing enable
+    xcursor_theme phinger-cursors 32
+}
+
+
+################################################################################
+##
+## Output configuration
+##
+################################################################################
+
+output * adaptive_sync on
+output * bg $wallpaper fill $sumiInk1
+
+
+################################################################################
+##
+## Input configuration
+##
+################################################################################
+
+input type:keyboard {
+    repeat_delay 400
+    repeat_rate 35
+    xkb_layout us
+    xkb_model hhk
+    xkb_options ctrl:nocaps
+}
+
+input type:touchpad {
+    accel_profile flat
+    drag enabled
+    dwt enabled
+    natural_scroll disabled
+    pointer_accel 0
+    scroll_method two_finger
+    tap enabled
+    tap_button_map lrm
+}
+
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+
+
+################################################################################
+##
+## Launch gtkgreet
+##
+################################################################################
+
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec ~/.config/sway/centralize-cursor.sh
-exec "gtkgreet -l; swaymsg exit"
+exec "gtkgreet -l -b $wallpaper; swaymsg exit"
 
 mode "power" {
     bindsym r exec systemctl reboot, mode "default"
