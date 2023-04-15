@@ -142,4 +142,6 @@ x-scheme-handler/msteams=teams.desktop
 message/rfc822=userapp-Thunderbird-6CPQT1.desktop
 
 [Added Associations]
+application/x-bibtex=code.desktop;
+text/plain=code.desktop;
 text/x-log=code.desktop;
