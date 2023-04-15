@@ -53,6 +53,10 @@ CLI_CONFIGS=(
     .config/paru
 )
 
+GUI_HOME_CONFIGS=(
+    .xinitrc
+)
+
 GUI_CONFIGS=(
     .config/alacritty
     .config/bspwm
@@ -122,6 +126,7 @@ sync() {
     fi
 
     for item in ${CLI_HOME_CONFIGS[@]}; do $RSYNC ~/$item ./; done
+    for item in ${GUI_HOME_CONFIGS[@]}; do $RSYNC ~/$item ./; done
     for item in ${CLI_CONFIGS[@]}; do $RSYNC ~/$item .config/; done
     for item in ${GUI_CONFIGS[@]}; do $RSYNC ~/$item .config/; done
     $RSYNC ~/.ssh ~/.gnupg ~/.config/mudlet private/
@@ -168,6 +173,7 @@ deploy() {
 deploy_all() {
     deploy
 
+    for item in ${GUI_HOME_CONFIGS[@]}; do $RSYNC "$item" ~/; done
     for item in ${GUI_CONFIGS[@]}; do $RSYNC "$item" ~/.config/; done
     $RSYNC private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && $RSYNC .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
