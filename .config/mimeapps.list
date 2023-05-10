@@ -145,3 +145,4 @@ message/rfc822=userapp-Thunderbird-6CPQT1.desktop
 application/x-bibtex=code.desktop;
 text/plain=code.desktop;
 text/x-log=code.desktop;
+text/markdown=code.desktop;
