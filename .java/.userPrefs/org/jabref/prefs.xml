@@ -16,7 +16,8 @@
   <entry key="CleanUpDO_NOT_CONVERT_TIMESTAMP" value="false"/>
   <entry key="CleanUpFIX_FILE_LINKS" value="true"/>
   <entry key="CleanUpFixFileLinks" value="true"/>
-  <entry key="CleanUpFormatters" value="disabled;month[normalize_month]&#10;pages[normalize_page_numbers]&#10;"/>
+  <entry key="CleanUpFormatters" value="all-text-fields[remove_unicode_ligatures]&#10;date[normalize_date]&#10;month[normalize_month]&#10;pages[normalize_page_numbers]&#10;"/>
+  <entry key="CleanUpFormattersEnabled" value="true"/>
   <entry key="CleanUpISSN" value="true"/>
   <entry key="CleanUpJobs" value="CLEAN_UP_DOI;CLEANUP_EPRINT;FIX_FILE_LINKS;CLEAN_UP_ISSN"/>
   <entry key="CleanUpMAKE_PATHS_RELATIVE" value="false"/>
@@ -58,6 +59,7 @@
   <entry key="biblatexMode" value="false"/>
   <entry key="bindNames" value="Abbreviate;Accept;Autogenerate citation keys;Automatically link files;Capitalize word;Check integrity;Cleanup;Clear read status;Clear search;Close dialog;Close library;Copy;Copy \\cite{citation key};Copy citation key;Copy citation key and link;Copy citation key and title;Copy preview;Copy title;Cut;Delete entry;Delete;Download full text documents;Edit strings;Entry editor, next entry;Entry editor, next panel;Entry editor, next panel 2;Entry editor, previous entry;Entry editor, previous panel;Entry editor, previous panel 2;Execute default action in dialog;Export;Export Selected;File list editor, move entry down;File list editor, move entry up;Focus entry table;Help;Import into current library;Import into new library;Lowercase word;Uppercase word;Merge entries;Move caret left;Move caret right;Move caret to beginning of line;Move caret to  of line;Move caret to next word;Move caret to previous word;Move caret down;Move caret to beginning of text;Move caret to end of text;Move caret up;New article;New book;New entry;New entry from plain text;New inbook;New inproceesings;New mastersthesis;New phdthesis;New proceedings;New technical report;New unpublished;Next library;Next preview layout;Open / close entry editor;Open OpenOffice/LibreOffice connection;Open URL or DOI;Open file;Open folder;Open library;Open terminal here;Paste;Preamble editor, store changes;Previous library;Previous preview layout;Pull changes from shared database;Push to application;Quit JabRef;Redo;Refresh OO;Remove characters until next word;Remove all characters caret to end of line;Characters until previous word;Replace string;Resolve duplicate citation keys;Save all;Save library;Save library as ...;Search;Search for unlinked local files;Select all;Select first entry;Select last entry;Set read status to read;Set read status to skimmed;String dialog, add string;String dialog, remove string;Synchronize files;Toggle groups interface;Unabbreviate;Undo;Web search"/>
   <entry key="bindings" value="ctrl+alt+A;ctrl+ENTER;ctrl+G;F7;;ctrl+F8;alt+F8;;ESCAPE;Esc;ctrl+W;ctrl+C;ctrl+K;ctrl+shift+K;ctrl+alt+K;ctrl+shift+alt+K;ctrl+shift+C;ctrl+shift+alt+T;ctrl+X;DELETE;;alt+F7;ctrl+T;alt+DOWN;ctrl+TAB;ctrl+PLUS;alt+UP;ctrl+shift+TAB;ctrl+MINUS;ctrl+ENTER;ctrl+alt+e;ctrl+shift+e;ctrl+DOWN;ctrl+UP;alt+1;F1;ctrl+I;ctrl+alt+I;;;ctrl+M;;;;;;;;;;;ctrl+shift+A;ctrl+shift+B;ctrl+N;ctrl+shift+N;ctrl+shift+I;;ctrl+shift+M;ctrl+shift+T;ctrl+shift+P;;ctrl+shift+U;ctrl+PAGE_DOWN;F9;ctrl+E;alt+0;F3;F4;ctrl+shift+O;ctrl+O;ctrl+shift+L;ctrl+V;alt+S;ctrl+PAGE_UP;shift+F9;ctrl+shift+R;ctrl+L;ctrl+Q;ctrl+Y;ctrl+alt+O;;;;ctrl+R;ctrl+shift+D;ctrl+alt+S;ctrl+S;ctrl+shift+S;ctrl+F;shift+F7;ctrl+A;HOME;END;;;ctrl+N;shift+DELETE;ctrl+shift+F7;alt+3;ctrl+alt+shift+A;ctrl+Z;alt+4"/>
+  <entry key="caseSensitiveSearch" value="false"/>
   <entry key="citeCommand" value="\cite"/>
   <entry key="collectTelemetry" value="false"/>
   <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle"/>
@@ -87,7 +89,7 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.6822157434402333"/>
+  <entry key="entryEditorHeightFX" value="0.6861030126336248"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -109,6 +111,7 @@
   <entry key="fontFamily" value="Hack"/>
   <entry key="fontSize" value="16"/>
   <entry key="fontStyle" value="0"/>
+  <entry key="fulltextSearch" value="false"/>
   <entry key="fxFontRenderingTweak" value="true"/>
   <entry key="fxTheme" value="Dark.css"/>
   <entry key="generateKeyOnImport" value="true"/>
@@ -130,13 +133,14 @@
   <entry key="importFileNamePattern" value="[bibtexkey]-[title]"/>
   <entry key="importInspectionDialogHeight" value="660"/>
   <entry key="importInspectionDialogWidth" value="1207"/>
-  <entry key="importWorkingDirectory" value="/home/kyc/cs/papers"/>
+  <entry key="importWorkingDirectory" value="/home/kyc/Downloads"/>
   <entry key="incompleteEntryBackground" value="250:175:175"/>
   <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
+  <entry key="keepSearchString" value="false"/>
   <entry key="keyGenAlwaysAddLetter" value="false"/>
   <entry key="keyGenFirstLetterA" value="true"/>
   <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib;/home/kyc/cs/projects/neo-paper/reference.bib"/>
-  <entry key="lastFocused" value="/home/kyc/cs/projects/neo-paper/reference.bib"/>
+  <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
   <entry key="lastUsedExport" value="HTML table (with Abstract &amp; BibTeX)"/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
@@ -146,11 +150,11 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;590.1789748353849;590.1789748353849;590.1789748353849;590.1789748353849;590.1789748353845"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;287.77009763219905;287.77009763219905;287.77009763219905;287.77009763219905;287.77009763219735"/>
   <entry key="mainWindowPosX" value="9.0"/>
   <entry key="mainWindowPosY" value="39.0"/>
-  <entry key="mainWindowSizeX" value="3416.0"/>
-  <entry key="mainWindowSizeY" value="1386.0"/>
+  <entry key="mainWindowSizeX" value="1896.0"/>
+  <entry key="mainWindowSizeY" value="1146.0"/>
   <entry key="markImportedEntries" value="false"/>
   <entry key="markedEntryBackground0" value="255:255:180"/>
   <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -199,6 +203,7 @@
   <entry key="pushToApplication" value="Vim"/>
   <entry key="recentDatabases" value="/home/kyc/cs/projects/neo-paper/reference.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib;/home/kyc/cs/papers/papers.bib;/home/kyc/cs/projects/allie/paper/conext23/reference.bib;/home/kyc/vmware/vrni-labs-scylla/paper.bib;/home/kyc/vmware/vrni-labs-paper/NSDI/Scylla/paper.bib;/home/kyc/vmware/nsdi23/paper.bib;/home/kyc/cs/projects/neo/paper/reference.bib"/>
   <entry key="reformatFileOnSaveAndExport" value="true"/>
+  <entry key="regExpSearch" value="false"/>
   <entry key="regExpSearchExpression" value="**/[bibtexkey](-.+)?\\.pdf"/>
   <entry key="remoteServerPort" value="6050"/>
   <entry key="resolveStringsAllFields" value="false"/>
