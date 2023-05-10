@@ -212,13 +212,13 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../inclu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> j gj
-nnoremap <silent> k gk
-nnoremap <silent> 0 g0
-nnoremap <silent> $ g$
-nnoremap <silent> w <Plug>CamelCaseMotion_w
-nnoremap <silent> b <Plug>CamelCaseMotion_b
-nnoremap <silent> e <Plug>CamelCaseMotion_e
+noremap  <silent> j gj
+noremap  <silent> k gk
+noremap  <silent> 0 g0
+noremap  <silent> $ g$
+noremap  <silent> w <Plug>CamelCaseMotion_w
+noremap  <silent> b <Plug>CamelCaseMotion_b
+noremap  <silent> e <Plug>CamelCaseMotion_e
 vnoremap <silent> Q gq
 vnoremap <silent> Y "+y
 nnoremap <leader>n :Lexplore<CR>
