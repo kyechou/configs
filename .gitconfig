@@ -48,5 +48,5 @@
     lg = log --graph --color
     lgp = log --color -p --compact-summary
     lsr = ls-remote
-    diff = diff
-    diffc = diff --cached
+    d = diff
+    dc = diff --cached
