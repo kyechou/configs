@@ -33,7 +33,8 @@
     submodulesummary = true
 
 [diff]
-    algorithm = minimal
+    algorithm = histogram
+    colorMoved = true
 
 [log]
     date = iso-local
