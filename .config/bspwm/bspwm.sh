@@ -10,7 +10,7 @@ dGPU_status=(
         con=${p%/status}
         echo -n "${con#*/card?-}:"
         cat "$p"
-    done | grep '\<DP-' | cut -d: -f2)
+    done | grep -E '\<DP-|HDMI-' | cut -d: -f2)
 )
 
 dGPU_connected=0
