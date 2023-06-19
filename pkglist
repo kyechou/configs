@@ -10,6 +10,7 @@ automake
 autossh
 baobab
 base
+base-devel
 bash-completion
 biber
 bind
