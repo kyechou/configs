@@ -97,6 +97,7 @@ less
 libarchive
 libreoffice-fresh
 libtool
+libva-nvidia-driver
 lifeograph
 light
 linux
@@ -129,7 +130,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
 nvidia-open-dkms
-nvidia-vaapi-driver-git
 openbsd-netcat
 openssh
 openvpn
