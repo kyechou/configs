@@ -5,8 +5,6 @@ asp
 astyle
 atool
 aur-out-of-date
-autoconf
-automake
 autossh
 baobab
 base
@@ -14,8 +12,6 @@ base-devel
 bash-completion
 biber
 bind
-binutils
-bison
 blueberry
 bridge-utils
 browserpass-firefox
@@ -36,7 +32,6 @@ edk2-ovmf
 elinks
 ettercap
 everforest-gtk-theme-git
-fakeroot
 fcitx5
 fcitx5-chewing
 fcitx5-configtool
@@ -45,20 +40,15 @@ fcitx5-nord
 fcitx5-qt
 feh
 ferdi-bin
-file
 file-roller
-findutils
 firefox
 flameshot
-flex
 font-manager
 fzf
 gammastep
 gaupol
-gawk
 gcc
 gdb
-gettext
 ghostscript
 git
 gnome-disk-utility
@@ -69,9 +59,7 @@ google-chrome
 gptfdisk
 greetd
 greetd-gtkgreet-git
-grep
 grimshot
-groff
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
@@ -80,7 +68,6 @@ gst-plugins-good
 gst-plugins-ugly
 gtk-engine-murrine
 gvim
-gzip
 htop
 hugo
 hunspell
@@ -95,7 +82,6 @@ kanagawa-gtk-theme-git
 less
 libarchive
 libreoffice-fresh
-libtool
 libva-nvidia-driver
 lifeograph
 light
@@ -109,8 +95,6 @@ logiops-git
 lxappearance-gtk3
 lxrandr
 lxsession
-m4
-make
 man-db
 man-pages
 mdadm
@@ -138,14 +122,12 @@ pacman-contrib
 parted
 paru
 pass
-patch
 pavucontrol
 pdfcrop
 pdftk
 phinger-cursors
 picom
 pipewire-pulse
-pkgconf
 polybar
 pscircle
 python-matplotlib
@@ -155,7 +137,6 @@ redshift
 reflector
 rofi-lbonn-wayland
 rsync
-sed
 solaar
 soundconverter
 speedcrunch
@@ -171,7 +152,6 @@ syncthing
 system-config-printer
 systemd-boot-pacman-hook
 tcpdump
-texinfo
 texlive-meta
 the_silver_searcher
 thunderbird
@@ -196,7 +176,6 @@ vlc
 waybar
 wdisplays
 wget
-which
 whois
 wireplumber
 wireshark-qt
