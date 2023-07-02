@@ -17,5 +17,5 @@ command = "agreety -c /bin/bash"
 user = "greeter"
 
 [initial_session]
-command = "/home/kyc/.config/bspwm/bspwm.sh"
+command = "/home/kyc/.config/hypr/hyprland.sh"
 user = "kyc"
