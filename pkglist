@@ -87,8 +87,6 @@ light
 linux
 linux-firmware
 linux-headers
-linux-lts
-linux-lts-headers
 linux-wifi-hotspot
 logiops-git
 lxappearance-gtk3
