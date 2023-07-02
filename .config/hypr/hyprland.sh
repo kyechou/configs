@@ -11,15 +11,16 @@ export GDK_BACKEND='wayland,x11'
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORM='wayland;xcb'
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export LIBSEAT_BACKEND=logind
 
 # Nvidia
 # https://wiki.hyprland.org/Configuring/Environment-variables/#nvidia-specific
-dGPU_status=(
-    $(for p in /sys/class/drm/*/status; do
+mapfile -t dGPU_status < <(
+    for p in /sys/class/drm/*/status; do
         con=${p%/status}
         echo -n "${con#*/card?-}:"
         cat "$p"
-    done | grep -E '\<DP-|HDMI-' | cut -d: -f2)
+    done | grep -E '\<DP-|\<HDMI-' | cut -d: -f2
 )
 
 dGPU_connected=0
@@ -36,7 +37,6 @@ if [[ $dGPU_connected -ne 0 ]]; then
     export __GLX_GSYNC_ALLOWED=1
     export __GL_VRR_ALLOWED=1
     export __GL_GSYNC_ALLOWED=1
-    export WLR_DRM_NO_ATOMIC=1
     export WLR_NO_HARDWARE_CURSORS=1
     export WLR_DRM_DEVICES=/dev/dri/card0
 fi

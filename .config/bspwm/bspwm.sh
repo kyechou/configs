@@ -5,12 +5,12 @@ BACKUP="$NVFILE.back"
 
 # Nvidia
 # https://wiki.hyprland.org/Configuring/Environment-variables/#nvidia-specific
-dGPU_status=(
-    $(for p in /sys/class/drm/*/status; do
+mapfile -t dGPU_status < <(
+    for p in /sys/class/drm/*/status; do
         con=${p%/status}
         echo -n "${con#*/card?-}:"
         cat "$p"
-    done | grep -E '\<DP-|HDMI-' | cut -d: -f2)
+    done | grep -E '\<DP-|\<HDMI-' | cut -d: -f2
 )
 
 dGPU_connected=0
