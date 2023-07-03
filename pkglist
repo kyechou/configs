@@ -27,7 +27,6 @@ dnsmasq
 dunst
 e2fsprogs
 easytag
-edk2-ovmf
 elinks
 ettercap
 everforest-gtk-theme-git
@@ -41,7 +40,6 @@ feh
 ferdi-bin
 file-roller
 firefox
-flameshot
 font-manager
 fzf
 gammastep
@@ -52,12 +50,10 @@ ghostscript
 git
 gnome-disk-utility
 gnome-keyring
-gnome-themes-extra
 gnuplot
 google-chrome
 gptfdisk
 greetd
-greetd-gtkgreet-git
 grimshot
 gst-libav
 gst-plugin-pipewire
@@ -65,12 +61,12 @@ gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
-gtk-engine-murrine
 gvim
 htop
 hugo
 hunspell
 hunspell-en_us
+hyprland-nvidia-git
 i3lock
 inetutils
 intel-ucode
@@ -105,7 +101,6 @@ nmap
 nnn
 nodejs
 nordic-wallpapers
-nordvpn-bin
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -128,8 +123,8 @@ picom
 pipewire-pulse
 polybar
 pscircle
-python-matplotlib
 qemu-desktop
+qt5-wayland
 qt6-wayland
 redshift
 reflector
@@ -141,7 +136,6 @@ speedcrunch
 spotify
 sshpass
 sudo
-sway
 swaybg
 swaylock-effects-git
 sxhkd
@@ -180,6 +174,7 @@ wireshark-qt
 wl-clipboard
 workrave
 xclip
+xdg-desktop-portal-hyprland
 xdotool
 xorg-bdftopcf
 xorg-docs
@@ -235,4 +230,3 @@ zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
 zip
-zoom
