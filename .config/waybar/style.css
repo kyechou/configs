@@ -65,6 +65,7 @@
   min-height: 0;
   margin: 0;
   padding: 0;
+  font-family: "Iosevka Nerd Font";
 }
 
 #waybar {
@@ -73,7 +74,7 @@
 }
 
 #waybar.hidden {
-  opacity: 0.2;
+  opacity: 0.7; /* 1: opaque, 0: transparent */
 }
 
 tooltip {
@@ -84,13 +85,13 @@ tooltip {
 tooltip label {
   padding-left:  6px;
   padding-right: 6px;
+  font-size: 15px;
   color: @fujiWhite;
-  font-size: 14px;
-  font-family: "Iosevka Nerd Font", "Hack Nerd Font";
 }
 
 #workspaces,
 #mode,
+#submap,
 #window,
 #custom-updates,
 #disk,
@@ -104,11 +105,13 @@ tooltip label {
   margin-top: 8px;
   margin-bottom: 0px;
   margin-left: 8px;
-  padding: 0 10px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
   transition: none;
-  color: @fujiWhite;
   font-size: 16px;
-  font-family: "Iosevka Nerd Font", "Hack Nerd Font";
+  color: @fujiWhite;
 }
 
 /* --------------------------------------------------------------------------
@@ -117,7 +120,7 @@ tooltip label {
 
 #workspaces {
   background: shade(@dragonBlue, 0.5);
-  padding: 0 7px;
+  padding: 0 6px;
 }
 
 #workspaces button {
@@ -134,11 +137,15 @@ tooltip label {
   color: white;
 }
 
+#workspaces button.active,
+#workspaces button.focused,
 #workspaces button.visible {
   color: @sumiInk0;
   background: shade(@crystalBlue, 0.9);
 }
 
+#workspaces button.active:hover,
+#workspaces button.focused:hover,
 #workspaces button.visible:hover {
   color: black;
 }
@@ -148,17 +155,17 @@ tooltip label {
   background: @waveRed;
 }
 
-#mode {
+#mode, #submap {
   color: @oldWhite;
   background: @sumiInk2;
 }
 
-#window {
+#window:not(.empty) {
   color: @oldWhite;
-  background: @sumiInk1;
+  background: @sumiInk2;
 }
 
-window#waybar.empty, #waybar.empty #window {
+#window.empty, window#waybar.empty, #waybar.empty #window {
   background: transparent;
 }
 
@@ -224,13 +231,8 @@ window#waybar.empty, #waybar.empty #window {
 
 #tray {
   margin-right: 8px;
-  background: @sumiInk3;
+  background: @sumiInk2;
 }
-
-/*
-#tray menu {
-}
-*/
 
 #tray > .passive {
     -gtk-icon-effect: dim;
