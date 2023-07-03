@@ -309,7 +309,7 @@ bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+v exec virt-manager
 bindsym $mod+Print     exec grimshot save output \$(date +'%Y-%m-%d.%H-%M-%S.png')
 bindsym Print          exec grimshot save area \$(date +'%Y-%m-%d.%H-%M-%S.png')
-bindsym $mod+Shift+Control+l exec /usr/bin/chromium --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
+bindsym $mod+Shift+Control+l exec /usr/bin/google-chrome-stable --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
 #bindsym Print exec flameshot gui
 # https://github.com/flameshot-org/flameshot/issues/2978
 
@@ -322,6 +322,7 @@ bindsym $mod+Shift+Control+l exec /usr/bin/chromium --app=chrome-extension://oph
 
 #
 # systemctl user environment
+# https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
 #
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
@@ -331,18 +332,12 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 #
 exec waybar
 exec dunst
-exec light -S 70
+exec light -S 60
 exec fcitx5 -d --replace
 exec nm-applet --indicator
-exec ~/.config/sway/centralize-cursor.sh
+exec solaar --window hide --battery-icons regular
 exec lxpolkit # needed by virt-manager
 exec /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
-exec gammastep
+#exec gammastep
 # https://www.reddit.com/r/gnome/comments/tzxeax/is_there_currently_a_solution_to_screen_color/
-
-#
-# User space applications
-#
-#until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
-#autostart thunderbird
-#autostart ferdi
+exec ~/.config/sway/centralize-cursor.sh
