@@ -45,6 +45,7 @@ gammastep
 gaupol
 gcc
 gdb
+gdm
 ghostscript
 git
 gnome-disk-utility
@@ -52,7 +53,6 @@ gnome-keyring
 gnuplot
 google-chrome
 gptfdisk
-greetd
 grimshot
 gst-libav
 gst-plugin-pipewire
