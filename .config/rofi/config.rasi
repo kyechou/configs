@@ -1,34 +1,37 @@
 configuration {
-    modi:                           "window,drun,run,ssh,combi";
-    width:                          30;
-    lines:                          20;
-    font:                           "Iosevka Nerd Font 13";
-    show-icons:                     false;
-    icon-theme:                     "Kanagawa";
-    drun-display-format:            "{name}";
-    disable-history:                true;
-    sort:                           true;
-    sorting-method:                 "fzf";
-    sidebar-mode:                   false;
-    combi-modi:                     "window,drun,run,ssh";
-    hide-scrollbar:                 true;
-    display-drun:                   " ";
-    display-combi:                  " ";
+    modi:                   "drun,run,ssh,combi";
+    width:                  30;
+    lines:                  20;
+    font:                   "Iosevka Nerd Font 13";
+    show-icons:             false;
+    icon-theme:             "Everforest-Dark";
+    drun-display-format:    "{name}";
+    combi-display-format:   " {mode}  {text}";
+    disable-history:        true;
+    sort:                   true;
+    sorting-method:         "fzf";
+    sidebar-mode:           false;
+    combi-modi:             "drun,run,ssh";
+    hide-scrollbar:         true;
+    display-drun:           " ";
+    display-run:            "󰜎 ";
+    display-ssh:            " ";
+    display-combi:          " ";
 
-    kb-remove-char-back:            "BackSpace,Shift+BackSpace";
-    kb-remove-to-eol:               "";
-    kb-accept-entry:                "Control+m,Return,KP_Enter";
-    kb-mode-complete:               "";
-    kb-row-up:                      "Up,Control+k";
-    kb-row-down:                    "Down,Control+j";
-    kb-page-prev:                   "Page_Up,Control+h";
-    kb-page-next:                   "Page_Down,Control+l";
+    kb-remove-char-back:    "BackSpace,Shift+BackSpace";
+    kb-remove-to-eol:       "";
+    kb-accept-entry:        "Control+m,Return,KP_Enter";
+    kb-mode-complete:       "";
+    kb-row-up:              "Up,Control+k";
+    kb-row-down:            "Down,Control+j";
+    kb-page-prev:           "Page_Up,Control+h";
+    kb-page-next:           "Page_Down,Control+l";
 }
 
-@theme "gruvbox-dark-hard"
+@theme "dracula-1"
 
 window {
-    transparency:                   "real";
-    location:                       center;
-    padding:                        8px;
+    transparency:           "real";
+    location:               center;
+    padding:                8px;
 }
