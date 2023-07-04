@@ -46,10 +46,12 @@ gaupol
 gcc
 gdb
 gdm
+gdm-settings
 ghostscript
 git
 gnome-disk-utility
 gnome-keyring
+gnome-tweaks
 gnuplot
 google-chrome
 gptfdisk
