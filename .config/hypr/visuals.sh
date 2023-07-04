@@ -14,5 +14,5 @@ if [[ "$animation_enabled" == 1 ]]; then
         keyword animations:enabled 0;\
     " >/dev/null
 else
-    hyprctl reload
+    hyprctl reload >/dev/null
 fi
