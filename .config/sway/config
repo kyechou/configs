@@ -299,7 +299,7 @@ bindsym $mod+Shift+m      exec pactl set-source-mute   @DEFAULT_SOURCE@ toggle
 
 # Program shortcuts
 bindsym $mod+Return exec $term
-bindsym $mod+Control+a exec ferdi
+bindsym $mod+Control+a exec ferdium
 bindsym $mod+Control+b exec firefox
 bindsym $mod+Control+c exec speedcrunch
 bindsym $mod+Control+f exec $term --class nnn -t nnn -e nnn
