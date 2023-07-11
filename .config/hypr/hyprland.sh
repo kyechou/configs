@@ -45,6 +45,6 @@ fi
 export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors
-export XCURSOR_SIZE=32
+#export XCURSOR_SIZE=32
 
 exec Hyprland
