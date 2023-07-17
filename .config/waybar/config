@@ -113,7 +113,8 @@
     "interval": 20,
     "format": "{} update(s)",
     "exec": "checkupdates | wc -l",
-    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]"
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    "tooltip": false
   },
   "disk#root": {
     "interval": 60,
