@@ -93,6 +93,7 @@ tooltip label {
 #mode,
 #submap,
 #window,
+#custom-spotify,
 #custom-updates,
 #disk,
 #pulseaudio,
@@ -167,6 +168,11 @@ tooltip label {
 
 #window.empty, window#waybar.empty, #waybar.empty #window {
   background: transparent;
+}
+
+#custom-spotify {
+  color: @fujiWhite;
+  background: @sumiInk4;
 }
 
 #custom-updates {

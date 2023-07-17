@@ -20,6 +20,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/spotify",
     "custom/updates",
     "disk#root",
     "disk#home",
@@ -109,6 +110,18 @@
   //
   // Modules (right)
   //
+  "custom/spotify": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "playerctl -p spotify stop",
+    "on-scroll-up" : "playerctl -p spotify previous",
+    "on-scroll-down" : "playerctl -p spotify next",
+    "exec": "python $HOME/.config/waybar/mediaplayer.py --player spotify 2>/dev/null",
+    "exec-if": "pgrep spotify"
+  },
   "custom/updates": {
     "interval": 20,
     "format": "{} update(s)",
