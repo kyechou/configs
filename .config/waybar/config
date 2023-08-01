@@ -21,7 +21,6 @@
     "clock"
   ],
   "modules-right": [
-    "custom/updates",
     "disk#root",
     "disk#home",
     "pulseaudio",
