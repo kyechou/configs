@@ -22,6 +22,11 @@ export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 
+# GTK themes
+export GTK_THEME=Kanagawa-Borderless:dark
+export GTK_ICON_THEME=Everforest-Dark
+export XCURSOR_THEME=phinger-cursors
+
 # input method framework
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
