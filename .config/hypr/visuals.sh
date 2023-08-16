@@ -9,7 +9,7 @@ if [[ "$animation_enabled" == 1 ]]; then
         keyword decoration:active_opacity 1.0;\
         keyword decoration:inactive_opacity 1.0;\
         keyword decoration:fullscreen_opacity 1.0;\
-        keyword decoration:blur 0;\
+        keyword decoration:blur:enabled 0;\
         keyword decoration:drop_shadow 0;\
         keyword animations:enabled 0;\
     " >/dev/null

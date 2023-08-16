@@ -140,7 +140,7 @@
   <entry key="keyGenAlwaysAddLetter" value="false"/>
   <entry key="keyGenFirstLetterA" value="true"/>
   <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib;/home/kyc/cs/projects/neo-paper/reference.bib"/>
-  <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
+  <entry key="lastFocused" value="/home/kyc/vmware/vrni-labs-scylla/reference.bib"/>
   <entry key="lastUsedExport" value="HTML table (with Abstract &amp; BibTeX)"/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
@@ -150,11 +150,11 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;287.77009763219905;287.77009763219905;287.77009763219905;287.77009763219905;287.77009763219735"/>
-  <entry key="mainWindowPosX" value="9.0"/>
-  <entry key="mainWindowPosY" value="39.0"/>
-  <entry key="mainWindowSizeX" value="1896.0"/>
-  <entry key="mainWindowSizeY" value="1146.0"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;211.7681829769399;277.7681829769399;277.7681829769399;277.7681829769399;343.7681829769394"/>
+  <entry key="mainWindowPosX" value="13.0"/>
+  <entry key="mainWindowPosY" value="48.0"/>
+  <entry key="mainWindowSizeX" value="1855.0"/>
+  <entry key="mainWindowSizeY" value="1193.0"/>
   <entry key="markImportedEntries" value="false"/>
   <entry key="markedEntryBackground0" value="255:255:180"/>
   <entry key="markedEntryBackground1" value="255:220:180"/>
