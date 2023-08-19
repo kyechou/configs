@@ -55,7 +55,7 @@ main() {
     num_monitors=$(hyprctl monitors | grep -c ^Monitor)
 
     if [[ "$OP" == "open" ]]; then
-        hyprctl keyword monitor "$laptop_monitor,preferred,auto,1.25"
+        hyprctl keyword monitor "$laptop_monitor,preferred,auto,1.2"
     elif [[ "$OP" == "close" ]]; then
         if [[ $num_monitors -le 1 ]]; then
             swaylock
