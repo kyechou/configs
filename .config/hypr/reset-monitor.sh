@@ -17,19 +17,15 @@ usage() {
     cat <<EOF
 [!] Usage: $(basename "${BASH_SOURCE[0]}") [options]
 
-    Handle laptop lid swith events
+    Reset Hyprland monitors
 
     Options:
     -h, --help          Print this help and exit
     -v, --verbose       Print script debug info
-    -o, --open          Lid open
-    -c, --close         Lid close
 EOF
 }
 
 parse_params() {
-    OP=
-
     while :; do
         case "${1-}" in
         -h | --help)
@@ -37,34 +33,35 @@ parse_params() {
             exit
             ;;
         -v | --verbose) set -x ;;
-        -o | --open) OP=open ;;
-        -c | --close) OP=close ;;
         -?*) die "Unknown option: $1\n$(usage)" ;;
         *) break ;;
         esac
         shift
     done
-
-    export OP
 }
 
 main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
-    laptop_scale=1.25 # This has to be consistent with reset-monitor.sh
+    laptop_scale=1.25
+    laptop_is_on=$(hyprctl monitors | grep -c "^Monitor $laptop_monitor ")
     num_monitors=$(hyprctl monitors | grep -c ^Monitor)
+    cmds=''
 
-    if [[ "$OP" == "open" ]]; then
-        hyprctl keyword monitor "$laptop_monitor,preferred,auto,$laptop_scale"
-    elif [[ "$OP" == "close" ]]; then
-        if [[ $num_monitors -le 1 ]]; then
-            swaylock
-            systemctl suspend
-        else
-            hyprctl keyword monitor "$laptop_monitor,disable"
-        fi
+    # All other monitors are enabled by default.
+    cmds+='keyword monitor ,preferred,auto,1;'
+
+    if [[ $laptop_is_on -gt 0 ]]; then
+        # The laptop monitor is on.
+        cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
+    else
+        # The laptop monitor is off. Keep it disabled.
+        cmds+="keyword monitor $laptop_monitor,disable"
     fi
+
+    # Run the commands.
+    hyprctl --batch "$cmds" >/dev/null
 }
 
 main "$@"
