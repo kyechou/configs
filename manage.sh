@@ -61,8 +61,10 @@ GUI_CONFIGS=(
     .config/alacritty
     .config/bspwm
     .config/cmus
+    .config/code-flags.conf
     .config/colorscheme.sh
     .config/dunst
+    .config/electron-flags.conf
     .config/hypr
     .config/mimeapps.list
     .config/newsboat
