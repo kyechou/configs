@@ -22,14 +22,10 @@ usage() {
     Options:
     -h, --help          Print this help and exit
     -v, --verbose       Print script debug info
-    -o, --open          Lid open
-    -c, --close         Lid close
 EOF
 }
 
 parse_params() {
-    OP=
-
     while :; do
         case "${1-}" in
         -h | --help)
@@ -37,15 +33,15 @@ parse_params() {
             exit
             ;;
         -v | --verbose) set -x ;;
-        -o | --open) OP=open ;;
-        -c | --close) OP=close ;;
         -?*) die "Unknown option: $1\n$(usage)" ;;
         *) break ;;
         esac
         shift
     done
+}
 
-    export OP
+laptop_lid_status() {
+    awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID0/state
 }
 
 main() {
@@ -53,17 +49,20 @@ main() {
 
     laptop_monitor="eDP-1"
     laptop_scale=1.25 # This has to be consistent with reset-monitor.sh
+    lid_status="$(laptop_lid_status)"
     num_monitors=$(hyprctl monitors | grep -c ^Monitor)
 
-    if [[ "$OP" == "open" ]]; then
+    if [[ "$lid_status" == "open" ]]; then
         hyprctl keyword monitor "$laptop_monitor,preferred,auto,$laptop_scale"
-    elif [[ "$OP" == "close" ]]; then
+    elif [[ "$lid_status" == "closed" ]]; then
         if [[ $num_monitors -le 1 ]]; then
             swaylock
             systemctl suspend
         else
             hyprctl keyword monitor "$laptop_monitor,disable"
         fi
+    else
+        die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
     fi
 }
 

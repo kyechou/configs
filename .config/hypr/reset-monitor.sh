@@ -40,25 +40,28 @@ parse_params() {
     done
 }
 
+laptop_lid_status() {
+    awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID0/state
+}
+
 main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
     laptop_scale=1.25
-    laptop_is_on=$(hyprctl monitors | grep -c "^Monitor $laptop_monitor ")
-    num_monitors=$(hyprctl monitors | grep -c ^Monitor)
+    lid_status="$(laptop_lid_status)"
     cmds=''
+
+    if [[ "$lid_status" == "open" ]]; then
+        cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
+    elif [[ "$lid_status" == "closed" ]]; then
+        cmds+="keyword monitor $laptop_monitor,disable"
+    else
+        die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
+    fi
 
     # All other monitors are enabled by default.
     cmds+='keyword monitor ,preferred,auto,1;'
-
-    if [[ $laptop_is_on -gt 0 ]]; then
-        # The laptop monitor is on.
-        cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
-    else
-        # The laptop monitor is off. Keep it disabled.
-        cmds+="keyword monitor $laptop_monitor,disable"
-    fi
 
     # Run the commands.
     hyprctl --batch "$cmds" >/dev/null
