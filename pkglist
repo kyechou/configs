@@ -22,6 +22,7 @@ devtools
 diffutils
 dmidecode
 dnsmasq
+dotool-git
 dunst
 e2fsprogs
 easytag
@@ -157,6 +158,5 @@ wireshark-qt
 wl-clipboard
 workrave
 xdg-desktop-portal-hyprland
-ydotool
 zathura-pdf-mupdf
 zip
