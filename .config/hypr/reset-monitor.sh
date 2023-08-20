@@ -55,7 +55,7 @@ main() {
     if [[ "$lid_status" == "open" ]]; then
         cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
     elif [[ "$lid_status" == "closed" ]]; then
-        cmds+="keyword monitor $laptop_monitor,disable"
+        cmds+="keyword monitor $laptop_monitor,disable;"
     else
         die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
     fi
