@@ -65,6 +65,7 @@ GUI_CONFIGS=(
     .config/colorscheme.sh
     .config/dunst
     .config/electron-flags.conf
+    .config/gammastep
     .config/hypr
     .config/mimeapps.list
     .config/newsboat
