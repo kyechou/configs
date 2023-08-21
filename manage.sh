@@ -60,6 +60,7 @@ GUI_HOME_CONFIGS=(
 GUI_CONFIGS=(
     .config/alacritty
     .config/bspwm
+    .config/chrome-flags.conf
     .config/cmus
     .config/code-flags.conf
     .config/colorscheme.sh
