@@ -44,18 +44,27 @@ laptop_lid_status() {
     awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID0/state
 }
 
+get_external_monitors() {
+    hyprctl monitors | grep ^Monitor | cut -d ' ' -f 2 |
+        grep -v "^${laptop_monitor}$"
+}
+
 main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
     laptop_scale=1.25
     lid_status="$(laptop_lid_status)"
+    read -r -a external_monitors < <(get_external_monitors)
     cmds=''
 
     if [[ "$lid_status" == "open" ]]; then
         cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
     elif [[ "$lid_status" == "closed" ]]; then
         cmds+="keyword monitor $laptop_monitor,disable;"
+        if [[ ${#external_monitors[@]} -eq 1 ]]; then
+            cmds+="keyword monitor ${external_monitors[0]},preferred,0x0,1;"
+        fi
     else
         die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
     fi
