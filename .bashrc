@@ -47,6 +47,12 @@ export NNN_FIFO='/tmp/nnn.fifo'
 
 # vRNI/VeriFlow
 export SOURCE_ROOT=/home/kyc/vmware/main
+export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
+export JAVA_HOME=$JAVA_11_HOME
+export MAVEN_OPTS="-Xmx2252m"
+export M2_HOME=/opt/maven
+export PATH=$PATH:$M2_HOME/bin
 
 # bash completion
 [[ "${BASH#*bash}" != "$BASH" ]] && {
