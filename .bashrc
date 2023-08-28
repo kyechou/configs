@@ -21,6 +21,7 @@ export BROWSER=firefox
 export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 
 # GTK themes
 export GTK_THEME=Kanagawa-Borderless:dark
