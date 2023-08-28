@@ -53,17 +53,19 @@ main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
-    laptop_scale=1.25
+    laptop_scale=1.3
     lid_status="$(laptop_lid_status)"
-    read -r -a external_monitors < <(get_external_monitors)
+    set +e
+    read -r -a ext_mons < <(get_external_monitors)
+    set -e
     cmds=''
 
     if [[ "$lid_status" == "open" ]]; then
         cmds+="keyword monitor $laptop_monitor,preferred,auto,$laptop_scale;"
     elif [[ "$lid_status" == "closed" ]]; then
         cmds+="keyword monitor $laptop_monitor,disable;"
-        if [[ ${#external_monitors[@]} -eq 1 ]]; then
-            cmds+="keyword monitor ${external_monitors[0]},preferred,0x0,1;"
+        if [[ ${#ext_mons[@]} -eq 1 ]]; then
+            cmds+="keyword monitor ${ext_mons[0]},preferred,0x0,1;"
         fi
     else
         die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
