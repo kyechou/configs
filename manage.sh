@@ -71,6 +71,7 @@ GUI_CONFIGS=(
     .config/gtk-4.0
     .config/hypr
     .config/mimeapps.list
+    .config/ncspot
     .config/newsboat
     .config/picom
     .config/polybar

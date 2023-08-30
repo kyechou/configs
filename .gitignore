@@ -4,7 +4,7 @@
 .config/cmus/lib.pl
 .config/cmus/playlist.pl
 .config/cmus/search-history
-.config/ncspot/userstate.toml
+.config/ncspot/userstate.cbor
 .config/nnn/.selection
 .config/rescrobbled/config.toml
 .config/rescrobbled/session
