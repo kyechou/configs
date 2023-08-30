@@ -56,7 +56,7 @@ main() {
     laptop_scale=1.3
     lid_status="$(laptop_lid_status)"
     set +e
-    read -r -a ext_mons < <(get_external_monitors)
+    mapfile -t ext_mons < <(get_external_monitors)
     set -e
     cmds=''
 
