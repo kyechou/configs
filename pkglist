@@ -36,7 +36,6 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-nord
 fcitx5-qt
-feh
 ferdium-bin
 file-roller
 firefox
@@ -68,6 +67,7 @@ hugo
 hunspell
 hunspell-en_us
 hyprland
+imv
 inetutils
 intel-ucode
 iptables-nft
@@ -123,7 +123,6 @@ spotify-launcher
 sshpass
 swaybg
 swaylock-effects-git
-sxiv
 syncthing
 system-config-printer
 systemd-boot-pacman-hook
