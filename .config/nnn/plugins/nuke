@@ -300,9 +300,9 @@ load_dir() {
 
     if [ -n "$count" ]; then
         if [ "$GUI" -ne 0 ]; then
-            xargs -0 nohup "$1" -apq -n "$count" -- < "$tmp"
+            xargs -0 nohup "$1" -n "$count" -- < "$tmp"
         else
-            xargs -0 "$1" -apq -n "$count" -- < "$tmp"
+            xargs -0 "$1" -n "$count" -- < "$tmp"
         fi
     else
         shift
