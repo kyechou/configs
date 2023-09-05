@@ -18,4 +18,4 @@ export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors
 
-exec Hyprland
+exec Hyprland >"$HOME/.local/share/hyprland.log" 2>&1
