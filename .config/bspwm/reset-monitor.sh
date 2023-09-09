@@ -37,6 +37,10 @@ reset_monitor() {
     MONITORS="$(xrandr --listmonitors | sed '1d' | awk -F ' ' '{print $4}')"
     if [[ "${MONITORS[@]}" =~ "$LAPTOP_MON" ]]; then
         switch_monitor "$LAPTOP_MON"
+        xrandr --newmode "1800x1200_60.00"  \
+            180.75  1800 1920 2112 2424  1200 1203 1213 1245 -hsync +vsync
+        xrandr --addmode "$LAPTOP_MON" "1800x1200_60.00"
+        xrandr --output "$LAPTOP_MON" --mode "1800x1200_60.00"
     else
         switch_monitor "$(echo "${MONITORS[@]}" | head -n1)"
     fi
