@@ -1,0 +1,17 @@
+pkgbase = bspwm-meta
+	pkgdesc = Meta package for my bspwm environment
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = x86_64
+	depends = bspwm
+	depends = sxhkd
+	depends = i3lock
+	depends = picom
+	depends = polybar
+	depends = lxrandr
+	depends = xclip
+	depends = xdotool
+	depends = xorg
+	depends = xorg-xinit
+
+pkgname = bspwm-meta
