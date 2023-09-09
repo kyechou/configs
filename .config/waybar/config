@@ -13,7 +13,7 @@
   // Module ordering
   //
   "modules-left": [
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "custom/spotify",
     "hyprland/submap"
   ],
@@ -58,6 +58,17 @@
     "on-click-right": "activate",
     "sort-by-number": true
   },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "format": "{name}",
+    "show-special": false
+  },
+  "hyprland/submap": {
+    "format": "{}",
+    "on-click": "hyprctl dispatch submap reset",
+    "tooltip": false
+  },
   "custom/spotify": {
     "format": "{}",
     "escape": true,
@@ -69,11 +80,6 @@
     "on-scroll-down" : "playerctl -p spotify next",
     "exec": "python $HOME/.config/waybar/mediaplayer.py --player spotify 2>/dev/null",
     "exec-if": "pgrep spotify"
-  },
-  "hyprland/submap": {
-    "format": "{}",
-    "on-click": "hyprctl dispatch submap reset",
-    "tooltip": false
   },
 
   //
