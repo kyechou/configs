@@ -4,27 +4,27 @@
 #
 ################################################################################
 
-# make sxhkd reload its configuration files:
+# Reload sxhkd configuration
 alt + ctrl + r
     pkill -USR1 -x sxhkd
 
-# program launcher
+# Program launcher
 alt + d
     rofi -no-lazy-grab -show drun -modi drun
 alt + x
     rofi -no-lazy-grab -show combi -modi combi -combi-modi window,drun,run,ssh
 
-# pass password manager
+# Pass password manager
 alt + p
     ~/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p "pass" -no-custom
 
-# dunst notification daemon
+# Dunst notification daemon
 ctrl + @space
     dunstctl close
 ctrl + Return
     dunstctl history-pop
 
-# power, session management
+# Power, session management
 alt + End ; l
     i3lock -ec 111111
 alt + End ; e
@@ -34,33 +34,58 @@ alt + End ; {s,h}
 alt + End ; {r,p}
     systemctl {reboot,poweroff}
 
-# keyboard and mouse config
-## delay: 400 ms, rate: 35 hits/sec
-## acceleration: 0, threshold: 0
-ctrl + F1
-    xset r rate 400 35; \
-    xset mouse 0 0
-ctrl + F2
-    setxkbmap -option ctrl:nocaps
+XF86AudioMedia ; l
+    i3lock -ec 111111
+XF86AudioMedia ; e
+    bspc quit
+XF86AudioMedia ; {s,h}
+    i3lock -ec 111111 && systemctl {suspend,hibernate}
+XF86AudioMedia ; {r,p}
+    systemctl {reboot,poweroff}
 
-# touchpad
-ctrl + {F3,F4}
+# # Keyboard and mouse config
+# ## delay: 400 ms, rate: 35 hits/sec
+# ## acceleration: 0, threshold: 0
+# ctrl + F1
+#     xset r rate 400 35; \
+#     xset mouse 0 0
+# ctrl + F2
+#     setxkbmap -option ctrl:nocaps
+
+# Touchpad (disable/enable)
+ctrl + {F1,F2}
     devname="$(xinput list --name-only | grep -i touchpad | head -n1)"; \
     xinput {disable,enable} "$devname"
 
-# screen backlight
-ctrl + {F5,F6}
-    light -{U,A} 3
+# Screen backlight
+ctrl + {F3,F4}
+    brightnessctl set {2%-,+2%}
 
-# audio
+# Audio
 alt + {period,comma}
     pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
 alt + m
     pactl set-sink-mute @DEFAULT_SINK@ toggle
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+    pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 alt + shift + {period,comma}
+    pactl set-source-volume @DEFAULT_SOURCE@ {+2%,-2%}
+shift + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
     pactl set-source-volume @DEFAULT_SOURCE@ {+2%,-2%}
 alt + shift + m
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
+shift + XF86AudioMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Music/Media
+XF86AudioPrev
+    playerctl previous
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
 
 # program shortcuts
 alt + Return
@@ -72,21 +97,21 @@ alt + ctrl + b
 alt + ctrl + c
     speedcrunch
 alt + ctrl + f
-    alacritty --class nnn -t nnn -e nnn
+    alacritty --class nnn --title nnn -e bash -c 'source ~/.bashrc; nnn'
 alt + ctrl + m
     thunderbird
 alt + ctrl + n
-    alacritty --class newsboat -t newsboat -e newsboat
+    alacritty --class newsboat --title newsboat -e newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s
-    spotify
+    spotify-launcher
 alt + ctrl + v
     virt-manager
 alt + shift + ctrl + l
     /usr/bin/google-chrome-stable --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
-Print
-    flameshot gui
+# Print
+#     flameshot gui
 
 ################################################################################
 #
