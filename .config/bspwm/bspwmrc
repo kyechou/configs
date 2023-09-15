@@ -79,23 +79,15 @@ autorestart() {
     "$@" &
 }
 
+feh --bg-fill "$wallpaper" --image-bg $sumiInk1
+
 autostart sxhkd
 autostart dunst
 autostart picom -b
 autostart brightnessctl set 36%
 autostart fcitx5 -d --replace
 autostart nm-applet --indicator
-#autostart solaar --window hide --battery-icons solaar
 autostart blueman-applet
 autostart lxpolkit  # needed by virt-manager
-autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
-#autorestart gammastep
-
-feh --bg-fill "$wallpaper" --image-bg $sumiInk1
-
-
-### user applications
-
-#until ping -c1 www.google.com >/dev/null 2>&1; do sleep 1; done
-#autostart thunderbird
-#autostart ferdi
+#autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
+#autorestart redshift
