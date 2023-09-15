@@ -110,8 +110,8 @@ alt + ctrl + v
     virt-manager
 alt + shift + ctrl + l
     /usr/bin/google-chrome-stable --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
-# Print
-#     flameshot gui
+Print
+    flameshot gui
 
 ################################################################################
 #
