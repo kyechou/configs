@@ -9,14 +9,7 @@ if [[ $1 == "--type" ]]; then
     shift
 fi
 
-if [[ -n $WAYLAND_DISPLAY ]]; then
-    dotool="dotoolc"
-elif [[ -n $DISPLAY ]]; then
-    dotool="xdotool type --clearmodifiers --file -"
-else
-    echo "Error: No Wayland or X11 display detected" >&2
-    exit 1
-fi
+dotool="dotoolc"
 
 # get all the saved password files
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
@@ -28,8 +21,9 @@ password_files=("${password_files[@]%.gpg}")
 password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@")
 [[ -n $password ]] || exit
 
-# pass -c copied the password in clipboard. The additional output from pass is piped in to /dev/null
 if [[ $typeit -eq 0 ]]; then
+    # pass -c copied the password in clipboard. The additional output from pass
+    # is piped in to /dev/null
     pass show -c "$password" 2>/dev/null
 else
     pass show "$password" | {
