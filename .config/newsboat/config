@@ -1,11 +1,19 @@
+# general configs
+always-display-description yes
+articlelist-title-format "%N %V - '%T' (%u unread, %t total)%?F? matching filter '%F'&?"
 auto-reload yes
 browser firefox
 datetime-format "%b %d, %Y"
+download-full-page yes
 goto-first-unread no
 goto-next-feed no
-keep-articles-days 30
-refresh-on-startup yes
-text-width 80
+keep-articles-days 60
+refresh-on-startup no
+reload-threads 4
+reload-time 60 # minutes
+scrolloff 3
+suppress-first-reload yes
+text-width 0
 
 # vim-like key bindings
 bind-key j  down
@@ -55,3 +63,5 @@ highlight article "https?://[^ ]+" color136 default underline
 highlight article "\\[[0-9]+\\]" color136 default bold
 highlight article "\\[image\\ [0-9]+\\]" color136 default bold
 highlight feedlist "^─.*$" color6 black bold
+
+# vim: set ft=conf :

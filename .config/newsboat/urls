@@ -1,21 +1,25 @@
-# blog
-https://slate.com/feeds/all.rss
-
 # tech
-https://archlinux.org/feeds/news/ tech
-https://www.networkcomputing.com/rss/all tech
-https://spectrum.ieee.org/rss/computing/fulltext tech
-https://spectrum.ieee.org/rss/telecom/fulltext tech
-http://rss.acm.org/technews/TechNews.xml tech
-http://opensource.com/feed tech
-
-# TW news
-https://about.pts.org.tw/rss/XML/newsfeed.xml news tw-news
-https://www.twreporter.org/a/rss2.xml news tw-news
-https://feeds.feedburner.com/TheNewsLens news tw-news
+https://archlinux.org/feeds/news/
+https://www.networkcomputing.com/rss/all
+http://rss.acm.org/technews/TechNews.xml
+https://spectrum.ieee.org/rss/computing/fulltext
 
 # news
-https://www.theatlantic.com/feed/best-of/ news "~The Atlantic"
-https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news "~The New York Times"
-https://global.udn.com/rss/news/1020/8662 news
-https://dailyillini.com/feed/rss/ news
+https://news.google.com/rss
+https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB # business
+https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB # technology
+https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB # science
+https://www.theatlantic.com/feed/best-of/ "~The Atlantic"
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "~The New York Times"
+https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114 "~CNBC - Top News and Analysis"
+https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147 "~CNBC - Business News"
+https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664 "~CNBC - Finance"
+https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000115 "~CNBC - Real Estate"
+https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069 "~CNBC - Investing"
+http://feeds.marketwatch.com/marketwatch/bulletins
+
+# TW news
+https://about.pts.org.tw/rss/XML/newsfeed.xml
+https://www.twreporter.org/a/rss2.xml
+https://feeds.feedburner.com/TheNewsLens
+
