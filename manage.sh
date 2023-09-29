@@ -141,7 +141,6 @@ sync() {
     "${RSYNC[@]}" ~/.ssh ~/.gnupg ~/.config/mudlet private/
     mkdir -p .java/.userPrefs/org && "${RSYNC[@]}" ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     mkdir -p .workrave && "${RSYNC[@]}" ~/.workrave/workrave.ini .workrave/
-    mkdir -p .elinks && "${RSYNC[@]}" ~/.elinks/elinks.conf .elinks/
     [[ -r /etc/makepkg.conf ]] &&
         "${RSYNC[@]}" /etc/makepkg.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] &&
@@ -185,7 +184,6 @@ deploy_all() {
     "${RSYNC[@]}" private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && "${RSYNC[@]}" .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     mkdir -p ~/.workrave && "${RSYNC[@]}" .workrave/workrave.ini ~/.workrave/
-    mkdir -p ~/.elinks && "${RSYNC[@]}" .elinks/elinks.conf ~/.elinks/
     sudo "${RSYNC[@]}" logid.cfg /etc/
     sudo "${RSYNC[@]}" hid_apple.conf /etc/modprobe.d/
     sudo "${RSYNC[@]}" iptables.rules /etc/iptables/

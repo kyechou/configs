@@ -1,5 +1,5 @@
 auto-reload yes
-browser elinks
+browser firefox
 datetime-format "%b %d, %Y"
 goto-first-unread no
 goto-next-feed no
