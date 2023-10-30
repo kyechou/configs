@@ -77,6 +77,7 @@ GUI_CONFIGS=(
     .config/polybar
     .config/redshift
     .config/rofi
+    .config/safeeyes
     .config/sway
     .config/swaylock
     .config/sxhkd
@@ -140,7 +141,6 @@ sync() {
     for item in "${GUI_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" .config/; done
     "${RSYNC[@]}" ~/.ssh ~/.gnupg ~/.config/mudlet private/
     mkdir -p .java/.userPrefs/org && "${RSYNC[@]}" ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
-    mkdir -p .workrave && "${RSYNC[@]}" ~/.workrave/workrave.ini .workrave/
     [[ -r /etc/makepkg.conf ]] &&
         "${RSYNC[@]}" /etc/makepkg.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] &&
@@ -183,7 +183,6 @@ deploy_all() {
     for item in "${GUI_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/.config/; done
     "${RSYNC[@]}" private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && "${RSYNC[@]}" .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
-    mkdir -p ~/.workrave && "${RSYNC[@]}" .workrave/workrave.ini ~/.workrave/
     sudo "${RSYNC[@]}" logid.cfg /etc/
     sudo "${RSYNC[@]}" hid_apple.conf /etc/modprobe.d/
     sudo "${RSYNC[@]}" iptables.rules /etc/iptables/

@@ -116,6 +116,7 @@ qt6-wayland
 reflector
 rofi-lbonn-wayland
 rsync
+safeeyes
 solaar
 soundconverter
 speedcrunch
@@ -158,7 +159,6 @@ whois
 wireplumber
 wireshark-qt
 wl-clipboard
-workrave
 xdg-desktop-portal-hyprland
 zathura-pdf-mupdf
 zip
