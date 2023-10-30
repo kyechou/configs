@@ -106,6 +106,8 @@ pass
 pavucontrol
 pdfcrop
 pdftk
+perl-file-homedir
+perl-yaml-tiny
 phinger-cursors
 pipewire-pulse
 pscircle
