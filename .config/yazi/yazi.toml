@@ -17,7 +17,8 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-edit = [{ exec = '"${VISUAL:-${EDITOR:-vi}}" "$@"', block = true }]
+edit = [{ exec = '"${EDITOR:-vi}" "$@"', block = true }]
+code = [{ exec = 'code "$@"', orphan = true }]
 open = [{ exec = 'xdg-open "$@"', orphan = true, desc = "XDG Open" }]
 reveal = [
     { exec = 'exiftool "$1"; echo "Press enter to exit"; read', block = true, desc = "Show EXIF" },
@@ -25,13 +26,16 @@ reveal = [
 
 [open]
 rules = [
+    # Directory
+    # { name = "*/", use = [] },
+
     # Text/Empty files
-    { mime = "text/*", use = ["edit", "open", "reveal"] },
-    { mime = "inode/x-empty", use = ["edit", "reveal"] },
-    { mime = "application/json", use = ["edit", "reveal"] },
+    { mime = "text/*", use = ["edit", "code", "open", "reveal"] },
+    { mime = "inode/x-empty", use = ["edit", "code", "reveal"] },
+    { mime = "application/json", use = ["edit", "code", "reveal"] },
 
     # Default
-    { mime = "*", use = ["open", "reveal"] },
+    { mime = "*", use = ["open", "code", "reveal"] },
 ]
 
 [tasks]
