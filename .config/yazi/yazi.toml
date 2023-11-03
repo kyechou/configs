@@ -35,7 +35,7 @@ rules = [
     { mime = "application/json", use = ["edit", "code", "reveal"] },
 
     # Default
-    { mime = "*", use = ["open", "code", "reveal"] },
+    { mime = "*", use = ["open", "edit", "code", "reveal"] },
 ]
 
 [tasks]
