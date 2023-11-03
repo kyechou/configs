@@ -49,8 +49,8 @@ CLI_HOME_CONFIGS=(
 )
 
 CLI_CONFIGS=(
-    .config/nnn
     .config/paru
+    .config/yazi
 )
 
 GUI_HOME_CONFIGS=(

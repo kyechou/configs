@@ -35,7 +35,9 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-nord
 fcitx5-qt
+fd
 ferdium-bin
+ffmpegthumbnailer
 file-roller
 firefox
 font-manager
@@ -89,7 +91,6 @@ network-manager-applet
 networkmanager
 newsboat
 nmap
-nnn
 nordic-wallpapers
 noto-fonts
 noto-fonts-cjk
@@ -107,6 +108,7 @@ pavucontrol
 pdfcrop
 pdftk
 perl-file-homedir
+perl-image-exiftool
 perl-yaml-tiny
 phinger-cursors
 pipewire-pulse
@@ -143,6 +145,7 @@ ttc-iosevka-etoile
 ttf-hack
 ttf-hack-nerd
 ttf-iosevka-nerd
+ueberzugpp
 uiuc-vpn
 unifi
 unrar
@@ -160,5 +163,6 @@ wireplumber
 wireshark-qt
 wl-clipboard
 xdg-desktop-portal-hyprland
+yazi
 zathura-pdf-poppler
 zip

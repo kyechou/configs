@@ -23,6 +23,9 @@ export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 
+# Perl executables
+export PATH=$PATH:/usr/bin/vendor_perl
+
 # GTK themes
 export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
@@ -32,19 +35,6 @@ export XCURSOR_THEME=phinger-cursors
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
-
-# nnn
-[[ -n "$NNNLVL" ]] && PS1="\[\e[2m\](N $NNNLVL)\[\e[0m\] $PS1"
-export NNN_OPTS='AcdeEiRuU'
-export NNN_OPENER=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke
-export GUI=1
-export BIN=0
-export NNN_PLUG='o:fzopen;c:fzcd;s:suedit;d:gpgd;e:gpge;O:openall'
-export NNN_COLORS='#44444444'
-export NNN_FCOLORS='c1e2442200607bf7c6d6abc4'
-export NNN_ARCHIVE='\\.(7z|bz2|gz|tar|tgz|xz|zip|zst)$'
-export NNN_TRASH=1
-export NNN_FIFO='/tmp/nnn.fifo'
 
 # vRNI/VeriFlow
 export SOURCE_ROOT=/home/kyc/vmware/main
