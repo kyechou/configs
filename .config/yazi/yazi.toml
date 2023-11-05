@@ -27,7 +27,7 @@ reveal = [
 [open]
 rules = [
     # Directory
-    # { name = "*/", use = [] },
+    { name = "*/", use = ["open", "edit", "reveal"] },
 
     # Text/Empty files
     { mime = "text/*", use = ["edit", "code", "open", "reveal"] },
