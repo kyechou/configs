@@ -2,7 +2,7 @@ configuration {
     modi:                   "drun,run,ssh,combi";
     width:                  30;
     lines:                  20;
-    font:                   "Iosevka Nerd Font 13";
+    font:                   "Iosevka NF 13";
     show-icons:             false;
     icon-theme:             "Everforest-Dark";
     drun-display-format:    "{name}";
