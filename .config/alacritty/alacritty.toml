@@ -1,0 +1,111 @@
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+[env]
+    # TERM variable
+    #
+    # This value is used to set the `$TERM` environment variable for
+    # each instance of Alacritty. If it is not present, alacritty will
+    # check the local terminfo database and use `alacritty` if it is
+    # available, otherwise `xterm-256color` is used.
+    #TERM: alacritty
+    WINIT_X11_SCALE_FACTOR = "1"
+
+[window]
+    decorations = "none"
+    decorations_theme_variant = "Dark"
+    dynamic_padding = false
+    dynamic_title = true
+    opacity = 1.0
+    startup_mode = "Windowed"
+
+    [window.padding]
+    # Blank space added around the window in pixels. This padding is scaled
+    # by DPI and the specified value is always added at both opposing sides.
+    x = 2
+    y = 2
+
+[colors.bright]
+black = "#928374"
+blue = "#83a5b0"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.footer_bar]
+background = "#282828"
+foreground = "#d5c4a1"
+
+[colors.normal]
+black = "#282828"
+blue = "#83a5b0"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#d5c4a1"
+yellow = "#d79921"
+
+[colors.primary]
+background = "#282828"
+bright_foreground = "#ebdbb2"
+dim_foreground = "#968c84"
+foreground = "#d5c4a1"
+
+[colors.search.focused_match]
+background = "CellForeground"
+foreground = "CellBackground"
+
+[colors.search.matches]
+background = "#d79921"
+foreground = "CellBackground"
+
+[colors.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+size = 12.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 100000
+multiplier = 2
+
