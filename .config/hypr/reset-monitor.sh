@@ -22,10 +22,12 @@ usage() {
     Options:
     -h, --help          Print this help and exit
     -v, --verbose       Print script debug info
+    -l, --lid           Handle laptop lid switch events
 EOF
 }
 
 parse_params() {
+    LID_SWITCH=0
     while :; do
         case "${1-}" in
         -h | --help)
@@ -33,6 +35,7 @@ parse_params() {
             exit
             ;;
         -v | --verbose) set -x ;;
+        -l | --lid) LID_SWITCH=1 ;;
         -?*) die "Unknown option: $1\n$(usage)" ;;
         *) break ;;
         esac
@@ -49,15 +52,23 @@ get_external_monitors() {
         grep -v "^${laptop_monitor}$"
 }
 
-main() {
-    parse_params "$@"
+lid_switch() {
+    # Handle laptop lid switch events
+    if [[ "$lid_status" == "open" ]]; then
+        hyprctl keyword monitor "$laptop_monitor,preferred,auto,$laptop_scale"
+    elif [[ "$lid_status" == "closed" ]]; then
+        if [[ ${#ext_mons[@]} -le 1 ]]; then
+            swaylock
+            systemctl suspend
+        else
+            hyprctl keyword monitor "$laptop_monitor,disable"
+        fi
+    else
+        die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
+    fi
+}
 
-    laptop_monitor="eDP-1"
-    laptop_scale=1.3
-    lid_status="$(laptop_lid_status)"
-    set +e
-    mapfile -t ext_mons < <(get_external_monitors)
-    set -e
+reset_monitor() {
     cmds=''
 
     if [[ "$lid_status" == "open" ]]; then
@@ -76,6 +87,23 @@ main() {
 
     # Run the commands.
     hyprctl --batch "$cmds" >/dev/null
+}
+
+main() {
+    parse_params "$@"
+
+    laptop_monitor="eDP-1"
+    laptop_scale=1.333333
+    lid_status="$(laptop_lid_status)"
+    set +e
+    mapfile -t ext_mons < <(get_external_monitors)
+    set -e
+
+    if [[ $LID_SWITCH -eq 1 ]]; then
+        lid_switch
+    else
+        reset_monitor
+    fi
 }
 
 main "$@"
