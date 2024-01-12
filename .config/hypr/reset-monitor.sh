@@ -57,7 +57,7 @@ lid_switch() {
     if [[ "$lid_status" == "open" ]]; then
         hyprctl keyword monitor "$laptop_monitor,preferred,auto,$laptop_scale"
     elif [[ "$lid_status" == "closed" ]]; then
-        if [[ ${#ext_mons[@]} -le 1 ]]; then
+        if [[ ${#ext_mons[@]} -eq 0 ]]; then
             swaylock
             systemctl suspend
         else
