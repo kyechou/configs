@@ -43,14 +43,14 @@ XF86AudioMedia ; {s,h}
 XF86AudioMedia ; {r,p}
     systemctl {reboot,poweroff}
 
-# # Keyboard and mouse config
-# ## delay: 400 ms, rate: 35 hits/sec
-# ## acceleration: 0, threshold: 0
-# ctrl + F1
-#     xset r rate 400 35; \
-#     xset mouse 0 0
-# ctrl + F2
-#     setxkbmap -option ctrl:nocaps
+# Keyboard and mouse config
+## delay: 400 ms, rate: 35 hits/sec
+## acceleration: 0, threshold: 0
+ctrl + shift + F1
+    xset r rate 400 35; \
+    xset mouse 0 0
+ctrl + shift + F2
+    setxkbmap -option ctrl:nocaps
 
 # Touchpad (disable/enable)
 ctrl + {F1,F2}
