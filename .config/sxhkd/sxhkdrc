@@ -93,11 +93,11 @@ alt + Return
 alt + ctrl + a
     ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer
 alt + ctrl + b
-    firefox
+    google-chrome-stable
 alt + ctrl + c
     speedcrunch
 alt + ctrl + f
-    alacritty --class nnn --title nnn -e bash -c 'source ~/.bashrc; nnn'
+    alacritty --class yazi --title yazi -e bash -c 'yazi'
 alt + ctrl + m
     thunderbird
 alt + ctrl + n

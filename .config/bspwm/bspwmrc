@@ -89,5 +89,5 @@ autostart fcitx5 -d --replace
 autostart nm-applet --indicator
 autostart blueman-applet
 autostart lxpolkit  # needed by virt-manager
-#autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
-#autorestart redshift
+autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
+autostart gammastep-indicator -m randr

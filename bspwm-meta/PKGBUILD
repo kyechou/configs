@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="Meta package for my bspwm environment"
 depends=(
     'bspwm' 'sxhkd' 'i3lock' 'picom' 'polybar' 'lxrandr' 'feh' 'xclip'
-    'xdotool' 'xorg-xinit' 'flameshot' 'redshift'
+    'xdotool' 'xorg-xinit' 'flameshot' 'gammastep'
     # xorg package group members
     'xf86-video-vesa'
     'xorg-bdftopcf'
