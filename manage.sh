@@ -66,6 +66,7 @@ GUI_CONFIGS=(
     .config/colorscheme.sh
     .config/dunst
     .config/electron-flags.conf
+    .config/flameshot
     .config/gammastep
     .config/gtk-3.0
     .config/gtk-4.0
