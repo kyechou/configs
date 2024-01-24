@@ -85,6 +85,8 @@ GUI_CONFIGS=(
     .config/vlc
     .config/waybar
     .config/zathura
+    .gtkrc-2.0
+    .icons
 )
 
 parse_params() {
