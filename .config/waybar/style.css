@@ -1,92 +1,34 @@
-/* --------------------------------------------------------------------------
- * Kanagawa colors
- * -------------------------------------------------------------------------- */
-
-/* Bg Shades */
-@define-color sumiInk0 #16161D;
-@define-color sumiInk1b #181820;
-@define-color sumiInk1 #1F1F28;
-@define-color sumiInk2 #2A2A37;
-@define-color sumiInk3 #363646;
-@define-color sumiInk4 #54546D;
-
-/* Popup and Floats */
-@define-color waveBlue1 #223249;
-@define-color waveBlue2 #2D4F67;
-@define-color waveBlue3 #3D5F77;
-
-/* Diff and Git */
-@define-color winterGreen #2B3328;
-@define-color winterYellow #49443C;
-@define-color winterRed #43242B;
-@define-color winterBlue #252535;
-@define-color autumnGreen #76946A;
-@define-color autumnRed #C34043;
-@define-color autumnYellow #DCA561;
-
-/* Diag */
-@define-color samuraiRed #E82424;
-@define-color roninYellow #FF9E3B;
-@define-color waveAqua1 #6A9589;
-@define-color dragonBlue #658594;
-
-/* Fg and Comments */
-@define-color oldWhite #C8C093;
-@define-color fujiWhite #DCD7BA;
-@define-color fujiGray #727169;
-@define-color springViolet1 #938AA9;
-@define-color oniViolet #957FB8;
-@define-color crystalBlue #7E9CD8;
-@define-color springViolet2 #9CABCA;
-@define-color springBlue #7FB4CA;
-@define-color lightBlue #A3D4D5;
-@define-color waveAqua1 #7AA89F;
-@define-color waveAqua2 #68AD99;
-@define-color waveAqua4 #7AA880;
-@define-color waveAqua5 #6CAF95;
-@define-color waveAqua3 #68AD99;
-@define-color springGreen #98BB6C;
-@define-color boatYellow1 #938056;
-@define-color boatYellow2 #C0A36E;
-@define-color carpYellow #E6C384;
-@define-color sakuraPink #D27E99;
-@define-color waveRed #E46876;
-@define-color peachRed #FF5D62;
-@define-color surimiOrange #FFA066;
-@define-color katanaGray #717C7C;
-
-/* --------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
+@import url("../colorscheme.css");
 
 * {
-  border: none;
-  border-radius: 10px;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  font-family: "Iosevka NF";
+    border: none;
+    border-radius: 10px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "Iosevka NF";
 }
 
 #waybar {
-  background: transparent;
-  transition-duration: .5s;
+    background: transparent;
+    transition-duration: .5s;
 }
 
 #waybar.hidden {
-  opacity: 0.7; /* 1: opaque, 0: transparent */
+    opacity: 0.7;
+    /* 1: opaque, 0: transparent */
 }
 
 tooltip {
-  background: @sumiInk2;
-  border: 2px solid @sumiInk4;
+    background: @sumiInk2;
+    border: 2px solid @sumiInk4;
 }
 
 tooltip label {
-  padding-left:  6px;
-  padding-right: 6px;
-  font-size: 15px;
-  color: @fujiWhite;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 15px;
+    color: @fujiWhite;
 }
 
 #workspaces,
@@ -103,16 +45,16 @@ tooltip label {
 #network,
 #clock,
 #tray {
-  margin-top: 8px;
-  margin-bottom: 0px;
-  margin-left: 8px;
-  padding-top: 1px;
-  padding-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  font-size: 16px;
-  color: @fujiWhite;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-left: 8px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    font-size: 16px;
+    color: @fujiWhite;
 }
 
 /* --------------------------------------------------------------------------
@@ -120,131 +62,134 @@ tooltip label {
  * -------------------------------------------------------------------------- */
 
 #workspaces {
-  background: shade(@dragonBlue, 0.5);
-  padding: 0 6px;
+    background: shade(@dragonBlue, 0.5);
+    padding: 0 6px;
 }
 
 #workspaces button {
-  color: @fujiWhite;
-  background: transparent;
-  border: none;
-  border-radius: 15px;
-  min-width: 0;
-  margin: 1px 3px;
-  padding: 2px 8px;
+    color: @fujiWhite;
+    background: transparent;
+    border: none;
+    border-radius: 15px;
+    min-width: 0;
+    margin: 1px 3px;
+    padding: 2px 8px;
 }
 
 #workspaces button:hover {
-  color: white;
+    color: white;
 }
 
 #workspaces button.active,
 #workspaces button.focused,
 #workspaces button.visible {
-  color: @sumiInk0;
-  background: shade(@crystalBlue, 0.9);
+    color: @sumiInk0;
+    background: shade(@crystalBlue, 0.9);
 }
 
 #workspaces button.active:hover,
 #workspaces button.focused:hover,
 #workspaces button.visible:hover {
-  color: black;
+    color: black;
 }
 
 #workspaces button.urgent {
-  color: @sumiInk0;
-  background: @waveRed;
+    color: @sumiInk0;
+    background: @waveRed;
 }
 
-#mode, #submap {
-  color: @oldWhite;
-  background: @sumiInk2;
+#mode,
+#submap {
+    color: @oldWhite;
+    background: @sumiInk2;
 }
 
 #window:not(.empty) {
-  color: @oldWhite;
-  background: @sumiInk2;
+    color: @oldWhite;
+    background: @sumiInk2;
 }
 
-#window.empty, window#waybar.empty, #waybar.empty #window {
-  background: transparent;
+#window.empty,
+window#waybar.empty,
+#waybar.empty #window {
+    background: transparent;
 }
 
 #custom-spotify {
-  color: @fujiWhite;
-  background: @sumiInk4;
+    color: @fujiWhite;
+    background: @sumiInk4;
 }
 
 #custom-updates {
-  color: @sumiInk0;
-  background: @sakuraPink;
+    color: @sumiInk0;
+    background: @sakuraPink;
 }
 
 #disk.root {
-  color: @sumiInk0;
-  background: @autumnGreen;
+    color: @sumiInk0;
+    background: @autumnGreen;
 }
 
 #disk.home {
-  color: @sumiInk0;
-  background: @boatYellow1;
+    color: @sumiInk0;
+    background: @boatYellow1;
 }
 
 #pulseaudio {
-  color: @sumiInk0;
-  background: @waveAqua1;
+    color: @sumiInk0;
+    background: @waveAqua1;
 }
 
 #pulseaudio.muted {
-  background: shade(@waveAqua1, 0.8);
+    background: shade(@waveAqua1, 0.8);
 }
 
 #cpu {
-  color: @sumiInk0;
-  background: @springViolet2;
+    color: @sumiInk0;
+    background: @springViolet2;
 }
 
 #memory {
-  color: @sumiInk0;
-  background: @oniViolet;
+    color: @sumiInk0;
+    background: @oniViolet;
 }
 
 #battery {
-  color: @sumiInk0;
-  background: @boatYellow2;
+    color: @sumiInk0;
+    background: @boatYellow2;
 }
 
-#battery.charging, #battery.plugged {
-}
+#battery.charging,
+#battery.plugged {}
 
 #battery.critical:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #network {
-  color: @sumiInk0;
-  background: @crystalBlue;
+    color: @sumiInk0;
+    background: @crystalBlue;
 }
 
 #clock {
-  color: @sumiInk0;
-  background: @waveAqua1;
+    color: @sumiInk0;
+    background: @waveAqua1;
 }
 
 #tray {
-  margin-right: 8px;
-  background: @sumiInk2;
+    margin-right: 8px;
+    background: @sumiInk2;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
 }
 
@@ -253,9 +198,8 @@ tooltip label {
  * -------------------------------------------------------------------------- */
 
 @keyframes blink {
-  to {
-    color: @sumiInk0;
-    background-color: @waveRed;
-  }
+    to {
+        color: @sumiInk0;
+        background-color: @waveRed;
+    }
 }
-
