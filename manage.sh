@@ -63,6 +63,7 @@ GUI_CONFIGS=(
     .config/chrome-flags.conf
     .config/cmus
     .config/code-flags.conf
+    .config/colorscheme.css
     .config/colorscheme.sh
     .config/dunst
     .config/electron-flags.conf
@@ -85,6 +86,7 @@ GUI_CONFIGS=(
     .config/systemd
     .config/vlc
     .config/waybar
+    .config/wlogout
     .config/zathura
     .gtkrc-2.0
     .icons
