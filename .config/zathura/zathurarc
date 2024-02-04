@@ -2,7 +2,9 @@ set font "Hack 10"
 set first-page-column "1:1"
 set guioptions "s"
 set window-title-basename true
+set window-title-home-tilde true
 set statusbar-basename true
+set statusbar-home-tilde true
 set selection-clipboard clipboard
 
 map = zoom in
