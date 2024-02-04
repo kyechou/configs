@@ -93,7 +93,7 @@ alt + Return
 alt + ctrl + a
     ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer
 alt + ctrl + b
-    google-chrome-stable
+    firefox
 alt + ctrl + c
     speedcrunch
 alt + ctrl + f
