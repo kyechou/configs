@@ -23,6 +23,7 @@ devtools
 diffutils
 dmidecode
 dnsmasq
+dosfstools
 dotool-git
 dunst
 e2fsprogs
