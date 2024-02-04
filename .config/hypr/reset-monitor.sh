@@ -82,6 +82,8 @@ reset_monitor() {
         die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
     fi
 
+    # Set the scale for the external Dell wide monitor.
+    cmds+="keyword monitor $dell_monitor,preferred,auto,$dell_scale;"
     # All other monitors are enabled by default.
     cmds+='keyword monitor ,preferred,auto,1;'
 
@@ -94,6 +96,9 @@ main() {
 
     laptop_monitor="eDP-1"
     laptop_scale=1.333333
+    dell_monitor="DP-1"
+    # dell_scale=1.066667
+    dell_scale=1.25
     lid_status="$(laptop_lid_status)"
     set +e
     mapfile -t ext_mons < <(get_external_monitors)
