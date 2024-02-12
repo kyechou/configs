@@ -48,7 +48,7 @@ set viminfo=""
 set viminfofile="NONE"
 set diffopt+=internal,algorithm:patience
 set sessionoptions=blank,buffers,curdir,folds,help,options,slash,tabpages,unix
-let g:mapleader="\\"
+let g:mapleader=" "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User interface
@@ -216,9 +216,6 @@ noremap  <silent> j gj
 noremap  <silent> k gk
 noremap  <silent> 0 g0
 noremap  <silent> $ g$
-noremap  <silent> w <Plug>CamelCaseMotion_w
-noremap  <silent> b <Plug>CamelCaseMotion_b
-noremap  <silent> e <Plug>CamelCaseMotion_e
 vnoremap <silent> Q gq
 vnoremap <silent> Y "+y
 nnoremap <leader>n :Lexplore<CR>
