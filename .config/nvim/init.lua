@@ -27,7 +27,7 @@ vim.o.diffopt = 'internal,filler,closeoff,algorithm:patience'
 vim.o.expandtab = true
 vim.o.fileencodings = 'ucs-bom,utf-8,big5,gdk,utf-16,utf-16le,default,latin1'
 vim.o.fileformats = 'unix,dos,mac'
-vim.o.formatoptions = 'tqnvmB1]j' -- remove c
+vim.o.formatoptions = 'tcqnvmB1]j'
 vim.o.guicursor = 'a:block'
 vim.o.ignorecase = true
 vim.o.mouse = 'a'
@@ -42,6 +42,8 @@ vim.o.signcolumn = 'yes' -- Avoid gitsigns moving the columns
 vim.o.smartcase = true
 vim.o.smartcase = true
 vim.o.smartindent = true
+vim.o.spelllang = 'en_us'
+vim.o.spelloptions = 'camel,noplainbuffer'
 vim.o.splitbelow = false -- Split up
 vim.o.splitright = true  -- Split right
 vim.o.tabstop = 4
@@ -62,59 +64,53 @@ require('lazy').setup({
     { import = 'color.onedark' },
     { import = 'color.catppuccin' },
     -- UI
-    { import = 'ui.lualine' },          -- statusline
-    { import = 'ui.bufferline' },       -- tabline
-    { import = 'ui.indent_blankline' }, -- Indent line
-    { import = 'ui.gitsigns' },         -- Git integration for buffers
+    { import = 'ui.lualine' },                -- statusline
+    { import = 'ui.bufferline' },             -- tabline
+    { import = 'ui.indent_blankline' },       -- Indent line
+    { import = 'ui.gitsigns' },               -- Git integration for buffers
+    { import = 'ui.css_color' },              -- CSS colors
+    -- Syntax
+    { import = 'syntax/click' },              -- Click
+    { import = 'syntax/p4' },                 -- P4
+    { import = 'syntax/promela' },            -- Promela
     -- Utility
-    { import = 'util.nvim_lspconfig' }, -- Configurations for LSP clients
-    { import = 'util.nvim_cmp' },       -- Autocomplete with LSP and snippets
-    { import = 'util.vim_sleuth' },     -- Automatically infer tabstop, shiftwidth, etc.
-    { import = 'util.which_key' },      -- Show pending keybindings
-    { import = 'util.autopairs' },      -- Auto-pairs
-    { import = 'util.comment' },        -- Comment
-    { import = 'util.telescope' },      -- Fuzzy finder
-
-    -- TODO: HEREEEE!! Mason config (all servers/linters), shell check (shfmt)
-    -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
-    -- https://github.com/jay-babu/mason-nvim-dap.nvim
-    -- https://github.com/jay-babu/mason-null-ls.nvim
-    -- https://github.com/rshkarin/mason-nvim-lint
-    -- https://github.com/bash-lsp/bash-language-server
-    -- https://github.com/mattn/efm-langserver
+    { import = 'util.fidget' },               -- LSP progress messages
+    { import = 'util.mason_tool_installer' }, -- Manage mason packages
+    { import = 'util.lspconfig' },            -- Configurations for LSP clients
+    { import = 'util.dap' },                  -- Debug support with DAPs
+    { import = 'util.cmp' },                  -- Autocomplete with LSP and snippets
+    { import = 'util.vim_sleuth' },           -- Automatically infer tabstop, shiftwidth, etc.
+    { import = 'util.which_key' },            -- Show pending keybindings
+    { import = 'util.autopairs' },            -- Auto-pairs
+    { import = 'util.comment' },              -- Comment
+    { import = 'util.telescope' },            -- Fuzzy finder
 
     -- TODO: Set up treesitter
-    { import = 'util.treesitter' },
+    -- { import = 'util.treesitter' },
 
-    -- Other plugins to use
+    -- Plugins to add --
+    -- https://github.com/vigoux/ltex-ls.nvim (Client-side plugin: needed for the dictionary stuff)
     -- git-blame.nvim
     -- harpoon
     -- trouble
     -- https://github.com/folke/todo-comments.nvim
     -- https://github.com/hedyhli/outline.nvim
-    -- Session management?
+    -- https://github.com/lervag/vimtex, if lsp is not good enough
+    -- Session management
+    -- https://github.com/rmagatti/auto-session
+    -- https://github.com/rmagatti/session-lens
 
-    -- Old plugins
-    -- " Utility
-    -- Plug 'ap/vim-css-color'
+    -- Old plugins (find a better alternative if it's still needed)
     -- Plug 'mileszs/ack.vim'
     -- Plug 'craigemery/vim-autotag'
     -- Plug 'vim-scripts/taglist.vim'
-    -- Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
-    -- " Syntax
-    -- Plug 'blyoa/vim-promela-syntax', {'for': 'promela'}
-    -- Plug 'vim-scripts/click.vim', {'for': 'click'}
-    -- Plug 'rightson/vim-p4-syntax', {'for': 'p4'}
-    -- Also look at the vscode plugins
 
     -- sonarlint (optional)
-    --      -- https://github.com/MuriloGhignatti/nvim-config/blob/2229c3ad270ecc1bce7f4883fa13854a425ca85e/lua/safe/plugins/lsp/linter.lua
-    --      -- https://www.reddit.com/r/neovim/comments/14a4y3y/sonarlint/
+    -- https://github.com/MuriloGhignatti/nvim-config/blob/2229c3/lua/safe/plugins/lsp/linter.lua
+    -- https://www.reddit.com/r/neovim/comments/14a4y3y/sonarlint/
 
 }, {
-    defaults = {
-        version = '*', -- Latest stable version
-    }
+    defaults = { version = '*' } -- Latest stable version
 })
 
 vim.cmd.colorscheme('catppuccin')
@@ -147,7 +143,6 @@ require('which-key').register({
 --
 -- Leader notes:
 --   - <leader> f : Find files
---   - <leader> s : Search text
 --   - <leader> d : Diagnostic
 --   - <leader> w : Workspace (tentative)
 --   - <leader> rn : rename symbol
@@ -159,6 +154,7 @@ require('which-key').register({
 -- scripts that have key mappings
 -- gitsigns, treesitter
 
+local helper = require('util.helper')
 local builtin = require('telescope.builtin')
 local gitsigns = package.loaded.gitsigns
 
@@ -168,6 +164,9 @@ vim.keymap.set({ 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, si
 vim.keymap.set({ 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, '0', "v:count == 0 ? 'g0' : '0'", { expr = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, '$', "v:count == 0 ? 'g$' : '$'", { expr = true, silent = true })
+vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('n', '<leader>cd', helper.cd_to_current_file, { silent = true })
 -- Comment: <C-c>, <C-/>
 -- UI
 vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
@@ -179,6 +178,7 @@ vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
 vim.keymap.set('n', '<C-j>', ':botright split +term<CR>', { silent = true, desc = 'Create a shell' })
 vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
 vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
+vim.keymap.set('n', '<C-m>', ':Mason<CR>', { desc = 'Open Mason' })
 -- Tabs / Buffers
 vim.keymap.set('n', 't', ':tabnew ', { desc = 'Create a new tab' })
 vim.keymap.set('n', 'yt', ':tab split<CR>', { silent = true, desc = 'Duplicate tab' })
@@ -187,24 +187,25 @@ vim.keymap.set('n', '<C-l>', ':tabnext<CR>', { silent = true, desc = 'Switch to 
 vim.keymap.set('n', '<C-h>', ':tabprev<CR>', { silent = true, desc = 'Switch to previous tab' })
 vim.keymap.set('n', '<C-Right>', ':tabmove +1<CR>', { silent = true, desc = 'Move tab to right' })
 vim.keymap.set('n', '<C-Left>', ':tabmove -1<CR>', { silent = true, desc = 'Move tab to left' })
-vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] List buffers' })
+vim.keymap.set('n', '<leader><space>', TLSCP_list_buffers, { desc = 'List buffers' })
 -- Files
--- TODO: wait for hdr/src switching
--- vim.keymap.set('n', '<C-a>', ':A<CR>', { silent = true, desc = 'Switch between hdr/src files' })
+vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
 vim.keymap.set('n', '<C-e>', TLSCP_find_git_files_or_from_cwd, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>ff', TLSCP_find_git_files_or_from_cwd, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently opened files' })
 -- Search / Grep
 vim.keymap.set('n', '<C-s>', TLSCP_live_grep_in_git_or_cwd, { desc = 'Search in git repo or cwd' })
-vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, { desc = '[S]earch in current [B]uffer' })
-vim.keymap.set('n', '<leader>so', TLSCP_live_grep_open_files, { desc = '[S]earch in [O]pen files' })
+vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
+-- vim.keymap.set('n', '<leader>so', TLSCP_live_grep_open_files, { desc = '[S]earch in [O]pen files' })
 -- Diagnostic (TODO: wait for trouble)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>d', TLSCP_diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>d', TLSCP_diagnostics, { desc = 'Search diagnostics' })
 -- vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic [M]essage' })
 -- vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostics [L]ist' })
+vim.keymap.set('n', '<leader>s', ':setlocal spell!<CR>', { desc = 'Toggle spell check' })
 -- LSP
+vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { desc = 'LSP: Signature help' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: Hover documentation' })
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'LSP: [G]oto [R]eferences' })
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'LSP: [G]oto [D]efinition' })
@@ -220,7 +221,7 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP: [C]ode
 -- Workspace / Session (TODO: wait for session management)
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'LSP: [W]orkspace [A]dd foler' })
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'LSP: [W]orkspace [R]emove folder' })
-vim.keymap.set('n', '<leader>wl', LSP_list_workspace_folders, { desc = 'LSP: [W]orkspace [L]ist folders' })
+vim.keymap.set('n', '<leader>wl', helper.list_workspace_folders, { desc = 'LSP: [W]orkspace [L]ist folders' })
 -- Documentation
 vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = '[H]elp' })
 vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = '[M]an pages' })
@@ -228,7 +229,7 @@ vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = '[M]an pages' })
 vim.keymap.set({ 'n', 'v' }, ']h', function() GS_next_hunk(']h') end, { desc = 'Jump to next hunk' })
 vim.keymap.set({ 'n', 'v' }, '[h', function() GS_prev_hunk('[h') end, { desc = 'Jump to previous hunk' })
 vim.keymap.set('n', '<leader>gs', TLSCP_git_status, { desc = 'Git status' })
-vim.keymap.set('n', '<leader>gb', TLSCP_git_branches, { desc = 'Git branch' })
+-- vim.keymap.set('n', '<leader>gb', TLSCP_git_branches, { desc = 'Git branch' })
 vim.keymap.set('n', '<leader>gc', TLSCP_git_commits, { desc = 'Git commit' })
 vim.keymap.set('v', '<leader>ga', GS_v_stage_hunk, { desc = 'Add git hunk' })
 vim.keymap.set('n', '<leader>ga', gitsigns.stage_hunk, { desc = 'Add git hunk' })
@@ -240,9 +241,18 @@ vim.keymap.set('n', '<leader>gR', gitsigns.reset_buffer, { desc = 'Git reset buf
 vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Preview git hunk' })
 vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = 'Diff against index (working tree)' })
 vim.keymap.set('n', '<leader>gD', function() gitsigns.diffthis('~') end, { desc = 'Diff against last commit' })
-vim.keymap.set('n', '<leader>b', gitsigns.blame_line, { desc = 'Git blame line' }) -- TODO: git blame
-
--- nnoremap <leader>s :set spell!<CR> -- toggle spell check
+vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, { desc = 'Git blame line' }) -- TODO: git blame
+-- Debug
+local dap = require('dap')
+local dapui = require('dapui')
+vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
+vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
+vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
+vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle breakpoint' })
+vim.keymap.set('n', '<leader>B', DAP_set_conditional_bp, { desc = 'Debug: Set conditional breakpoint' })
+vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: Toggle debug UI' })
+vim.keymap.set({ 'n', 'v' }, '<F8>', dapui.eval, { desc = 'Debug: Evaluate expression' })
 
 --
 -- Autocommands

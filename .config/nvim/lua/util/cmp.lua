@@ -5,7 +5,6 @@
 
 return {
     'hrsh7th/nvim-cmp',
-    lazy = true,
     dependencies = {
         -- Here we use LuaSnip as the snippet engine
         {
@@ -13,7 +12,6 @@ return {
             build = (function() return 'make install_jsregexp' end)(),
         },
         'saadparwaiz1/cmp_luasnip', -- LuaSnip completion source for nvim-cmp
-
         -- LSP completion capabilities
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
@@ -83,6 +81,7 @@ return {
         }
 
         local insert_mapping = cmp.mapping.preset.insert(custom_mapping)
+        local cmdline_mapping = cmp.mapping.preset.cmdline(custom_mapping)
 
         cmp.setup({
             snippet = {
@@ -113,20 +112,20 @@ return {
         -- Use buffer source for `/` and `?`
         ---@diagnostic disable-next-line: missing-fields
         cmp.setup.cmdline('/', {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmdline_mapping,
             sources = { { name = 'buffer' } }
         })
 
         ---@diagnostic disable-next-line: missing-fields
         cmp.setup.cmdline('?', {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmdline_mapping,
             sources = { { name = 'buffer' } }
         })
 
         -- Use cmdline & path source for ':'
         ---@diagnostic disable-next-line: missing-fields
         cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmdline_mapping,
             sources = cmp.config.sources(
                 { { name = 'path' } },
                 { { name = 'cmdline' } }
