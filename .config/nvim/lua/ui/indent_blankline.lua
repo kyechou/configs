@@ -7,9 +7,14 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
     opts = {
+        indent = {
+            char = '▏',
+        },
         scope = {
-            -- `:help idl.config.scope.exclude`
+            show_start = false,
+            show_end = false,
             exclude = {
+                -- `:help idl.config.scope.exclude`
                 language = {}, -- Requires treesitter
             },
         },

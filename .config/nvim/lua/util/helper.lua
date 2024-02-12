@@ -49,6 +49,53 @@ helper.mason_dap_configs = {
     cpptools = {}, -- https://github.com/microsoft/vscode-cpptools
 }
 
+-- Treesitter language parsers
+-- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
+-- https://tree-sitter.github.io/tree-sitter/
+helper.ts_language_parsers = {
+    'awk',
+    'bash',
+    'bibtex',
+    'c',
+    'cmake',
+    'comment',
+    'cpp',
+    'css',
+    'csv',
+    'diff',
+    'dockerfile',
+    'dot',
+    'git_config',
+    'gitcommit',
+    'gitignore',
+    'go',
+    'haskell',
+    'html',
+    'java',
+    'javascript',
+    'json',
+    'jsonc',
+    'latex',
+    'lua',
+    'make',
+    'markdown',
+    'ocaml',
+    'passwd',
+    'proto',
+    'python',
+    'query',
+    'rust',
+    'scss',
+    'sql',
+    'ssh_config',
+    'textproto',
+    'toml',
+    'vim',
+    'vimdoc',
+    'xml',
+    'yaml',
+}
+
 -- Return the current buffer's path or cwd if it's not a file.
 function helper.find_file_dir_or_cwd()
     local current_file = vim.api.nvim_buf_get_name(0)

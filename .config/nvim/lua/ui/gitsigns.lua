@@ -40,5 +40,9 @@ return {
         function GS_v_reset_hunk()
             gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
         end
+
+        function GS_blame_line()
+            gitsigns.blame_line({ full = true, ignore_whitespace = true })
+        end
     end,
 }
