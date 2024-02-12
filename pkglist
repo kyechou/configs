@@ -88,6 +88,7 @@ man-db
 man-pages
 mudlet
 nautilus
+neovim
 network-manager-applet
 networkmanager
 newsboat
@@ -96,6 +97,7 @@ nordic-wallpapers
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 ntfs-3g
 openbsd-netcat
 openssh
@@ -117,6 +119,7 @@ pscircle
 qemu-desktop
 qt6-wayland
 reflector
+ripgrep
 rofi-lbonn-wayland
 rsync
 safeeyes

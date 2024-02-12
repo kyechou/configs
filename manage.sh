@@ -49,6 +49,7 @@ CLI_HOME_CONFIGS=(
 )
 
 CLI_CONFIGS=(
+    .config/nvim
     .config/paru
     .config/yazi
 )

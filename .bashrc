@@ -12,8 +12,8 @@ umask 022
 # environment variables
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER='less -R'
 export TERM='xterm-256color'
 export GPG_TTY=$(tty)
@@ -80,6 +80,7 @@ alias ll='ls --color=auto -lAF'
 alias ls='ls --color=auto -F'
 alias cp='cp --sparse=auto'
 alias rm='trash-put'
+alias vim='nvim'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
