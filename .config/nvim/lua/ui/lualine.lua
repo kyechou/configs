@@ -9,6 +9,10 @@ return {
         { 'rmagatti/auto-session', config = true },
     },
     config = function()
+        local function session_name()
+            return '[' .. require('auto-session.lib').current_session_name() .. ']'
+        end
+
         require('lualine').setup({
             options = {
                 icons_enabled = true,
@@ -21,7 +25,7 @@ return {
                 lualine_a = { 'mode' },
                 lualine_b = {
                     'hostname',
-                    require('auto-session.lib').current_session_name,
+                    session_name,
                     'branch',
                     'diff',
                     {
