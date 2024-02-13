@@ -11,7 +11,7 @@ vim.g.maplocalleader = ' '
 
 --
 -- Vim settings
--- `:help vim.o`
+-- :help vim.o
 --
 vim.o.autochdir = false
 vim.o.background = 'dark'
@@ -63,16 +63,16 @@ require('lazy').setup({
     -- Color themes
     { import = 'color.onedark' },
     { import = 'color.catppuccin' },
+    -- Syntax
+    { import = 'syntax/click' },              -- Click
+    { import = 'syntax/p4' },                 -- P4
+    { import = 'syntax/promela' },            -- Promela
     -- UI
     { import = 'ui.lualine' },                -- statusline
     { import = 'ui.bufferline' },             -- tabline
     { import = 'ui.indent_blankline' },       -- Indent line
     { import = 'ui.gitsigns' },               -- Git integration for buffers
     { import = 'ui.css_color' },              -- CSS colors
-    -- Syntax
-    { import = 'syntax/click' },              -- Click
-    { import = 'syntax/p4' },                 -- P4
-    { import = 'syntax/promela' },            -- Promela
     -- Utility
     { import = 'util.vim_sleuth' },           -- Automatically infer tabstop, shiftwidth, etc.
     { import = 'util.autopairs' },            -- Auto-pairs
@@ -88,11 +88,13 @@ require('lazy').setup({
     { import = 'util.which_key' },            -- Show pending keybindings
     { import = 'util.trouble' },              -- Pretty diagnostics and others
     { import = 'util.outline' },              -- Code outline sidebar
+    { import = 'util.latex' },                -- Enhanced integration of ltex-ls for neovim (needed for dictionaries)
 
     -- Plugins to add --
+    -- https://github.com/vim-voom/VOoM -- latex outline pane (add to latex.lua)
+    -- https://github.com/akinsho/toggleterm.nvim
+    -- https://github.com/nvim-neo-tree/neo-tree.nvim
     -- https://github.com/folke/todo-comments.nvim
-    -- https://github.com/vigoux/ltex-ls.nvim (Client-side plugin: needed for the dictionary stuff)
-    -- https://github.com/lervag/vimtex, if lsp is not good enough
     -- harpoon
 
     -- Old plugins (find a better alternative if it's still needed)
@@ -109,25 +111,10 @@ require('lazy').setup({
 
 vim.cmd.colorscheme('catppuccin')
 
--- Document existing key chains.
-require('which-key').register({
-    ['<leader>c'] = { name = '[C]hange', _ = 'which_key_ignore' },
-    ['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
-    ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
-    ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-    ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-    ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-})
-
--- Required for visual <leader>hs (hunk stage) to work.
-require('which-key').register({
-    ['<leader>'] = { name = 'VISUAL <leader>' },
-    ['<leader>g'] = { 'Git hunk' },
-}, { mode = 'v' })
-
 --
 -- Key mappings
--- `:help vim.keymap.set()`
+-- :help vim.keymap.set()
+-- https://github.com/lervag/vimtex/blob/master/VISUALS.md
 --
 -- Leader notes:
 --   - <leader> a : code action
@@ -136,14 +123,28 @@ require('which-key').register({
 --   - <leader> f : Find files
 --   - <leader> g : git
 --   - <leader> h : help
+--   - <leader> l : latex (vimtex)
 --   - <leader> m : man pages
 --   - <leader> o : Outline
 --   - <leader> rn : rename symbol
 --   - <leader> s : Spell check
 --   - <leader> w : Workspace (tentative)
 
--- scripts that have key mappings
--- gitsigns, treesitter
+-- Document existing key chains.
+require('which-key').register({
+    ['<leader>c'] = { name = '[C]hange', _ = 'which_key_ignore' },
+    ['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
+    ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
+    ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+    ['<leader>l'] = { name = '[L]aTeX', _ = 'which_key_ignore' },
+    ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+    ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+})
+
+require('which-key').register({
+    ['<leader>'] = { name = 'VISUAL <leader>' },
+    ['<leader>g'] = { 'Git hunk' },
+}, { mode = 'v' })
 
 local helper = require('util.helper')
 local builtin = require('telescope.builtin')

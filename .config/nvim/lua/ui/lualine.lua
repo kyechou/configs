@@ -6,10 +6,9 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'rmagatti/auto-session',
+        { 'rmagatti/auto-session', config = true },
     },
     config = function()
-        require('auto-session').setup()
         require('lualine').setup({
             options = {
                 icons_enabled = true,

@@ -29,6 +29,7 @@ return {
                 load_on_setup = true,
                 -- list of buffer types that should not be deleted from current session
                 buftypes_to_ignore = {},
+                winblend = 0, -- fully opaque bg for floating window
                 path_display = { 'absolute' },
                 theme_conf = { border = true },
                 previewer = true,

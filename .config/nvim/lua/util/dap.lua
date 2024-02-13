@@ -25,6 +25,7 @@ return {
         require('mason').setup()
         require('mason-nvim-dap').setup({
             ensure_installed = vim.tbl_keys(helper.mason_dap_configs),
+            automatic_installation = false,
             handlers = {},
         })
 

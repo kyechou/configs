@@ -23,6 +23,8 @@ helper.mason_packages = {
     'shellcheck',                 -- Bash linter
     'shfmt',                      -- Shell formatter
     'taplo',                      -- TOML LSP
+    'vale',                       -- Text, Markdown, LaTeX linter
+    'vale-ls',                    -- Text, Markdown LSP
 }
 
 -- Mason language servers
@@ -40,6 +42,7 @@ helper.mason_lsp_configs = {
     marksman = {}, -- https://github.com/artempyanykh/marksman
     pyright = {},  -- https://github.com/microsoft/pyright
     taplo = {},    -- https://taplo.tamasfe.dev/cli/usage/language-server.html (TOML)
+    vale_ls = {},  -- https://github.com/errata-ai/vale-ls
 }
 
 -- Mason debug adapters

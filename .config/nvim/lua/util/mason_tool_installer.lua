@@ -22,7 +22,7 @@ return {
             ensure_installed = helper.mason_packages,
             auto_update = false,
             run_on_start = true,
-            start_delay = 1000, -- (ms) only effective if run_on_start is true
+            start_delay = 0,    -- (ms) only effective if run_on_start is true
             debounce_hours = 5, -- (hr) only effective if run_on_start is true
         })
     end,
