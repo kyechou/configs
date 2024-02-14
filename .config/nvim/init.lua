@@ -4,7 +4,7 @@
 
 --
 -- Set <space> as the leader key.
--- This must be set before plugins are required (otherwise wrong leader will be used).
+-- This must be set before plugins are required.
 --
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -20,6 +20,7 @@ vim.o.browsedir = 'last'
 vim.o.cindent = true
 vim.o.clipboard = 'unnamed,unnamedplus'
 vim.o.colorcolumn = 81
+vim.cmd('set colorcolumn=81')
 vim.o.complete = '.,w,b,u,i,d,t'
 vim.o.completeopt = 'menuone,preview'
 vim.o.cursorline = true
@@ -33,7 +34,7 @@ vim.o.ignorecase = true
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.scrolloff = 5
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,localoptions,options,tabpages,terminal,winpos,winsize'
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,terminal,winpos,winsize'
 vim.o.shada = '!,\'100,<50,s20,h'
 vim.o.shiftwidth = 4
 vim.o.showtabline = 2
@@ -64,38 +65,38 @@ require('lazy').setup({
     { import = 'color.onedark' },
     { import = 'color.catppuccin' },
     -- Syntax
-    { import = 'syntax/click' },              -- Click
-    { import = 'syntax/p4' },                 -- P4
-    { import = 'syntax/promela' },            -- Promela
+    { import = 'syntax/click' },        -- Click
+    { import = 'syntax/p4' },           -- P4
+    { import = 'syntax/promela' },      -- Promela
     -- UI
-    { import = 'ui.lualine' },                -- statusline
-    { import = 'ui.bufferline' },             -- tabline
-    { import = 'ui.indent_blankline' },       -- Indent line
-    { import = 'ui.gitsigns' },               -- Git integration for buffers
-    { import = 'ui.css_color' },              -- CSS colors
+    { import = 'ui.lualine' },          -- statusline
+    { import = 'ui.bufferline' },       -- tabline
+    { import = 'ui.indent_blankline' }, -- Indent line
+    { import = 'ui.gitsigns' },         -- Git integration for buffers
+    { import = 'ui.css_color' },        -- CSS colors
     -- Utility
-    { import = 'util.vim_sleuth' },           -- Automatically infer tabstop, shiftwidth, etc.
-    { import = 'util.autopairs' },            -- Auto-pairs
-    { import = 'util.comment' },              -- Comment
-    { import = 'util.session' },              -- Session management
-    { import = 'util.mason_tool_installer' }, -- Manage mason packages
-    { import = 'util.fidget' },               -- LSP progress messages
-    { import = 'util.lspconfig' },            -- Configurations for LSP clients
-    { import = 'util.dap' },                  -- Debug support with DAPs
-    { import = 'util.cmp' },                  -- Autocomplete with LSP and snippets
-    { import = 'util.treesitter' },           -- Highlight, edit, and navigate code
-    { import = 'util.telescope' },            -- Fuzzy finder
-    { import = 'util.which_key' },            -- Show pending keybindings
-    { import = 'util.trouble' },              -- Pretty diagnostics and others
-    { import = 'util.outline' },              -- Code outline sidebar
-    { import = 'util.latex' },                -- Enhanced integration of ltex-ls for neovim (needed for dictionaries)
+    { import = 'util.which_key' },      -- Show pending keybindings
+    { import = 'util.vim_sleuth' },     -- Auto-adjust tabstop, shiftwidth, etc.
+    { import = 'util.autopairs' },      -- Auto-pairs
+    { import = 'util.comment' },        -- Comment
+    { import = 'util.session' },        -- Session management
+    { import = 'util.terminal' },       -- Terminal toggle
+    { import = 'util.mason_packages' }, -- Manage mason packages
+    { import = 'util.fidget' },         -- LSP progress messages
+    { import = 'util.lspconfig' },      -- Configurations for LSP clients
+    { import = 'util.dap' },            -- Debug support with DAPs
+    { import = 'util.cmp' },            -- Autocomplete with LSP and snippets
+    { import = 'util.treesitter' },     -- Highlight, edit, and navigate code
+    { import = 'util.telescope' },      -- Fuzzy finder
+    { import = 'util.trouble' },        -- Pretty diagnostics and others
+    { import = 'util.outline' },        -- Code outline sidebar
+    { import = 'util.latex' },          -- Client integration of ltex-ls (needed for dictionaries)
 
     -- Plugins to add --
+    -- https://github.com/lukas-reineke/virt-column.nvim
     -- https://github.com/vim-voom/VOoM -- latex outline pane (add to latex.lua)
-    -- https://github.com/akinsho/toggleterm.nvim
     -- https://github.com/nvim-neo-tree/neo-tree.nvim
     -- https://github.com/folke/todo-comments.nvim
-    -- harpoon
 
     -- Old plugins (find a better alternative if it's still needed)
     -- Plug 'craigemery/vim-autotag'
@@ -150,22 +151,24 @@ local helper = require('util.helper')
 local builtin = require('telescope.builtin')
 local gitsigns = package.loaded.gitsigns
 
--- Navigation
+-- Reset key mappings
+vim.keymap.set('n', '<CR>', '<Nop>', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- Navigation
 vim.keymap.set({ 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, '0', "v:count == 0 ? 'g0' : '0'", { expr = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, '$', "v:count == 0 ? 'g$' : '$'", { expr = true, silent = true })
-vim.keymap.set('n', '<C-\\>', ':vs<CR>', { silent = true })
-vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { silent = true })
-vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('n', '<C-\\>', ':vs<CR>', { silent = true, desc = 'Vertical split' })
+vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { silent = true, desc = 'Move down the selected text' })
+vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true, desc = 'Move up the selected text' })
 vim.keymap.set('n', '<leader>cd', helper.cd_to_current_file, { silent = true, desc = 'Change to current directory' })
 -- UI
 vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
 vim.keymap.set('n', '<C-f>', ':Telescope file_browser<CR>', { silent = true, desc = 'file browser' })
 -- Shell / Commands
 vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
-vim.keymap.set('n', '<C-j>', ':botright split +term<CR>', { silent = true, desc = 'Create a shell' })
+vim.keymap.set('n', '<C-j>', TERM_toggle, { silent = true, desc = 'Terminal' })
 vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
 vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
 vim.keymap.set('n', '<C-m>', ':Mason<CR>', { desc = 'Open Mason' })
@@ -247,10 +250,6 @@ vim.keymap.set({ 'n', 'v' }, '<F8>', dapui.eval, { desc = 'Debug: Evaluate expre
 --
 -- Autocommands
 --
-vim.api.nvim_create_autocmd('TermOpen', {
-    command = 'startinsert',
-    desc = 'Start insert mode upon opening terminals'
-})
 -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 --     pattern = { '*.maude' },
 --     command = 'set syntax=maude filetype=maude',
