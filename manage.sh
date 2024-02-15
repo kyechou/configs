@@ -44,8 +44,6 @@ CLI_HOME_CONFIGS=(
     .gitconfig
     .profile
     .tmux.conf
-    .vim
-    .vimrc
 )
 
 CLI_CONFIGS=(

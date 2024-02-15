@@ -16,7 +16,6 @@ browserpass-firefox
 cantarell-fonts
 clang
 cmus
-ctags
 cups
 devtools
 diffutils
@@ -152,7 +151,6 @@ unifi
 unrar
 unzip
 valgrind
-vim
 virt-manager
 visual-studio-code-bin
 vlc
