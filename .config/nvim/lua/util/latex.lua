@@ -7,7 +7,7 @@ return {
     'lervag/vimtex',
     dependencies = {
         {
-            'vigoux/ltex-ls.nvim',               -- Enhanced integration of ltex-ls (needed for dictionaries)
+            'vigoux/ltex-ls.nvim',               -- Client integration of ltex-ls (needed for dictionaries)
             dependencies = {
                 'neovim/nvim-lspconfig',         -- LSP configuration
                 'hrsh7th/cmp-nvim-lsp',          -- LSP completion capabilities
@@ -61,6 +61,7 @@ return {
         },
     },
     config = function()
+        -- vimtex
         vim.g.vimtex_view_method = 'zathura'
         vim.g.vimtex_compiler_method = 'latexmk'
         vim.g.maplocalleader = ' '

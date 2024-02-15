@@ -33,7 +33,18 @@ return {
                 path_display = { 'absolute' },
                 theme_conf = { border = true },
                 previewer = true,
+                -- See the end of |:h telescope.mappings|
+                attach_mappings = function(_, map)
+                    local telescope_actions = require('telescope.actions')
+                    local actions = require('auto-session.session-lens.actions')
+                    telescope_actions.select_default:replace(actions.source_session)
+                    map({ 'n', 'i' }, '<CR>', telescope_actions.select_default)
+                    map({ 'n', 'i' }, '<C-d>', actions.delete_session)
+                    map({ 'n', 'i' }, '<C-x>', actions.delete_session)
+                    map({ 'n', 'i' }, '<C-a>', actions.alternate_session)
+                    return true
+                end,
             },
         })
-    end
+    end,
 }

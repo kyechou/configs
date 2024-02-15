@@ -10,7 +10,6 @@ return {
     dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-tree/nvim-web-devicons',
-        'nvim-telescope/telescope-file-browser.nvim',   -- File browser
         {
             'nvim-telescope/telescope-fzf-native.nvim', -- FZF sorter in C
             build =
@@ -27,8 +26,36 @@ return {
         local telescope = require('telescope')
         local actions = require('telescope.actions')
         local builtin = require('telescope.builtin')
-        local fb_actions = require('telescope._extensions.file_browser.actions')
-        local fb_finders = require('telescope._extensions.file_browser.finders')
+
+        -- local function open(bufnr)
+        --     actions.select_default(bufnr)
+        --     actions.center(bufnr)
+        -- end
+
+        local function open_drop(bufnr)
+            require('telescope.actions.set').edit(bufnr, 'drop')
+            actions.center(bufnr)
+        end
+
+        local function open_tab(bufnr)
+            actions.select_tab(bufnr)
+            actions.center(bufnr)
+        end
+
+        -- local function open_tab_drop(bufnr)
+        --     require('telescope.actions.set').edit(bufnr, 'tab drop')
+        --     actions.center(bufnr)
+        -- end
+
+        local function open_horizontal(bufnr)
+            actions.select_horizontal(bufnr)
+            actions.center(bufnr)
+        end
+
+        local function open_vertical(bufnr)
+            actions.select_vertical(bufnr)
+            actions.center(bufnr)
+        end
 
         telescope.setup({
             defaults = {
@@ -45,7 +72,7 @@ return {
                 multi_icon = '+',
                 initial_mode = 'insert',
                 border = true,
-                path_display = { 'smart' },
+                path_display = { 'truncate' },
                 hl_result_eol = true,
                 color_devicons = true,
                 mappings = {
@@ -61,10 +88,10 @@ return {
                         ['<C-p>'] = actions.preview_scrolling_up,    -- scroll up preview
                         ['<C-d>'] = actions.results_scrolling_down,  -- scroll down
                         ['<C-u>'] = actions.results_scrolling_up,    -- scroll up
-                        ['<CR>'] = actions.select_default,           -- open in current window
-                        ['<C-s>'] = actions.select_horizontal,       -- horizontal split
-                        ['<C-t>'] = actions.select_tab,              -- open in new tab
-                        ['<C-v>'] = actions.select_vertical,         -- vertical split
+                        ['<CR>'] = open_drop,                        -- open in current window
+                        ['<C-s>'] = open_horizontal,                 -- horizontal split
+                        ['<C-t>'] = open_tab,                        -- open in new tab
+                        ['<C-v>'] = open_vertical,                   -- vertical split
                         ['<C-a>'] = actions.toggle_all,              -- toggle all selection
                         ['<C-l>'] = false,
                         ['<M-q>'] = false,
@@ -91,10 +118,10 @@ return {
                         ['<C-p>'] = actions.preview_scrolling_up,   -- scroll up preview
                         ['<C-d>'] = actions.results_scrolling_down, -- scroll down
                         ['<C-u>'] = actions.results_scrolling_up,   -- scroll up
-                        ['<CR>'] = actions.select_default,          -- open in current window
-                        ['<C-s>'] = actions.select_horizontal,      -- horizontal split
-                        ['<C-t>'] = actions.select_tab,             -- open in new tab
-                        ['<C-v>'] = actions.select_vertical,        -- vertical split
+                        ['<CR>'] = open_drop,                       -- open in current window
+                        ['<C-s>'] = open_horizontal,                -- horizontal split
+                        ['<C-t>'] = open_tab,                       -- open in new tab
+                        ['<C-v>'] = open_vertical,                  -- vertical split
                         ['<M-q>'] = false,
                         ['<Down>'] = false,
                         ['<Up>'] = false,
@@ -111,89 +138,11 @@ return {
                     -- 'ignore_case', 'respect_case', 'smart_case'
                     case_mode = 'smart_case',
                 },
-                file_browser = {
-                    -- :h telescope-file-browser.picker.file_browser()
-                    path = helper.find_git_dir_or_cwd(),
-                    cwd = helper.find_git_dir_or_cwd(),
-                    cwd_to_path = false,
-                    grouped = false,
-                    files = true,
-                    add_dirs = true,
-                    depth = 1,
-                    auto_depth = false,
-                    select_buffer = false,
-                    hidden = { file_browser = true, folder_browser = true },
-                    respect_gitignore = vim.fn.executable('fd') == 1,
-                    no_ignore = false,
-                    follow_symlinks = vim.fn.executable('fd') == 1,
-                    browse_files = fb_finders.browse_files,
-                    browse_folders = fb_finders.browse_folders,
-                    hide_parent_dir = false,
-                    collapse_dirs = true,
-                    prompt_path = false,
-                    quiet = false,
-                    use_ui_input = true,
-                    dir_icon = '',
-                    dir_icon_hl = 'Default',
-                    display_stat = { date = true, size = true, mode = true },
-                    hijack_netrw = true,
-                    use_fd = vim.fn.executable('fd') == 1,
-                    git_status = vim.fn.executable('git') == 1,
-                    mappings = {
-                        ['i'] = {
-                            ['<C-a>'] = fb_actions.create,
-                            ['<S-CR>'] = fb_actions.create_from_prompt,
-                            ['<C-o>'] = fb_actions.open,
-                            ['<C-p>'] = fb_actions.goto_parent_dir,
-                            ['<C-h>'] = fb_actions.goto_home_dir,
-                            ['<C-w>'] = fb_actions.goto_cwd,
-                            ['<C-c>'] = fb_actions.change_cwd,
-                            ['<C-f>'] = fb_actions.toggle_browser,
-                            ['<C-.>'] = fb_actions.toggle_hidden,
-                            ['<BS>'] = fb_actions.backspace,
-                            ['<CR>'] = actions.select_default,     -- open in current window
-                            ['<C-s>'] = actions.select_horizontal, -- horizontal split
-                            ['<C-t>'] = actions.select_tab,        -- open in new tab
-                            ['<C-v>'] = actions.select_vertical,   -- vertical split
-                            ['<A-r>'] = false,
-                            ['<A-m>'] = false,
-                            ['<A-y>'] = false,
-                            ['<A-c>'] = false,
-                            ['<A-d>'] = false,
-                        },
-                        ['n'] = {
-                            ['a'] = fb_actions.create,
-                            ['r'] = fb_actions.rename,
-                            ['x'] = fb_actions.move,
-                            ['y'] = fb_actions.copy,
-                            ['d'] = fb_actions.remove,
-                            ['o'] = fb_actions.open,
-                            ['p'] = fb_actions.goto_parent_dir,
-                            ['h'] = fb_actions.goto_home_dir,
-                            ['w'] = fb_actions.goto_cwd,
-                            ['c'] = fb_actions.change_cwd,
-                            ['f'] = fb_actions.toggle_browser,
-                            ['.'] = fb_actions.toggle_hidden,
-                            ['<BS>'] = fb_actions.backspace,
-                            ['<CR>'] = actions.select_default,     -- open in current window
-                            ['<C-s>'] = actions.select_horizontal, -- horizontal split
-                            ['s'] = actions.select_horizontal,     -- horizontal split
-                            ['<C-t>'] = actions.select_tab,        -- open in new tab
-                            ['t'] = actions.select_tab,            -- open in new tab
-                            ['<C-v>'] = actions.select_vertical,   -- vertical split
-                            ['v'] = actions.select_vertical,       -- vertical split
-                            ['e'] = false,
-                            ['g'] = false,
-                            ['m'] = false,
-                        },
-                    },
-                },
             },
         })
 
         -- Enable telescope extensions, if installed
         pcall(telescope.load_extension, 'fzf')
-        pcall(telescope.load_extension, 'file_browser')
         pcall(telescope.load_extension, 'session-lens')
 
         -- Search for a string in a git repository or cwd

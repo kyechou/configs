@@ -8,7 +8,7 @@ return {
     config = function()
         require('gitsigns').setup({
             signcolumn = true,
-            numhl = true,
+            numhl = false,
             linehl = false,
             word_diff = false,
             current_line_blame = false,

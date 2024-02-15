@@ -13,14 +13,17 @@ vim.g.maplocalleader = ' '
 -- Vim settings
 -- :help vim.o
 --
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 20
+vim.g.netrw_browse_split = 3
 vim.o.autochdir = false
 vim.o.background = 'dark'
 vim.o.breakindent = true
 vim.o.browsedir = 'last'
 vim.o.cindent = true
 vim.o.clipboard = 'unnamed,unnamedplus'
-vim.o.colorcolumn = 81
-vim.cmd('set colorcolumn=81')
+vim.o.colorcolumn = '+1,121'
 vim.o.complete = '.,w,b,u,i,d,t'
 vim.o.completeopt = 'menuone,preview'
 vim.o.cursorline = true
@@ -34,7 +37,7 @@ vim.o.ignorecase = true
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.scrolloff = 5
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,terminal,winpos,winsize'
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,resize,tabpages,terminal,winpos,winsize'
 vim.o.shada = '!,\'100,<50,s20,h'
 vim.o.shiftwidth = 4
 vim.o.showtabline = 2
@@ -64,6 +67,7 @@ require('lazy').setup({
     -- Color themes
     { import = 'color.onedark' },
     { import = 'color.catppuccin' },
+    { import = 'color.kanagawa' },
     -- Syntax
     { import = 'syntax/click' },        -- Click
     { import = 'syntax/p4' },           -- P4
@@ -72,45 +76,34 @@ require('lazy').setup({
     { import = 'ui.lualine' },          -- statusline
     { import = 'ui.bufferline' },       -- tabline
     { import = 'ui.indent_blankline' }, -- Indent line
+    { import = 'ui.virt_column' },      -- Color column as a virtual text
     { import = 'ui.gitsigns' },         -- Git integration for buffers
+    { import = 'ui.todo' },             -- Todo comments
     { import = 'ui.css_color' },        -- CSS colors
     -- Utility
     { import = 'util.which_key' },      -- Show pending keybindings
     { import = 'util.vim_sleuth' },     -- Auto-adjust tabstop, shiftwidth, etc.
     { import = 'util.autopairs' },      -- Auto-pairs
     { import = 'util.comment' },        -- Comment
-    { import = 'util.session' },        -- Session management
     { import = 'util.terminal' },       -- Terminal toggle
+    { import = 'util.undo' },           -- Undo closing tabs
+    { import = 'util.telescope' },      -- Fuzzy finder
+    { import = 'util.session' },        -- Session management
+    { import = 'util.nvim_tree' },      -- File tree
     { import = 'util.mason_packages' }, -- Manage mason packages
     { import = 'util.fidget' },         -- LSP progress messages
     { import = 'util.lspconfig' },      -- Configurations for LSP clients
     { import = 'util.dap' },            -- Debug support with DAPs
     { import = 'util.cmp' },            -- Autocomplete with LSP and snippets
     { import = 'util.treesitter' },     -- Highlight, edit, and navigate code
-    { import = 'util.telescope' },      -- Fuzzy finder
     { import = 'util.trouble' },        -- Pretty diagnostics and others
     { import = 'util.outline' },        -- Code outline sidebar
-    { import = 'util.latex' },          -- Client integration of ltex-ls (needed for dictionaries)
-
-    -- Plugins to add --
-    -- https://github.com/lukas-reineke/virt-column.nvim
-    -- https://github.com/vim-voom/VOoM -- latex outline pane (add to latex.lua)
-    -- https://github.com/nvim-neo-tree/neo-tree.nvim
-    -- https://github.com/folke/todo-comments.nvim
-
-    -- Old plugins (find a better alternative if it's still needed)
-    -- Plug 'craigemery/vim-autotag'
-    -- Plug 'vim-scripts/taglist.vim'
-
-    -- sonarlint (optional)
-    -- https://github.com/MuriloGhignatti/nvim-config/blob/2229c3/lua/safe/plugins/lsp/linter.lua
-    -- https://www.reddit.com/r/neovim/comments/14a4y3y/sonarlint/
-
+    { import = 'util.latex' },          -- Better LaTeX support
 }, {
-    defaults = { version = '*' } -- Latest stable version
+    defaults = { version = '*' }        -- Latest stable version
 })
 
-vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('kanagawa')
 
 --
 -- Key mappings
@@ -121,21 +114,20 @@ vim.cmd.colorscheme('catppuccin')
 --   - <leader> a : code action
 --   - <leader> cd : change to current dir
 --   - <leader> d : Diagnostics
---   - <leader> f : Find files
 --   - <leader> g : git
 --   - <leader> h : help
 --   - <leader> l : latex (vimtex)
 --   - <leader> m : man pages
---   - <leader> o : Outline
+--   - <leader> o/O : Outline
 --   - <leader> rn : rename symbol
---   - <leader> s : Spell check
+--   - <leader> s : spell check
+--   - <leader> t : todo comments
 --   - <leader> w : Workspace (tentative)
 
 -- Document existing key chains.
 require('which-key').register({
     ['<leader>c'] = { name = '[C]hange', _ = 'which_key_ignore' },
     ['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
-    ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
     ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
     ['<leader>l'] = { name = '[L]aTeX', _ = 'which_key_ignore' },
     ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
@@ -165,10 +157,10 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true, desc = 'Move u
 vim.keymap.set('n', '<leader>cd', helper.cd_to_current_file, { silent = true, desc = 'Change to current directory' })
 -- UI
 vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
-vim.keymap.set('n', '<C-f>', ':Telescope file_browser<CR>', { silent = true, desc = 'file browser' })
 -- Shell / Commands
 vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
-vim.keymap.set('n', '<C-j>', TERM_toggle, { silent = true, desc = 'Terminal' })
+vim.keymap.set('n', '<C-`>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
+vim.keymap.set('n', '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
 vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
 vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
 vim.keymap.set('n', '<C-m>', ':Mason<CR>', { desc = 'Open Mason' })
@@ -180,12 +172,13 @@ vim.keymap.set('n', '<C-l>', ':tabnext<CR>', { silent = true, desc = 'Switch to 
 vim.keymap.set('n', '<C-h>', ':tabprev<CR>', { silent = true, desc = 'Switch to previous tab' })
 vim.keymap.set('n', '<C-Right>', ':tabmove +1<CR>', { silent = true, desc = 'Move tab to right' })
 vim.keymap.set('n', '<C-Left>', ':tabmove -1<CR>', { silent = true, desc = 'Move tab to left' })
+vim.keymap.set('n', '<C-S-t>', ':LastBuf<CR>', { desc = 'Reopen last buffer' })
+vim.keymap.set('n', '<C-S-k>', helper.del_windowless_bufs, { desc = 'Delete windowless buffers (caution!)' })
 vim.keymap.set('n', '<leader><space>', TLSCP_list_buffers, { desc = 'List buffers' })
 -- Files
 vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
 vim.keymap.set('n', '<C-e>', TLSCP_find_git_files_or_from_cwd, { desc = 'Find files' })
-vim.keymap.set('n', '<leader>ff', TLSCP_find_git_files_or_from_cwd, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecently opened files' })
+vim.keymap.set('n', '<C-f>', NVT_toggle, { silent = true, desc = 'File browser' })
 -- Search / Grep
 vim.keymap.set('n', '<C-s>', TLSCP_live_grep_in_git_or_cwd, { desc = 'Search in git repo or cwd' })
 vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
@@ -207,19 +200,20 @@ vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: [G]oto [D]ecla
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = 'LSP: [G]oto [I]mplementation' })
 vim.keymap.set('n', 'gs', builtin.lsp_dynamic_workspace_symbols, { desc = 'LSP: [G]oto [S]ymbols' })
 vim.keymap.set('n', 'gS', builtin.lsp_document_symbols, { desc = 'LSP: [G]oto document [S]ymbols' })
-vim.keymap.set('n', '<leader>o', ':Outline<CR>', { desc = 'Toggle outline ' })
+vim.keymap.set('n', '<leader>o', ':AerialToggle!<CR>', { desc = 'Outline' })
+vim.keymap.set('n', '<leader>O', ':AerialToggle<CR>', { desc = 'Outline (switch cursor)' })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'LSP: Code [A]ction' })
 -- Workspace / Session
-vim.keymap.set("n", "<leader>wl", require("auto-session.session-lens").search_session, { desc = 'List sessions' })
-vim.keymap.set("n", "<leader>ws", ':SessionSave<CR>', { desc = 'Save session' })
-vim.keymap.set("n", "<leader>wd", ':SessionDelete<CR>', { desc = 'Delete session' })
+vim.keymap.set('n', '<leader>wl', require('auto-session.session-lens').search_session, { desc = 'List sessions' })
+vim.keymap.set('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Save session' })
+vim.keymap.set('n', '<leader>wd', ':SessionDelete<CR>', { desc = 'Delete session' })
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'LSP: Workspace [A]dd foler' })
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'LSP: Workspace [R]emove folder' })
 vim.keymap.set('n', '<leader>wf', helper.list_workspace_folders, { desc = 'LSP: Workspace [F]olders' })
 -- Documentation
-vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = '[H]elp' })
-vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = '[M]an pages' })
+vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = 'Man pages' })
 -- Git
 vim.keymap.set({ 'n', 'v' }, ']h', function() GS_next_hunk(']h') end, { desc = 'Jump to next hunk' })
 vim.keymap.set({ 'n', 'v' }, '[h', function() GS_prev_hunk('[h') end, { desc = 'Jump to previous hunk' })
@@ -236,6 +230,20 @@ vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Preview git h
 vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = 'Diff against index (working tree)' })
 vim.keymap.set('n', '<leader>gD', function() gitsigns.diffthis('~') end, { desc = 'Diff against last commit' })
 vim.keymap.set('n', '<leader>gb', GS_blame_line, { desc = 'Git blame' })
+-- Comments
+local capi = require('Comment.api')
+vim.keymap.set('n', '<C-/>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
+vim.keymap.set('v', '<C-/>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
+vim.keymap.set({ 'n', 'v' }, '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Comment operator' })
+vim.keymap.set('n', '<C-c>O', capi.insert.linewise.above, { desc = 'Insert a comment above' })
+vim.keymap.set('n', '<C-c>o', capi.insert.linewise.below, { desc = 'Insert a comment below' })
+vim.keymap.set('n', '<C-c>A', capi.insert.linewise.eol, { desc = 'Insert a comment at end of line' })
+-- Todo
+vim.keymap.set('n', ']t', TODO_jump_next, { desc = 'Next todo comment' })
+vim.keymap.set('n', '[t', TODO_jump_prev, { desc = 'Previous todo comment' })
+vim.keymap.set('n', ']T', TODO_jump_next_issue, { desc = 'Next issue' })
+vim.keymap.set('n', '[T', TODO_jump_prev_issue, { desc = 'Previous issue' })
+vim.keymap.set('n', '<leader>t', ':TodoTelescope<CR>', { desc = 'Todo comments' })
 -- Debug
 local dap = require('dap')
 local dapui = require('dapui')

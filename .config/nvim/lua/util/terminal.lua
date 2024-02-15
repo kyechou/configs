@@ -28,10 +28,10 @@ return {
             terminal_mappings = true, -- whether `open_mapping` applies in the opened terminals
             persist_size = false,     -- whether the previous term size is remembered
             persist_mode = true,      -- whether the previous term mode is remembered
-            direction = 'float',      -- 'vertical', 'horizontal', 'tab', 'float'
+            direction = 'horizontal', -- 'vertical', 'horizontal', 'tab', 'float'
             close_on_exit = true,     -- close term window on exit
             shell = vim.o.shell,      -- default shell (string | func)
-            auto_scroll = false,      -- scroll to the bottom on term output
+            auto_scroll = true,       -- scroll to the bottom on term output
             float_opts = {
                 border = 'rounded',   -- See :h nvim_open_win for details on borders.
                 winblend = 0,         -- 0: no transparency
@@ -53,6 +53,26 @@ return {
                 nil,                          -- size
                 helper.find_git_dir_or_cwd(), -- dir
                 nil,                          -- direction
+                nil                           -- name
+            )
+        end
+
+        function TERM_toggle_bottom()
+            require('toggleterm').toggle(
+                nil,                          -- count
+                nil,                          -- size
+                helper.find_git_dir_or_cwd(), -- dir
+                'horizontal',                 -- direction
+                nil                           -- name
+            )
+        end
+
+        function TERM_toggle_float()
+            require('toggleterm').toggle(
+                nil,                          -- count
+                nil,                          -- size
+                helper.find_git_dir_or_cwd(), -- dir
+                'float',                      -- direction
                 nil                           -- name
             )
         end

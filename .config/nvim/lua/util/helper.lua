@@ -57,7 +57,7 @@ helper.mason_dap_configs = {
 -- https://tree-sitter.github.io/tree-sitter/
 helper.ts_language_parsers = {
     'awk',
-    'bash',
+    -- 'bash', -- I don't like treesitter's bash highlighting
     'bibtex',
     'c',
     'cmake',
@@ -148,6 +148,17 @@ end
 -- List workspace folders
 function helper.list_workspace_folders()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end
+
+-- Delete all unmodified buffers that are not displayed in a window
+function helper.del_windowless_bufs()
+    local bufinfos = vim.fn.getbufinfo({ buflisted = true })
+    vim.tbl_map(function(bufinfo)
+        if bufinfo.changed == 0 and (not bufinfo.windows or #bufinfo.windows == 0) then
+            print(('Deleting buffer %d : %s'):format(bufinfo.bufnr, bufinfo.name))
+            vim.api.nvim_buf_delete(bufinfo.bufnr, { force = false, unload = false })
+        end
+    end, bufinfos)
 end
 
 return helper

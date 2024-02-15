@@ -32,8 +32,8 @@ return {
                         'diagnostics',
                         -- 'nvim_lsp', 'nvim_diagnostic',
                         -- 'nvim_workspace_diagnostic', 'coc', 'ale', 'vim_lsp'.
-                        sources = { 'nvim_lsp', 'nvim_diagnostic', 'coc' },
-                    }
+                        sources = { 'nvim_lsp', 'nvim_diagnostic', 'vim_lsp' },
+                    },
                 },
                 lualine_c = {
                     {
@@ -44,7 +44,15 @@ return {
                             modified = '+',
                             readonly = '🔒',
                         }
-                    }
+                    },
+                    {
+                        'aerial',
+                        sep = nil,       -- default separator
+                        depth = -1,      -- the number of symbols to render
+                        dense = false,   -- dense mode
+                        dense_sep = '.', -- separator in dense mode
+                        colored = true,  -- color the symbol icon
+                    },
                 },
                 lualine_x = {
                     {

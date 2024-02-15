@@ -15,7 +15,9 @@ return {
             show_end = false,
             exclude = {
                 -- `:help idl.config.scope.exclude`
-                language = {}, -- Requires treesitter
+                language = {
+                    'markdown', 'tex', 'json', 'jsonc'
+                }, -- Requires treesitter
             },
         },
     },
