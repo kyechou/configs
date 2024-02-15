@@ -25,6 +25,7 @@ usage() {
     -d, --deploy    Deploy as in a CLI environment
     -a, --all       Deploy everything (as an Arch desktop)
     -s, --sync      Sync everything (as an Arch desktop)
+    -r, --cp-root   Copy CLI configs to /root/
     -n, --dry-run   Dry run
 EOF
 }
@@ -32,6 +33,7 @@ EOF
 DEPLOY=0
 DEPLOY_ALL=0
 SYNC=0
+CP_ROOT=1
 DRYRUN=0
 RSYNC=('rsync' '--delete-after' '-rlptDvh')
 GPG='gpg'
@@ -102,6 +104,7 @@ parse_params() {
         -d | --deploy) DEPLOY=1 ;;
         -a | --all) DEPLOY_ALL=1 ;;
         -s | --sync) SYNC=1 ;;
+        -r | --cp-root) CP_ROOT=1 ;;
         -n | --dry-run) DRYRUN=1 ;;
         -?*) die "Unknown option: $1\n$(usage)" ;;
         *) break ;;
@@ -200,6 +203,11 @@ deploy_all() {
     fi
 }
 
+copy_cli_to_root() {
+    for item in "${CLI_HOME_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /root/; done
+    for item in "${CLI_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /root/.config/; done
+}
+
 main() {
     parse_params "$@"
 
@@ -209,6 +217,10 @@ main() {
         deploy
     elif [[ $DEPLOY_ALL -eq 1 ]]; then
         deploy_all
+    fi
+
+    if [[ $CP_ROOT -eq 1 ]]; then
+        copy_cli_to_root
     fi
 }
 
