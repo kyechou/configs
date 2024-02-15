@@ -9,11 +9,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'mileszs/ack.vim'
-Plug 'bkad/CamelCaseMotion'
-Plug 'craigemery/vim-autotag'
-Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
-Plug 'MarcWeber/vim-addon-local-vimrc'
 " Syntax
 Plug 'godlygeek/tabular', {'for': 'markdown'} " needed by vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
@@ -196,11 +192,6 @@ let g:netrw_browse_split = 3
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => bkad/CamelCaseMotion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:camelcasemotion_key = '<leader>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => a.vim
