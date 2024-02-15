@@ -79,6 +79,7 @@ require('lazy').setup({
     { import = 'ui.virt_column' },      -- Color column as a virtual text
     { import = 'ui.gitsigns' },         -- Git integration for buffers
     { import = 'ui.todo' },             -- Todo comments
+    { import = 'ui.illuminate' },       -- Illuminate word under cursor
     { import = 'ui.css_color' },        -- CSS colors
     -- Utility
     { import = 'util.which_key' },      -- Show pending keybindings
@@ -108,21 +109,7 @@ vim.cmd.colorscheme('kanagawa')
 --
 -- Key mappings
 -- :help vim.keymap.set()
--- https://github.com/lervag/vimtex/blob/master/VISUALS.md
 --
--- Leader notes:
---   - <leader> a : code action
---   - <leader> cd : change to current dir
---   - <leader> d : Diagnostics
---   - <leader> g : git
---   - <leader> h : help
---   - <leader> l : latex (vimtex)
---   - <leader> m : man pages
---   - <leader> o/O : Outline
---   - <leader> rn : rename symbol
---   - <leader> s : spell check
---   - <leader> t : todo comments
---   - <leader> w : Workspace (tentative)
 
 -- Document existing key chains.
 require('which-key').register({
@@ -141,6 +128,7 @@ require('which-key').register({
 
 local helper = require('util.helper')
 local builtin = require('telescope.builtin')
+local illum = require('illuminate')
 local gitsigns = package.loaded.gitsigns
 
 -- Reset key mappings
@@ -154,16 +142,15 @@ vim.keymap.set({ 'n', 'v' }, '$', "v:count == 0 ? 'g$' : '$'", { expr = true, si
 vim.keymap.set('n', '<C-\\>', ':vs<CR>', { silent = true, desc = 'Vertical split' })
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { silent = true, desc = 'Move down the selected text' })
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true, desc = 'Move up the selected text' })
+vim.keymap.set('n', '<C-s>', TLSCP_live_grep_in_git_or_cwd, { desc = 'Search in git repo or cwd' })
+vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
 vim.keymap.set('n', '<leader>cd', helper.cd_to_current_file, { silent = true, desc = 'Change to current directory' })
--- UI
-vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
--- Shell / Commands
-vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
-vim.keymap.set('n', '<C-`>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
-vim.keymap.set('n', '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
-vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
-vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
-vim.keymap.set('n', '<C-m>', ':Mason<CR>', { desc = 'Open Mason' })
+vim.keymap.set('n', ']r', illum.goto_next_reference, { silent = true, desc = 'Go to next reference' })
+vim.keymap.set('n', '[r', illum.goto_prev_reference, { silent = true, desc = 'Go to previous reference' })
+-- Files
+vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
+vim.keymap.set('n', '<C-e>', TLSCP_find_git_files_or_from_cwd, { desc = 'Find files' })
+vim.keymap.set('n', '<C-f>', NVT_toggle, { silent = true, desc = 'File browser' })
 -- Tabs / Buffers
 vim.keymap.set('n', 't', ':tabnew ', { desc = 'Create a new tab' })
 vim.keymap.set('n', 'yt', ':tab split<CR>', { silent = true, desc = 'Duplicate tab' })
@@ -175,13 +162,41 @@ vim.keymap.set('n', '<C-Left>', ':tabmove -1<CR>', { silent = true, desc = 'Move
 vim.keymap.set('n', '<C-S-t>', ':LastBuf<CR>', { desc = 'Reopen last buffer' })
 vim.keymap.set('n', '<C-S-k>', helper.del_windowless_bufs, { desc = 'Delete windowless buffers (caution!)' })
 vim.keymap.set('n', '<leader><space>', TLSCP_list_buffers, { desc = 'List buffers' })
--- Files
-vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
-vim.keymap.set('n', '<C-e>', TLSCP_find_git_files_or_from_cwd, { desc = 'Find files' })
-vim.keymap.set('n', '<C-f>', NVT_toggle, { silent = true, desc = 'File browser' })
--- Search / Grep
-vim.keymap.set('n', '<C-s>', TLSCP_live_grep_in_git_or_cwd, { desc = 'Search in git repo or cwd' })
-vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
+-- UI
+vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
+-- Shell / Commands
+vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
+vim.keymap.set('n', '<C-`>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
+vim.keymap.set('n', '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
+vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
+vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
+-- Comments
+local capi = require('Comment.api')
+vim.keymap.set('n', '<C-/>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
+vim.keymap.set('v', '<C-/>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
+vim.keymap.set({ 'n', 'v' }, '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Comment operator' })
+vim.keymap.set('n', '<C-c>O', capi.insert.linewise.above, { desc = 'Insert a comment above' })
+vim.keymap.set('n', '<C-c>o', capi.insert.linewise.below, { desc = 'Insert a comment below' })
+vim.keymap.set('n', '<C-c>A', capi.insert.linewise.eol, { desc = 'Insert a comment at end of line' })
+-- Todo
+vim.keymap.set('n', ']t', TODO_jump_next, { desc = 'Next todo comment' })
+vim.keymap.set('n', '[t', TODO_jump_prev, { desc = 'Previous todo comment' })
+vim.keymap.set('n', ']T', TODO_jump_next_issue, { desc = 'Next issue' })
+vim.keymap.set('n', '[T', TODO_jump_prev_issue, { desc = 'Previous issue' })
+vim.keymap.set('n', '<leader>t', ':TodoTelescope<CR>', { desc = 'Todo comments' })
+-- LSP
+vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { desc = 'LSP: Signature help' })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: Hover documentation' })
+vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'LSP: References' })
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'LSP: Definition' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: Declaration' })
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = 'LSP: Implementation' })
+vim.keymap.set('n', 'gs', builtin.lsp_dynamic_workspace_symbols, { desc = 'LSP: Symbols' })
+vim.keymap.set('n', 'gS', builtin.lsp_document_symbols, { desc = 'LSP: Symbols in the current buffer' })
+vim.keymap.set('n', '<leader>o', ':AerialToggle!<CR>', { desc = 'Outline' })
+vim.keymap.set('n', '<leader>O', ':AerialToggle<CR>', { desc = 'Outline (switch focus)' })
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
+vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'LSP: Code actions' })
 -- Diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
@@ -191,26 +206,6 @@ vim.keymap.set('n', '<leader>dd', ':TroubleToggle workspace_diagnostics<CR>', { 
 vim.keymap.set('n', '<leader>df', ':TroubleToggle quickfix<CR>', { desc = 'Trouble: Quickfix' })
 vim.keymap.set('n', '<leader>dl', ':TroubleToggle loclist<CR>', { desc = 'Trouble: Location list' })
 vim.keymap.set('n', '<leader>s', ':setlocal spell!<CR>', { desc = 'Spell check' })
--- LSP
-vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { desc = 'LSP: Signature help' })
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: Hover documentation' })
-vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'LSP: [G]oto [R]eferences' })
-vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'LSP: [G]oto [D]efinition' })
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: [G]oto [D]eclaration' })
-vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = 'LSP: [G]oto [I]mplementation' })
-vim.keymap.set('n', 'gs', builtin.lsp_dynamic_workspace_symbols, { desc = 'LSP: [G]oto [S]ymbols' })
-vim.keymap.set('n', 'gS', builtin.lsp_document_symbols, { desc = 'LSP: [G]oto document [S]ymbols' })
-vim.keymap.set('n', '<leader>o', ':AerialToggle!<CR>', { desc = 'Outline' })
-vim.keymap.set('n', '<leader>O', ':AerialToggle<CR>', { desc = 'Outline (switch cursor)' })
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
-vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'LSP: Code [A]ction' })
--- Workspace / Session
-vim.keymap.set('n', '<leader>wl', require('auto-session.session-lens').search_session, { desc = 'List sessions' })
-vim.keymap.set('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Save session' })
-vim.keymap.set('n', '<leader>wd', ':SessionDelete<CR>', { desc = 'Delete session' })
-vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'LSP: Workspace [A]dd foler' })
-vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'LSP: Workspace [R]emove folder' })
-vim.keymap.set('n', '<leader>wf', helper.list_workspace_folders, { desc = 'LSP: Workspace [F]olders' })
 -- Documentation
 vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = 'Man pages' })
@@ -230,20 +225,13 @@ vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Preview git h
 vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = 'Diff against index (working tree)' })
 vim.keymap.set('n', '<leader>gD', function() gitsigns.diffthis('~') end, { desc = 'Diff against last commit' })
 vim.keymap.set('n', '<leader>gb', GS_blame_line, { desc = 'Git blame' })
--- Comments
-local capi = require('Comment.api')
-vim.keymap.set('n', '<C-/>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
-vim.keymap.set('v', '<C-/>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
-vim.keymap.set({ 'n', 'v' }, '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Comment operator' })
-vim.keymap.set('n', '<C-c>O', capi.insert.linewise.above, { desc = 'Insert a comment above' })
-vim.keymap.set('n', '<C-c>o', capi.insert.linewise.below, { desc = 'Insert a comment below' })
-vim.keymap.set('n', '<C-c>A', capi.insert.linewise.eol, { desc = 'Insert a comment at end of line' })
--- Todo
-vim.keymap.set('n', ']t', TODO_jump_next, { desc = 'Next todo comment' })
-vim.keymap.set('n', '[t', TODO_jump_prev, { desc = 'Previous todo comment' })
-vim.keymap.set('n', ']T', TODO_jump_next_issue, { desc = 'Next issue' })
-vim.keymap.set('n', '[T', TODO_jump_prev_issue, { desc = 'Previous issue' })
-vim.keymap.set('n', '<leader>t', ':TodoTelescope<CR>', { desc = 'Todo comments' })
+-- Workspace / Session
+vim.keymap.set('n', '<leader>wl', require('auto-session.session-lens').search_session, { desc = 'List sessions' })
+vim.keymap.set('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Save session' })
+vim.keymap.set('n', '<leader>wd', ':SessionDelete<CR>', { desc = 'Delete session' })
+vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Workspace: Add foler' })
+vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Workspace: Remove folder' })
+vim.keymap.set('n', '<leader>wf', helper.list_workspace_folders, { desc = 'Workspace: Folders' })
 -- Debug
 local dap = require('dap')
 local dapui = require('dapui')
