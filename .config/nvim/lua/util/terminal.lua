@@ -31,7 +31,7 @@ return {
             direction = 'horizontal', -- 'vertical', 'horizontal', 'tab', 'float'
             close_on_exit = true,     -- close term window on exit
             shell = vim.o.shell,      -- default shell (string | func)
-            auto_scroll = true,       -- scroll to the bottom on term output
+            auto_scroll = false,      -- scroll to the bottom on term output
             float_opts = {
                 border = 'rounded',   -- See :h nvim_open_win for details on borders.
                 winblend = 0,         -- 0: no transparency
