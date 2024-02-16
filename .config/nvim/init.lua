@@ -69,6 +69,7 @@ require('lazy').setup({
     { import = 'color.catppuccin' },
     { import = 'color.kanagawa' },
     -- Syntax
+    { import = 'syntax/pkgbuild' },     -- PKGBUILD
     { import = 'syntax/click' },        -- Click
     { import = 'syntax/p4' },           -- P4
     { import = 'syntax/promela' },      -- Promela
