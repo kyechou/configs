@@ -19,6 +19,10 @@ return {
                     Boolean = {
                         bold = false,
                     },
+                    ['@diff.add'] = { fg = colors.theme.vcs.added },
+                    ['@diff.delete'] = { fg = colors.theme.vcs.removed },
+                    ['@text.diff.add'] = { fg = colors.theme.vcs.added },
+                    ['@text.diff.delete'] = { fg = colors.theme.vcs.removed },
                 }
             end,
         })
