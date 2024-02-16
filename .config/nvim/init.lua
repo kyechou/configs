@@ -100,6 +100,7 @@ require('lazy').setup({
     { import = 'util.trouble' },        -- Pretty diagnostics and others
     { import = 'util.outline' },        -- Code outline sidebar
     { import = 'util.latex' },          -- Better LaTeX support
+    { import = 'util.shfmt' },          -- Shell formatting
 }, {
     defaults = { version = '*' }        -- Latest stable version
 })
@@ -246,6 +247,11 @@ vim.keymap.set({ 'n', 'v' }, '<F8>', dapui.eval, { desc = 'Debug: Evaluate expre
 --
 -- Autocommands
 --
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+    pattern = { '*.sh', '*.bash' },
+    command = 'Shfmt', -- require 'z0mbix/vim-shfmt' (util/shfmt.lua)
+    desc = 'Auto-format shell scripts',
+})
 -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 --     pattern = { '*.maude' },
 --     command = 'set syntax=maude filetype=maude',
