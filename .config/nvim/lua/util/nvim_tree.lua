@@ -217,10 +217,10 @@ return {
                 -- show_on_dirs = true,
                 -- show_on_open_dirs = true,
             },
-            -- filters = {
-            --     git_ignored = true,
-            --     dotfiles = false,
-            -- },
+            filters = {
+                git_ignored = false,
+                -- dotfiles = false,
+            },
             live_filter = {
                 prefix = '[filter]: ',
                 -- always_show_folders = true,
