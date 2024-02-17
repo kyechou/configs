@@ -24,6 +24,7 @@ return {
             auto_session_suppress_dirs = nil,
             auto_session_allowed_dirs = nil,
             auto_session_use_git_branch = nil,
+
             session_lens = {
                 -- If load_on_setup is set to false, one needs to
                 -- eventually call `require("auto-session").setup_session_lens()`
