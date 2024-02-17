@@ -94,9 +94,9 @@ return {
 
             -- Custom mappings
             vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+            vim.keymap.set('n', '-', api.tree.change_root_to_parent, opts('Up'))
+            vim.keymap.set('n', '=', api.tree.change_root_to_node, opts('CD'))
             vim.keymap.set('n', '<C-c>', api.marks.clear, opts('Clear all marks'))
-            vim.keymap.set('n', '<C-h>', api.tree.change_root_to_parent, opts('Up'))
-            vim.keymap.set('n', '<C-l>', api.tree.change_root_to_node, opts('CD'))
             vim.keymap.set('n', '<C-r>', api.tree.reload, opts('Refresh'))
             vim.keymap.set('n', '<C-s>', api.node.open.horizontal, opts('Open split'))
             vim.keymap.set('n', '<C-t>', api.node.open.tab_drop, opts('Open in new tab'))
@@ -250,7 +250,7 @@ return {
                 },
             },
             help = {
-                sort_by = 'desc',
+                sort_by = 'key',
             },
             ui = {
                 confirm = {
