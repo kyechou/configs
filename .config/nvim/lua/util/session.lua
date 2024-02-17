@@ -4,6 +4,9 @@
 
 return {
     'rmagatti/auto-session',
+    dependencies = {
+        'nvim-telescope/telescope.nvim',
+    },
     config = function()
         local session_dir = vim.fn.stdpath('data') .. '/sessions/'
 
@@ -21,7 +24,6 @@ return {
             auto_session_suppress_dirs = nil,
             auto_session_allowed_dirs = nil,
             auto_session_use_git_branch = nil,
-
             session_lens = {
                 -- If load_on_setup is set to false, one needs to
                 -- eventually call `require("auto-session").setup_session_lens()`
@@ -29,10 +31,13 @@ return {
                 load_on_setup = true,
                 -- list of buffer types that should not be deleted from current session
                 buftypes_to_ignore = {},
-                winblend = 0, -- fully opaque bg for floating window
+                -- See |:h telescope.setup()|
+                scroll_strategy = 'limit',
+                layout_config = {
+                    height = { 0.6, max = vim.api.nvim_win_get_height(0) - 4, min = 20 },
+                    width = 80,
+                },
                 path_display = { 'absolute' },
-                theme_conf = { border = true },
-                previewer = true,
                 -- See the end of |:h telescope.mappings|
                 attach_mappings = function(_, map)
                     local telescope_actions = require('telescope.actions')
