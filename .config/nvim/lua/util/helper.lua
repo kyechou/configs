@@ -47,7 +47,9 @@ helper.mason_lsp_configs = {
     marksman = {}, -- https://github.com/artempyanykh/marksman
     pyright = {},  -- https://github.com/microsoft/pyright
     taplo = {},    -- https://taplo.tamasfe.dev/cli/usage/language-server.html (TOML)
-    vale_ls = {},  -- https://github.com/errata-ai/vale-ls
+    vale_ls = {    -- https://github.com/errata-ai/vale-ls
+        filetypes = { 'markdown', 'text', 'plaintex', 'tex' },
+    },
 }
 
 -- Mason debug adapters
