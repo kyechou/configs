@@ -121,7 +121,7 @@ return {
             vim.keymap.set('n', 's', api.tree.search_node, opts('Search'))
             vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
             vim.keymap.set('n', 'yy', api.fs.copy.node, opts('Copy'))
-            vim.keymap.set('n', 'yc', api.fs.copy.node, opts('Clear copies'))
+            vim.keymap.set('n', 'yc', api.fs.clear_clipboard, opts('Clear copies'))
             vim.keymap.set('n', 'yn', api.fs.copy.filename, opts('Copy Name'))
             vim.keymap.set('n', 'yp', api.fs.copy.relative_path, opts('Copy Relative Path'))
             vim.keymap.set('n', 'yP', api.fs.copy.absolute_path, opts('Copy Absolute Path'))
