@@ -146,7 +146,7 @@ return {
             -- respect_buf_cwd = false,
             select_prompts = true,
             view = {
-                centralize_selection = true,
+                -- centralize_selection = false,
                 -- side = 'left',
                 preserve_window_proportions = true,
                 signcolumn = 'auto',
