@@ -27,9 +27,10 @@ return {
                     window_border = 'single',
                     capabilities = capabilities,
                     on_attach = require('lsp-format').on_attach, -- Enable auto-format on save
+                    filetypes = { 'bib', 'plaintex', 'tex', 'context' },
                     settings = {
                         ltex = {
-                            enabled = { 'latex', 'tex', 'bib', 'markdown' },
+                            enabled = { 'bibtex', 'tex', 'latex', 'plaintex', 'context' },
                             language = 'auto',
                             diagnosticSeverity = 'information',
                             dictionary = (function()

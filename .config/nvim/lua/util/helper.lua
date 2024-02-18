@@ -37,7 +37,12 @@ helper.mason_lsp_configs = {
     dockerls = {}, -- https://github.com/rcjsuen/dockerfile-language-server
     html = {},     -- https://github.com/hrsh7th/vscode-langservers-extracted
     jsonls = {},   -- https://github.com/hrsh7th/vscode-langservers-extracted
-    ltex = {},     -- https://github.com/valentjn/ltex-ls
+    ltex = {       -- https://github.com/valentjn/ltex-ls
+        filetypes = { 'bib', 'plaintex', 'tex', 'context' },
+        ltex = {
+            enabled = { 'bibtex', 'tex', 'latex', 'context' },
+        },
+    },
     lua_ls = {},   -- https://luals.github.io/wiki/settings/
     marksman = {}, -- https://github.com/artempyanykh/marksman
     pyright = {},  -- https://github.com/microsoft/pyright
