@@ -53,6 +53,7 @@ git
 gnome-disk-utility
 gnome-keyring
 gnome-tweaks
+go
 google-chrome
 gptfdisk
 grim
@@ -81,6 +82,7 @@ lifeograph
 linux
 linux-firmware
 linux-wifi-hotspot
+luarocks
 lxappearance
 lxsession
 man-db
