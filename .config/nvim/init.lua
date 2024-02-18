@@ -93,6 +93,7 @@ require('lazy').setup({
     { import = 'util.session' },        -- Session management
     { import = 'util.nvim_tree' },      -- File tree
     { import = 'util.mason_packages' }, -- Manage mason packages
+    -- LSP, DAP, Linters, Formatters
     { import = 'util.fidget' },         -- LSP progress messages
     { import = 'util.lspconfig' },      -- Configurations for LSP clients
     { import = 'util.dap' },            -- Debug support with DAPs
@@ -100,8 +101,8 @@ require('lazy').setup({
     { import = 'util.treesitter' },     -- Highlight, edit, and navigate code
     { import = 'util.trouble' },        -- Pretty diagnostics and others
     { import = 'util.outline' },        -- Code outline sidebar
-    { import = 'util.latex' },          -- Better LaTeX support
     { import = 'util.shfmt' },          -- Shell formatting
+    { import = 'util.latex' },          -- Better LaTeX support
 }, {
     defaults = { version = '*' }        -- Latest stable version
 })
