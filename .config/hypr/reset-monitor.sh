@@ -95,7 +95,7 @@ main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
-    laptop_scale=1.333333
+    laptop_scale=1.566667
     dell_monitor="DP-1"
     # dell_scale=1.066667
     dell_scale=1.25
