@@ -73,6 +73,7 @@ require('lazy').setup({
     { import = 'syntax/click' },        -- Click
     { import = 'syntax/p4' },           -- P4
     { import = 'syntax/promela' },      -- Promela
+    { import = 'syntax/systemtap' },    -- SystemTap
     -- UI
     { import = 'ui.lualine' },          -- statusline
     { import = 'ui.bufferline' },       -- tabline
