@@ -3,7 +3,8 @@
 #
 
 # prompt
-PS1='\[\e[2m\][\D{%F %a %I:%M %P}]\[\e[0m\] \[\e[92m\]\u\[\e[0m\] @ \[\e[96m\]\h\[\e[0m\] : \w\n\$ '
+# PS1='\[\e[2m\][\D{%F %a %I:%M %P}]\[\e[0m\] \[\e[92m\]\u\[\e[0m\] @ \[\e[96m\]\h\[\e[0m\] : \w\n\$ '
+PS1='\[\e[92m\]\u\[\e[0m\] @ \[\e[96m\]\h\[\e[0m\] : \w\n\$ '
 PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 # umask
