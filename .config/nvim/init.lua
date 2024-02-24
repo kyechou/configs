@@ -153,7 +153,8 @@ vim.keymap.set('n', ']r', illum.goto_next_reference, { silent = true, desc = 'Go
 vim.keymap.set('n', '[r', illum.goto_prev_reference, { silent = true, desc = 'Go to previous reference' })
 -- Files
 vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
-vim.keymap.set('n', '<C-e>', TLSCP_find_git_files_or_from_cwd, { desc = 'Find files' })
+vim.keymap.set('n', '<C-e>', TLSCP_find_files_from_git_or_cwd, { desc = 'Find files' })
+vim.keymap.set('n', '<C-S-e>', TLSCP_find_ignored_files_from_git_or_cwd, { desc = 'Find ignored files' })
 vim.keymap.set('n', '<C-f>', NVT_toggle, { silent = true, desc = 'File browser' })
 -- Tabs / Buffers
 vim.keymap.set('n', 't', ':tabnew ', { desc = 'Create a new tab' })

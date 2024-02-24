@@ -159,17 +159,25 @@ return {
         end
 
         -- Search for a file in a git repository or cwd
-        function TLSCP_find_git_files_or_from_cwd()
-            local git_dir = helper.find_git_dir()
-            if git_dir then
-                builtin.git_files({
-                    cwd = git_dir,
-                    use_git_root = true,
-                    show_untracked = true
-                })
-            else
-                builtin.find_files({ follow = true, hidden = true })
-            end
+        function TLSCP_find_files_from_git_or_cwd()
+            local root_dir = helper.find_git_dir_or_cwd()
+            builtin.find_files({
+                cwd = root_dir,
+                follow = true,
+                hidden = true,
+                no_ignore = false, -- respect .gitignore
+            })
+        end
+
+        -- Search for a file in a git repository or cwd
+        function TLSCP_find_ignored_files_from_git_or_cwd()
+            local root_dir = helper.find_git_dir_or_cwd()
+            builtin.find_files({
+                cwd = root_dir,
+                follow = true,
+                hidden = true,
+                no_ignore = true, -- show ignored files
+            })
         end
 
         -- Search from all diagnostics of the git repo or cwd
