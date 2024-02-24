@@ -83,7 +83,7 @@ blinking = "Off"
 shape = "Block"
 
 [font]
-size = 10.0
+size = 11.0
 
 [font.bold]
 style = "Bold"
