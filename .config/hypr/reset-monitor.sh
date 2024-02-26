@@ -76,16 +76,14 @@ reset_monitor() {
     elif [[ "$lid_status" == "closed" ]]; then
         cmds+="keyword monitor $laptop_monitor,disable;"
         if [[ ${#ext_mons[@]} -eq 1 ]]; then
-            cmds+="keyword monitor ${ext_mons[0]},preferred,0x0,1;"
+            cmds+="keyword monitor ${ext_mons[0]},preferred,0x0,$ext_scale;"
         fi
     else
         die "Unknown lid status: '$lid_status'. Expected 'open' or 'closed'"
     fi
 
-    # Set the scale for the external Dell wide monitor.
-    cmds+="keyword monitor $dell_monitor,preferred,auto,$dell_scale;"
     # All other monitors are enabled by default.
-    cmds+='keyword monitor ,preferred,auto,1;'
+    cmds+="keyword monitor ,preferred,auto,$ext_scale;"
 
     # Run the commands.
     hyprctl --batch "$cmds" >/dev/null
@@ -96,9 +94,7 @@ main() {
 
     laptop_monitor="eDP-1"
     laptop_scale=1.566667
-    dell_monitor="DP-1"
-    # dell_scale=1.066667
-    dell_scale=1.25
+    ext_scale=1.25
     lid_status="$(laptop_lid_status)"
     set +e
     mapfile -t ext_mons < <(get_external_monitors)
