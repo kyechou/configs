@@ -3,6 +3,8 @@
 -- |:help nvim-treesitter|
 --
 
+-- TODO: https://youtu.be/CEMPq_r8UYQ?si=AHcqeUFsOngXxdyK
+
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -23,13 +25,15 @@ return {
             modules = {},
             highlight = {
                 enable = true,
-                disable = { 'latex', 'markdown' },
+                -- I don't like treesitter's bash highlighting
+                disable = { 'latex', 'markdown', 'bash' },
                 additional_vim_regex_highlighting = { 'latex', 'markdown' },
             },
             indent = { enable = true },
             incremental_selection = {
                 enable = true,
                 keymaps = {
+                    -- TODO: Fix the keymap conflicts with hyprland.
                     init_selection = '<c-space>',   -- 'gnn'
                     node_incremental = '<c-space>', -- 'grn'
                     scope_incremental = '<c-s>',    -- 'grc'

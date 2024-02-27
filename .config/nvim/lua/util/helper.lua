@@ -64,7 +64,7 @@ helper.mason_dap_configs = {
 -- https://tree-sitter.github.io/tree-sitter/
 helper.ts_language_parsers = {
     'awk',
-    -- 'bash', -- I don't like treesitter's bash highlighting
+    'bash',
     'bibtex',
     'c',
     'cmake',
