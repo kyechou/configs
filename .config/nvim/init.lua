@@ -171,9 +171,9 @@ vim.keymap.set('n', '<leader><space>', TLSCP_list_buffers, { desc = 'List buffer
 vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
 -- Shell / Commands
 vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
-vim.keymap.set({ 'n', 'i' }, '<C-`>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
+vim.keymap.set({ 'n', 'i' }, '<C-CR>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
 vim.keymap.set({ 'n', 'i' }, '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
-vim.keymap.set('t', '<C-`>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
+vim.keymap.set('t', '<C-CR>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
 vim.keymap.set('t', '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
 vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Run commands' })
 vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history' })
