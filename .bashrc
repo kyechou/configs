@@ -17,15 +17,16 @@ export EDITOR=nvim
 export VISUAL=nvim
 export PAGER='less -R'
 export TERM='xterm-256color'
-export GPG_TTY=$(tty)
-export BROWSER=google-chrome-stable
+GPG_TTY=$(tty)
+export GPG_TTY
+export BROWSER=firefox
 export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 
 # Perl executables
-export PATH=$PATH:/usr/bin/vendor_perl
+export PATH="$PATH:/usr/bin/vendor_perl"
 
 # GTK themes
 export GTK_THEME=Kanagawa-Borderless:dark
@@ -64,15 +65,27 @@ set -o vi               # start vi mode
 
 # colored less for interactive shell
 [[ $- == *i* ]] && {
-    export LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
-    export LESS_TERMCAP_md=$(tput bold; tput setaf 2)
-    export LESS_TERMCAP_me=$(tput sgr0)
-    ## use italic (sitm/ritm) instead of underline (smul/rmul)
-    export LESS_TERMCAP_us=$(tput sitm; tput setaf 4)
-    export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)
-    export LESS_TERMCAP_mr=$(tput rev)
-    export LESS_TERMCAP_mh=$(tput dim)
+    LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
+    LESS_TERMCAP_md=$(tput bold; tput setaf 2)
+    LESS_TERMCAP_me=$(tput sgr0)
+    # use italic (sitm/ritm) instead of underline (smul/rmul)
+    LESS_TERMCAP_us=$(tput sitm; tput setaf 4)
+    LESS_TERMCAP_ue=$(tput ritm; tput sgr0)
+    LESS_TERMCAP_mr=$(tput rev)
+    LESS_TERMCAP_mh=$(tput dim)
+    export LESS_TERMCAP_mb
+    export LESS_TERMCAP_md
+    export LESS_TERMCAP_me
+    export LESS_TERMCAP_us
+    export LESS_TERMCAP_ue
+    export LESS_TERMCAP_mr
+    export LESS_TERMCAP_mh
 }
+
+# zoxide
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init --cmd cd bash)"
+fi
 
 # aliases
 alias l='ls --color=auto -F'
@@ -80,16 +93,20 @@ alias la='ls --color=auto -AF'
 alias ll='ls --color=auto -lAF'
 alias ls='ls --color=auto -F'
 alias cp='cp --sparse=auto'
-alias rm='trash-put'
-alias vi='nvim'
-alias vim='nvim'
+if command -v trash-put &>/dev/null; then
+    alias rm='trash-put'
+fi
+if command -v nvim &>/dev/null; then
+    alias vi='nvim'
+    alias vim='nvim'
+fi
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias pacman='pacman --color auto'
 alias gdb='gdb -q'
 alias valgrind='valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all'
-alias mvn_all="mvn clean install -DskipTests -T $(($(nproc) - 1))"
-alias mvn_offline="mvn clean install -DskipTests -T $(($(nproc) - 1)) -o -Pdev-local"
-alias mvn_fast="mvn clean install -DskipTests -Dspotbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true -T $(($(nproc) - 1))"
-alias mvn_fast_offline="mvn clean install -DskipTests -Dspotbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true -T $(($(nproc) - 1)) -o -Pdev-local"
+alias mvn_all='mvn clean install -DskipTests -T $(($(nproc) - 1))'
+alias mvn_offline='mvn clean install -DskipTests -T $(($(nproc) - 1)) -o -Pdev-local'
+alias mvn_fast='mvn clean install -DskipTests -Dspotbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true -T $(($(nproc) - 1))'
+alias mvn_fast_offline='mvn clean install -DskipTests -Dspotbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true -T $(($(nproc) - 1)) -o -Pdev-local'
