@@ -140,6 +140,7 @@ x-scheme-handler/mid=userapp-Thunderbird-NTGPD2.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-G75PD2.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-G75PD2.desktop
 message/rfc822=userapp-Thunderbird-NTGPD2.desktop
+x-scheme-handler/ferdium=ferdium.desktop
 
 [Added Associations]
 application/x-bibtex=code.desktop;
