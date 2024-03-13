@@ -143,10 +143,6 @@ message/rfc822=userapp-Thunderbird-NTGPD2.desktop
 x-scheme-handler/ferdium=ferdium.desktop
 
 [Added Associations]
-application/x-bibtex=code.desktop;
-text/plain=code.desktop;
-text/x-log=code.desktop;
-text/markdown=code.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-NTGPD2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-NTGPD2.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-G75PD2.desktop;

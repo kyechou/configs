@@ -18,7 +18,6 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [{ exec = '"${EDITOR:-nvim}" "$@"', block = true }]
-code = [{ exec = 'code "$@"', orphan = true }]
 open = [{ exec = 'xdg-open "$@"', orphan = true, desc = "XDG Open" }]
 reveal = [
     { exec = 'exiftool "$1"; echo "Press enter to exit"; read', block = true, desc = "Show EXIF" },
@@ -30,12 +29,12 @@ rules = [
     { name = "*/", use = ["open", "edit", "reveal"] },
 
     # Text/Empty files
-    { mime = "text/*", use = ["edit", "code", "open", "reveal"] },
-    { mime = "inode/x-empty", use = ["edit", "code", "reveal"] },
-    { mime = "application/json", use = ["edit", "code", "reveal"] },
+    { mime = "text/*", use = ["edit", "open", "reveal"] },
+    { mime = "inode/x-empty", use = ["edit", "reveal"] },
+    { mime = "application/json", use = ["edit", "reveal"] },
 
     # Default
-    { mime = "*", use = ["open", "edit", "code", "reveal"] },
+    { mime = "*", use = ["open", "edit", "reveal"] },
 ]
 
 [tasks]
@@ -48,3 +47,5 @@ preload = []
 
 [log]
 enabled = false
+
+# vim: ts=4 sw=4 et :
