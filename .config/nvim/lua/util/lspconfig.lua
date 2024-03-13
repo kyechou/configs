@@ -39,6 +39,7 @@ return {
                     on_attach = require('lsp-format').on_attach, -- Enable auto-format on save
                     settings = helper.mason_lsp_configs[server_name],
                     filetypes = (helper.mason_lsp_configs[server_name] or {}).filetypes,
+                    autostart = (helper.mason_lsp_configs[server_name] or {}).autostart,
                 })
             end,
         })

@@ -49,6 +49,7 @@ helper.mason_lsp_configs = {
     taplo = {},    -- https://taplo.tamasfe.dev/cli/usage/language-server.html (TOML)
     vale_ls = {    -- https://github.com/errata-ai/vale-ls
         filetypes = { 'markdown', 'text', 'plaintex', 'tex' },
+        autostart = false,
     },
 }
 
