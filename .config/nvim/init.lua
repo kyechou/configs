@@ -258,6 +258,15 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     command = 'Shfmt', -- require 'z0mbix/vim-shfmt' (util/shfmt.lua)
     desc = 'Auto-format shell scripts',
 })
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+    pattern = { '*.tex', '*.latex', '*.bib' },
+    callback = function()
+        local save_cursor = vim.fn.getpos(".")
+        pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
+        vim.fn.setpos(".", save_cursor)
+    end,
+    desc = 'Auto-remove trailing whitespaces for LaTeX files',
+})
 -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 --     pattern = { '*.maude' },
 --     command = 'set syntax=maude filetype=maude',
