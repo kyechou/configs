@@ -1,19 +1,20 @@
 --
 -- https://github.com/lervag/vimtex
--- https://github.com/vigoux/ltex-ls.nvim
+-- https://github.com/barreiroleo/ltex_extra.nvim
 --
 
 return {
     'lervag/vimtex',
     dependencies = {
         {
-            'vigoux/ltex-ls.nvim',               -- Client integration of ltex-ls (needed for dictionaries)
+            'barreiroleo/ltex-extra.nvim',       -- Client integration of ltex-ls (needed for dictionaries)
             dependencies = {
                 'neovim/nvim-lspconfig',         -- LSP configuration
                 'hrsh7th/cmp-nvim-lsp',          -- LSP completion capabilities
                 'folke/neodev.nvim',             -- Full signature and completion for nvim Lua
                 'lukas-reineke/lsp-format.nvim', -- Use the native LSP formatting
             },
+            ft = { 'bib', 'plaintex', 'tex', 'context' },
             config = function()
                 -- Apply cmp-nvim-lsp for additional completion capabilities
                 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -22,40 +23,27 @@ return {
                 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
                 require("neodev").setup()
 
-                require('ltex-ls').setup({
-                    use_spellfile = false,
-                    window_border = 'single',
-                    capabilities = capabilities,
-                    on_attach = require('lsp-format').on_attach, -- Enable auto-format on save
-                    filetypes = { 'bib', 'plaintex', 'tex', 'context' },
-                    settings = {
-                        ltex = {
-                            enabled = { 'bibtex', 'tex', 'latex', 'plaintex', 'context' },
-                            language = 'auto',
-                            diagnosticSeverity = 'information',
-                            dictionary = (function()
-                                -- For dictionary, search for files in the runtime to have
-                                -- and include them as externals the format for them is
-                                -- dict/{LANG}.txt
-                                -- Also add dict/default.txt to all of them
-                                local files = {}
-                                for _, file in ipairs(vim.api.nvim_get_runtime_file('dict/*', true)) do
-                                    local lang = vim.fn.fnamemodify(file, ':t:r')
-                                    local fullpath = vim.fs.normalize(file)
-                                    files[lang] = { ':' .. fullpath }
-                                end
-
-                                if files.default then
-                                    for lang, _ in pairs(files) do
-                                        if lang ~= 'default' then
-                                            vim.list_extend(files[lang], files.default)
-                                        end
-                                    end
-                                    files.default = nil
-                                end
-                                return files
-                            end)(),
-                        },
+                local helper = require('util.helper')
+                require('ltex_extra').setup({
+                    -- table <string> : languages for witch dictionaries will be loaded
+                    load_langs = { 'en-US' },
+                    -- boolean : whether to load dictionaries on startup
+                    init_check = true,
+                    -- string : relative or absolute path to store dictionaries
+                    -- e.g. subfolder in the project root or the current working directory: ".ltex"
+                    -- e.g. shared files for all projects:  vim.fn.expand("~") .. "/.local/share/ltex"
+                    path = '.ltex',
+                    -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+                    log_level = 'none',
+                    -- table : configurations of the ltex language server.
+                    -- Only if you are calling the server from ltex_extra
+                    -- See lspconfig.lua and helper.lua.
+                    server_opts = {
+                        capabilities = capabilities,
+                        on_attach = require('lsp-format').on_attach, -- Enable auto-format on save
+                        settings = helper.mason_lsp_configs['ltex'],
+                        filetypes = (helper.mason_lsp_configs['ltex'] or {}).filetypes,
+                        autostart = (helper.mason_lsp_configs['ltex'] or {}).autostart,
                     },
                 })
             end,

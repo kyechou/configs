@@ -41,6 +41,8 @@ helper.mason_lsp_configs = {
         filetypes = { 'bib', 'plaintex', 'tex', 'context' },
         ltex = {
             enabled = { 'bibtex', 'tex', 'latex', 'context' },
+            language = 'auto',
+            diagnosticSeverity = 'information',
         },
     },
     lua_ls = {},   -- https://luals.github.io/wiki/settings/
