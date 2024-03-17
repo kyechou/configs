@@ -3,11 +3,13 @@
 -- |:help nvim-treesitter|
 --
 
--- TODO: https://youtu.be/CEMPq_r8UYQ?si=AHcqeUFsOngXxdyK
+-- TODO: Set up nvim-treesitter-textobjects
+-- https://youtu.be/CEMPq_r8UYQ?si=AHcqeUFsOngXxdyK
 
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
         local helper = require('util.helper')
         require('nvim-treesitter.configs').setup({
@@ -33,11 +35,10 @@ return {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    -- TODO: Fix the keymap conflicts with hyprland.
-                    init_selection = '<c-space>',   -- 'gnn'
-                    node_incremental = '<c-space>', -- 'grn'
-                    scope_incremental = '<c-s>',    -- 'grc'
-                    node_decremental = '<M-space>', -- 'grm'
+                    init_selection = '<C-space>',
+                    node_incremental = '<C-space>',
+                    scope_incremental = false,
+                    node_decremental = '<BS>',
                 },
             },
         })
