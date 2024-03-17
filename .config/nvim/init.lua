@@ -65,15 +65,13 @@ vim.o.wildmode = 'longest:full,full'
 require('lazy_init')
 require('lazy').setup({
     -- Color themes
-    { import = 'color.onedark' },
-    { import = 'color.catppuccin' },
     { import = 'color.kanagawa' },
     -- Syntax
-    { import = 'syntax/pkgbuild' },     -- PKGBUILD
-    { import = 'syntax/click' },        -- Click
-    { import = 'syntax/p4' },           -- P4
-    { import = 'syntax/promela' },      -- Promela
-    { import = 'syntax/systemtap' },    -- SystemTap
+    { import = 'syntax.pkgbuild' },     -- PKGBUILD
+    { import = 'syntax.click' },        -- Click
+    { import = 'syntax.p4' },           -- P4
+    { import = 'syntax.promela' },      -- Promela
+    { import = 'syntax.systemtap' },    -- SystemTap
     -- UI
     { import = 'ui.lualine' },          -- statusline
     { import = 'ui.bufferline' },       -- tabline
@@ -259,7 +257,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     desc = 'Auto-format shell scripts',
 })
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-    pattern = { '*.tex', '*.latex', '*.bib' },
+    pattern = { '*.tex', '*.bib' },
     callback = function()
         local save_cursor = vim.fn.getpos(".")
         pcall(function() vim.cmd([[%s/\s\+$//e]]) end)

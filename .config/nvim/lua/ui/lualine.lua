@@ -41,7 +41,7 @@ return {
                         newfile_status = true,
                         path = 3,
                         symbols = {
-                            modified = '+',
+                            modified = '◉ ',
                             readonly = '🔒',
                         }
                     },
