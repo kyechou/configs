@@ -1,14 +1,13 @@
 {
-  "layer": "top",     // Waybar at top layer
-  "position": "top",  // Waybar position (top|bottom|left|right)
-  "height": "",       // Waybar height (to be removed for auto height)
-  "width": "",        // Waybar width
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": "", // Waybar height (to be removed for auto height)
+  "width": "", // Waybar width
   "spacing": 3,
   "exclusive": true,
   "fixed-center": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-
   //
   // Module ordering
   //
@@ -30,7 +29,6 @@
     "network",
     "tray"
   ],
-
   //
   // Modules (left)
   //
@@ -76,12 +74,11 @@
     "max-length": 40,
     "on-click": "playerctl -p spotify play-pause",
     "on-click-right": "playerctl -p spotify stop",
-    "on-scroll-up" : "playerctl -p spotify previous",
-    "on-scroll-down" : "playerctl -p spotify next",
+    "on-scroll-up": "playerctl -p spotify previous",
+    "on-scroll-down": "playerctl -p spotify next",
     "exec": "python $HOME/.config/waybar/mediaplayer.py --player spotify 2>/dev/null",
     "exec-if": "pgrep spotify"
   },
-
   //
   // Modules (center)
   //
@@ -96,7 +93,8 @@
   },
   "clock": {
     "interval": 10,
-    "format": "{:󰃭  %Y-%m-%d %a    %I:%M %p %Z}",
+    // "format": "{:󰃭  %Y-%m-%d %a    %I:%M %p %Z}",
+    "format": "{:%Y-%m-%d %a  %I:%M %p %Z}",
     "timezones": [
       "America/Chicago",
       "Asia/Taipei"
@@ -104,26 +102,25 @@
     "tooltip": true,
     "tooltip-format": "{calendar}",
     "calendar": {
-      "mode"        : "year",
+      "mode": "year",
       "mode-mon-col": 3,
-      "weeks-pos"   : "",
-      "on-scroll"   : 1,
-      "on-click"    : "mode",
+      "weeks-pos": "",
+      "on-scroll": 1,
+      "on-click": "mode",
       "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
     },
-    "actions":  {
+    "actions": {
       //"on-click": "mode",
       "on-scroll-up": "tz_up",
       "on-scroll-down": "tz_down"
     }
   },
-
   //
   // Modules (right)
   //
@@ -148,7 +145,11 @@
     "format": "{icon} {volume}% | {format_source}",
     "format-muted": "󰝟 | {format_source}",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "format-source": " {volume}%",
     "format-source-muted": "",
@@ -178,7 +179,13 @@
     "format": "{icon}  {capacity}%",
     "format-charging": "⚡ {capacity}%",
     "format-plugged": "  {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "network": {
     "interval": 60,
@@ -196,5 +203,4 @@
     "reverse-direction": false
   }
 }
-
 // vim: ft=jsonc :
