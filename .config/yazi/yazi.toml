@@ -17,10 +17,10 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-edit = [{ exec = '"${EDITOR:-nvim}" "$@"', block = true }]
-open = [{ exec = 'xdg-open "$@"', orphan = true, desc = "XDG Open" }]
+edit = [{ run = '"${EDITOR:-nvim}" "$@"', block = true }]
+open = [{ run = 'xdg-open "$@"', orphan = true, desc = "XDG Open" }]
 reveal = [
-    { exec = 'exiftool "$1"; echo "Press enter to exit"; read', block = true, desc = "Show EXIF" },
+    { run = 'exiftool "$1"; echo "Press enter to exit"; read', block = true, desc = "Show EXIF" },
 ]
 
 [open]
