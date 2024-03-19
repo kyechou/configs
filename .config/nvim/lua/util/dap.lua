@@ -13,6 +13,7 @@ return {
             'rcarriga/nvim-dap-ui',      -- Debugger UI for nvim-dep
             dependencies = {
                 'mfussenegger/nvim-dap', -- DAP client for neovim
+                'nvim-neotest/nvim-nio', -- Required by nvim-dap-ui
             }
         },
     },
