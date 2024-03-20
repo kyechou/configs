@@ -91,6 +91,7 @@ require('lazy').setup({
     { import = 'util.telescope' },      -- Fuzzy finder
     { import = 'util.session' },        -- Session management
     { import = 'util.nvim_tree' },      -- File tree
+    { import = 'util.documentation' },  -- Documentation generation
     { import = 'util.mason_packages' }, -- Manage mason packages
     -- LSP, DAP, Linters, Formatters
     { import = 'util.fidget' },         -- LSP progress messages
@@ -116,7 +117,7 @@ vim.cmd.colorscheme('kanagawa')
 -- Document existing key chains.
 require('which-key').register({
     ['<leader>c'] = { name = '[C]hange', _ = 'which_key_ignore' },
-    ['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
+    ['<leader>d'] = { name = '[D]iagnostics/[D]ocumentation', _ = 'which_key_ignore' },
     ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
     ['<leader>l'] = { name = '[L]aTeX', _ = 'which_key_ignore' },
     ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
@@ -208,12 +209,17 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>ds', TLSCP_diagnostics, { desc = 'Search diagnostics' })
 vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Diagnostic message' })
 vim.keymap.set('n', '<leader>dd', ':TroubleToggle workspace_diagnostics<CR>', { desc = 'Trouble: Diagnostics' })
-vim.keymap.set('n', '<leader>df', ':TroubleToggle quickfix<CR>', { desc = 'Trouble: Quickfix' })
-vim.keymap.set('n', '<leader>dl', ':TroubleToggle loclist<CR>', { desc = 'Trouble: Location list' })
+-- vim.keymap.set('n', '<leader>df', ':TroubleToggle quickfix<CR>', { desc = 'Trouble: Quickfix' })
+-- vim.keymap.set('n', '<leader>dl', ':TroubleToggle loclist<CR>', { desc = 'Trouble: Location list' })
 vim.keymap.set('n', '<leader>s', ':setlocal spell!<CR>', { desc = 'Spell check' })
 -- Documentation
 vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<leader>m', TLSCP_man_pages, { desc = 'Man pages' })
+vim.keymap.set('n', '<leader>dg', NEOGEN_any, { desc = 'Generate documentation' })
+vim.keymap.set('n', '<leader>df', NEOGEN_function, { desc = 'Generate function documentation' })
+vim.keymap.set('n', '<leader>dc', NEOGEN_class, { desc = 'Generate class documentation' })
+vim.keymap.set('n', '<leader>dt', NEOGEN_type, { desc = 'Generate type documentation' })
+vim.keymap.set('n', '<leader>dF', NEOGEN_file, { desc = 'Generate file documentation' })
 -- Git
 vim.keymap.set({ 'n', 'v' }, ']h', function() GS_next_hunk(']h') end, { desc = 'Jump to next hunk' })
 vim.keymap.set({ 'n', 'v' }, '[h', function() GS_prev_hunk('[h') end, { desc = 'Jump to previous hunk' })
