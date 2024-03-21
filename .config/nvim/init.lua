@@ -263,7 +263,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     desc = 'Auto-format shell scripts',
 })
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-    pattern = { '*.tex', '*.bib' },
+    pattern = { '*' },
     callback = function()
         local save_cursor = vim.fn.getpos(".")
         pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
