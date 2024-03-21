@@ -47,7 +47,8 @@
     rt = restore
     br = branch -avv
     lg = log --graph --color
-    lgp = log --color -p --compact-summary
+    lgo = log --graph --color --oneline --parents
+    lgp = log --color --patch --compact-summary
     lsr = ls-remote
     d = diff
     dc = diff --cached
