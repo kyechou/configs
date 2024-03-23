@@ -199,7 +199,8 @@ deploy_all() {
     fi
     sudo "${RSYNC[@]}" private/system-connections /etc/NetworkManager/
     if [[ $DRYRUN -eq 0 ]]; then
-        sudo pacman -U --needed --noconfirm private/uiuc-vpn/uiuc-vpn-1.0.0-1-x86_64.pkg.tar.zst
+        sudo pacman -U --needed --noconfirm \
+            private/cisco-secure-client/cisco-secure-client-5.0.02075-1-x86_64.pkg.tar.zst
     fi
 }
 

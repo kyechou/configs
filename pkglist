@@ -14,6 +14,7 @@ blueman
 brightnessctl
 browserpass-firefox
 cantarell-fonts
+cisco-secure-client
 clang
 cmus
 cups
@@ -151,7 +152,6 @@ ttc-iosevka-etoile
 ttf-hack
 ttf-hack-nerd
 ttf-iosevka-nerd
-uiuc-vpn
 unifi
 unrar
 unzip
