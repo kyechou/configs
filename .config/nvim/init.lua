@@ -154,6 +154,7 @@ vim.keymap.set('n', '[r', illum.goto_prev_reference, { silent = true, desc = 'Go
 vim.keymap.set('n', '<C-a>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'Switch hdr/src' })
 vim.keymap.set('n', '<C-e>', TLSCP_find_files_from_git_or_cwd, { desc = 'Find files' })
 vim.keymap.set('n', '<C-S-e>', TLSCP_find_ignored_files_from_git_or_cwd, { desc = 'Find ignored files' })
+vim.keymap.set('n', '<leader>e', TLSCP_find_ignored_files_from_git_or_cwd, { desc = 'Find ignored files' })
 vim.keymap.set('n', '<C-f>', NVT_toggle, { silent = true, desc = 'File browser' })
 -- Tabs / Buffers
 vim.keymap.set('n', 't', ':tabnew ', { desc = 'Create a new tab' })
@@ -164,13 +165,16 @@ vim.keymap.set('n', '<C-h>', ':tabprev<CR>', { silent = true, desc = 'Switch to 
 vim.keymap.set('n', '<C-Right>', ':tabmove +1<CR>', { silent = true, desc = 'Move tab to right' })
 vim.keymap.set('n', '<C-Left>', ':tabmove -1<CR>', { silent = true, desc = 'Move tab to left' })
 vim.keymap.set('n', '<C-S-t>', ':LastBuf<CR>', { desc = 'Reopen last buffer' })
+vim.keymap.set('n', '<leader>u', ':LastBuf<CR>', { desc = 'Reopen last buffer' })
 vim.keymap.set('n', '<C-S-k>', helper.del_windowless_bufs, { desc = 'Delete windowless buffers (caution!)' })
+vim.keymap.set('n', '<leader>k', helper.del_windowless_bufs, { desc = 'Delete windowless buffers (caution!)' })
 vim.keymap.set('n', '<leader><space>', TLSCP_list_buffers, { desc = 'List buffers' })
 -- UI
 vim.keymap.set('n', '<C-n>', ':noh<CR>', { silent = true, desc = 'Disable search highlights' })
 -- Shell / Commands
 vim.keymap.set('n', 'r', ':! ', { desc = 'Run shell commands' })
 vim.keymap.set({ 'n', 'i' }, '<C-CR>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
+vim.keymap.set('n', '<leader><CR>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
 vim.keymap.set({ 'n', 'i' }, '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
 vim.keymap.set('t', '<C-CR>', TERM_toggle_float, { silent = true, desc = 'Terminal (float)' })
 vim.keymap.set('t', '<C-j>', TERM_toggle_bottom, { silent = true, desc = 'Terminal (bottom)' })
@@ -180,6 +184,8 @@ vim.keymap.set('n', '<C-p>', builtin.command_history, { desc = 'Command history'
 local capi = require('Comment.api')
 vim.keymap.set('n', '<C-/>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
 vim.keymap.set('v', '<C-/>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
+vim.keymap.set('n', '<C-_>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
+vim.keymap.set('v', '<C-_>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
 vim.keymap.set({ 'n', 'v' }, '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Comment operator' })
 vim.keymap.set('n', '<C-c>O', capi.insert.linewise.above, { desc = 'Insert a comment above' })
 vim.keymap.set('n', '<C-c>o', capi.insert.linewise.below, { desc = 'Insert a comment below' })
