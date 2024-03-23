@@ -198,10 +198,6 @@ deploy_all() {
         sudo "${RSYNC[@]}" 20-nvidia.conf /etc/X11/xorg.conf.d/
     fi
     sudo "${RSYNC[@]}" private/system-connections /etc/NetworkManager/
-    if [[ $DRYRUN -eq 0 ]]; then
-        sudo pacman -U --needed --noconfirm \
-            private/cisco-secure-client/cisco-secure-client-5.0.02075-1-x86_64.pkg.tar.zst
-    fi
 }
 
 copy_cli_to_root() {
