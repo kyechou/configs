@@ -247,7 +247,7 @@ return {
         -- end,
 
         -- When true, aerial will automatically close after jumping to a symbol
-        close_on_select = true,
+        close_on_select = false,
 
         -- The autocmds that trigger symbols update (not used for LSP backend)
         update_events = 'TextChanged,InsertLeave',
