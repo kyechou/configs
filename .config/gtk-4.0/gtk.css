@@ -1,0 +1,24 @@
+/**
+ * This is a temporary workaround until the issue
+ * (https://codeberg.org/river/river/issues/24) is fixed.
+ * See https://codeberg.org/river/wiki#how-do-i-disable-gtk-decorations-e-g-title-bar
+ */
+/* No (default) title bar on wayland */
+headerbar.default-decoration {
+  /* You may need to tweak these values depending on your GTK theme */
+  margin-bottom: 0px;
+  margin-top: -50px;
+
+  background: transparent;
+  padding: 0;
+  border: 0;
+  min-height: 0;
+  font-size: 0;
+  box-shadow: none;
+}
+
+/* rm -rf window shadows */
+window.csd,             /* gtk4? */
+window.csd decoration { /* gtk3 */
+  box-shadow: none;
+}
