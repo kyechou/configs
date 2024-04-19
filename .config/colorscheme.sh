@@ -1,4 +1,5 @@
 # Kanagawa colors
+# shellcheck disable=SC2034
 
 ## Bg Shades
 sumiInk0="#16161D"
