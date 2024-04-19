@@ -313,7 +313,7 @@ autostart gammastep-indicator
 riverctl default-layout wideriver
 autostart wideriver \
     --layout                       left     \
-    --layout-alt                   wide     \
+    --layout-alt                   monocle  \
     --stack                        dwindle  \
     --count-master                 1        \
     --ratio-master                 0.50     \
