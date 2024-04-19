@@ -33,11 +33,6 @@ export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors
 
-# input method framework
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export XMODIFIERS='@im=fcitx'
-
 # vRNI/VeriFlow
 export SOURCE_ROOT=/home/kyc/vmware/main
 export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
