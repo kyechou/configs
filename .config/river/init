@@ -112,6 +112,7 @@ riverctl map normal $mod+Control I swap next
 # Resize the layout ratio
 riverctl map -repeat normal $mod+Shift H send-layout-cmd wideriver "--ratio -$ratio_dist"
 riverctl map -repeat normal $mod+Shift L send-layout-cmd wideriver "--ratio +$ratio_dist"
+riverctl map -repeat normal $mod   equal send-layout-cmd wideriver "--ratio 0.5"
 # Wide shuffling
 riverctl map -repeat normal $mod+Shift J spawn "riverctl send-layout-cmd wideriver '--count +1' && riverctl focus-view next"
 riverctl map -repeat normal $mod+Shift K spawn "riverctl send-layout-cmd wideriver '--count -1' && riverctl focus-view previous"
@@ -156,6 +157,7 @@ riverctl map normal $mod+Control bracketright send-to-output next
 riverctl map normal $mod space toggle-float
 riverctl map normal $mod F toggle-fullscreen
 riverctl map normal $mod W               send-layout-cmd wideriver "--layout-toggle"
+riverctl map normal $mod E               send-layout-cmd wideriver "--layout-toggle"
 riverctl map normal $mod+Control+Shift H send-layout-cmd wideriver "--layout left"
 riverctl map normal $mod+Control+Shift J send-layout-cmd wideriver "--layout wide"
 riverctl map normal $mod+Control+Shift K send-layout-cmd wideriver "--layout monocle"
@@ -319,6 +321,9 @@ autostart wideriver \
     --ratio-master                 0.50     \
     --count-wide-left              1        \
     --ratio-wide                   0.35     \
+    --smart-gaps                   off      \
+    --inner-gaps                   10       \
+    --outer-gaps                   10       \
     --border-width                 2        \
     --border-width-monocle         0        \
     --border-color-focused         "${crystalBlue//#/0x}" \
