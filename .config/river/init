@@ -1,0 +1,327 @@
+#!/usr/bin/env bash
+#
+# See river(1), riverctl(1), and wideriver(1) man pages.
+# https://man.archlinux.org/man/river.1.en
+# https://man.archlinux.org/man/riverctl.1.en
+# https://github.com/alex-courtis/wideriver
+#
+# shellcheck disable=SC1091
+# shellcheck disable=SC2154
+
+set -uo pipefail
+
+source "$HOME/.config/colorscheme.sh"
+
+#
+# Configuration
+#
+riverctl default-attach-mode bottom
+riverctl background-color "${sumiInk1//#/0x}"
+riverctl border-color-focused "${crystalBlue//#/0x}"
+riverctl border-color-unfocused "${sumiInk2//#/0x}"
+riverctl border-color-urgent "${waveRed//#/0x}"
+riverctl border-width 2
+riverctl focus-follows-cursor normal # disabled, normal, always
+riverctl hide-cursor timeout 0 # milliseconds
+riverctl hide-cursor when-typing enabled # enabled, disabled
+riverctl set-cursor-warp on-output-change # disabled, on-output-change, on-focus-change
+riverctl set-repeat 40 350 # <rate: repeats per second> <delay: milliseconds>
+riverctl xcursor-theme phinger-cursors-dark 0 # <theme name> <size>
+
+#
+# Input configuration
+#
+riverctl keyboard-layout -model hhk -options ctrl:nocaps us
+mapfile -t pointer_inputs < <(riverctl list-inputs | grep ^pointer | grep -v dotool | grep -v FRMW)
+for pi in "${pointer_inputs[@]}"; do
+    riverctl input "$pi" events enabled
+    riverctl input "$pi" accel-profile flat # none, flat, adaptive
+    riverctl input "$pi" pointer-accel 0
+    # I have no idea what these click methods mean.
+    # riverctl input "$pi" click-method none # none, button-areas, clickfinger
+    riverctl input "$pi" drag enabled
+    riverctl input "$pi" drag-lock disabled
+    riverctl input "$pi" disable-while-typing enabled
+    riverctl input "$pi" disable-while-trackpointing enabled
+    riverctl input "$pi" middle-emulation enabled
+    riverctl input "$pi" natural-scroll disabled
+    riverctl input "$pi" scroll-factor 1
+    riverctl input "$pi" left-handed disabled
+    riverctl input "$pi" tap enabled
+    riverctl input "$pi" tap-button-map left-right-middle
+    riverctl input "$pi" scroll-method two-finger
+done
+
+#
+# Rules
+#
+riverctl rule-add ssd # Use server-side decoration by default.
+riverctl rule-add -app-id Lxappearance                              float
+riverctl rule-add -app-id Lxrandr                                   float
+riverctl rule-add -app-id Sxiv                                      float
+riverctl rule-add -app-id blueman-manager                           float
+riverctl rule-add -app-id font-manager                              float
+riverctl rule-add -app-id nm-connection-editor                      float
+riverctl rule-add -app-id org.fcitx.fcitx5-config-qt                float
+riverctl rule-add -app-id org.speedcrunch.speedcrunch               float
+riverctl rule-add -app-id pavucontrol                               float
+riverctl rule-add -app-id wdisplays                                 float
+riverctl rule-add -app-id wihotspot-gui                             float
+riverctl rule-add -app-id lifeograph                                float
+riverctl rule-add -app-id solaar                                    float
+riverctl rule-add -app-id zenity                                    float
+riverctl rule-add -app-id gnome-tweaks                              float
+riverctl rule-add -app-id gnome-disks                               float
+riverctl rule-add -app-id flameshot                                 float
+riverctl rule-add -app-id io.github.realmazharhussain.GdmSettings   float
+riverctl rule-add -title 'Open *'                                   float
+riverctl rule-add -app-id firefox -title 'Opening *'                float
+riverctl rule-add -app-id thunderbird -title '*Reminders*'          float
+riverctl rule-add -app-id thunderbird -title 'Check Spelling'       float
+riverctl rule-add -app-id org.pwmt.zathura                          no-float
+riverctl rule-add -app-id Spotify                                   no-float
+riverctl rule-add -app-id libreoffice-writer                        no-fullscreen
+
+#
+# Window management keybindings
+# /usr/include/xkbcommon/xkbcommon-keysyms.h
+# /usr/include/linux/input-event-codes.h
+#
+mod=Alt
+distance=30
+ratio_dist=0.025
+
+# Reload the init rc
+riverctl map normal $mod+Control+Shift R spawn "$HOME/.config/river/init"
+# Close the focused view
+riverctl map normal $mod+Control Q close
+# Switch the focused view
+riverctl map normal $mod H focus-view -skip-floating left
+riverctl map normal $mod J focus-view -skip-floating down
+riverctl map normal $mod K focus-view -skip-floating up
+riverctl map normal $mod L focus-view -skip-floating right
+riverctl map normal $mod O focus-view previous
+riverctl map normal $mod I focus-view next
+# Swap the focused view (with another non-floating view)
+riverctl map normal $mod+Control H swap left
+riverctl map normal $mod+Control J swap down
+riverctl map normal $mod+Control K swap up
+riverctl map normal $mod+Control L swap right
+riverctl map normal $mod+Control O swap previous
+riverctl map normal $mod+Control I swap next
+# Resize the layout ratio
+riverctl map -repeat normal $mod+Shift H send-layout-cmd wideriver "--ratio -$ratio_dist"
+riverctl map -repeat normal $mod+Shift L send-layout-cmd wideriver "--ratio +$ratio_dist"
+# Wide shuffling
+riverctl map -repeat normal $mod+Shift J spawn "riverctl send-layout-cmd wideriver '--count +1' && riverctl focus-view next"
+riverctl map -repeat normal $mod+Shift K spawn "riverctl send-layout-cmd wideriver '--count -1' && riverctl focus-view previous"
+# Move the focused view, making them float
+riverctl map -repeat normal $mod+Control Left  move left  "$distance"
+riverctl map -repeat normal $mod+Control Down  move down  "$distance"
+riverctl map -repeat normal $mod+Control Up    move up    "$distance"
+riverctl map -repeat normal $mod+Control Right move right "$distance"
+# Resize the focused view, making them float
+riverctl map -repeat normal $mod+Shift Left  resize horizontal "-$distance"
+riverctl map -repeat normal $mod+Shift Down  resize vertical   "+$distance"
+riverctl map -repeat normal $mod+Shift Up    resize vertical   "-$distance"
+riverctl map -repeat normal $mod+Shift Right resize horizontal "+$distance"
+# Move/resize views with mouse
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
+# Tags (workspaces)
+all_tags=$(((1 << 32) - 1))
+scratchpad_tags=$((1 << 9))
+all_but_scratchy=$((all_tags ^ scratchpad_tags))
+riverctl map normal $mod         0 set-focused-tags "$all_but_scratchy"
+riverctl map normal $mod+Control 0 set-view-tags    "$all_but_scratchy"
+riverctl map normal $mod         minus toggle-focused-tags "$scratchpad_tags"
+riverctl map normal $mod+Control minus set-view-tags       "$scratchpad_tags"
+for i in {1..9}; do
+    tags=$((1 << (i - 1)))
+    riverctl map normal $mod               "$i" set-focused-tags    "$tags"
+    riverctl map normal $mod+Control       "$i" set-view-tags       "$tags"
+    riverctl map normal $mod+Shift         "$i" toggle-focused-tags "$tags"
+    riverctl map normal $mod+Shift+Control "$i" toggle-view-tags    "$tags"
+done
+riverctl map normal $mod Tab         focus-previous-tags
+riverctl map normal $mod+Control Tab send-to-previous-tags
+# Outputs (monitors)
+riverctl map normal $mod         bracketleft  focus-output   previous
+riverctl map normal $mod         bracketright focus-output   next
+riverctl map normal $mod+Control bracketleft  send-to-output previous
+riverctl map normal $mod+Control bracketright send-to-output next
+
+# Set the window/view layout
+riverctl map normal $mod space toggle-float
+riverctl map normal $mod F toggle-fullscreen
+riverctl map normal $mod W               send-layout-cmd wideriver "--layout-toggle"
+riverctl map normal $mod+Control+Shift H send-layout-cmd wideriver "--layout left"
+riverctl map normal $mod+Control+Shift J send-layout-cmd wideriver "--layout wide"
+riverctl map normal $mod+Control+Shift K send-layout-cmd wideriver "--layout monocle"
+riverctl map normal $mod+Control+Shift L send-layout-cmd wideriver "--layout right"
+
+#
+# Non-window-managing keybindings
+#
+
+# Pass-through mode, useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+riverctl map normal      $mod F11 enter-mode passthrough
+riverctl map passthrough $mod F11 enter-mode normal
+
+# Program launcher
+riverctl map normal $mod D spawn 'rofi -no-lazy-grab -show drun -modi drun'
+riverctl map normal $mod X spawn 'rofi -no-lazy-grab -show combi -modi combi -combi-modi window,drun,run,ssh'
+
+# Pass password manager
+riverctl map normal $mod P spawn "$HOME/.config/rofi/passmenu.sh --type -no-lazy-grab -i -p pass -no-custom"
+
+# Dunst notification daemon
+riverctl map normal Control grave spawn 'dunstctl close'
+riverctl map normal Control+Shift grave spawn 'dunstctl history-pop'
+
+# Power, session management
+riverctl map normal None XF86AudioMedia spawn 'wlogout -b 3 -p layer-shell'
+riverctl map normal $mod End            spawn 'wlogout -b 3 -p layer-shell'
+
+# Touchpad (disable/enable)
+tp_inputs=(
+    pointer-2362-628-PIXA3854:00_093A:0274_Mouse
+    pointer-2362-628-PIXA3854:00_093A:0274_Touchpad
+)
+for i in "${tp_inputs[@]}"; do riverctl input "$i" events disabled-on-external-mouse; done
+riverctl map normal Control F1 spawn "for i in ${tp_inputs[*]}; do riverctl input \$i events disabled; done"
+riverctl map normal Control F2 spawn "for i in ${tp_inputs[*]}; do riverctl input \$i events enabled; done"
+
+# Screen backlight
+riverctl map -repeat normal Control F3 spawn 'brightnessctl set 2%-'
+riverctl map -repeat normal Control F4 spawn 'brightnessctl set +2%'
+riverctl map -repeat normal None XF86MonBrightnessDown spawn 'brightnessctl set 2%-'
+riverctl map -repeat normal None XF86MonBrightnessUp   spawn 'brightnessctl set +2%'
+
+# Audio
+riverctl map -repeat normal $mod period spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
+riverctl map -repeat normal $mod comma  spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
+riverctl map -repeat normal $mod M      spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
+riverctl map -repeat normal None XF86AudioRaiseVolume spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
+riverctl map -repeat normal None XF86AudioLowerVolume spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
+riverctl map -repeat normal None XF86AudioMute        spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
+riverctl map -repeat normal $mod+Shift period spawn 'pactl set-source-volume @DEFAULT_SOURCE@ +2%'
+riverctl map -repeat normal $mod+Shift comma  spawn 'pactl set-source-volume @DEFAULT_SOURCE@ -2%'
+riverctl map -repeat normal $mod+Shift M      spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
+riverctl map -repeat normal Shift XF86AudioRaiseVolume spawn 'pactl set-source-volume @DEFAULT_SOURCE@ +2%'
+riverctl map -repeat normal Shift XF86AudioLowerVolume spawn 'pactl set-source-volume @DEFAULT_SOURCE@ -2%'
+riverctl map -repeat normal Shift XF86AudioMute        spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
+
+# Music/Media
+riverctl map normal None XF86AudioPlay spawn 'playerctl play-pause'
+riverctl map normal None XF86AudioStop spawn 'playerctl stop'
+riverctl map normal None XF86AudioPrev spawn 'playerctl previous'
+riverctl map normal None XF86AudioNext spawn 'playerctl next'
+
+# Lid switch open/close
+riverctl map-switch normal lid open  spawn "$HOME/.config/river/reset-monitor.sh --lid"
+riverctl map-switch normal lid close spawn "$HOME/.config/river/reset-monitor.sh --lid"
+
+# Program shortcuts
+riverctl map normal $mod Return    spawn 'alacritty'
+riverctl map normal $mod+Control A spawn 'ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer'
+riverctl map normal $mod+Control B spawn 'firefox'
+riverctl map normal $mod+Control C spawn 'speedcrunch'
+riverctl map normal $mod+Control F spawn 'alacritty --class yazi --title yazi -e bash -c yazi'
+riverctl map normal $mod+Control M spawn 'thunderbird'
+riverctl map normal $mod+Control N spawn 'alacritty --class newsboat --title newsboat -e newsboat'
+riverctl map normal $mod+Control P spawn "$HOME/.config/river/reset-monitor.sh"
+riverctl map normal $mod+Control S spawn 'spotify-launcher'
+riverctl map normal $mod+Control V spawn 'virt-manager'
+riverctl map normal $mod+Control W spawn 'if pgrep waybar >/dev/null; then killall -SIGUSR2 waybar; else waybar & fi'
+riverctl map normal None Print     spawn "$HOME/.config/river/flameshot.sh"
+riverctl map normal $mod Print     spawn "$HOME/.config/river/flameshot.sh --screen"
+riverctl map normal Super P        spawn 'wdisplays'
+
+#
+# Environment variables
+#
+# Wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export SDL_VIDEODRIVER=wayland
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=River
+export XDG_CURRENT_DESKTOP=River
+export GDK_BACKEND='wayland,x11'
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_QPA_PLATFORM='wayland;xcb'
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export LIBSEAT_BACKEND=logind
+# GTK themes
+export GTK_THEME=Kanagawa-Borderless:dark
+export GTK_ICON_THEME=Everforest-Dark
+export XCURSOR_THEME=phinger-cursors-dark
+# Systemctl user environment
+# https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+#
+# Autostart programs
+#
+
+autostart() {
+    local prog=$1
+    local pgrep_args=()
+    if [[ ${#prog} -gt 15 ]]; then
+        pgrep_args+=('-f')
+    fi
+    if pgrep "${pgrep_args[@]}" "$prog" >/dev/null; then return; fi
+    "$@" &
+}
+
+autorestart() {
+    local prog=$1
+    local pgrep_args=()
+    if [[ ${#prog} -gt 15 ]]; then
+        pgrep_args+=('-f')
+    fi
+    if pgrep "${pgrep_args[@]}" "$prog" >/dev/null; then pkill "$prog"; fi
+    "$@" &
+}
+
+"$HOME/.config/river/reset-monitor.sh"
+
+# Wallpaper
+# wallpaper=/usr/share/backgrounds/nordic-wallpapers/ign_unsplash39.png
+# wallpaper=/usr/share/backgrounds/nordic-wallpapers/kittyboard.png
+# wallpaper=/home/kyc/pic/MJ/20211107_065812.jpg
+wallpaper=/usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
+autostart swaybg -c "$sumiInk1" -i "$wallpaper" --mode fill
+
+# Desktop environment applets
+autostart waybar
+autostart brightnessctl set 36%
+autostart fcitx5 -d --replace
+autostart nm-applet --indicator
+autostart blueman-applet
+autostart lxpolkit # needed by virt-manager
+autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
+autostart gammastep-indicator
+
+#
+# Tiler (layout generator)
+#
+riverctl default-layout wideriver
+autostart wideriver \
+    --layout                       left     \
+    --layout-alt                   wide     \
+    --stack                        dwindle  \
+    --count-master                 1        \
+    --ratio-master                 0.50     \
+    --count-wide-left              1        \
+    --ratio-wide                   0.35     \
+    --border-width                 2        \
+    --border-width-monocle         0        \
+    --border-color-focused         "${crystalBlue//#/0x}" \
+    --border-color-focused-monocle "${sumiInk2//#/0x}" \
+    --border-color-unfocused       "${sumiInk2//#/0x}" \
+    --log-threshold                info

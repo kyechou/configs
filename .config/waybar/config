@@ -12,9 +12,8 @@
   // Module ordering
   //
   "modules-left": [
-    "hyprland/workspaces",
-    "custom/spotify",
-    "hyprland/submap"
+    "river/tags",
+    "custom/spotify"
   ],
   "modules-center": [
     "clock"
@@ -32,6 +31,50 @@
   //
   // Modules (left)
   //
+  "river/tags": {
+    "num-tags": 10,
+    "tag-labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      "-"
+    ],
+    "disable-click": false,
+    "set-tags": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512 // 1 << 9
+      // It has to be the position of the button, see
+      // https://github.com/Alexays/Waybar/blob/master/src/modules/river/tags.cpp#L193
+    ],
+    "toggle-tags": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512 // 1 << 9
+      // It has to be the position of the button, see
+      // https://github.com/Alexays/Waybar/blob/master/src/modules/river/tags.cpp#L193
+    ]
+  },
   "sway/workspaces": {
     "all-outputs": false,
     "format": "{name}",

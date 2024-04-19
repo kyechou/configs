@@ -79,6 +79,7 @@ GUI_CONFIGS=(
     .config/picom
     .config/polybar
     .config/redshift
+    .config/river
     .config/rofi
     .config/safeeyes
     .config/sway

@@ -31,6 +31,7 @@ tooltip label {
     color: @fujiWhite;
 }
 
+#tags,
 #workspaces,
 #mode,
 #submap,
@@ -61,11 +62,13 @@ tooltip label {
  * Module styles
  * -------------------------------------------------------------------------- */
 
+#tags,
 #workspaces {
     background: shade(@dragonBlue, 0.5);
     padding: 0 6px;
 }
 
+#tags button,
 #workspaces button {
     color: @fujiWhite;
     background: transparent;
@@ -76,10 +79,20 @@ tooltip label {
     padding: 2px 8px;
 }
 
+#tags button {
+    color: shade(@fujiWhite, 0.45);
+}
+
+#tags button.occupied {
+    color: @fujiWhite;
+}
+
+#tags button:hover,
 #workspaces button:hover {
     color: white;
 }
 
+#tags button.focused,
 #workspaces button.active,
 #workspaces button.focused,
 #workspaces button.visible {
@@ -87,12 +100,14 @@ tooltip label {
     background: shade(@crystalBlue, 0.9);
 }
 
+#tags button.focused:hover,
 #workspaces button.active:hover,
 #workspaces button.focused:hover,
 #workspaces button.visible:hover {
     color: black;
 }
 
+#tags button.urgent,
 #workspaces button.urgent {
     color: @sumiInk0;
     background: @waveRed;
