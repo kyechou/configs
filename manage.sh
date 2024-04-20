@@ -55,6 +55,8 @@ CLI_CONFIGS=(
 )
 
 GUI_HOME_CONFIGS=(
+    .gtkrc-2.0
+    .icons
     .xinitrc
 )
 
@@ -89,9 +91,8 @@ GUI_CONFIGS=(
     .config/vlc
     .config/waybar
     .config/wlogout
+    .config/xsettingsd
     .config/zathura
-    .gtkrc-2.0
-    .icons
 )
 
 parse_params() {
