@@ -192,7 +192,7 @@ tp_inputs=(
     pointer-2362-628-PIXA3854:00_093A:0274_Mouse
     pointer-2362-628-PIXA3854:00_093A:0274_Touchpad
 )
-for i in "${tp_inputs[@]}"; do riverctl input "$i" events disabled-on-external-mouse; done
+# for i in "${tp_inputs[@]}"; do riverctl input "$i" events disabled-on-external-mouse; done
 riverctl map normal Control F1 spawn "for i in ${tp_inputs[*]}; do riverctl input \$i events disabled; done"
 riverctl map normal Control F2 spawn "for i in ${tp_inputs[*]}; do riverctl input \$i events enabled; done"
 
