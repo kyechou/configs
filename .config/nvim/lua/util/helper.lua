@@ -83,7 +83,7 @@ helper.ts_language_parsers = {
     'gitignore',
     'go',
     'haskell',
-    'html',
+    -- 'html', -- This causes nvim to crash when inserting whitespaces.
     'java',
     'javascript',
     'json',
