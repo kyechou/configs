@@ -56,6 +56,7 @@ done
 # Rules
 #
 riverctl rule-add ssd # Use server-side decoration by default.
+riverctl rule-add -app-id nwg-look                                  float
 riverctl rule-add -app-id Lxappearance                              float
 riverctl rule-add -app-id Lxrandr                                   float
 riverctl rule-add -app-id Sxiv                                      float
@@ -301,13 +302,13 @@ autostart swaybg -c "$sumiInk1" -i "$wallpaper" --mode fill
 
 # Desktop environment applets
 autostart waybar
-autostart brightnessctl set 36%
+autostart brightnessctl set 32%
 autostart fcitx5 -d --replace
 autostart nm-applet --indicator
 autostart blueman-applet
 autostart lxpolkit # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
-autostart gammastep-indicator
+# autostart gammastep-indicator
 
 #
 # Tiler (layout generator)
@@ -321,7 +322,7 @@ autostart wideriver \
     --ratio-master                 0.50     \
     --count-wide-left              1        \
     --ratio-wide                   0.35     \
-    --smart-gaps                   off      \
+    --no-smart-gaps                         \
     --inner-gaps                   10       \
     --outer-gaps                   10       \
     --border-width                 2        \
