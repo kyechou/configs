@@ -76,9 +76,11 @@ riverctl rule-add -app-id gnome-disks                               float
 riverctl rule-add -app-id flameshot                                 float
 riverctl rule-add -app-id io.github.realmazharhussain.GdmSettings   float
 riverctl rule-add -title 'Open *'                                   float
+riverctl rule-add -title 'Save *'                                   float
 riverctl rule-add -app-id firefox -title 'Opening *'                float
 riverctl rule-add -app-id thunderbird -title '*Reminders*'          float
 riverctl rule-add -app-id thunderbird -title 'Check Spelling'       float
+riverctl rule-add -app-id thunderbird -title 'TbSync*'              float
 riverctl rule-add -app-id org.pwmt.zathura                          no-float
 riverctl rule-add -app-id Spotify                                   no-float
 riverctl rule-add -app-id libreoffice-writer                        no-fullscreen
