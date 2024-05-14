@@ -97,8 +97,8 @@ main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
-    laptop_scale=1.5 # 1.566667
-    ext_scale=1.20
+    laptop_scale=1.5
+    ext_scale=1.1
     lid_status="$(laptop_lid_status)"
     set +e
     mapfile -t ext_mons < <(get_external_monitors)

@@ -264,10 +264,6 @@ export LIBSEAT_BACKEND=logind
 export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors-dark
-# Systemctl user environment
-# https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 #
 # Autostart programs
