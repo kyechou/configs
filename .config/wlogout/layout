@@ -6,7 +6,7 @@
 }
 {
   "label": "logout",
-  "action": "riverctl exit",
+  "action": "hyprctl dispatch exit",
   "text": "Logout",
   "keybind": "e"
 }

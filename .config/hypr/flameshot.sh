@@ -17,7 +17,7 @@ usage() {
     cat <<EOF
 [!] Usage: $(basename "${BASH_SOURCE[0]}") [options]
 
-    Reset Hyprland monitors
+    Take a screenshot with flameshot
 
     Options:
     -h, --help          Print this help and exit
@@ -47,7 +47,7 @@ main() {
     parse_params "$@"
 
     local scale
-    scale="$(hyprctl monitors | grep -B 2 'focused:.*yes' | grep scale | cut -d: -f2 | sed 's/ //g')"
+    scale="$(hyprctl -j monitors | jq '.[] | select(.focused == true) .scale' | head -n1)"
     local inv_scale
     inv_scale="$(echo "$scale" | awk '{ printf("%f\n", 1/$1) }')"
 

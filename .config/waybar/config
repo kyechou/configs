@@ -12,7 +12,8 @@
   // Module ordering
   //
   "modules-left": [
-    "river/tags",
+    "hyprland/workspaces",
+    "hyprland/submap",
     "custom/spotify"
   ],
   "modules-center": [
@@ -103,7 +104,7 @@
     "active-only": false,
     "all-outputs": false,
     "format": "{name}",
-    "show-special": false
+    "show-special": true
   },
   "hyprland/submap": {
     "format": "{}",
