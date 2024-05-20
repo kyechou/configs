@@ -20,7 +20,6 @@ vim.g.netrw_browse_split = 3
 vim.o.autochdir = false
 vim.o.background = 'dark'
 vim.o.breakindent = true
-vim.o.browsedir = 'last'
 vim.o.cindent = true
 vim.o.clipboard = 'unnamed,unnamedplus'
 vim.o.colorcolumn = '+1,121'
