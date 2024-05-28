@@ -13,9 +13,6 @@
     status = auto
     ui = auto
 
-[init]
-    defaultBranch = master
-
 [commit]
     gpgsign = true
 
@@ -46,12 +43,9 @@
     co = checkout
     rt = restore
     br = branch -avv
-    lg = log --graph --color
-    lga = log --graph --color --all
-    lgo = log --graph --color --oneline --parents
+    lg = log --graph --color --oneline
+    lga = log --graph --color --oneline --all
     lgp = log --color --patch --compact-summary
-    lgoa = log --graph --color --oneline --parents --all
-    lgao = log --graph --color --oneline --parents --all
     lsr = ls-remote
     d = diff
     dc = diff --cached
