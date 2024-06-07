@@ -95,6 +95,7 @@ image/png=imv.desktop
 image/tiff=imv.desktop
 image/vnd.djvu+multipage=org.pwmt.zathura.desktop
 image/vnd.djvu=org.pwmt.zathura.desktop
+image/webp=imv.desktop
 image/x-eps=org.pwmt.zathura.desktop
 image/x-portable-anymap=imv.desktop
 image/x-portable-bitmap=imv.desktop
