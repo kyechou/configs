@@ -71,6 +71,7 @@ require('lazy').setup({
     { import = 'syntax.p4' },           -- P4
     { import = 'syntax.promela' },      -- Promela
     { import = 'syntax.systemtap' },    -- SystemTap
+    { import = 'syntax.hugo' },         -- Hugo (html/markdown)
     -- UI
     { import = 'ui.lualine' },          -- statusline
     { import = 'ui.bufferline' },       -- tabline
