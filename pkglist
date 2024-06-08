@@ -1,5 +1,6 @@
 accountsservice
 alacritty
+aleo-fonts
 arc-icon-theme
 archlinux-wallpaper
 aur-out-of-date
@@ -107,6 +108,8 @@ nwg-look
 openbsd-netcat
 openssh
 openvpn
+otf-besley
+otf-drafting
 p7zip
 pacman-contrib
 parted
@@ -151,6 +154,8 @@ trougnouf-backgrounds
 ttc-iosevka
 ttc-iosevka-aile
 ttc-iosevka-etoile
+ttf-besley
+ttf-drafting
 ttf-hack
 ttf-hack-nerd
 ttf-iosevka-nerd
