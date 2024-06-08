@@ -1,8 +1,17 @@
 # tech
 https://archlinux.org/feeds/news/
-https://www.networkcomputing.com/rss/all
-http://rss.acm.org/technews/TechNews.xml
-https://spectrum.ieee.org/rss/computing/fulltext
+
+# IF
+https://planet-if.com/atom.xml
+
+# science
+https://api.quantamagazine.org/feed
+https://www.symmetrymagazine.org/feed
+
+# magazines
+https://nautil.us/feed
+https://aeon.co/feed.rss
+https://asteriskmag.com/feed
 
 # news
 https://news.google.com/rss
@@ -16,10 +25,8 @@ https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001
 https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664 "~CNBC - Finance"
 https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000115 "~CNBC - Real Estate"
 https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069 "~CNBC - Investing"
-http://feeds.marketwatch.com/marketwatch/bulletins
+https://feeds.marketwatch.com/marketwatch/bulletins
 
 # TW news
 https://about.pts.org.tw/rss/XML/newsfeed.xml
-https://www.twreporter.org/a/rss2.xml
 https://feeds.feedburner.com/TheNewsLens
-
