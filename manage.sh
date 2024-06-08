@@ -72,6 +72,7 @@ GUI_CONFIGS=(
     .config/electron-flags.conf
     .config/flameshot
     .config/gammastep
+    .config/garglk.ini
     .config/gtk-3.0
     .config/gtk-4.0
     .config/hypr
