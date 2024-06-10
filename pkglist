@@ -32,6 +32,7 @@ e2fsprogs
 easytag
 ettercap
 everforest-gtk-theme-git
+everforest-icon-theme-git
 fcitx5
 fcitx5-chewing
 fcitx5-configtool
@@ -62,6 +63,8 @@ go
 google-chrome
 gptfdisk
 grim
+gruvbox-gtk-theme-git
+gruvbox-icon-theme-git
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
@@ -79,6 +82,7 @@ iptables-nft
 jabref
 jq
 kanagawa-gtk-theme-git
+kanagawa-icon-theme-git
 less
 libreoffice-fresh
 lifeograph
