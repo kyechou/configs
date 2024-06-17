@@ -26,7 +26,7 @@
     "cpu",
     "memory",
     "battery",
-    "network",
+    "custom/wlogout",
     "tray"
   ],
   //
@@ -177,12 +177,12 @@
   },
   "disk#root": {
     "interval": 60,
-    "format": " {percentage_used}%",
+    "format": "  {percentage_used}%",
     "path": "/"
   },
   "disk#home": {
     "interval": 60,
-    "format": " {percentage_used}%",
+    "format": "  {percentage_used}%",
     "path": "/home"
   },
   "pulseaudio": {
@@ -196,7 +196,7 @@
       ]
     },
     "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format-source-muted": " ",
     "scroll-step": 2.0, // %
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
@@ -239,6 +239,12 @@
     "format-disconnected": "Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr} via {gwaddr}",
     "tooltip-format-disconnected": ""
+  },
+  "custom/wlogout": {
+    "format": " ",
+    "interval": "once",
+    "on-click": "wlogout -b 3 -p layer-shell",
+    "tooltip": false
   },
   "tray": {
     "icon-size": 20,

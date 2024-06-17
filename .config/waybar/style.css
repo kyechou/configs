@@ -27,7 +27,7 @@ tooltip {
 tooltip label {
     padding-left: 6px;
     padding-right: 6px;
-    font-size: 15px;
+    font-size: 14px;
     color: @fujiWhite;
 }
 
@@ -45,14 +45,15 @@ tooltip label {
 #battery,
 #network,
 #clock,
+#custom-wlogout,
 #tray {
     margin-top: 8px;
     margin-bottom: 0px;
     margin-left: 8px;
-    padding-top: 1px;
+    padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 9px;
+    padding-right: 8px;
     transition: none;
     font-size: 16px;
     color: @fujiWhite;
@@ -65,7 +66,7 @@ tooltip label {
 #tags,
 #workspaces {
     background: shade(@dragonBlue, 0.5);
-    padding: 0 6px;
+    padding: 0 4px;
 }
 
 #tags button,
@@ -97,7 +98,7 @@ tooltip label {
 #workspaces button.focused,
 #workspaces button.visible {
     color: @sumiInk0;
-    background: shade(@crystalBlue, 0.9);
+    background: shade(@crystalBlue, 0.8);
 }
 
 #tags button.focused:hover,
@@ -193,6 +194,12 @@ window#waybar.empty,
 #clock {
     color: @sumiInk0;
     background: @waveAqua1;
+}
+
+#custom-wlogout {
+    color: @sumiInk0;
+    background: @dragonBlue;
+    border-radius: 15px;
 }
 
 #tray {
