@@ -13,6 +13,9 @@
     status = auto
     ui = auto
 
+[init]
+    defaultBranch = main
+
 [commit]
     gpgsign = true
 
