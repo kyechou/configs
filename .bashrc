@@ -3,9 +3,16 @@
 #
 
 # prompt
-# PS1='\[\e[2m\][\D{%F %a %I:%M %P}]\[\e[0m\] \[\e[92m\]\u\[\e[0m\] @ \[\e[96m\]\h\[\e[0m\] : \w\n\$ '
-PS1='\[\e[92m\]\u\[\e[0m\] @ \[\e[96m\]\h\[\e[0m\] : \w\n\$ '
+PS1='\[\e[92m\]\u\[\e[0m\] @ \[\e[94m\]\h\[\e[0m\] : \w\n\$ '
 PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+# allow foot to jump between prompts
+# https://codeberg.org/dnkl/foot/wiki#user-content-jumping-between-prompts
+prompt_marker() {
+    # shellcheck disable=SC1003
+    printf '\e]133;A\e\\'
+}
+PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }prompt_marker
 
 # umask
 umask 022
@@ -16,7 +23,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER='less -R'
-export TERM='xterm-256color'
+#export TERM='xterm-256color'
 GPG_TTY=$(tty)
 export GPG_TTY
 export BROWSER=firefox
@@ -33,20 +40,11 @@ export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors
 
-# # vRNI/VeriFlow
-# export SOURCE_ROOT=/home/kyc/vmware/main
-# export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
-# export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
-# export JAVA_HOME=$JAVA_11_HOME
-# export MAVEN_OPTS="-Xmx2252m"
-# export M2_HOME=/opt/maven
-# export PATH=$PATH:$M2_HOME/bin
-
 # bash completion
-[[ "${BASH#*bash}" != "$BASH" ]] && {
-    [[ -r /usr/share/bash-completion/bash_completion ]] &&
-        . /usr/share/bash-completion/bash_completion
-}
+if [[ "${BASH#*bash}" != "$BASH" ]] &&
+    [[ -r /usr/share/bash-completion/bash_completion ]]; then
+    . /usr/share/bash-completion/bash_completion
+fi
 
 # history settings
 HISTCONTROL=ignoreboth
@@ -59,7 +57,7 @@ shopt -s globstar     # globstar **
 set -o vi             # start vi mode
 
 # colored less for interactive shell
-[[ $- == *i* ]] && {
+if [[ $- == *i* ]]; then
     LESS_TERMCAP_mb=$(
         tput bold
         tput setaf 3
@@ -87,7 +85,7 @@ set -o vi             # start vi mode
     export LESS_TERMCAP_ue
     export LESS_TERMCAP_mr
     export LESS_TERMCAP_mh
-}
+fi
 
 # zoxide
 if command -v zoxide &>/dev/null; then
@@ -106,6 +104,7 @@ fi
 if command -v nvim &>/dev/null; then
     alias vi='nvim'
     alias vim='nvim'
+    alias vimdiff='nvim -d'
 fi
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
