@@ -33,19 +33,19 @@ export GTK_THEME=Kanagawa-Borderless:dark
 export GTK_ICON_THEME=Everforest-Dark
 export XCURSOR_THEME=phinger-cursors
 
-# vRNI/VeriFlow
-export SOURCE_ROOT=/home/kyc/vmware/main
-export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
-export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
-export JAVA_HOME=$JAVA_11_HOME
-export MAVEN_OPTS="-Xmx2252m"
-export M2_HOME=/opt/maven
-export PATH=$PATH:$M2_HOME/bin
+# # vRNI/VeriFlow
+# export SOURCE_ROOT=/home/kyc/vmware/main
+# export JAVA_8_HOME=/usr/lib/jvm/java-8-openjdk
+# export JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk
+# export JAVA_HOME=$JAVA_11_HOME
+# export MAVEN_OPTS="-Xmx2252m"
+# export M2_HOME=/opt/maven
+# export PATH=$PATH:$M2_HOME/bin
 
 # bash completion
 [[ "${BASH#*bash}" != "$BASH" ]] && {
-    [[ -r /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
+    [[ -r /usr/share/bash-completion/bash_completion ]] &&
+        . /usr/share/bash-completion/bash_completion
 }
 
 # history settings
@@ -53,19 +53,31 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=1000
 
-shopt -s checkwinsize   # check window size after each external command
-shopt -s histappend     # append the history file
-shopt -s globstar       # globstar **
-set -o vi               # start vi mode
+shopt -s checkwinsize # check window size after each external command
+shopt -s histappend   # append the history file
+shopt -s globstar     # globstar **
+set -o vi             # start vi mode
 
 # colored less for interactive shell
 [[ $- == *i* ]] && {
-    LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
-    LESS_TERMCAP_md=$(tput bold; tput setaf 2)
+    LESS_TERMCAP_mb=$(
+        tput bold
+        tput setaf 3
+    )
+    LESS_TERMCAP_md=$(
+        tput bold
+        tput setaf 2
+    )
     LESS_TERMCAP_me=$(tput sgr0)
     # use italic (sitm/ritm) instead of underline (smul/rmul)
-    LESS_TERMCAP_us=$(tput sitm; tput setaf 4)
-    LESS_TERMCAP_ue=$(tput ritm; tput sgr0)
+    LESS_TERMCAP_us=$(
+        tput sitm
+        tput setaf 4
+    )
+    LESS_TERMCAP_ue=$(
+        tput ritm
+        tput sgr0
+    )
     LESS_TERMCAP_mr=$(tput rev)
     LESS_TERMCAP_mh=$(tput dim)
     export LESS_TERMCAP_mb
