@@ -71,6 +71,7 @@ GUI_CONFIGS=(
     .config/dunst
     .config/electron-flags.conf
     .config/flameshot
+    .config/foot
     .config/gammastep
     .config/garglk.ini
     .config/gtk-3.0

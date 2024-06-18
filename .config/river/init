@@ -21,11 +21,11 @@ riverctl border-color-focused "${crystalBlue//#/0x}"
 riverctl border-color-unfocused "${sumiInk2//#/0x}"
 riverctl border-color-urgent "${waveRed//#/0x}"
 riverctl border-width 2
-riverctl focus-follows-cursor normal # disabled, normal, always
-riverctl hide-cursor timeout 0 # milliseconds
-riverctl hide-cursor when-typing enabled # enabled, disabled
-riverctl set-cursor-warp on-output-change # disabled, on-output-change, on-focus-change
-riverctl set-repeat 40 350 # <rate: repeats per second> <delay: milliseconds>
+riverctl focus-follows-cursor normal          # disabled, normal, always
+riverctl hide-cursor timeout 0                # milliseconds
+riverctl hide-cursor when-typing enabled      # enabled, disabled
+riverctl set-cursor-warp on-output-change     # disabled, on-output-change, on-focus-change
+riverctl set-repeat 40 350                    # <rate: repeats per second> <delay: milliseconds>
 riverctl xcursor-theme phinger-cursors-dark 0 # <theme name> <size>
 
 #
@@ -115,7 +115,7 @@ riverctl map normal $mod+Control I swap next
 # Resize the layout ratio
 riverctl map -repeat normal $mod+Shift H send-layout-cmd wideriver "--ratio -$ratio_dist"
 riverctl map -repeat normal $mod+Shift L send-layout-cmd wideriver "--ratio +$ratio_dist"
-riverctl map -repeat normal $mod   equal send-layout-cmd wideriver "--ratio 0.5"
+riverctl map -repeat normal $mod equal   send-layout-cmd wideriver "--ratio 0.5"
 # Wide shuffling
 riverctl map -repeat normal $mod+Shift J spawn "riverctl send-layout-cmd wideriver '--count +1' && riverctl focus-view next"
 riverctl map -repeat normal $mod+Shift K spawn "riverctl send-layout-cmd wideriver '--count -1' && riverctl focus-view previous"
@@ -230,13 +230,13 @@ riverctl map-switch normal lid open  spawn "$HOME/.config/river/reset-monitor.sh
 riverctl map-switch normal lid close spawn "$HOME/.config/river/reset-monitor.sh --lid"
 
 # Program shortcuts
-riverctl map normal $mod Return    spawn 'alacritty'
+riverctl map normal $mod Return    spawn 'foot'
 riverctl map normal $mod+Control A spawn 'ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer'
 riverctl map normal $mod+Control B spawn 'firefox'
 riverctl map normal $mod+Control C spawn 'speedcrunch'
-riverctl map normal $mod+Control F spawn 'alacritty --class yazi --title yazi -e bash -c yazi'
+riverctl map normal $mod+Control F spawn 'foot --app-id yazi --title yazi yazi'
 riverctl map normal $mod+Control M spawn 'thunderbird'
-riverctl map normal $mod+Control N spawn 'alacritty --class newsboat --title newsboat -e newsboat'
+riverctl map normal $mod+Control N spawn 'foot --app-id newsboat --title newsboat newsboat'
 riverctl map normal $mod+Control P spawn "$HOME/.config/river/reset-monitor.sh"
 riverctl map normal $mod+Control S spawn 'spotify-launcher'
 riverctl map normal $mod+Control V spawn 'virt-manager'
@@ -304,7 +304,7 @@ autostart brightnessctl set 32%
 autostart fcitx5 -d --replace
 autostart nm-applet --indicator
 autostart blueman-applet
-autostart lxpolkit # needed by virt-manager
+autostart lxpolkit                         # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
 # autostart gammastep-indicator
 

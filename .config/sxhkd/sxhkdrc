@@ -89,7 +89,7 @@ XF86AudioNext
 
 # program shortcuts
 alt + Return
-    alacritty
+    foot
 alt + ctrl + a
     ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer
 alt + ctrl + b
@@ -97,11 +97,11 @@ alt + ctrl + b
 alt + ctrl + c
     speedcrunch
 alt + ctrl + f
-    alacritty --class yazi --title yazi -e bash -c 'yazi'
+    foot --app-id yazi --title yazi yazi
 alt + ctrl + m
     thunderbird
 alt + ctrl + n
-    alacritty --class newsboat --title newsboat -e newsboat
+    foot --app-id newsboat --title newsboat newsboat
 alt + ctrl + p
     ~/.config/polybar/launch.sh
 alt + ctrl + s

@@ -13,7 +13,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term foot
 set $opacity 0.92
 set $wallpaper /usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
 
