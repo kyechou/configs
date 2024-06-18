@@ -23,7 +23,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER='less -R'
-#export TERM='xterm-256color'
+export TERM='xterm-256color'
 GPG_TTY=$(tty)
 export GPG_TTY
 export BROWSER=firefox
