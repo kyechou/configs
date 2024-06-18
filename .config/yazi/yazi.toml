@@ -7,26 +7,30 @@ sort_dir_first = true
 linemode = "size"
 show_hidden = false
 show_symlink = true
+scrolloff = 0
+mouse_events = ["click", "scroll", "touch"]
 
 [preview]
-tab_size = 8
+tab_size = 4
 max_width = 600
 max_height = 900
-cache_dir = ""
-ueberzug_scale = 1
+cache_dir = "~/.cache/yazi"
+image_filter = "catmull-rom"   # "nearest", "triangle", "catmull-rom", "lanczos3"
+image_quality = 60             # 50 -- 90
+ueberzug_scale = 1             # 1 / 1.25 = 0.8
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-edit = [{ run = '"${EDITOR:-nvim}" "$@"', block = true }]
-open = [{ run = 'xdg-open "$@"', orphan = true, desc = "XDG Open" }]
+edit = [{ run = '"${EDITOR:-nvim}" "$@"', block = true, desc = "Edit" }]
+open = [{ run = 'xdg-open "$@"', orphan = true, desc = "Open" }]
 reveal = [
-    { run = 'exiftool "$1"; echo "Press enter to exit"; read', block = true, desc = "Show EXIF" },
+    { run = '/usr/bin/vendor_perl/exiftool "$1"; echo "> [Press enter to continue...]"; read', block = true, desc = "Show EXIF" },
 ]
 
 [open]
 rules = [
     # Directory
-    { name = "*/", use = ["open", "edit", "reveal"] },
+    { name = "*/", use = ["edit", "reveal"] },
 
     # Text/Empty files
     { mime = "text/*", use = ["edit", "open", "reveal"] },
@@ -41,11 +45,5 @@ rules = [
 micro_workers = 5
 macro_workers = 10
 bizarre_retry = 5
-
-[plugins]
-preload = []
-
-[log]
-enabled = false
 
 # vim: ts=4 sw=4 et :
