@@ -31,6 +31,8 @@ export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
+export NETHACKDIR="$HOME/games/nethack"
+export NETHACKOPTIONS="@$NETHACKDIR/.nethackrc"
 
 # Perl executables
 export PATH="$PATH:/usr/bin/vendor_perl"
