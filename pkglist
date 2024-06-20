@@ -49,7 +49,6 @@ font-manager
 foot
 fzf
 gammastep
-gargoyle-git
 gaupol
 gcc
 gdb
@@ -124,9 +123,7 @@ pass
 pavucontrol
 pdfcrop
 pdftk
-perl-file-homedir
 perl-image-exiftool
-perl-yaml-tiny
 phinger-cursors
 pipewire-pulse
 pscircle
