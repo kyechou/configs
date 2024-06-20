@@ -61,7 +61,6 @@ GUI_HOME_CONFIGS=(
 )
 
 GUI_CONFIGS=(
-    .config/alacritty
     .config/bspwm
     .config/chrome-flags.conf
     .config/cmus
@@ -78,7 +77,6 @@ GUI_CONFIGS=(
     .config/gtk-4.0
     .config/hypr
     .config/mimeapps.list
-    .config/ncspot
     .config/newsboat
     .config/picom
     .config/polybar
