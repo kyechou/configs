@@ -94,7 +94,7 @@ main() {
 
     laptop_monitor="eDP-1"
     laptop_scale=1.566667
-    ext_scale=1.066667
+    ext_scale=1.25
     lid_status="$(laptop_lid_status)"
     set +e
     mapfile -t ext_mons < <(get_external_monitors)
