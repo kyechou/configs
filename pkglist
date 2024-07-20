@@ -131,7 +131,6 @@ qemu-desktop
 qt6-wayland
 reflector
 ripgrep
-river
 rofi-wayland
 rsync
 safeeyes
@@ -174,7 +173,6 @@ wdisplays
 webkit2gtk
 wget
 whois
-wideriver
 wireplumber
 wireshark-qt
 wl-clipboard
