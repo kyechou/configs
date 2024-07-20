@@ -115,19 +115,16 @@ vim.cmd.colorscheme('kanagawa')
 --
 
 -- Document existing key chains.
-require('which-key').register({
-    ['<leader>c'] = { name = '[C]hange', _ = 'which_key_ignore' },
-    ['<leader>d'] = { name = '[D]iagnostics/[D]ocumentation', _ = 'which_key_ignore' },
-    ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-    ['<leader>l'] = { name = '[L]aTeX', _ = 'which_key_ignore' },
-    ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-    ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+require('which-key').add({
+    { '<leader>c', group = '[C]hange' },
+    { '<leader>d', group = '[D]iagnostics/[D]ocumentation' },
+    { '<leader>g', group = '[G]it' },
+    { '<leader>l', group = '[L]aTeX' },
+    { '<leader>r', group = '[R]ename' },
+    { '<leader>w', group = '[W]orkspace' },
+    { '<leader>',  group = 'VISUAL <leader>',              mode = 'v' },
+    { '<leader>g', desc = '[G]it hunk',                    mode = 'v' },
 })
-
-require('which-key').register({
-    ['<leader>'] = { name = 'VISUAL <leader>' },
-    ['<leader>g'] = { 'Git hunk' },
-}, { mode = 'v' })
 
 local helper = require('util.helper')
 local builtin = require('telescope.builtin')
