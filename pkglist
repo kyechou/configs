@@ -113,6 +113,7 @@ npm
 ntfs-3g
 nwg-look
 openbsd-netcat
+openhue-cli
 openssh
 openvpn
 otf-besley
@@ -155,6 +156,7 @@ tmux
 traceroute
 transmission-gtk
 trash-cli
+tron
 trougnouf-backgrounds
 ttc-iosevka
 ttc-iosevka-aile
