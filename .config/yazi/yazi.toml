@@ -15,11 +15,11 @@ scrolloff = 0
 
 [preview]
 tab_size = 4
-max_width = 600
-max_height = 900
+max_width = 1200
+max_height = 1200
 cache_dir = "~/.cache/yazi"
 image_filter = "catmull-rom"   # "nearest", "triangle", "catmull-rom", "lanczos3"
-image_quality = 60             # 50 -- 90
+image_quality = 80             # 50 -- 90
 sixel_fraction = 16            # 10 -- 20
 ueberzug_scale = 1             # 1 / 1.25 = 0.8
 ueberzug_offset = [0, 0, 0, 0]
