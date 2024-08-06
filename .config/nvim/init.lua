@@ -36,7 +36,7 @@ vim.o.ignorecase = true
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.scrolloff = 3
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,tabpages,terminal,winpos,winsize'
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,terminal,winpos,winsize'
 vim.o.shada = '!,\'100,<50,s20,h'
 vim.o.shiftwidth = 4
 vim.o.showtabline = 2
@@ -79,6 +79,7 @@ require('lazy').setup({
     { import = 'ui.virt_column' },      -- Color column as a virtual text
     { import = 'ui.gitsigns' },         -- Git integration for buffers
     { import = 'ui.todo' },             -- Todo comments
+    { import = 'ui.fold' },             -- UFO, ultra fold in neovim
     { import = 'ui.illuminate' },       -- Illuminate word under cursor
     { import = 'ui.css_color' },        -- CSS colors
     -- Utility
