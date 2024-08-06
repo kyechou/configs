@@ -151,7 +151,7 @@ sync() {
     for item in "${GUI_HOME_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" ./; done
     for item in "${CLI_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" .config/; done
     for item in "${GUI_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" .config/; done
-    "${RSYNC[@]}" ~/.ssh ~/.gnupg ~/.config/mudlet private/
+    "${RSYNC[@]}" ~/.ssh ~/.gnupg ~/.wireguard ~/.config/mudlet private/
     mkdir -p .java/.userPrefs/org && "${RSYNC[@]}" ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     [[ -r /etc/makepkg.conf ]] &&
         "${RSYNC[@]}" /etc/makepkg.conf ./
@@ -195,6 +195,7 @@ deploy_all() {
 
     for item in "${GUI_HOME_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/; done
     for item in "${GUI_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/.config/; done
+    "${RSYNC[@]}" private/.wireguard ~/
     "${RSYNC[@]}" private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && "${RSYNC[@]}" .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     sudo "${RSYNC[@]}" logid.cfg /etc/
