@@ -102,7 +102,6 @@ net-tools
 nethack
 network-manager-applet
 networkmanager
-networkmanager-l2tp
 newsboat
 nmap
 nordic-wallpapers
@@ -141,7 +140,6 @@ soundconverter
 speedcrunch
 spotify-launcher
 sshpass
-strongswan
 swaybg
 swaylock-effects-git
 syncthing
@@ -178,6 +176,7 @@ wdisplays
 webkit2gtk
 wget
 whois
+wireguard-tools
 wireplumber
 wireshark-qt
 wl-clipboard
