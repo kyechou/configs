@@ -20,6 +20,7 @@ helper.mason_packages = {
     'lua-language-server',        -- Lua LSP
     'marksman',                   -- Markdown LSP
     'pyright',                    -- Python LSP
+    'ruff-lsp',                   -- Python linter, LSP
     'shellcheck',                 -- Bash linter
     'shfmt',                      -- Shell formatter
     'taplo',                      -- TOML LSP

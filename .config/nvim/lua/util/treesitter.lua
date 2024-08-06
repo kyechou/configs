@@ -29,7 +29,7 @@ return {
                 enable = true,
                 -- I don't like treesitter's bash highlighting
                 disable = { 'latex', 'markdown', 'bash' },
-                additional_vim_regex_highlighting = { 'latex', 'markdown' },
+                additional_vim_regex_highlighting = { 'latex', 'markdown', 'python' },
             },
             indent = { enable = true },
             incremental_selection = {
