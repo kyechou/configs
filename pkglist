@@ -96,7 +96,6 @@ luarocks
 lxsession
 man-db
 man-pages
-mudlet
 neovim
 net-tools
 nethack
@@ -165,7 +164,6 @@ ttf-hack
 ttf-hack-nerd
 ttf-iosevka-nerd
 unarchiver
-unifi
 unrar
 unzip
 valgrind
