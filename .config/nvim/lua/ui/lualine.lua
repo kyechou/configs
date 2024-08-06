@@ -10,7 +10,11 @@ return {
     },
     config = function()
         local function session_name()
-            return '[' .. require('auto-session.lib').current_session_name() .. ']'
+            local name = require('auto-session.lib').current_session_name(true)
+            if string.len(name) > 0 then
+                return '[' .. name .. ']'
+            end
+            return ''
         end
 
         require('lualine').setup({

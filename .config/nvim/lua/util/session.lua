@@ -11,19 +11,18 @@ return {
         local session_dir = vim.fn.stdpath('data') .. '/sessions/'
 
         require('auto-session').setup({
-            log_level = 'error',
-            auto_session_enable_last_session = false,
-            auto_session_root_dir = session_dir,
-            auto_session_last_session_dir = session_dir,
             auto_session_enabled = true,
+            auto_session_root_dir = session_dir,
+            auto_save_enabled = true,
+            auto_restore_enabled = true,
+            auto_session_suppress_dirs = nil,
+            auto_session_allowed_dirs = nil,
             -- Do not auto-create new sessions.
             -- Sessions need to be manually created for the first time.
             auto_session_create_enabled = false,
-            auto_save_enabled = nil,
-            auto_restore_enabled = nil,
-            auto_session_suppress_dirs = nil,
-            auto_session_allowed_dirs = nil,
-            auto_session_use_git_branch = nil,
+            auto_session_enable_last_session = false,
+            auto_session_use_git_branch = false,
+            log_level = 'error',
 
             session_lens = {
                 -- If load_on_setup is set to false, one needs to
