@@ -93,7 +93,7 @@ main() {
     parse_params "$@"
 
     laptop_monitor="eDP-1"
-    laptop_scale=1.175
+    laptop_scale=1.333333
     ext_scale=1.066667
     lid_status="$(laptop_lid_status)"
     set +e
