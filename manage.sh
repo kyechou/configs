@@ -161,6 +161,8 @@ sync() {
         "${RSYNC[@]}" /etc/logid.cfg ./
     [[ -r /etc/modprobe.d/hid_apple.conf ]] &&
         "${RSYNC[@]}" /etc/modprobe.d/hid_apple.conf ./
+    [[ -r /etc/modprobe.d/kvm_intel.conf ]] &&
+        "${RSYNC[@]}" /etc/modprobe.d/kvm_intel.conf ./
     [[ -r /etc/iptables/iptables.rules ]] &&
         "${RSYNC[@]}" /etc/iptables/iptables.rules ./
     [[ -r /etc/nftables.conf ]] &&
@@ -200,6 +202,7 @@ deploy_all() {
     mkdir -p ~/.java/.userPrefs/org && "${RSYNC[@]}" .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
     sudo "${RSYNC[@]}" logid.cfg /etc/
     sudo "${RSYNC[@]}" hid_apple.conf /etc/modprobe.d/
+    sudo "${RSYNC[@]}" kvm_intel.conf /etc/modprobe.d/
     sudo "${RSYNC[@]}" iptables.rules /etc/iptables/
     sudo "${RSYNC[@]}" nftables.conf /etc/
     sudo "${RSYNC[@]}" geoclue.conf /etc/geoclue/
