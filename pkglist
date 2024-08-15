@@ -96,6 +96,7 @@ luarocks
 lxsession
 man-db
 man-pages
+mkinitcpio-firmware
 neovim
 net-tools
 nethack
