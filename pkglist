@@ -86,6 +86,7 @@ kanagawa-gtk-theme-git
 kanagawa-icon-theme-git
 less
 libreoffice-fresh
+libva-intel-driver
 lifeograph
 linux
 linux-firmware
@@ -111,6 +112,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 nwg-look
+obs-studio
 openbsd-netcat
 openhue-cli
 openssh
@@ -167,6 +169,8 @@ ttf-iosevka-nerd
 unarchiver
 unrar
 unzip
+v4l2loopback-dkms
+v4l2loopback-utils
 valgrind
 virt-manager
 vlc
@@ -187,4 +191,5 @@ yazi
 yt-dlp
 zathura-pdf-poppler
 zip
+zoom
 zoxide
