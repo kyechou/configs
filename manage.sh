@@ -157,6 +157,12 @@ sync() {
         "${RSYNC[@]}" /etc/makepkg.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] &&
         "${RSYNC[@]}" /etc/xdg/reflector/reflector.conf ./
+    [[ -r /etc/systemd/logind.conf ]] &&
+        "${RSYNC[@]}" /etc/systemd/logind.conf ./etc-systemd/
+    [[ -r /etc/systemd/resolved.conf ]] &&
+        "${RSYNC[@]}" /etc/systemd/resolved.conf ./etc-systemd/
+    [[ -r /etc/systemd/sleep.conf ]] &&
+        "${RSYNC[@]}" /etc/systemd/sleep.conf ./etc-systemd/
     [[ -r /etc/logid.cfg ]] &&
         "${RSYNC[@]}" /etc/logid.cfg ./
     [[ -r /etc/modprobe.d/hid_apple.conf ]] &&
@@ -186,6 +192,9 @@ deploy() {
     if [[ "$NAME" = 'Arch Linux' ]]; then
         sudo "${RSYNC[@]}" makepkg.conf /etc/
         sudo "${RSYNC[@]}" reflector.conf /etc/xdg/reflector/
+        sudo "${RSYNC[@]}" etc-systemd/logind.conf /etc/systemd/
+        sudo "${RSYNC[@]}" etc-systemd/resolved.conf /etc/systemd/
+        sudo "${RSYNC[@]}" etc-systemd/sleep.conf /etc/systemd/
         "${RSYNC[@]}" private/.gnupg ~/
     else
         $GPG --import private/.gnupg/*.asc
