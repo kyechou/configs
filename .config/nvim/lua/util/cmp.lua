@@ -94,6 +94,7 @@ return {
             },
             mapping = insert_mapping,
             sources = {
+                { name = 'codeium' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
                 { name = 'path' },
@@ -104,9 +105,9 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         cmp.setup.filetype('gitcommit', {
             mapping = insert_mapping,
-            sources = cmp.config.sources(
-                { { name = 'buffer' } }
-            )
+            sources = cmp.config.sources({
+                { name = 'buffer' },
+            })
         })
 
         -- Use buffer source for `/` and `?`

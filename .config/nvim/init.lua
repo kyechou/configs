@@ -104,6 +104,7 @@ require('lazy').setup({
     { import = 'util.outline' },        -- Code outline sidebar
     { import = 'util.shfmt' },          -- Shell formatting
     { import = 'util.latex' },          -- Better LaTeX support
+    { import = 'util.ai' },             -- AI assistant
 }, {
     defaults = { version = '*' }        -- Latest stable version
 })
