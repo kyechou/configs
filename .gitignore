@@ -8,10 +8,7 @@
 .config/nnn/.selection
 .config/rescrobbled/config.toml
 .config/rescrobbled/session
-.config/tron/certs/
 .config/vlc/vlc-qt-interface.conf
-.openhue/config.yaml
-.openhue/openhue.log
 .stversions
 .vim/.netrwhist
 .vim/autoload/*.old

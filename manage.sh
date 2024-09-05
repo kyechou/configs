@@ -57,8 +57,6 @@ CLI_CONFIGS=(
 GUI_HOME_CONFIGS=(
     .gtkrc-2.0
     .icons
-    .openhue
-    .tronrc
     .xinitrc
 )
 
@@ -90,7 +88,6 @@ GUI_CONFIGS=(
     .config/swaylock
     .config/sxhkd
     .config/systemd
-    .config/tron
     .config/vlc
     .config/waybar
     .config/wlogout
