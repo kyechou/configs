@@ -3,11 +3,9 @@
 HOSTNAME=${HOSTNAME:-$(uname -n)}
 wallpaper=/usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
 
-
 ### monitors
 
 ~/.config/bspwm/reset-monitor.sh
-
 
 ### color
 
@@ -20,40 +18,37 @@ bspc config active_border_color $sumiInk2
 # focused window of focused monitor
 bspc config focused_border_color $crystalBlue
 
-
 ### configuration
 
-bspc config border_width        2
-bspc config window_gap          9
+bspc config border_width 2
+bspc config window_gap 9
 
-bspc config split_ratio         0.5
-bspc config automatic_scheme    longest_side
-bspc config initial_polarity    second_child
-bspc config removal_adjustment  true
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
-bspc config single_monocle      false
-bspc config pointer_modifier    mod1    # alt
-bspc config click_to_focus      any
+bspc config split_ratio 0.5
+bspc config automatic_scheme longest_side
+bspc config initial_polarity second_child
+bspc config removal_adjustment true
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config single_monocle false
+bspc config pointer_modifier mod1 # alt
+bspc config click_to_focus any
 bspc config swallow_first_click false
 
-bspc rule -a Zathura            state=tiled
-bspc rule -a Sxiv               state=floating
-bspc rule -a SpeedCrunch        state=floating
-bspc rule -a Pavucontrol        state=floating
-bspc rule -a Lxappearance       state=floating
-bspc rule -a Blueberry.py       state=floating
-bspc rule -a Wihotspot-gui      state=floating
-bspc rule -a Lifeograph         state=floating
-bspc rule -a gource             state=floating
-bspc rule -a Thunderbird        desktop='^1'
-
+bspc rule -a Zathura state=tiled
+bspc rule -a Sxiv state=floating
+bspc rule -a SpeedCrunch state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Lxappearance state=floating
+bspc rule -a Blueberry.py state=floating
+bspc rule -a Wihotspot-gui state=floating
+bspc rule -a gource state=floating
+bspc rule -a Thunderbird desktop='^1'
 
 ### input configuration
 
 # keyboard and mouse
-xset r rate 400 35  # delay: 400 ms, rate: 35 hits/sec
-xset mouse 0 0      # acceleration: 0, threshold: 0
+xset r rate 400 35 # delay: 400 ms, rate: 35 hits/sec
+xset mouse 0 0     # acceleration: 0, threshold: 0
 setxkbmap -option ctrl:nocaps
 
 # touchpad
@@ -63,7 +58,6 @@ xinput set-prop "$touchpad" 'libinput Tapping Enabled' 1
 
 # disable DPMS and screen saver blanking
 xset s off -dpms
-
 
 ### desktop environment applets
 
@@ -88,6 +82,6 @@ autostart brightnessctl set 36%
 autostart fcitx5 -d --replace
 autostart nm-applet --indicator
 autostart blueman-applet
-autostart lxpolkit  # needed by virt-manager
+autostart lxpolkit                         # needed by virt-manager
 autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
 autostart gammastep-indicator -m randr

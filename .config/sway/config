@@ -93,7 +93,6 @@ for_window [app_id="org.speedcrunch.speedcrunch"]   floating enable
 for_window [app_id="pavucontrol"]                   floating enable
 for_window [app_id="wdisplays"]                     floating enable
 for_window [app_id="wihotspot-gui"]                 floating enable
-for_window [app_id="Lifeograph"]                    floating enable
 for_window [app_id="org.pwmt.zathura"]              floating disable
 for_window [app_id="Spotify"]                       floating disable
 assign [app_id="thunderbird"]   workspace number 1

@@ -56,34 +56,33 @@ done
 # Rules
 #
 riverctl rule-add ssd # Use server-side decoration by default.
-riverctl rule-add -app-id nwg-look                                  float
-riverctl rule-add -app-id Lxappearance                              float
-riverctl rule-add -app-id Lxrandr                                   float
-riverctl rule-add -app-id Sxiv                                      float
-riverctl rule-add -app-id blueman-manager                           float
-riverctl rule-add -app-id font-manager                              float
-riverctl rule-add -app-id nm-connection-editor                      float
-riverctl rule-add -app-id org.fcitx.fcitx5-config-qt                float
-riverctl rule-add -app-id org.speedcrunch.speedcrunch               float
-riverctl rule-add -app-id pavucontrol                               float
-riverctl rule-add -app-id wdisplays                                 float
-riverctl rule-add -app-id wihotspot-gui                             float
-riverctl rule-add -app-id lifeograph                                float
-riverctl rule-add -app-id solaar                                    float
-riverctl rule-add -app-id zenity                                    float
-riverctl rule-add -app-id gnome-tweaks                              float
-riverctl rule-add -app-id gnome-disks                               float
-riverctl rule-add -app-id flameshot                                 float
-riverctl rule-add -app-id io.github.realmazharhussain.GdmSettings   float
-riverctl rule-add -title 'Open *'                                   float
-riverctl rule-add -title 'Save *'                                   float
-riverctl rule-add -app-id firefox -title 'Opening *'                float
-riverctl rule-add -app-id thunderbird -title '*Reminders*'          float
-riverctl rule-add -app-id thunderbird -title 'Check Spelling'       float
-riverctl rule-add -app-id thunderbird -title 'TbSync*'              float
-riverctl rule-add -app-id org.pwmt.zathura                          no-float
-riverctl rule-add -app-id Spotify                                   no-float
-riverctl rule-add -app-id libreoffice-writer                        no-fullscreen
+riverctl rule-add -app-id nwg-look float
+riverctl rule-add -app-id Lxappearance float
+riverctl rule-add -app-id Lxrandr float
+riverctl rule-add -app-id Sxiv float
+riverctl rule-add -app-id blueman-manager float
+riverctl rule-add -app-id font-manager float
+riverctl rule-add -app-id nm-connection-editor float
+riverctl rule-add -app-id org.fcitx.fcitx5-config-qt float
+riverctl rule-add -app-id org.speedcrunch.speedcrunch float
+riverctl rule-add -app-id pavucontrol float
+riverctl rule-add -app-id wdisplays float
+riverctl rule-add -app-id wihotspot-gui float
+riverctl rule-add -app-id solaar float
+riverctl rule-add -app-id zenity float
+riverctl rule-add -app-id gnome-tweaks float
+riverctl rule-add -app-id gnome-disks float
+riverctl rule-add -app-id flameshot float
+riverctl rule-add -app-id io.github.realmazharhussain.GdmSettings float
+riverctl rule-add -title 'Open *' float
+riverctl rule-add -title 'Save *' float
+riverctl rule-add -app-id firefox -title 'Opening *' float
+riverctl rule-add -app-id thunderbird -title '*Reminders*' float
+riverctl rule-add -app-id thunderbird -title 'Check Spelling' float
+riverctl rule-add -app-id thunderbird -title 'TbSync*' float
+riverctl rule-add -app-id org.pwmt.zathura no-float
+riverctl rule-add -app-id Spotify no-float
+riverctl rule-add -app-id libreoffice-writer no-fullscreen
 
 #
 # Window management keybindings
@@ -115,19 +114,19 @@ riverctl map normal $mod+Control I swap next
 # Resize the layout ratio
 riverctl map -repeat normal $mod+Shift H send-layout-cmd wideriver "--ratio -$ratio_dist"
 riverctl map -repeat normal $mod+Shift L send-layout-cmd wideriver "--ratio +$ratio_dist"
-riverctl map -repeat normal $mod equal   send-layout-cmd wideriver "--ratio 0.5"
+riverctl map -repeat normal $mod equal send-layout-cmd wideriver "--ratio 0.5"
 # Wide shuffling
 riverctl map -repeat normal $mod+Shift J spawn "riverctl send-layout-cmd wideriver '--count +1' && riverctl focus-view next"
 riverctl map -repeat normal $mod+Shift K spawn "riverctl send-layout-cmd wideriver '--count -1' && riverctl focus-view previous"
 # Move the focused view, making them float
-riverctl map -repeat normal $mod+Control Left  move left  "$distance"
-riverctl map -repeat normal $mod+Control Down  move down  "$distance"
-riverctl map -repeat normal $mod+Control Up    move up    "$distance"
+riverctl map -repeat normal $mod+Control Left move left "$distance"
+riverctl map -repeat normal $mod+Control Down move down "$distance"
+riverctl map -repeat normal $mod+Control Up move up "$distance"
 riverctl map -repeat normal $mod+Control Right move right "$distance"
 # Resize the focused view, making them float
-riverctl map -repeat normal $mod+Shift Left  resize horizontal "-$distance"
-riverctl map -repeat normal $mod+Shift Down  resize vertical   "+$distance"
-riverctl map -repeat normal $mod+Shift Up    resize vertical   "-$distance"
+riverctl map -repeat normal $mod+Shift Left resize horizontal "-$distance"
+riverctl map -repeat normal $mod+Shift Down resize vertical "+$distance"
+riverctl map -repeat normal $mod+Shift Up resize vertical "-$distance"
 riverctl map -repeat normal $mod+Shift Right resize horizontal "+$distance"
 # Move/resize views with mouse
 riverctl map-pointer normal $mod BTN_LEFT move-view
@@ -137,30 +136,30 @@ riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 all_tags=$(((1 << 32) - 1))
 scratchpad_tags=$((1 << 9))
 all_but_scratchy=$((all_tags ^ scratchpad_tags))
-riverctl map normal $mod         0 set-focused-tags "$all_but_scratchy"
-riverctl map normal $mod+Control 0 set-view-tags    "$all_but_scratchy"
-riverctl map normal $mod         minus toggle-focused-tags "$scratchpad_tags"
-riverctl map normal $mod+Control minus set-view-tags       "$scratchpad_tags"
+riverctl map normal $mod 0 set-focused-tags "$all_but_scratchy"
+riverctl map normal $mod+Control 0 set-view-tags "$all_but_scratchy"
+riverctl map normal $mod minus toggle-focused-tags "$scratchpad_tags"
+riverctl map normal $mod+Control minus set-view-tags "$scratchpad_tags"
 for i in {1..9}; do
     tags=$((1 << (i - 1)))
-    riverctl map normal $mod               "$i" set-focused-tags    "$tags"
-    riverctl map normal $mod+Control       "$i" set-view-tags       "$tags"
-    riverctl map normal $mod+Shift         "$i" toggle-focused-tags "$tags"
-    riverctl map normal $mod+Shift+Control "$i" toggle-view-tags    "$tags"
+    riverctl map normal $mod "$i" set-focused-tags "$tags"
+    riverctl map normal $mod+Control "$i" set-view-tags "$tags"
+    riverctl map normal $mod+Shift "$i" toggle-focused-tags "$tags"
+    riverctl map normal $mod+Shift+Control "$i" toggle-view-tags "$tags"
 done
-riverctl map normal $mod Tab         focus-previous-tags
+riverctl map normal $mod Tab focus-previous-tags
 riverctl map normal $mod+Control Tab send-to-previous-tags
 # Outputs (monitors)
-riverctl map normal $mod         bracketleft  focus-output   previous
-riverctl map normal $mod         bracketright focus-output   next
-riverctl map normal $mod+Control bracketleft  send-to-output previous
+riverctl map normal $mod bracketleft focus-output previous
+riverctl map normal $mod bracketright focus-output next
+riverctl map normal $mod+Control bracketleft send-to-output previous
 riverctl map normal $mod+Control bracketright send-to-output next
 
 # Set the window/view layout
 riverctl map normal $mod space toggle-float
 riverctl map normal $mod F toggle-fullscreen
-riverctl map normal $mod W               send-layout-cmd wideriver "--layout-toggle"
-riverctl map normal $mod E               send-layout-cmd wideriver "--layout-toggle"
+riverctl map normal $mod W send-layout-cmd wideriver "--layout-toggle"
+riverctl map normal $mod E send-layout-cmd wideriver "--layout-toggle"
 riverctl map normal $mod+Control+Shift H send-layout-cmd wideriver "--layout left"
 riverctl map normal $mod+Control+Shift J send-layout-cmd wideriver "--layout wide"
 riverctl map normal $mod+Control+Shift K send-layout-cmd wideriver "--layout monocle"
@@ -172,7 +171,7 @@ riverctl map normal $mod+Control+Shift L send-layout-cmd wideriver "--layout rig
 
 # Pass-through mode, useful for testing a nested wayland compositor
 riverctl declare-mode passthrough
-riverctl map normal      $mod F11 enter-mode passthrough
+riverctl map normal $mod F11 enter-mode passthrough
 riverctl map passthrough $mod F11 enter-mode normal
 
 # Program launcher
@@ -188,7 +187,7 @@ riverctl map normal Control+Shift grave spawn 'dunstctl history-pop'
 
 # Power, session management
 riverctl map normal None XF86AudioMedia spawn 'wlogout -b 3 -p layer-shell'
-riverctl map normal $mod End            spawn 'wlogout -b 3 -p layer-shell'
+riverctl map normal $mod End spawn 'wlogout -b 3 -p layer-shell'
 
 # Touchpad (disable/enable)
 tp_inputs=(
@@ -203,21 +202,21 @@ riverctl map normal Control F2 spawn "for i in ${tp_inputs[*]}; do riverctl inpu
 riverctl map -repeat normal Control F3 spawn 'brightnessctl set 2%-'
 riverctl map -repeat normal Control F4 spawn 'brightnessctl set +2%'
 riverctl map -repeat normal None XF86MonBrightnessDown spawn 'brightnessctl set 2%-'
-riverctl map -repeat normal None XF86MonBrightnessUp   spawn 'brightnessctl set +2%'
+riverctl map -repeat normal None XF86MonBrightnessUp spawn 'brightnessctl set +2%'
 
 # Audio
 riverctl map -repeat normal $mod period spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
-riverctl map -repeat normal $mod comma  spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
-riverctl map -repeat normal $mod M      spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
+riverctl map -repeat normal $mod comma spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
+riverctl map -repeat normal $mod M spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
 riverctl map -repeat normal None XF86AudioRaiseVolume spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
 riverctl map -repeat normal None XF86AudioLowerVolume spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
-riverctl map -repeat normal None XF86AudioMute        spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
+riverctl map -repeat normal None XF86AudioMute spawn 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
 riverctl map -repeat normal $mod+Shift period spawn 'pactl set-source-volume @DEFAULT_SOURCE@ +2%'
-riverctl map -repeat normal $mod+Shift comma  spawn 'pactl set-source-volume @DEFAULT_SOURCE@ -2%'
-riverctl map -repeat normal $mod+Shift M      spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
+riverctl map -repeat normal $mod+Shift comma spawn 'pactl set-source-volume @DEFAULT_SOURCE@ -2%'
+riverctl map -repeat normal $mod+Shift M spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
 riverctl map -repeat normal Shift XF86AudioRaiseVolume spawn 'pactl set-source-volume @DEFAULT_SOURCE@ +2%'
 riverctl map -repeat normal Shift XF86AudioLowerVolume spawn 'pactl set-source-volume @DEFAULT_SOURCE@ -2%'
-riverctl map -repeat normal Shift XF86AudioMute        spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
+riverctl map -repeat normal Shift XF86AudioMute spawn 'pactl set-source-mute   @DEFAULT_SOURCE@ toggle'
 
 # Music/Media
 riverctl map normal None XF86AudioPlay spawn 'playerctl play-pause'
@@ -226,11 +225,11 @@ riverctl map normal None XF86AudioPrev spawn 'playerctl previous'
 riverctl map normal None XF86AudioNext spawn 'playerctl next'
 
 # Lid switch open/close
-riverctl map-switch normal lid open  spawn "$HOME/.config/river/reset-monitor.sh --lid"
+riverctl map-switch normal lid open spawn "$HOME/.config/river/reset-monitor.sh --lid"
 riverctl map-switch normal lid close spawn "$HOME/.config/river/reset-monitor.sh --lid"
 
 # Program shortcuts
-riverctl map normal $mod Return    spawn 'foot'
+riverctl map normal $mod Return spawn 'foot'
 riverctl map normal $mod+Control A spawn 'ferdium --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-webrtc-pipewire-capturer'
 riverctl map normal $mod+Control B spawn 'firefox'
 riverctl map normal $mod+Control C spawn 'speedcrunch'
@@ -241,9 +240,9 @@ riverctl map normal $mod+Control P spawn "$HOME/.config/river/reset-monitor.sh"
 riverctl map normal $mod+Control S spawn 'spotify-launcher'
 riverctl map normal $mod+Control V spawn 'virt-manager'
 riverctl map normal $mod+Control W spawn 'if pgrep waybar >/dev/null; then killall -SIGUSR2 waybar; else waybar & fi'
-riverctl map normal None Print     spawn "$HOME/.config/river/flameshot.sh"
-riverctl map normal $mod Print     spawn "$HOME/.config/river/flameshot.sh --screen"
-riverctl map normal Super P        spawn 'wdisplays'
+riverctl map normal None Print spawn "$HOME/.config/river/flameshot.sh"
+riverctl map normal $mod Print spawn "$HOME/.config/river/flameshot.sh --screen"
+riverctl map normal Super P spawn 'wdisplays'
 
 #
 # Environment variables
@@ -313,19 +312,19 @@ autostart /usr/lib/geoclue-2.0/demos/agent # needed by redshift/gammastep
 #
 riverctl default-layout wideriver
 autostart wideriver \
-    --layout                       left     \
-    --layout-alt                   monocle  \
-    --stack                        dwindle  \
-    --count-master                 1        \
-    --ratio-master                 0.50     \
-    --count-wide-left              1        \
-    --ratio-wide                   0.35     \
-    --no-smart-gaps                         \
-    --inner-gaps                   10       \
-    --outer-gaps                   10       \
-    --border-width                 2        \
-    --border-width-monocle         0        \
-    --border-color-focused         "${crystalBlue//#/0x}" \
+    --layout left \
+    --layout-alt monocle \
+    --stack dwindle \
+    --count-master 1 \
+    --ratio-master 0.50 \
+    --count-wide-left 1 \
+    --ratio-wide 0.35 \
+    --no-smart-gaps \
+    --inner-gaps 10 \
+    --outer-gaps 10 \
+    --border-width 2 \
+    --border-width-monocle 0 \
+    --border-color-focused "${crystalBlue//#/0x}" \
     --border-color-focused-monocle "${sumiInk2//#/0x}" \
-    --border-color-unfocused       "${sumiInk2//#/0x}" \
-    --log-threshold                info
+    --border-color-unfocused "${sumiInk2//#/0x}" \
+    --log-threshold info

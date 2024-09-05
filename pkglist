@@ -86,7 +86,6 @@ kanagawa-icon-theme-git
 less
 libreoffice-fresh
 libva-intel-driver
-lifeograph
 linux
 linux-firmware
 linux-wifi-hotspot
@@ -112,6 +111,7 @@ npm
 ntfs-3g
 nwg-look
 obs-studio
+obsidian
 ollama
 openbsd-netcat
 openssh
