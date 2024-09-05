@@ -2,7 +2,6 @@ accountsservice
 aleo-fonts
 arc-icon-theme
 archlinux-wallpaper
-aseprite
 aur-out-of-date
 autossh
 baobab
@@ -60,7 +59,6 @@ gnome-disk-utility
 gnome-keyring
 gnome-tweaks
 go
-godot
 google-chrome
 gptfdisk
 grim
@@ -114,7 +112,6 @@ ntfs-3g
 nwg-look
 obs-studio
 openbsd-netcat
-openhue-cli
 openssh
 openvpn
 otf-besley
@@ -156,7 +153,6 @@ tmux
 traceroute
 transmission-gtk
 trash-cli
-tron
 trougnouf-backgrounds
 ttc-iosevka
 ttc-iosevka-aile
