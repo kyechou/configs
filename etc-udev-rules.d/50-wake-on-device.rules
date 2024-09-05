@@ -1,0 +1,2 @@
+# Wake on HHKB Type-S
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="04fe", ATTRS{idProduct}=="0021", ATTR{power/wakeup}="enabled", ATTR{driver/3-3/power/wakeup}="enabled"
