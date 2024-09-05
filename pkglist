@@ -29,6 +29,7 @@ dotool-git
 dunst
 e2fsprogs
 easytag
+ente-auth-bin
 ettercap
 everforest-gtk-theme-git
 everforest-icon-theme-git
@@ -111,6 +112,7 @@ npm
 ntfs-3g
 nwg-look
 obs-studio
+ollama
 openbsd-netcat
 openssh
 openvpn
