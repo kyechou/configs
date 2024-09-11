@@ -79,7 +79,7 @@ require('lazy').setup({
     { import = 'ui.virt_column' },      -- Color column as a virtual text
     { import = 'ui.gitsigns' },         -- Git integration for buffers
     { import = 'ui.todo' },             -- Todo comments
-    { import = 'ui.fold' },             -- UFO, ultra fold in neovim
+    -- { import = 'ui.fold' },             -- UFO, ultra fold in neovim
     { import = 'ui.illuminate' },       -- Illuminate word under cursor
     { import = 'ui.css_color' },        -- CSS colors
     -- Utility
