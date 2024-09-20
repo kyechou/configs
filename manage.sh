@@ -154,6 +154,8 @@ sync() {
         "${RSYNC[@]}" /etc/makepkg.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] &&
         "${RSYNC[@]}" /etc/xdg/reflector/reflector.conf ./
+    [[ -r /etc/greetd ]] &&
+        "${RSYNC[@]}" /etc/greetd/ ./etc-greetd/
     [[ -r /etc/systemd/logind.conf ]] &&
         "${RSYNC[@]}" /etc/systemd/logind.conf ./etc-systemd/
     [[ -r /etc/systemd/resolved.conf ]] &&
@@ -209,6 +211,7 @@ deploy_all() {
     "${RSYNC[@]}" private/.wireguard ~/
     "${RSYNC[@]}" private/mudlet ~/.config/
     mkdir -p ~/.java/.userPrefs/org && "${RSYNC[@]}" .java/.userPrefs/org/jabref ~/.java/.userPrefs/org/
+    sudo "${RSYNC[@]}" etc-greetd/ /etc/greetd/
     sudo "${RSYNC[@]}" logid.cfg /etc/
     sudo "${RSYNC[@]}" hid_apple.conf /etc/modprobe.d/
     sudo "${RSYNC[@]}" kvm_intel.conf /etc/modprobe.d/

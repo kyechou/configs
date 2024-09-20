@@ -52,8 +52,6 @@ gammastep
 gaupol
 gcc
 gdb
-gdm
-gdm-settings
 ghostscript
 git
 gnome-disk-utility
@@ -62,6 +60,8 @@ gnome-tweaks
 go
 google-chrome
 gptfdisk
+greetd
+greetd-tuigreet
 grim
 gruvbox-gtk-theme-git
 gruvbox-icon-theme-git
