@@ -87,8 +87,8 @@
   <entry key="emailSubject" value="References"/>
   <entry key="enforceLegalBibtexKey" value="true"/>
   <entry key="entryEditorHeight" value="349"/>
-  <entry key="entryEditorHeightFX" value="0.616382806163828"/>
-  <entry key="entryEditorPreviewDividerPos" value="0.49953917050691243"/>
+  <entry key="entryEditorHeightFX" value="0.6192026037428804"/>
+  <entry key="entryEditorPreviewDividerPos" value="0.5011731581417175"/>
   <entry key="exportInOriginalOrder" value="false"/>
   <entry key="exportInSpecifiedOrder" value="false"/>
   <entry key="exportPriDescending" value="false"/>
@@ -142,7 +142,7 @@
   <entry key="keyGenAlwaysAddLetter" value="false"/>
   <entry key="keyGenFirstLetterA" value="true"/>
   <entry key="lastEdited" value="/home/kyc/cs/papers/papers.bib;/home/kyc/UIUC/prelim/references.bib;/home/kyc/cs/projects/mimesis-paper/mimesis.bib;/home/kyc/cs/projects/neo-paper/neo.bib;/home/kyc/cs/projects/scylla-paper/scylla.bib"/>
-  <entry key="lastFocused" value="/home/kyc/cs/papers/papers.bib"/>
+  <entry key="lastFocused" value="/home/kyc/cs/projects/mimesis-paper/mimesis.bib"/>
   <entry key="lastUsedExport" value="HTML table (with Abstract &amp; BibTeX)"/>
   <entry key="listOfFileColumns" value=""/>
   <entry key="localAutoSave" value="false"/>
@@ -152,7 +152,7 @@
   <entry key="mainTableColumnNames" value="files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle"/>
   <entry key="mainTableColumnSortOrder" value="field:year"/>
   <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING;DESCENDING;ASCENDING"/>
-  <entry key="mainTableColumnWidths" value="28.0;28.0;431.58989835345295;431.58989835345295;431.58989835345295;431.58989835345295;431.5898983534241"/>
+  <entry key="mainTableColumnWidths" value="28.0;28.0;423.789054024315;423.789054024315;423.789054024315;423.789054024315;423.7890540243027"/>
   <entry key="mainWindowPosX" value="10.0"/>
   <entry key="mainWindowPosY" value="48.0"/>
   <entry key="mainWindowSizeX" value="2538.0"/>
@@ -205,7 +205,7 @@
   <entry key="pushToApplication" value="Vim"/>
   <entry key="recentDatabases" value="/home/kyc/cs/projects/scylla-paper/scylla.bib;/home/kyc/cs/projects/neo-paper/neo.bib;/home/kyc/cs/projects/mimesis-paper/mimesis.bib;/home/kyc/UIUC/prelim/references.bib;/home/kyc/cs/papers/papers.bib;/home/kyc/cs/projects/scylla-paper/reference.bib;/home/kyc/cs/projects/neo-paper/reference.bib;/home/kyc/vmware/vrni-labs-scylla/reference.bib"/>
   <entry key="reformatFileOnSaveAndExport" value="true"/>
-  <entry key="regExpSearch" value="false"/>
+  <entry key="regExpSearch" value="true"/>
   <entry key="regExpSearchExpression" value="**/[bibtexkey](-.+)?\\.pdf"/>
   <entry key="remoteServerPort" value="6050"/>
   <entry key="resolveStringsAllFields" value="false"/>
@@ -231,7 +231,7 @@
   <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
   <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
   <entry key="sidePaneWidth" value="269"/>
-  <entry key="sidePaneWidthFX" value="322.0"/>
+  <entry key="sidePaneWidthFX" value="361.0"/>
   <entry key="specialFieldsEnabled" value="true"/>
   <entry key="sublimeTextPath" value="subl"/>
   <entry key="tableBackground" value="255:255:255"/>
