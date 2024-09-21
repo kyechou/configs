@@ -66,6 +66,7 @@ tooltip label {
 #tags,
 #workspaces {
     background: transparent;
+    margin-left: 1px;
 }
 
 #tags button,
@@ -206,7 +207,7 @@ window#waybar.empty,
 
 #tray {
     margin-right: 8px;
-    background: @sumiInk2;
+    background: rgba(42, 42, 55, 0.6);
 }
 
 #tray>.passive {
