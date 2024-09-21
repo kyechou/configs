@@ -49,7 +49,7 @@ tooltip label {
 #tray {
     margin-top: 8px;
     margin-bottom: 0px;
-    margin-left: 6px;
+    margin-left: 5px;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 9px;
@@ -65,20 +65,21 @@ tooltip label {
 
 #tags,
 #workspaces {
-    background: shade(@dragonBlue, 0.5);
-    margin-left: 8px;
-    padding: 0 4px;
+    background: transparent;
 }
 
 #tags button,
 #workspaces button {
     color: @fujiWhite;
-    background: transparent;
-    border: none;
-    border-radius: 15px;
+    background: rgba(54, 54, 70, 0.4);
+    border-radius: 12px;
     min-width: 0;
-    margin: 1px 2px;
-    padding: 2px 8px;
+    margin-left: 0;
+    margin-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #tags button {
@@ -99,7 +100,7 @@ tooltip label {
 #workspaces button.focused,
 #workspaces button.visible {
     color: @sumiInk0;
-    background: shade(@crystalBlue, 0.8);
+    background: shade(@crystalBlue, 0.85);
 }
 
 #tags button.focused:hover,
