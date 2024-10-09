@@ -4,6 +4,6 @@
 --
 
 return {
-    { import = 'util.codeium' },
+    -- { import = 'util.codeium' },
     { import = 'util.gen' },
 }
