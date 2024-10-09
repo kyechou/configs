@@ -101,6 +101,7 @@ net-tools
 nethack
 network-manager-applet
 networkmanager
+networkmanager-dmenu-git
 newsboat
 nmap
 nordic-wallpapers
