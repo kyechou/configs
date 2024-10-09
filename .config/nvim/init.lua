@@ -257,7 +257,8 @@ require('gen').prompts['Review_Code'] = {
     replace = false,
 }
 require('gen').prompts['Improve_Writing'] = {
-    prompt = "Improve the following text to make it better and concise without losing any points:\n\n$text",
+    prompt =
+    "Improve the following text to make it more concise, academic, and without losing any points. Show only the improved text without anything else.\n\n$text",
     replace = false,
 }
 vim.keymap.set({ 'n', 'v' }, '<leader>pm', require('gen').select_model, { desc = 'Gen: Select model' })
