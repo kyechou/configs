@@ -50,9 +50,9 @@ tooltip label {
     margin-top: 8px;
     margin-bottom: 0px;
     margin-left: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 9px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 8px;
     padding-right: 8px;
     transition: none;
     font-size: 16px;
@@ -78,7 +78,7 @@ tooltip label {
     margin-left: 0;
     margin-right: 5px;
     padding-top: 1px;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     padding-left: 8px;
     padding-right: 8px;
 }
