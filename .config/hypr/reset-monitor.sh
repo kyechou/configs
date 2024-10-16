@@ -44,7 +44,11 @@ parse_params() {
 }
 
 laptop_lid_status() {
-    awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID0/state
+    if [[ -e /proc/acpi/button/lid/LID0/state ]]; then
+        awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID0/state
+    elif [[ -e /proc/acpi/button/lid/LID/state ]]; then
+        awk -F ' ' '{print $2}' </proc/acpi/button/lid/LID/state
+    fi
 }
 
 get_external_monitors() {
