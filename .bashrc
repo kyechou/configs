@@ -26,7 +26,7 @@ export PAGER='less -R'
 export TERM='xterm-256color'
 GPG_TTY=$(tty)
 export GPG_TTY
-export BROWSER=firefox
+export BROWSER=zen-browser
 export CUPS_USER='uofi\kychou2'
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export _JAVA_AWT_WM_NONREPARENTING=1 # java apps issues with non-reparenting WM
