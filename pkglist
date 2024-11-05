@@ -19,6 +19,7 @@ clang
 cmus
 cups
 cups-pdf
+curl
 devtools
 diffutils
 dmidecode
