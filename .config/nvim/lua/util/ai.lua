@@ -5,5 +5,5 @@
 
 return {
     -- { import = 'util.codeium' },
-    { import = 'util.gen' },
+    -- { import = 'util.gen' }, -- local ollama models
 }

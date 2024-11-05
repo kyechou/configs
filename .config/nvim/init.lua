@@ -251,23 +251,23 @@ vim.keymap.set('n', '<leader>wd', ':SessionDelete<CR>', { desc = 'Delete session
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Workspace: Add foler' })
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Workspace: Remove folder' })
 vim.keymap.set('n', '<leader>wf', helper.list_workspace_folders, { desc = 'Workspace: Folders' })
--- GenAI / Prompt
-require('gen').prompts['Review_Code'] = {
-    prompt = "Improve the following code and make concise suggestions:\n\n$text",
-    replace = false,
-}
-require('gen').prompts['Improve_Writing'] = {
-    prompt =
-    "Improve the following text to make it more concise, academic, and without losing any points. Show only the improved text without anything else.\n\n$text",
-    replace = false,
-}
-vim.keymap.set({ 'n', 'v' }, '<leader>pm', require('gen').select_model, { desc = 'Gen: Select model' })
-vim.keymap.set({ 'n', 'v' }, '<leader>pp', ':Gen<CR>', { desc = 'Gen: Choose prompt' })
-vim.keymap.set({ 'n', 'v' }, '<leader>pc', ':Gen Chat<CR>', { desc = 'Gen: Talk/Chat' })
-vim.keymap.set({ 'n', 'v' }, '<leader>pa', ':Gen Ask<CR>', { desc = 'Gen: Ask about the provided text' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ps', ':Gen Summarize<CR>', { desc = 'Gen: Summarize the provided text' })
-vim.keymap.set({ 'n', 'v' }, '<leader>pr', ':Gen Review_Code<CR>', { desc = 'Gen: Review code' })
-vim.keymap.set({ 'n', 'v' }, '<leader>pw', ':Gen Improve_Writing<CR>', { desc = 'Gen: Improve writing' })
+-- -- GenAI / Prompt
+-- require('gen').prompts['Review_Code'] = {
+--     prompt = "Improve the following code and make concise suggestions:\n\n$text",
+--     replace = false,
+-- }
+-- require('gen').prompts['Improve_Writing'] = {
+--     prompt =
+--     "Improve the following text to make it more concise, academic, and without losing any points. Show only the improved text without anything else.\n\n$text",
+--     replace = false,
+-- }
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pm', require('gen').select_model, { desc = 'Gen: Select model' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pp', ':Gen<CR>', { desc = 'Gen: Choose prompt' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pc', ':Gen Chat<CR>', { desc = 'Gen: Talk/Chat' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pa', ':Gen Ask<CR>', { desc = 'Gen: Ask about the provided text' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>ps', ':Gen Summarize<CR>', { desc = 'Gen: Summarize the provided text' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pr', ':Gen Review_Code<CR>', { desc = 'Gen: Review code' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>pw', ':Gen Improve_Writing<CR>', { desc = 'Gen: Improve writing' })
 -- Debug
 local dap = require('dap')
 local dapui = require('dapui')
