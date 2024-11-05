@@ -153,6 +153,7 @@ swaylock-effects-git
 syncthing
 system-config-printer
 systemd-boot-pacman-hook
+tailscale
 tcpdump
 texlive-meta
 the_silver_searcher
@@ -162,6 +163,7 @@ tmux
 traceroute
 transmission-gtk
 trash-cli
+trayscale
 trougnouf-backgrounds
 ttc-iosevka
 ttc-iosevka-aile
@@ -184,7 +186,6 @@ wdisplays
 webkit2gtk
 wget
 whois
-wireguard-tools
 wireplumber
 wireshark-qt
 wl-clipboard
