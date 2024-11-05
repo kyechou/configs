@@ -56,6 +56,7 @@ gnome-disk-utility
 gnome-keyring
 gnome-tweaks
 go
+gobuster
 google-chrome
 gptfdisk
 greetd
@@ -79,6 +80,7 @@ intel-media-driver
 intel-ucode
 iptables-nft
 jabref
+john
 jq
 kanagawa-gtk-theme-git
 kanagawa-icon-theme-git
@@ -94,6 +96,7 @@ luarocks
 lxsession
 man-db
 man-pages
+mariadb-clients
 mkinitcpio-firmware
 neovim
 net-tools
@@ -134,10 +137,13 @@ pscircle
 qemu-desktop
 qt6-wayland
 reflector
+responder
 ripgrep
 rofi-wayland
 rsync
+ruby-evil-winrm
 safeeyes
+seclists
 soundconverter
 speedcrunch
 spotify-launcher
@@ -185,6 +191,7 @@ wl-clipboard
 wlogout
 wlr-randr
 wlrctl
+wordlists
 xdg-desktop-portal-hyprland
 yazi
 yt-dlp
