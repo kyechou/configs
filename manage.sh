@@ -165,6 +165,8 @@ sync() {
         "${RSYNC[@]}" /etc/systemd/sleep.conf ./etc-systemd/
     [[ -r /etc/udev/rules.d ]] &&
         "${RSYNC[@]}" /etc/udev/rules.d/ ./etc-udev-rules.d/
+    [[ -r /etc/sysctl.d/99-tailscale.conf ]] &&
+        "${RSYNC[@]}" /etc/sysctl.d/99-tailscale.conf ./
     [[ -r /etc/logid.cfg ]] &&
         "${RSYNC[@]}" /etc/logid.cfg ./
     [[ -r /etc/modprobe.d/hid_apple.conf ]] &&
@@ -198,6 +200,7 @@ deploy() {
         sudo "${RSYNC[@]}" etc-systemd/resolved.conf /etc/systemd/
         sudo "${RSYNC[@]}" etc-systemd/sleep.conf /etc/systemd/
         sudo "${RSYNC[@]}" etc-udev-rules.d/ /etc/udev/rules.d/
+        sudo "${RSYNC[@]}" 99-tailscale.conf /etc/sysctl.d/
         "${RSYNC[@]}" private/.gnupg ~/
     else
         $GPG --import private/.gnupg/*.asc
