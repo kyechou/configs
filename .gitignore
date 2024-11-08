@@ -16,3 +16,4 @@
 .vim/sessions
 private/
 *.pkg.tar.zst
+.nextcloudsync.log
