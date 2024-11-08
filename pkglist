@@ -69,6 +69,9 @@ gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
+gvfs-afc
+gvfs-dnssd
+gvfs-google
 htop
 hunspell
 hunspell-en_us
@@ -95,6 +98,9 @@ lxsession
 man-db
 man-pages
 mkinitcpio-firmware
+nautilus
+nautilus-launch
+nautilus-open-any-terminal
 neovim
 net-tools
 nethack
@@ -102,6 +108,7 @@ network-manager-applet
 networkmanager
 networkmanager-dmenu-git
 newsboat
+nextcloud-client
 nmap
 nordic-wallpapers
 noto-fonts
@@ -129,6 +136,7 @@ perl-image-exiftool
 phinger-cursors
 pipewire-pulse
 pscircle
+python-nautilus
 qemu-desktop
 qt6-wayland
 reflector
