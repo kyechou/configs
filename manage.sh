@@ -153,6 +153,8 @@ sync() {
     mkdir -p .java/.userPrefs/org && "${RSYNC[@]}" ~/.java/.userPrefs/org/jabref .java/.userPrefs/org/
     [[ -r /etc/makepkg.conf ]] &&
         "${RSYNC[@]}" /etc/makepkg.conf ./
+    [[ -r /etc/pacman.conf ]] &&
+        "${RSYNC[@]}" /etc/pacman.conf ./
     [[ -r /etc/xdg/reflector/reflector.conf ]] &&
         "${RSYNC[@]}" /etc/xdg/reflector/reflector.conf ./
     [[ -r /etc/greetd ]] &&
@@ -194,7 +196,7 @@ deploy() {
     for item in "${CLI_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/.config/; done
     "${RSYNC[@]}" private/.ssh ~/
     if [[ "$NAME" = 'Arch Linux' ]]; then
-        sudo "${RSYNC[@]}" makepkg.conf /etc/
+        sudo "${RSYNC[@]}" makepkg.conf pacman.conf /etc/
         sudo "${RSYNC[@]}" reflector.conf /etc/xdg/reflector/
         sudo "${RSYNC[@]}" etc-systemd/logind.conf /etc/systemd/
         sudo "${RSYNC[@]}" etc-systemd/resolved.conf /etc/systemd/
