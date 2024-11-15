@@ -27,6 +27,7 @@ ueberzug_offset = [0, 0, 0, 0]
 [opener]
 edit = [{ run = '"${EDITOR:-nvim}" "$@"', block = true, desc = "Edit" }]
 open = [{ run = 'xdg-open "$@"', orphan = true, desc = "Open" }]
+evince = [{ run = 'evince "$@"', orphan = true, desc = "Evince" }]
 reveal = [
     { run = '/usr/bin/vendor_perl/exiftool "$1"; echo "> [Press enter to continue...]"; read', block = true, desc = "Show EXIF" },
 ]
@@ -40,6 +41,9 @@ rules = [
     { mime = "text/*", use = ["edit", "open", "reveal"] },
     { mime = "inode/x-empty", use = ["edit", "reveal"] },
     { mime = "application/json", use = ["edit", "reveal"] },
+
+    # PDF
+    { mime = "application/pdf", use = ["open", "evince", "edit", "reveal"] },
 
     # Default
     { mime = "*", use = ["open", "edit", "reveal"] },
