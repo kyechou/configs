@@ -101,6 +101,7 @@ mkinitcpio-firmware
 nautilus
 nautilus-launch
 nautilus-open-any-terminal
+nautilus-python
 neovim
 net-tools
 nethack
@@ -136,7 +137,6 @@ perl-image-exiftool
 phinger-cursors
 pipewire-pulse
 pscircle
-python-nautilus
 qemu-desktop
 qt6-wayland
 quickgui
