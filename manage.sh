@@ -61,6 +61,7 @@ GUI_HOME_CONFIGS=(
 )
 
 GUI_CONFIGS=(
+    .config/alacritty
     .config/bspwm
     .config/chrome-flags.conf
     .config/cmus
@@ -94,6 +95,21 @@ GUI_CONFIGS=(
     .config/wlogout
     .config/xsettingsd
     .config/zathura
+)
+
+MACOS_HOME_CONFIGS=(
+    .bash_profile
+    .bashrc
+    .gitconfig
+)
+
+MACOS_CONFIGS=(
+    .config/alacritty
+    .config/newsboat
+    .config/nvim
+    .config/skhd
+    .config/yabai
+    .config/yazi
 )
 
 parse_params() {
@@ -130,6 +146,19 @@ parse_params() {
 }
 
 sync() {
+    # Check if the host is MacOS
+    if [[ "$(uname)" == "Darwin" ]]; then
+        echo -n "[!] This machine is a god-damned MacOS. Do you really want to continue syncing? [Y/n] "
+        read -r continue_syncing
+        continue_syncing="$(echo "$continue_syncing" | tr '[:upper:]' '[:lower:]')"
+        if [ -z "${continue_syncing##y*}" ]; then
+            sync_macos
+        elif [ -z "${continue_syncing##n*}" ]; then
+            exit 1
+        fi
+        return
+    fi
+
     # Check if the host is "arch"
     if [[ "$(hostname)" != "arch" ]]; then
         while :; do
@@ -137,7 +166,6 @@ sync() {
             read -r continue_syncing
             continue_syncing="$(echo "$continue_syncing" | tr '[:upper:]' '[:lower:]')"
             if [ -z "${continue_syncing##y*}" ]; then
-                rm -rf "$INSTALL_DIR"
                 break
             elif [ -z "${continue_syncing##n*}" ]; then
                 exit 1
@@ -191,6 +219,11 @@ sync() {
     fi
 }
 
+sync_macos() {
+    for item in "${MACOS_HOME_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" ./; done
+    for item in "${MACOS_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" .config/; done
+}
+
 deploy() {
     for item in "${CLI_HOME_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/; done
     for item in "${CLI_CONFIGS[@]}"; do "${RSYNC[@]}" "$item" ~/.config/; done
@@ -229,8 +262,8 @@ deploy_all() {
 }
 
 copy_cli_to_root() {
-    for item in "${CLI_HOME_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /root/; done
-    for item in "${CLI_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /root/.config/; done
+    for item in "${CLI_HOME_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /var/root/; done
+    for item in "${CLI_CONFIGS[@]}"; do sudo "${RSYNC[@]}" "$item" /var/root/.config/; done
 }
 
 main() {
