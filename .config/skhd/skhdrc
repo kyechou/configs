@@ -111,10 +111,6 @@
 # https://github.com/koekeishiya/yabai/wiki/Commands
 #
 
-# # Close the active window
-# cmd + ctrl - q : yabai
-# # Enter the kill mode
-# cmd + ctrl + shift - q : exec, hyprctl kill
 # Switch the active/focused window
 cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
@@ -210,8 +206,7 @@ cmd + shift - 0x2F : osascript -e 'set volume input volume (input volume of (get
 cmd + shift - 0x2B : osascript -e 'set volume input volume (input volume of (get volume settings)) - 2' # comma
 
 # # Program shortcuts
-cmd - return :              open -a /Applications/Alacritty.app
-cmd + shift - return :      open -na /Applications/Alacritty.app
+cmd - return :              open -na /Applications/Alacritty.app
 cmd + ctrl - a :            open -a /Applications/Quip.app
 cmd + ctrl - b :            open -a /Applications/Firefox.app
 cmd + ctrl - c :            open -a /System/Applications/Calculator.app
