@@ -209,6 +209,7 @@ cmd + shift - 0x2B : osascript -e 'set volume input volume (input volume of (get
 cmd - return :              open -na /Applications/Alacritty.app
 cmd + ctrl - a :            open -a /Applications/Quip.app
 cmd + ctrl - b :            open -a /Applications/Firefox.app
+cmd + ctrl + shift - b :    open -na /Applications/Firefox.app
 cmd + ctrl - c :            open -a /System/Applications/Calculator.app
 cmd + ctrl - f :            /Applications/Alacritty.app/Contents/MacOS/alacritty --class yazi --title yazi -e yazi /Users/kychou
 cmd + ctrl + shift - f :    open -a /System/Library/CoreServices/Finder.app
