@@ -184,7 +184,7 @@ cmd + shift - space : yabai -m window --toggle sticky
 cmd - e : yabai -m window --toggle zoom-fullscreen
 cmd + shift - e : yabai -m window --toggle native-fullscreen
 cmd + shift - f : yabai -m window --toggle native-fullscreen
-cmd - r : yabai -m window --toggle split
+cmd + shift - r : yabai -m window --toggle split
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
