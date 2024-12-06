@@ -33,7 +33,7 @@ EOF
 DEPLOY=0
 DEPLOY_ALL=0
 SYNC=0
-CP_ROOT=1
+CP_ROOT=0
 DRYRUN=0
 RSYNC=('rsync' '--delete-after' '-rlptDvh')
 GPG='gpg'
