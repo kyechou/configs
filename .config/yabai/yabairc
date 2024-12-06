@@ -7,9 +7,8 @@
 # see this wiki page for information:
 #  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
 #
-# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-# sudo yabai --load-sa
-#
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # global settings
 yabai -m config                                 \
@@ -25,10 +24,10 @@ yabai -m config                                 \
     window_animation_duration    0.0            \
     window_animation_easing      ease_out_circ  \
     window_opacity_duration      0.0            \
-    active_window_opacity        1.0            \
-    normal_window_opacity        0.90           \
-    window_opacity               off            \
-    insert_feedback_color        0xffd75f5f     \
+    active_window_opacity        0.96           \
+    normal_window_opacity        0.96           \
+    window_opacity               on             \
+    insert_feedback_color        0xff658594     \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
@@ -44,3 +43,12 @@ yabai -m config                                 \
     mouse_drop_action            swap
 
 echo "yabai configuration loaded.."
+
+NUM_SPACES=3
+echo "creating yabai spaces..."
+while [ "$(yabai -m query --spaces | jq length)" -lt "$NUM_SPACES" ]; do
+    yabai -m space --create
+done
+while [ "$(yabai -m query --spaces | jq length)" -gt "$NUM_SPACES" ]; do
+    yabai -m space --destroy "$(yabai -m query --spaces | jq '.[-1].index')"
+done
