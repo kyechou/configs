@@ -186,10 +186,8 @@ vim.keymap.set('n', '<C-/>', capi.toggle.linewise.current, { desc = 'Toggle comm
 vim.keymap.set('v', '<C-/>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
 vim.keymap.set('n', '<C-_>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
 vim.keymap.set('v', '<C-_>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
-vim.keymap.set({ 'n', 'v' }, '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Comment operator' })
-vim.keymap.set('n', '<C-c>O', capi.insert.linewise.above, { desc = 'Insert a comment above' })
-vim.keymap.set('n', '<C-c>o', capi.insert.linewise.below, { desc = 'Insert a comment below' })
-vim.keymap.set('n', '<C-c>A', capi.insert.linewise.eol, { desc = 'Insert a comment at end of line' })
+vim.keymap.set('n', '<C-c>', capi.toggle.linewise.current, { desc = 'Toggle comment' })
+vim.keymap.set('v', '<C-c>', capi.call('toggle.linewise', 'g@'), { expr = true, desc = 'Toggle comment' })
 -- Todo
 vim.keymap.set('n', ']t', TODO_jump_next, { desc = 'Next todo comment' })
 vim.keymap.set('n', '[t', TODO_jump_prev, { desc = 'Previous todo comment' })
