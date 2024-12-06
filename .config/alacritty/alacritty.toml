@@ -12,12 +12,13 @@
 WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
-decorations = "none"
+# decorations = "None"
 decorations_theme_variant = "Dark"
-dynamic_padding = false
+dynamic_padding = true
 dynamic_title = true
 opacity = 1.0
 startup_mode = "Windowed"
+dimensions = { columns = 144, lines = 42 }
 
 [window.padding]
 # Blank space added around the window in pixels. This padding is scaled
@@ -82,8 +83,12 @@ unfocused_hollow = true
 blinking = "Off"
 shape = "Block"
 
+[scrolling]
+history = 100000
+multiplier = 2
+
 [font]
-size = 10.0
+size = 14.0
 
 [font.bold]
 style = "Bold"
@@ -95,7 +100,7 @@ style = "Bold Italic"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka"
+family = "Iosevka NF"
 style = "Regular"
 
 [font.offset]
@@ -105,6 +110,5 @@ y = 0
 [mouse]
 hide_when_typing = true
 
-[scrolling]
-history = 100000
-multiplier = 2
+[terminal]
+shell = "/opt/homebrew/bin/bash"
