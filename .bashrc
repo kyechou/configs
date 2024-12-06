@@ -94,12 +94,34 @@ if command -v zoxide &>/dev/null; then
     eval "$(zoxide init --cmd cd bash)"
 fi
 
+# MacOS related settings
+if [[ -f /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export HOMEBREW_NO_ANALYTICS=1
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    if [[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
+        . /opt/homebrew/etc/profile.d/bash_completion.sh
+    fi
+fi
+if [[ -x /usr/libexec/java_home ]]; then
+    JAVA_HOME="$(/usr/libexec/java_home)"
+    export JAVA_HOME
+fi
+
+# Amazon related settings
+if [[ -r "$HOME/.toolbox/bin" ]]; then
+    export PATH="$PATH:$HOME/.toolbox/bin"
+fi
+if [[ -r "$HOME/.brazil_completion/bash_completion" ]]; then
+    source "$HOME/.brazil_completion/bash_completion"
+fi
+
 # aliases
-alias l='ls --color=auto -F'
-alias la='ls --color=auto -AF'
-alias ll='ls --color=auto -lAF'
-alias ls='ls --color=auto -F'
-alias cp='cp --sparse=auto'
+alias l='ls --color -F'
+alias la='ls --color -AF'
+alias ll='ls --color -lAF'
+alias ls='ls --color -F'
+# alias cp='cp --sparse=auto'
 if command -v trash-put &>/dev/null; then
     alias rm='trash-put'
 fi
@@ -108,9 +130,9 @@ if command -v nvim &>/dev/null; then
     alias vim='nvim'
     alias vimdiff='nvim -d'
 fi
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep='grep --color'
+alias fgrep='fgrep --color'
+alias egrep='egrep --color'
 alias pacman='pacman --color auto'
 alias gdb='gdb -q'
 alias valgrind='valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all'
