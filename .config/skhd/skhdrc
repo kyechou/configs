@@ -214,7 +214,7 @@ cmd + ctrl - f :            /Applications/Alacritty.app/Contents/MacOS/alacritty
 cmd + ctrl + shift - f :    open -a /System/Library/CoreServices/Finder.app
 cmd + ctrl - m :            open -a "/Applications/Microsoft Outlook.app"
 cmd + ctrl - n :            /Applications/Alacritty.app/Contents/MacOS/alacritty --class newsboat --title newsboat -e newsboat
-cmd + ctrl - s :            open -a /Applications/Spotify.app
+cmd + ctrl - s :            open -a /Applications/Slack.app
 # cmd + ctrl - v :            open -a Virtualization
 # cmd + ctrl - w :            open -a Status Bar
 0x69 :                      open -a /System/Applications/Utilities/Screenshot.app
