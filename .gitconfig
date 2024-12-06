@@ -2,6 +2,8 @@
     name = Kuan-Yen Chou
     email = kuanyenchou@gmail.com
     signingkey = 71FF6F39B8A800DE
+    ; email = kychou@amazon.com
+    ; signingkey = 7F20C4B999ED0BF7
 
 [core]
     editor = nvim
