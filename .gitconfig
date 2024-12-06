@@ -1,10 +1,11 @@
 [user]
-    name = kyechou
+    name = Kuan-Yen Chou
     email = kuanyenchou@gmail.com
     signingkey = 71FF6F39B8A800DE
 
 [core]
     editor = nvim
+    pager = less -FMRiX
 
 [color]
     branch = auto
@@ -46,8 +47,8 @@
     co = checkout
     rt = restore
     br = branch -avv
-    lg = log --graph --color --oneline
-    lga = log --graph --color --oneline --all
+    lg = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    lga = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order --all
     lgp = log --color --patch --compact-summary
     lsr = ls-remote
     d = diff
