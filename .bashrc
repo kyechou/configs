@@ -95,25 +95,9 @@ if command -v zoxide &>/dev/null; then
     eval "$(zoxide init --cmd cd bash)"
 fi
 
-# MacOS related settings
-export PATH="$PATH:/usr/local/bin"
-if [[ -f /opt/homebrew/bin/brew ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    export HOMEBREW_NO_ANALYTICS=1
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-    if [[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
-        # shellcheck source=/dev/null
-        . /opt/homebrew/etc/profile.d/bash_completion.sh
-    fi
-fi
-if [[ -x /usr/libexec/java_home ]]; then
-    JAVA_HOME="$(/usr/libexec/java_home)"
-    export JAVA_HOME
-fi
-
 # Amazon related settings
 if [[ -r "$HOME/.toolbox/bin" ]]; then
-    export PATH="$PATH:$HOME/.toolbox/bin"
+    export PATH="$HOME/.toolbox/bin:$PATH"
 fi
 if [[ -r "$HOME/.brazil_completion/bash_completion" ]]; then
     # shellcheck source=/dev/null
@@ -126,6 +110,31 @@ fi
 if [[ -e "$HOME/.cargo/env" ]]; then
     # shellcheck source=/dev/null
     source "$HOME/.cargo/env"
+fi
+
+if [[ "$(uname)" = "Darwin" ]]; then
+    # MacOS related settings
+    export PATH="$PATH:/usr/local/bin"
+    if [[ -f /opt/homebrew/bin/brew ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        export HOMEBREW_NO_ANALYTICS=1
+        export BASH_SILENCE_DEPRECATION_WARNING=1
+        if [[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
+            # shellcheck source=/dev/null
+            source /opt/homebrew/etc/profile.d/bash_completion.sh
+        fi
+    fi
+    if [[ -x /usr/libexec/java_home ]]; then
+        JAVA_HOME="$(/usr/libexec/java_home)"
+        export JAVA_HOME
+    fi
+else
+    # AL2 related settings
+    if [[ -e /usr/bin/java ]]; then
+        JAVA_HOME="$(dirname "$(dirname "$(realpath /usr/bin/java)")")"
+        export JAVA_HOME
+        export PATH="$JAVA_HOME/bin:$PATH"
+    fi
 fi
 
 # aliases
