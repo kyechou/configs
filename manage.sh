@@ -222,6 +222,7 @@ sync() {
 sync_macos() {
     for item in "${MACOS_HOME_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" ./; done
     for item in "${MACOS_CONFIGS[@]}"; do "${RSYNC[@]}" ~/"$item" .config/; done
+    "${RSYNC[@]}" ~/.ssh private/
 }
 
 deploy() {
