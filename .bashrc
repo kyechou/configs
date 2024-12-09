@@ -45,6 +45,7 @@ export XCURSOR_THEME=phinger-cursors
 # bash completion
 if [[ "${BASH#*bash}" != "$BASH" ]] &&
     [[ -r /usr/share/bash-completion/bash_completion ]]; then
+    # shellcheck source=/dev/null
     . /usr/share/bash-completion/bash_completion
 fi
 
@@ -95,11 +96,13 @@ if command -v zoxide &>/dev/null; then
 fi
 
 # MacOS related settings
+export PATH="$PATH:/usr/local/bin"
 if [[ -f /opt/homebrew/bin/brew ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     export HOMEBREW_NO_ANALYTICS=1
     export BASH_SILENCE_DEPRECATION_WARNING=1
     if [[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
+        # shellcheck source=/dev/null
         . /opt/homebrew/etc/profile.d/bash_completion.sh
     fi
 fi
@@ -113,7 +116,16 @@ if [[ -r "$HOME/.toolbox/bin" ]]; then
     export PATH="$PATH:$HOME/.toolbox/bin"
 fi
 if [[ -r "$HOME/.brazil_completion/bash_completion" ]]; then
+    # shellcheck source=/dev/null
     source "$HOME/.brazil_completion/bash_completion"
+fi
+if [[ -e '/usr/local/bin/aws_completer' ]]; then
+    # shellcheck source=/dev/null
+    complete -C '/usr/local/bin/aws_completer' aws
+fi
+if [[ -e "$HOME/.cargo/env" ]]; then
+    # shellcheck source=/dev/null
+    source "$HOME/.cargo/env"
 fi
 
 # aliases
