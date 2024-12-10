@@ -125,9 +125,11 @@ if [[ "$(uname)" = "Darwin" ]]; then
         fi
     fi
     if [[ -x /usr/libexec/java_home ]]; then
-        JAVA_HOME="$(/usr/libexec/java_home)"
+        JAVA_HOME="$(/usr/libexec/java_home -v 17)"
         export JAVA_HOME
     fi
+    # Added by Toolbox App
+    export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 else
     # AL2 related settings
     if [[ -e /usr/bin/java ]]; then
