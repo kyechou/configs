@@ -111,6 +111,7 @@ if [[ -e "$HOME/.cargo/env" ]]; then
     # shellcheck source=/dev/null
     source "$HOME/.cargo/env"
 fi
+alias bb='brazil-build'
 
 if [[ "$(uname)" = "Darwin" ]]; then
     # MacOS related settings
