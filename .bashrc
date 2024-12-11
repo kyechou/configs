@@ -130,8 +130,10 @@ if [[ "$(uname)" = "Darwin" ]]; then
         JAVA_HOME="$(/usr/libexec/java_home -v 17)"
         export JAVA_HOME
     fi
-    # Added by Toolbox App
+    # JetBrains Toolbox scripts (for remote connections)
     export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+    # Use rbenv for Ruby 2.7 (required by Tiros on MacOS)
+    eval "$(rbenv init - --no-rehash bash)"
 else
     # AL2 related settings
     if [[ -e /usr/bin/java ]]; then
