@@ -113,6 +113,8 @@ if [[ -e "$HOME/.cargo/env" ]]; then
 fi
 alias b='brazil'
 alias bb='brazil-build'
+alias bbr='brazil-build release'
+alias bbc='brazil-build clean'
 
 if [[ "$(uname)" = "Darwin" ]]; then
     # MacOS related settings
